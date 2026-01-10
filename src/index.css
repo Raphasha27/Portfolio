@@ -26,6 +26,11 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none !important; /* Force use of custom cursor on desktop */
+}
+
+@media (max-width: 1024px) {
+  * { cursor: auto !important; }
 }
 
 body {
@@ -33,6 +38,43 @@ body {
   color: var(--text-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 999;
+  filter: contrast(150%) brightness(100%);
+}
+
+.bg-glow {
+  position: fixed;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-1 {
+  background: var(--primary);
+  top: -10%;
+  left: -5%;
+}
+
+.glow-2 {
+  background: var(--secondary);
+  bottom: -10%;
+  right: -5%;
 }
 
 ::-webkit-scrollbar {

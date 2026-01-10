@@ -75,15 +75,17 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="glass project-card"
+            className="glass project-card interactive"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -10, transition: { duration: 0.2 } }}
           >
+            <div className="scan-overlay" />
             <div className="project-icon-wrapper">
               {project.icon}
+              <div className="icon-scan" />
             </div>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>{project.title}</h3>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px', lineHeight: 1.6 }}>
@@ -120,12 +122,47 @@ export default function Projects() {
           position: relative;
           overflow: hidden;
         }
+        .scan-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, var(--primary), transparent);
+          opacity: 0;
+          transition: 0.3s;
+          pointer-events: none;
+        }
+        .project-card:hover .scan-overlay {
+          animation: scanVertical 2s linear infinite;
+          opacity: 1;
+        }
+        @keyframes scanVertical {
+          0% { top: -2px; }
+          100% { top: 100%; }
+        }
         .project-icon-wrapper {
           margin-bottom: 24px;
           padding: 12px;
           background: rgba(255, 255, 255, 0.05);
           border-radius: 12px;
           width: fit-content;
+          position: relative;
+          overflow: hidden;
+        }
+        .icon-scan {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+          transform: skewX(-20deg);
+          animation: iconScan 3s infinite;
+        }
+        @keyframes iconScan {
+          0% { left: -100%; }
+          50%, 100% { left: 200%; }
         }
         .project-icon-wrapper svg {
           width: 32px;

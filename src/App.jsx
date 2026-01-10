@@ -7,7 +7,8 @@ import Achievements from './components/Achievements';
 import Collaborations from './components/Collaborations';
 import Contact from './components/Contact';
 import DigitalCard from './components/DigitalCard';
-import { motion, useScroll, useSpring, useInView } from 'framer-motion';
+import CustomCursor from './components/CustomCursor';
+import { motion, useScroll, useSpring, useInView, useTransform } from 'framer-motion';
 
 const RevealSection = ({ children, id }) => {
   const ref = useRef(null);
@@ -36,6 +37,11 @@ function App() {
 
   return (
     <div className="portfolio-app">
+      <CustomCursor />
+      <div className="noise-overlay" />
+      <div className="bg-glow glow-1" />
+      <div className="bg-glow glow-2" />
+
       {/* Scroll Progress Bar */}
       <motion.div
         className="progress-bar"
