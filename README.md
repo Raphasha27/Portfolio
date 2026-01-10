@@ -1,70 +1,74 @@
-# 📔 The Digital Portfolio of Raphasha27
-### **Where Code Meets Intelligence & Design**
+# 🚀 Professional 3D Portfolio - Koketso Raphasha
 
-Welcome to my central portfolio hub. This repository serves as a showcase of my journey through the complex landscapes of Software Engineering, Artificial Intelligence, and Modern Web Systems.
+A dynamic, high-fidelity portfolio website built for a Software Developer & AI Specialist. This project utilizes cutting-edge web technologies to create an immersive, luxury digital experience.
 
----
-
-## 🏗️ Architecture of Excellence
-I specialize in building full-cycle applications: from robust neural network backends to high-fidelity, interactive frontends.
-
-### 🔭 Explore My Domains:
-- **[Intelligence & AI](#-intelligence--ai)**: Predictive models, NLP, and Computer Vision.
-- **[Enterprise & Web](#-enterprise--web)**: High-performance React, Angular, and FastAPI systems.
-- **[Mobile Innovation](#-mobile-innovation)**: Cross-platform experiences with React Native & Expo.
-- **[Cyber Security](#-cyber-security)**: SOC dashboards and AI-driven threat analysis.
+**Live Demo:** [http://localhost:3000](http://localhost:3000) (Local Development)
 
 ---
 
-## 🎞️ Gallery of Innovations
+## 📸 Visual Masterpieces
 
-### 🤖 AI Job Market Intelligence Platform
-> *The ultimate bridge between talent and data.*
-- **Core**: Real-time aggregation & trend analysis.
-- **AI**: Autonomous Resume-to-Job matching engine.
-- **UI**: Premium Glassmorphism with Tailwind 4.
-<img src="./assets/jobsphere_dashboard.png" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+### 🤖 Hero & Neural Core
+*Featuring the custom-engineered 3D Neural Sphere and real-time connectivity widget.*
+![Hero Section](./public/screenshots/hero.png)
 
-### 🛡️ CyberShield SOC Platform
-> *Modernizing security infrastructure with AI.*
-- **Features**: Interactive threat timeline, incident Kanban, and AI chat assistant.
-- **Tech**: Angular, D3.js, Tailwind, WebSockets.
-<img src="./assets/cybershield.png" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+### 💻 Technical Persona
+*A deep dive into the engineering mindset with integrated bash terminal simulations.*
+![About Section](./public/screenshots/about.png)
 
-### ☀️ Aura Weather AI
-> *Visualizing the atmosphere through code.*
-- **Features**: Live weather animations, climate change risk assessment, and glassmorphic telemetry.
-- **Visuals**: Dynamic backgrounds based on atmospheric state.
-<img src="./assets/aura_weather.png" width="100%" style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+### 🏆 Featured Projects
+*Showcasing FlowSentinel, AI Job Market Intelligence, and more with high-performance metrics.*
+![Projects Section](./public/screenshots/projects.png)
+
+### 📈 Professional Milestones
+*A chronological timeline of leadership roles, academic excellence, and certifications.*
+![Achievements Section](./public/screenshots/achievements.png)
 
 ---
 
-## 🛠️ Specialized Toolset
+## 🛠️ Tech Stack & Arsenal
 
-| Category | Technologies |
-| :-- | :-- |
-| **Languages** | Python, Java, JavaScript (ES6+), C++, Rust |
-| **Frameworks** | React, Next.js, FastAPI, Spring Boot, Angular |
-| **AI/ML** | PyTorch, TensorFlow, OpenAI API, LangChain |
-| **Data** | PostgreSQL, MongoDB, Redis, Pinecone |
-| **DevOps** | Docker, AWS, GitHub Actions, Linux |
-
----
-
-## 📈 Performance & Impact
-I don't just write code; I build solutions that scale. My projects focus on **User Experience**, **Data Integrity**, and **System Resilience**.
-
-- 🎯 **19+ Repositories** under active maintenance.
-- 🚀 **100% Commitment** to clean, documented, and modular architecture.
-- 💡 **Innovation Driven**: Always exploring the next frontier (Web3, Generative AI).
+- **Frontend Core:** React.js, Vite (Migrated to CRA for stability)
+- **3D Engine:** Three.js, React Three Fiber, React Three Drei
+- **Animations:** Framer Motion (Scroll reveal, Magnetic effects)
+- **Styling:** CSS3 (Modern Glassmorphism, Dark Themes)
+- **Icons:** Lucide React
+- **Connectivity:** QRCode.react (Functional Mobile Cross-Platform Sync)
 
 ---
 
-## 🤝 Let's Connect
-The future is being coded right now. Let's build it together.
+## 🌟 Key Features
 
-**[LinkedIn](https://www.linkedin.com/in/koketso-raphasha-27)** • **[GitHub](https://github.com/Raphasha27)** • **[Twitter](https://twitter.com/Raphasha27)**
+- **3D Neural Network Sphere:** An animated, reactive Three.js model representing AI intelligence.
+- **Dynamic Scroll Reveals:** Advanced motion-driven UI that responds as you navigate.
+- **Functional Mobile Scanning:** Integrated QR codes that allow instant mobile viewing via local network routing.
+- **Glassmorphic UI:** Premium design system with high-transparency layers and vibrant accents.
+- **Lead Developer Identity:** Personalized content celebrating the Co-founder role at *Kid of Dynamics*.
 
-<div align="center">
-  <sub>Portfolio v2.0 • 2026 • Raphasha27</sub>
-</div>
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Raphasha27/Portfolio.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Launch the engine**
+   ```bash
+   npm start
+   ```
+
+---
+
+## 🤝 Connect & Collaborate
+
+**Email:** [raphashakokets69@gmail.com](mailto:raphashakokets69@gmail.com)  
+**GitHub:** [@Raphasha27](https://github.com/Raphasha27)  
+
+Built with ❤️ by **Koketso Raphasha**
