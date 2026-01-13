@@ -2,7 +2,7 @@
 
 A dynamic, high-fidelity portfolio website built for a Software Developer & AI Specialist. This project utilizes cutting-edge web technologies to create an immersive, luxury digital experience.
 
-**Live Demo:** [http://localhost:3000](http://localhost:3000) (Local Development)
+**Live Demo:** [https://portfolio-drab-five-89.vercel.app](https://portfolio-drab-five-89.vercel.app)
 
 ---
 
