@@ -39,6 +39,7 @@ A dynamic, high-fidelity portfolio website built for a Software Developer & AI S
 
 ## 🌟 Key Features
 
+- **Portrait Mode Optimization:** Meticulously tuned for vertical mobile views.
 - **3D Neural Network Sphere:** An animated, reactive Three.js model representing AI intelligence.
 - **Dynamic Scroll Reveals:** Advanced motion-driven UI that responds as you navigate.
 - **Functional Mobile Scanning:** Integrated QR codes that allow instant mobile viewing via local network routing.
