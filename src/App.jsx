@@ -184,7 +184,7 @@ function App() {
           margin-bottom: 32px;
         }
         @media (max-width: 768px) {
-          .philosophy-section { padding: 60px 20px; }
+          .philosophy-section { padding: 100px 20px 60px; }
           .philosophy-section h2 { font-size: 2rem; }
           .philosophy-section blockquote { font-size: 1.2rem; }
         }

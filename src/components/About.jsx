@@ -162,7 +162,6 @@ console.log('Hello World! 🚀');`;
           .terminal-window { font-size: 0.6rem; }
           .about-text h2 { font-size: 1.6rem !important; }
           .about-p { font-size: 0.85rem; }
-          section#about { padding: 20px 16px; }
         }
       `}</style>
     </section>
