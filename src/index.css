@@ -170,36 +170,61 @@ a {
 @media (max-width: 768px) {
   section {
     padding: 60px 20px;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   h2 {
-    font-size: 2rem !important;
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
   }
 
   h3 {
-    font-size: 1.2rem !important;
+    font-size: clamp(1.1rem, 5vw, 1.4rem) !important;
   }
 
   .btn-primary, .btn-secondary {
     padding: 10px 20px;
     font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
   }
 }
 
+/* Portrait Specific & Very Small Devices */
 @media (max-width: 480px) {
   section {
     padding: 40px 16px;
   }
 
+  h1 {
+    font-size: clamp(2.2rem, 12vw, 3rem) !important;
+  }
+
   h2 {
-    font-size: 1.75rem !important;
+    font-size: clamp(1.6rem, 10vw, 2rem) !important;
   }
 
   h3 {
-    font-size: 1.1rem !important;
+    font-size: clamp(1rem, 6vw, 1.2rem) !important;
   }
 
   p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .glass {
+    border-radius: 12px;
+  }
+}
+
+/* Landscape on small height fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  section {
+    padding: 40px 20px;
+  }
+  .hero-container {
+    height: auto !important;
+    min-height: 100vh;
   }
 }

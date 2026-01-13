@@ -191,21 +191,22 @@ function App() {
         @media (max-width: 1024px) {
           .nav-links { display: none; }
           .navbar { 
-            padding: 12px 24px; 
-            border-radius: 20px;
-            width: 90%;
+            padding: 10px 16px; 
+            border-radius: 16px;
+            width: 95%;
+            top: 12px;
           }
           .mobile-menu-toggle {
             display: block;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 10px;
+            padding: 8px;
             z-index: 101;
           }
           .hamburger {
-            width: 24px;
-            height: 18px;
+            width: 20px;
+            height: 15px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -219,32 +220,32 @@ function App() {
             transition: 0.3s;
             border-radius: 2px;
           }
-          .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+          .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
           .hamburger.open span:nth-child(2) { opacity: 0; }
-          .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+          .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
           .mobile-nav {
             position: absolute;
-            top: 80px;
+            top: 64px;
             left: 0;
             right: 0;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 40px 24px;
+            background: rgba(5, 5, 5, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 32px 16px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
             align-items: center;
-            border-radius: 24px;
+            border-radius: 20px;
             border: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow);
           }
           .mobile-nav a {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text-main);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
           }
         }
         @media (min-width: 1025px) {

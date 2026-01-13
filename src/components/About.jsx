@@ -143,14 +143,19 @@ console.log('Hello World! 🚀');`;
         }
 
         @media (max-width: 968px) {
-          .about-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-          .about-text { order: 2; }
-          .about-code { order: 1; }
+          .about-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+          .about-text { order: 2; width: 100%; }
+          .about-code { order: 1; width: 100%; }
           .tech-banner { display: none; }
-          .terminal-window { font-size: 0.75rem; }
+          .terminal-window { font-size: 0.7rem; width: 100%; max-width: 100%; overflow-x: hidden; }
+          .terminal-body { padding: 16px; overflow-x: auto; }
           .about-text div:first-child { justify-content: center; }
           .about-text .btn-primary, .about-text .btn-secondary { width: 100%; justify-content: center; }
-          .about-text div:last-child { flex-direction: column; }
+          .about-text div:last-child { flex-direction: column; width: 100%; }
+        }
+        @media (max-width: 480px) {
+          .terminal-window { font-size: 0.65rem; }
+          .about-text h2 { font-size: 1.8rem !important; }
         }
       `}</style>
     </section>

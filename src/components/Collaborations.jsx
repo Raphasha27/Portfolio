@@ -99,12 +99,10 @@ export default function Collaborations() {
           gap: 24px;
         }
         @media (max-width: 600px) {
-          .collab-grid {
-            grid-template-columns: 1fr;
-          }
-          h2 {
-            font-size: 2rem !important;
-          }
+          .collab-grid { grid-template-columns: 1fr; gap: 16px; }
+          .collab-card { padding: 24px 16px; }
+          .philosophy-footer { padding: 24px 16px; margin-top: 40px; }
+          h2 { font-size: 1.8rem !important; }
         }
         .collab-card {
           padding: 32px;

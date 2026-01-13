@@ -141,40 +141,55 @@ export default function Hero() {
           }
           .hero-container {
             text-align: center;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 16px;
+            padding-right: 16px;
             height: auto;
             min-height: 100vh;
-            padding-top: 120px;
-            padding-bottom: 60px;
+            padding-top: 100px;
+            padding-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
           .hero-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 32px;
+            gap: 24px;
             max-width: 100%;
+            width: 100%;
           }
           .hero-content > div:last-child {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
           }
           .hero-qr-frame {
             margin-left: auto;
             margin-right: auto;
+            transform: scale(0.9);
           }
           .btn-group {
+            justify-content: center;
+            width: 100%;
+            flex-direction: column;
+            gap: 12px;
+          }
+          .btn-group > div {
+            width: 100%;
             justify-content: center;
           }
         }
         @media (max-width: 480px) {
           .profile-pic-frame {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
+            margin-bottom: 10px;
           }
           .hero-qr-frame {
-            padding: 8px 16px;
+            padding: 8px 12px;
+            margin-top: 16px;
           }
         }
       `}</style>
