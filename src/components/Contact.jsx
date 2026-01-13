@@ -120,7 +120,10 @@ export default function Contact() {
             gap: 40px;
           }
           .contact-container {
-            padding: 32px;
+            padding: 32px 24px;
+          }
+          h2 {
+            font-size: 2rem !important;
           }
         }
       `}</style>

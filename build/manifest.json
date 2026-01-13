@@ -1,0 +1,8 @@
+{
+    "short_name": "Portfolio",
+    "name": "Koketso Raphasha Portfolio",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#0070f3",
+    "background_color": "#050505"
+}

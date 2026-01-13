@@ -1,1 +1,11 @@
 node_modules
+/build
+.vercel
+*.log
+.DS_Store
+_backup
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

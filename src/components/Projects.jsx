@@ -205,9 +205,20 @@ export default function Projects() {
         .link-icon:hover {
           color: var(--primary);
         }
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
           .projects-grid {
             grid-template-columns: 1fr;
+          }
+          h2 {
+            font-size: 2.2rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .project-card {
+            padding: 24px;
+          }
+          h2 {
+            font-size: 1.8rem !important;
           }
         }
       `}</style>

@@ -165,3 +165,41 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 16px;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}

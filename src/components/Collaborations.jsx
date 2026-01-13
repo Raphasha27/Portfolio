@@ -98,6 +98,14 @@ export default function Collaborations() {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 24px;
         }
+        @media (max-width: 600px) {
+          .collab-grid {
+            grid-template-columns: 1fr;
+          }
+          h2 {
+            font-size: 2rem !important;
+          }
+        }
         .collab-card {
           padding: 32px;
           display: flex;

@@ -143,8 +143,14 @@ console.log('Hello World! 🚀');`;
         }
 
         @media (max-width: 968px) {
-          .about-grid { grid-template-columns: 1fr; gap: 40px; }
+          .about-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+          .about-text { order: 2; }
+          .about-code { order: 1; }
           .tech-banner { display: none; }
+          .terminal-window { font-size: 0.75rem; }
+          .about-text div:first-child { justify-content: center; }
+          .about-text .btn-primary, .about-text .btn-secondary { width: 100%; justify-content: center; }
+          .about-text div:last-child { flex-direction: column; }
         }
       `}</style>
     </section>

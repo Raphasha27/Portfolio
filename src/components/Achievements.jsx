@@ -128,12 +128,18 @@ export default function Achievements() {
           color: var(--text-muted);
           line-height: 1.6;
         }
+        @media (max-width: 768px) {
+          h2 { font-size: 2rem !important; }
+        }
         @media (max-width: 600px) {
           .achievement-card {
             flex-direction: column;
             gap: 20px;
             padding: 24px;
+            text-align: center;
           }
+          .achievement-icon-wrapper { align-self: center; }
+          h2 { font-size: 1.8rem !important; }
         }
       `}</style>
     </section>

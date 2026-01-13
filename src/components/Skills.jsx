@@ -81,8 +81,12 @@ export default function Skills() {
       <style>{`
         .skills-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 40px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 32px;
+        }
+        @media (max-width: 600px) {
+          .skills-grid { grid-template-columns: 1fr; }
+          h2 { font-size: 2rem !important; }
         }
         .skill-category {
           padding-bottom: 20px;

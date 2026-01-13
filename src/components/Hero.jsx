@@ -50,7 +50,7 @@ export default function Hero() {
             Software Developer & AI Specialist. Building intelligent systems that bridge the gap between complex data and human intuition.
           </p>
           
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="btn-group" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <motion.a 
               href="#projects" 
               className="btn-primary"
@@ -141,21 +141,40 @@ export default function Hero() {
           }
           .hero-container {
             text-align: center;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
             height: auto;
-            padding-top: 150px;
-            padding-bottom: 80px;
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: 60px;
           }
           .hero-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 32px;
+            max-width: 100%;
+          }
+          .hero-content > div:last-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           }
           .hero-qr-frame {
             margin-left: auto;
             margin-right: auto;
+          }
+          .btn-group {
+            justify-content: center;
+          }
+        }
+        @media (max-width: 480px) {
+          .profile-pic-frame {
+            width: 160px;
+            height: 160px;
+          }
+          .hero-qr-frame {
+            padding: 8px 16px;
           }
         }
       `}</style>

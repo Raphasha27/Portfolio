@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -34,6 +34,7 @@ function App() {
     damping: 30,
     restDelta: 0.001
   });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="portfolio-app">
@@ -48,9 +49,10 @@ function App() {
         style={{ scaleX, position: 'fixed', top: 0, left: 0, right: 0, height: '4px', background: 'var(--primary)', transformOrigin: '0%', zIndex: 100 }}
       />
 
-      <nav className="glass navbar">
+      <nav className={`glass navbar ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-content">
           <div className="logo"><a href="#home" style={{ textDecoration: 'none', color: 'inherit' }}>KR<span className="dot">.</span></a></div>
+          
           <div className="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -60,7 +62,30 @@ function App() {
             <a href="#collaborations">Teamwork</a>
             <a href="#contact" className="btn-primary" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>Contact</a>
           </div>
+
+          <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         </div>
+
+        {/* Mobile Navigation Overlay */}
+        <motion.div 
+          className="mobile-nav"
+          initial={false}
+          animate={isMenuOpen ? { opacity: 1, y: 0, pointerEvents: 'all' } : { opacity: 0, y: -20, pointerEvents: 'none' }}
+        >
+          <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setIsMenuOpen(false)}>Arsenal</a>
+          <a href="#achievements" onClick={() => setIsMenuOpen(false)}>Milestones</a>
+          <a href="#collaborations" onClick={() => setIsMenuOpen(false)}>Teamwork</a>
+          <a href="#contact" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Contact</a>
+        </motion.div>
       </nav>
 
       <main>
@@ -72,15 +97,15 @@ function App() {
         <RevealSection id="skills"><Skills /></RevealSection>
         <RevealSection id="achievements"><Achievements /></RevealSection>
         
-        <section id="philosophy" style={{ textAlign: 'center', padding: '100px 24px' }}>
+        <section id="philosophy" className="philosophy-section">
            <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
            >
-              <h2 style={{ fontSize: '3rem', marginBottom: '24px' }}>Engineering <span className="gradient-text">Philosophy</span></h2>
-              <blockquote style={{ fontSize: '1.6rem', color: 'var(--text-muted)', fontStyle: 'italic', maxWidth: '900px', margin: '0 auto', lineHeight: 1.6, marginBottom: '32px' }}>
+              <h2>Engineering <span className="gradient-text">Philosophy</span></h2>
+              <blockquote>
                 "As a Co-founder of Kid of Dynamics, I believe complexity is a challenge to be conquered, not an obstacle to be avoided. My goal is to distill the most intricate data into intuitive, impactful experiences through intelligent systems."
               </blockquote>
            </motion.div>
@@ -141,9 +166,89 @@ function App() {
         main {
           overflow-x: hidden;
         }
+        .philosophy-section {
+          text-align: center;
+          padding: 100px 24px;
+        }
+        .philosophy-section h2 {
+          font-size: 3rem;
+          margin-bottom: 24px;
+        }
+        .philosophy-section blockquote {
+          font-size: 1.6rem;
+          color: var(--text-muted);
+          font-style: italic;
+          maxWidth: 900px;
+          margin: 0 auto;
+          line-height: 1.6;
+          margin-bottom: 32px;
+        }
+        @media (max-width: 768px) {
+          .philosophy-section { padding: 60px 20px; }
+          .philosophy-section h2 { font-size: 2rem; }
+          .philosophy-section blockquote { font-size: 1.2rem; }
+        }
         @media (max-width: 1024px) {
           .nav-links { display: none; }
-          .navbar { padding: 12px 24px; }
+          .navbar { 
+            padding: 12px 24px; 
+            border-radius: 20px;
+            width: 90%;
+          }
+          .mobile-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+          }
+          .hamburger {
+            width: 24px;
+            height: 18px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text-main);
+            transition: 0.3s;
+            border-radius: 2px;
+          }
+          .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+          .hamburger.open span:nth-child(2) { opacity: 0; }
+          .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+          .mobile-nav {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+          }
+          .mobile-nav a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
+        }
+        @media (min-width: 1025px) {
+          .mobile-menu-toggle, .mobile-nav { display: none; }
         }
       `}</style>
     </div>
