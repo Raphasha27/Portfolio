@@ -6,7 +6,7 @@
 
 A high-performance, immersive 3D personal portfolio built with **React**, **Three.js**, and **Framer Motion**. This project showcases my skills as a Software Developer & AI Specialist, featuring a glassmorphic design, intelligent AI chatbot, and interactive elements.
 
-🔗 **Live Demo:** [https://portfolio-raphasha27.vercel.app](https://portfolio-raphasha27.vercel.app) *(Note: URL might vary based on your Vercel project name)*
+🔗 **Live Demo:** [https://portfolio-drab-five-89.vercel.app](https://portfolio-drab-five-89.vercel.app)
 
 ## ✨ Key Features
 
