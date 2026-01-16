@@ -78,7 +78,7 @@ const Hero = ({ scrollToSection, onScanClick }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 backdrop-blur-xl relative z-10 shadow-2xl">
                 <img 
-                  src="/src/assets/profile.jpg" 
+                  src="/src/assets/profile.png" 
                   alt="Koketso Raphasha"
                   className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
                 />
