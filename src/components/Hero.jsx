@@ -81,7 +81,7 @@ const Hero = ({ scrollToSection, onScanClick }) => {
                 <img 
                   src={profileImg} 
                   alt="Koketso Raphasha"
-                  className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
               </div>
               {/* Floating Cards with Glassmorphism */}
