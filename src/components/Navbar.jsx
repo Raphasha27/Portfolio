@@ -26,7 +26,7 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
           </div>
           
           <div className="hidden md:flex space-x-8">
-            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+            {['Home', 'About', 'Skills', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item.toLowerCase())}
@@ -63,7 +63,7 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
             className="md:hidden bg-slate-900 border-b border-slate-800"
           >
             <div className="px-4 pt-2 pb-4 space-y-1">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+              {['Home', 'About', 'Skills', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => handleNavClick(item.toLowerCase())}

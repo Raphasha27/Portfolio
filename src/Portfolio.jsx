@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -26,7 +25,7 @@ const Portfolio = () => {
   // Scroll Spy logic
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'contact'];
       
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -57,7 +56,6 @@ const Portfolio = () => {
         <Hero scrollToSection={scrollToSection} onScanClick={() => setShowScanModal(true)} />
         <About />
         <Skills />
-        <Projects />
         <Contact />
         <Associates />
       </main>

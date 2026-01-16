@@ -6,7 +6,7 @@
 
 A high-performance, immersive 3D personal portfolio built with **React**, **Three.js**, and **Framer Motion**. This project showcases my skills as a Software Developer & AI Specialist, featuring a glassmorphic design, intelligent AI chatbot, and interactive elements.
 
-🔗 **Live Demo:** [https://portfolio-raphasha27.vercel.app](https://portfolio-raphasha27.vercel.app) *(Note: URL might vary based on your Vercel project name)*
+🔗 **Live Demo:** [https://portfolio-drab-five-89.vercel.app](https://portfolio-drab-five-89.vercel.app)
 
 ## ✨ Key Features
 
@@ -25,14 +25,6 @@ Integrated QR code scanner for instant contact sharing.
 - **Direct GitHub Link**: Scans to verify credentials via GitHub.
 
 ![Mobile Scanner](public/screenshots/mobile-scanner.png)
-
-### 💼 Portfolio Showcase
-Displaying enterprise-grade projects with detailed stats and tech stacks.
-- **Live Links**: Direct access to GitHub repositories.
-- **Rich Data**: User stats, uptime, and performance metrics.
-- **Interactive Cards**: Glassmorphic hover effects.
-
-![Projects Showcase](public/screenshots/projects.png)
 
 ### 🤝 Trusted Associates
 Seamless scrolling slider showcasing professional affiliations.
