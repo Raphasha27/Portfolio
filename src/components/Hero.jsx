@@ -43,10 +43,10 @@ const Hero = ({ scrollToSection, onScanClick }) => {
             </motion.p>
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-8">
               <button 
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('contact')}
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-2 font-medium text-white backdrop-blur-xl"
               >
-                View Projects <ChevronRight className="w-5 h-5" />
+                Get In Touch <ChevronRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={onScanClick}
