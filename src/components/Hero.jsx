@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Download, Github, Linkedin, Mail, Briefcase, Code } from 'lucide-react';
+import { ChevronRight, Download, Github, Linkedin, Mail, Briefcase, Code, MessageCircle } from 'lucide-react';
 import LiveInfoCards from './LiveInfoCards';
 import profileImg from '../assets/profile.png';
 
@@ -60,10 +60,11 @@ const Hero = ({ scrollToSection, onScanClick }) => {
               {[
                 { Icon: Github, href: "https://github.com/Raphasha27" },
                 { Icon: Linkedin, href: "https://linkedin.com/in/koketso-raphasha" },
-                { Icon: Mail, href: "mailto:contact@koketso.dev" }
-              ].map(({ Icon, href }, i) => (
+                { Icon: Mail, href: "mailto:contact@koketso.dev" },
+                { Icon: MessageCircle, href: "https://wa.me/27781173470", color: "group-hover:text-green-400" }
+              ].map(({ Icon, href, color }, i) => (
                 <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl flex items-center justify-center hover:bg-white/20 hover:border-white/30 hover:-translate-y-1 transition-all group">
-                  <Icon className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors" />
+                  <Icon className={`w-5 h-5 text-slate-300 ${color || 'group-hover:text-white'} transition-colors`} />
                 </a>
               ))}
             </motion.div>
