@@ -4,18 +4,97 @@ import { Calendar as CalendarIcon, MapPin, Cloud, Sun, CloudRain, Wind } from 'l
 
 const LiveInfoCards = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [weather] = useState({
-    temp: 24,
-    condition: 'Partly Cloudy',
-    location: 'Centurion, SA',
-    humidity: 65,
-    wind: 12
+  const [weather, setWeather] = useState({
+    temp: '--',
+    condition: 'Loading...',
+    location: 'Detecting location...',
+    humidity: '--',
+    wind: '--',
+    icon: 'cloud'
   });
+  const [loading, setLoading] = useState(true);
+
+  const getWeatherIcon = (code) => {
+    // WMO Weather interpretation codes (WW)
+    if (code === 0) return <Sun className="w-5 h-5 text-yellow-400" />;
+    if (code <= 3) return <Cloud className="w-5 h-5 text-blue-300" />;
+    if (code >= 51 && code <= 67) return <CloudRain className="w-5 h-5 text-blue-400" />;
+    if (code >= 71 && code <= 86) return <CloudRain className="w-5 h-5 text-slate-300" />;
+    if (code >= 95) return <Wind className="w-5 h-5 text-purple-400" />;
+    return <Cloud className="w-5 h-5 text-blue-300" />;
+  };
+
+  const getWeatherCondition = (code) => {
+    if (code === 0) return 'Clear Sky';
+    if (code === 1) return 'Mainly Clear';
+    if (code === 2) return 'Partly Cloudy';
+    if (code === 3) return 'Overcast';
+    if (code >= 45 && code <= 48) return 'Foggy';
+    if (code >= 51 && code <= 55) return 'Drizzle';
+    if (code >= 61 && code <= 67) return 'Rainy';
+    if (code >= 71 && code <= 77) return 'Snowy';
+    if (code >= 80 && code <= 82) return 'Rain Showers';
+    if (code >= 95) return 'Thunderstorm';
+    return 'Cloudy';
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
+
+    const fetchWeatherData = async (lat, lon) => {
+      try {
+        // Fetch location name
+        const geoResponse = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+        const geoData = await geoResponse.json();
+        const city = geoData.city || geoData.locality || 'Unknown Location';
+        const country = geoData.countryCode || '';
+
+        // Fetch weather
+        const weatherResponse = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relative_humidity_2m,wind_speed_10m`);
+        const weatherData = await weatherResponse.json();
+        
+        setWeather({
+          temp: Math.round(weatherData.current_weather.temperature),
+          condition: getWeatherCondition(weatherData.current_weather.weathercode),
+          location: `${city}${country ? ', ' + country : ''}`,
+          humidity: weatherData.hourly.relative_humidity_2m[0],
+          wind: Math.round(weatherData.current_weather.windspeed),
+          weatherCode: weatherData.current_weather.weathercode
+        });
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+        setWeather(prev => ({ ...prev, condition: 'Weather unavailable', location: 'Location error' }));
+        setLoading(false);
+      }
+    };
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          fetchWeatherData(position.coords.latitude, position.coords.longitude);
+        },
+        async (error) => {
+          console.warn("Geolocation denied, falling back to IP-based location.");
+          // Fallback to IP-based location
+          try {
+            const ipResponse = await fetch('https://ipapi.co/json/');
+            const ipData = await ipResponse.json();
+            if (ipData.latitude && ipData.longitude) {
+              fetchWeatherData(ipData.latitude, ipData.longitude);
+            }
+          } catch (e) {
+            setWeather(prev => ({ ...prev, condition: 'Location denied', location: 'Centurion, SA' })); // Default fallback
+            setLoading(false);
+          }
+        }
+      );
+    } else {
+      setLoading(false);
+    }
+
     return () => clearInterval(timer);
   }, []);
 
@@ -64,14 +143,22 @@ const LiveInfoCards = () => {
         </div>
         <div className="space-y-2">
           <div className="flex items-baseline gap-2">
-            <p className="text-3xl font-bold text-white">{weather.temp}°C</p>
-            <Sun className="w-5 h-5 text-yellow-400" />
+            <p className="text-3xl font-bold text-white">
+              {weather.temp}{weather.temp !== '--' ? '°C' : ''}
+            </p>
+            {getWeatherIcon(weather.weatherCode)}
           </div>
           <p className="text-sm text-slate-300">{weather.condition}</p>
           <div className="flex items-center gap-1 text-xs text-slate-400">
             <MapPin className="w-3 h-3" />
-            <span>{weather.location}</span>
+            <span className="truncate">{weather.location}</span>
           </div>
+          {weather.temp !== '--' && (
+            <div className="flex gap-3 mt-1 text-[10px] text-slate-500 font-medium uppercase tracking-wider">
+              <span className="flex items-center gap-1"><Wind className="w-3 h-3" /> {weather.wind} km/h</span>
+              <span className="flex items-center gap-1">Humidity: {weather.humidity}%</span>
+            </div>
+          )}
         </div>
       </motion.div>
 
