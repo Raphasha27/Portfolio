@@ -83,7 +83,7 @@ const Hero = ({ scrollToSection, onScanClick }) => {
                   src={profileImg} 
                   alt="Koketso Raphasha"
                   className="w-full h-full object-contain relative z-20 transition-transform duration-700 hover:scale-105"
-                  style={{ backgroundColor: '#bdd7e0' }}
+                  style={{ backgroundColor: '#bbced5' }}
                 />
               </div>
               {/* Floating Cards with Glassmorphism */}
