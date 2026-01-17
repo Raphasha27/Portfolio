@@ -90,8 +90,9 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
             >
               <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div 
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-xl relative z-10 shadow-2xl"
-                style={{ backgroundColor: '#ffffff' }}
+                className={`w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border relative z-10 shadow-2xl transition-all duration-500 ${
+                  isDarkMode ? 'border-white/5 bg-transparent' : 'border-slate-200 bg-white'
+                }`}
               >
                 <img 
                   src={profileImg} 
@@ -103,16 +104,16 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute bottom-4 -right-8 md:-right-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
-                  isDarkMode ? 'bg-slate-900/80 border-white/10' : 'bg-white/80 border-slate-200'
+                className={`absolute bottom-8 -right-8 md:-right-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
+                  isDarkMode ? 'bg-slate-950/40 border-white/10' : 'bg-white/80 border-slate-200'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-500/10 rounded-xl">
-                    <Briefcase className="w-5 h-5 text-blue-400" />
+                  <div className={`p-2 rounded-xl ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-50'}`}>
+                    <Briefcase className="w-5 h-5 text-blue-500" />
                   </div>
                   <div>
-                    <p className={`text-[10px] uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Experience</p>
+                    <p className={`text-[10px] uppercase tracking-wider font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Experience</p>
                     <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>3+ Years</p>
                   </div>
                 </div>
@@ -120,16 +121,16 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute top-4 -left-8 md:-left-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
-                  isDarkMode ? 'bg-slate-900/80 border-white/10' : 'bg-white/80 border-slate-200'
+                className={`absolute top-8 -left-8 md:-left-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
+                  isDarkMode ? 'bg-slate-950/40 border-white/10' : 'bg-white/80 border-slate-200'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-500/10 rounded-xl">
-                    <Code className="w-5 h-5 text-green-400" />
+                  <div className={`p-2 rounded-xl ${isDarkMode ? 'bg-green-500/10' : 'bg-green-50'}`}>
+                    <Code className="w-5 h-5 text-green-500" />
                   </div>
                   <div>
-                    <p className={`text-[10px] uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Projects</p>
+                    <p className={`text-[10px] uppercase tracking-wider font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Projects</p>
                     <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>20+ Done</p>
                   </div>
                 </div>
