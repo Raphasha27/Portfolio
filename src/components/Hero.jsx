@@ -60,8 +60,8 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
             <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start">
               {[
                 { Icon: Github, href: "https://github.com/Raphasha27" },
-                { Icon: Linkedin, href: "https://linkedin.com/in/koketso-raphasha" },
-                { Icon: Mail, href: "mailto:contact@koketso.dev" },
+                { Icon: Linkedin, href: "https://linkedin.com/in/koketso-raphasha-27" },
+                { Icon: Mail, href: "mailto:raphashakoketso99@gmail.com" },
                 { Icon: MessageCircle, href: "https://wa.me/27781172470", color: "group-hover:text-green-400" }
               ].map(({ Icon, href, color }, i) => (
                 <a 

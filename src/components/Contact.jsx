@@ -24,7 +24,7 @@ const Contact = ({ isDarkMode }) => {
           <p className={`text-lg mb-10 max-w-2xl mx-auto ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
           </p>
-          <a href="mailto:contact@koketso.dev" className="px-12 py-5 bg-blue-600 rounded-xl text-lg font-bold shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/40 transition-all inline-flex items-center gap-3 transform hover:-translate-y-1 text-white">
+          <a href="mailto:raphashakoketso99@gmail.com" className="px-12 py-5 bg-blue-600 rounded-xl text-lg font-bold shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/40 transition-all inline-flex items-center gap-3 transform hover:-translate-y-1 text-white">
             <Mail className="w-6 h-6" />
             Get In Touch
           </a>
