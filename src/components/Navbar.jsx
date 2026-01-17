@@ -12,7 +12,7 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick, isDarkMode, toggl
 
   return (
     <nav className={`fixed w-full z-50 backdrop-blur-xl border-b transition-all duration-500 ${
-      isDarkMode ? 'bg-slate-950/90 border-slate-800' : 'bg-white/90 border-slate-200 shadow-sm'
+      isDarkMode ? 'bg-[#020617]/90 border-slate-800' : 'bg-white/90 border-slate-200 shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
