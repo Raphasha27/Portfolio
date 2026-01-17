@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,4 +5,13 @@
 html, body {
   background-color: #0f172a; /* slate-900 */
   overscroll-behavior-y: none;
+  transition: background-color 0.5s ease;
+}
+
+html.light-mode body {
+  background-color: #ffffff;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Layout, Brain, Server, Terminal } from 'lucide-react';
 
-const Skills = () => {
+const Skills = ({ isDarkMode }) => {
   const categories = [
     {
       id: "languages",
@@ -22,25 +22,29 @@ const Skills = () => {
       title: "Frameworks & Tools",
       icon: Layout,
       skills: [
-        { name: "React / Next.js", level: 92, color: "bg-blue-400" },
-        { name: "Spring Boot", level: 80, color: "bg-green-400" },
-        { name: "Tailwind CSS", level: 95, color: "bg-teal-400" },
-        { name: "Docker / K8s", level: 75, color: "bg-blue-500" },
-        { name: "TensorFlow / PyTorch", level: 70, color: "bg-orange-400" },
+        { name: "React / Next.js", level: 92, color: "bg-blue-500" },
+        { name: "Spring Boot", level: 80, color: "bg-green-500" },
+        { name: "Tailwind CSS", level: 95, color: "bg-teal-500" },
+        { name: "Docker / K8s", level: 75, color: "bg-blue-600" },
+        { name: "AI/ML Tools", level: 70, color: "bg-orange-500" },
       ]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 relative z-10 w-full bg-green-950/30">
+    <section id="skills" className={`py-20 px-4 relative z-10 w-full transition-colors duration-500 ${
+      isDarkMode ? 'bg-green-950/20' : 'bg-slate-50'
+    }`}>
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <span className="text-green-400 font-medium tracking-wider uppercase text-sm">Proficiency Calculator</span>
-          <h2 className="text-4xl font-bold mt-2 text-white">Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">Expertise</span></h2>
+          <span className={`font-medium tracking-wider uppercase text-xs sm:text-sm ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>Professional Toolkit</span>
+          <h2 className={`text-4xl font-bold mt-2 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">Expertise</span>
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -50,28 +54,32 @@ const Skills = () => {
               initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.2 }}
-              className="bg-slate-900/50 p-8 rounded-3xl border border-white/5 hover:border-green-500/30 transition-all shadow-2xl shadow-black/20"
+              className={`p-8 rounded-3xl border transition-all duration-500 ${
+                isDarkMode 
+                  ? 'bg-slate-900/50 border-white/5 hover:border-green-500/30' 
+                  : 'bg-white border-slate-200 hover:border-green-400 shadow-xl shadow-slate-200/50'
+              }`}
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="p-3 bg-green-500/10 rounded-xl">
-                  <category.icon className="w-6 h-6 text-green-400" />
+                <div className={`p-3 rounded-xl ${isDarkMode ? 'bg-green-500/10' : 'bg-green-50'}`}>
+                  <category.icon className="w-6 h-6 text-green-500" />
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>{category.title}</h3>
               </div>
 
               <div className="space-y-6">
                 {category.skills.map((skill, j) => (
                   <div key={j}>
                     <div className="flex justify-between mb-2 text-sm font-medium">
-                      <span className="text-slate-300">{skill.name}</span>
-                      <span className="text-green-400">{skill.level}%</span>
+                      <span className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>{skill.name}</span>
+                      <span className="text-green-500 font-bold">{skill.level}%</span>
                     </div>
-                    <div className="h-2.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                    <div className={`h-2.5 w-full rounded-full overflow-hidden ${isDarkMode ? 'bg-slate-800' : 'bg-slate-100'}`}>
                       <motion.div 
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-                        className={`h-full rounded-full ${skill.color} shadow-[0_0_10px_rgba(34,197,94,0.3)] relative group`}
+                        className={`h-full rounded-full ${skill.color} relative group opacity-90`}
                       >
                          <div className="absolute inset-0 bg-white/20 group-hover:animate-pulse"></div>
                       </motion.div>

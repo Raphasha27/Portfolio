@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Menu, X, Scan, QrCode } from 'lucide-react';
+import { Code, Menu, X, Scan, QrCode, Sun, Moon } from 'lucide-react';
 
-const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
+const Navbar = ({ activeSection, scrollToSection, onScanClick, isDarkMode, toggleTheme }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNavClick = (section) => {
@@ -11,7 +11,9 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-slate-950/90 backdrop-blur-xl border-b border-slate-800">
+    <nav className={`fixed w-full z-50 backdrop-blur-xl border-b transition-all duration-500 ${
+      isDarkMode ? 'bg-slate-950/90 border-slate-800' : 'bg-white/90 border-slate-200 shadow-sm'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick('home')}>
@@ -22,16 +24,20 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
             >
               <Code className="w-6 h-6 text-white" />
             </motion.div>
-            <span className="text-xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Koketso</span>
+            <span className={`text-xl font-bold transition-colors ${
+              isDarkMode ? 'bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent' : 'text-slate-900'
+            }`}>Koketso</span>
           </div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {['Home', 'About', 'Skills', 'Contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => handleNavClick(item.toLowerCase())}
-                className={`text-sm font-medium transition-all hover:text-blue-400 ${
-                  activeSection === item.toLowerCase() ? 'text-blue-400 scale-105' : 'text-slate-400'
+                className={`text-sm font-medium transition-all hover:text-blue-500 ${
+                  activeSection === item.toLowerCase() 
+                    ? 'text-blue-500 scale-105' 
+                    : isDarkMode ? 'text-slate-400' : 'text-slate-600'
                 }`}
               >
                 {item}
@@ -39,15 +45,34 @@ const Navbar = ({ activeSection, scrollToSection, onScanClick }) => {
             ))}
             <button
                 onClick={onScanClick}
-                className="text-sm font-medium text-green-400 hover:text-green-300 flex items-center gap-2 transition-all"
+                className="text-sm font-medium text-green-500 hover:text-green-600 flex items-center gap-2 transition-all"
             >
                 <QrCode className="w-4 h-4" /> Scan ID
             </button>
+            
+            <button 
+              onClick={toggleTheme}
+              className={`p-2 rounded-xl transition-all ${
+                isDarkMode ? 'bg-slate-800 text-yellow-400 hover:bg-slate-700' : 'bg-slate-100 text-indigo-600 hover:bg-slate-200'
+              }`}
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button 
+              onClick={toggleTheme}
+              className={`p-2 rounded-xl transition-all ${
+                isDarkMode ? 'bg-slate-800 text-yellow-400' : 'bg-slate-100 text-indigo-600'
+              }`}
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-slate-300" />}
+              {mobileMenuOpen 
+                ? <X className={`w-6 h-6 ${isDarkMode ? 'text-white' : 'text-slate-900'}`} /> 
+                : <Menu className={`w-6 h-6 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`} />}
             </button>
           </div>
         </div>

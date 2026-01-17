@@ -4,82 +4,93 @@ import { ChevronRight, Download, Github, Linkedin, Mail, Briefcase, Code, Messag
 import LiveInfoCards from './LiveInfoCards';
 import profileImg from '../assets/profile.png';
 
-const Hero = ({ scrollToSection, onScanClick }) => {
+const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: {
+        staggerChildren: 0.2
+      }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
-    <section id="home" className="pt-32 pb-20 px-4 min-h-screen flex items-center relative z-10 w-full">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+    <section id="home" className="min-h-screen pt-32 pb-20 px-4 relative overflow-hidden w-full">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
           <motion.div 
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
+            className="flex-1 text-center lg:text-left"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6 px-4 py-2 backdrop-blur-xl bg-blue-500/10 rounded-full border border-blue-500/20 shadow-lg">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-blue-300 text-sm font-medium">Available for opportunities</span>
+            <motion.div variants={itemVariants} className="inline-block px-4 py-2 bg-blue-500/10 rounded-full mb-6">
+              <span className="text-blue-500 font-bold text-sm tracking-widest uppercase">Available for Hire</span>
             </motion.div>
-            <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Koketso Raphasha
-              </span>
+            <motion.h1 variants={itemVariants} className={`text-5xl md:text-7xl font-bold mb-6 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+              Hi, I'm <span className="text-blue-500">Koketso</span> <br />
+              <span className="text-3xl md:text-5xl opacity-80">Software Developer</span>
             </motion.h1>
-            <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-slate-300 mb-6 font-semibold">
-              Software Developer & AI Specialist
+            <motion.p variants={itemVariants} className={`text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
+              I build intelligent, high-performance web and mobile solutions. Specialized in React, AI integration, and creating seamless digital experiences that drive growth.
             </motion.p>
-            <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
-              Building intelligent, scalable systems with cutting-edge AI. Transforming complex challenges into elegant, high-performance solutions.
-            </motion.p>
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-8">
+            
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all flex items-center gap-2 font-medium text-white backdrop-blur-xl"
+                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-xl shadow-blue-500/25 flex items-center gap-2 group"
               >
-                Get In Touch <ChevronRight className="w-5 h-5" />
+                Let's Talk <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button 
-                onClick={onScanClick}
-                className="px-8 py-4 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl hover:bg-white/20 transition-all flex items-center gap-2 font-medium text-white"
-              >
-                <Download className="w-5 h-5" /> Scan Digital ID
+              <button className={`px-8 py-4 border rounded-2xl font-bold transition-all flex items-center gap-2 ${
+                isDarkMode 
+                  ? 'border-white/10 hover:bg-white/5 text-white' 
+                  : 'border-slate-200 hover:bg-slate-50 text-slate-900'
+              }`}>
+                <Download className="w-5 h-5" /> Resume
               </button>
             </motion.div>
-            <motion.div variants={itemVariants} className="flex gap-4">
+
+            <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start">
               {[
                 { Icon: Github, href: "https://github.com/Raphasha27" },
                 { Icon: Linkedin, href: "https://linkedin.com/in/koketso-raphasha" },
                 { Icon: Mail, href: "mailto:contact@koketso.dev" },
                 { Icon: MessageCircle, href: "https://wa.me/27781172470", color: "group-hover:text-green-400" }
               ].map(({ Icon, href, color }, i) => (
-                <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl flex items-center justify-center hover:bg-white/20 hover:border-white/30 hover:-translate-y-1 transition-all group">
-                  <Icon className={`w-5 h-5 text-slate-300 ${color || 'group-hover:text-white'} transition-colors`} />
+                <a 
+                  key={i} 
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={`w-12 h-12 backdrop-blur-xl border rounded-xl flex items-center justify-center transition-all group ${
+                    isDarkMode 
+                      ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20' 
+                      : 'bg-slate-50 border-slate-200 hover:bg-slate-100'
+                  }`}
+                >
+                  <Icon className={`w-5 h-5 transition-colors ${color || (isDarkMode ? 'text-slate-400 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900')}`} />
                 </a>
               ))}
             </motion.div>
           </motion.div>
-          
-          <div className="flex justify-center relative">
-            <motion.div 
+
+          <div className="flex-1 relative">
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div 
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/10 backdrop-blur-xl relative z-10 shadow-2xl"
+                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-xl relative z-10 shadow-2xl"
                 style={{ backgroundColor: '#ffffff' }}
               >
                 <img 
@@ -92,30 +103,34 @@ const Hero = ({ scrollToSection, onScanClick }) => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-4 -right-8 md:-right-12 backdrop-blur-md bg-slate-900/80 border border-white/10 px-5 py-3 rounded-2xl shadow-2xl z-20"
+                className={`absolute bottom-4 -right-8 md:-right-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
+                  isDarkMode ? 'bg-slate-900/80 border-white/10' : 'bg-white/80 border-slate-200'
+                }`}
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-blue-500/10 rounded-xl">
                     <Briefcase className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Experience</p>
-                    <p className="text-sm font-bold text-white">3+ Years</p>
+                    <p className={`text-[10px] uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Experience</p>
+                    <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>3+ Years</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-4 -left-8 md:-left-12 backdrop-blur-md bg-slate-900/80 border border-white/10 px-5 py-3 rounded-2xl shadow-2xl z-20"
+                className={`absolute top-4 -left-8 md:-left-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
+                  isDarkMode ? 'bg-slate-900/80 border-white/10' : 'bg-white/80 border-slate-200'
+                }`}
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-green-500/10 rounded-xl">
                     <Code className="w-5 h-5 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Projects</p>
-                    <p className="text-sm font-bold text-white">20+ Done</p>
+                    <p className={`text-[10px] uppercase tracking-wider ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Projects</p>
+                    <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>20+ Done</p>
                   </div>
                 </div>
               </motion.div>
@@ -124,8 +139,8 @@ const Hero = ({ scrollToSection, onScanClick }) => {
         </div>
 
         {/* Live Info Cards Section */}
-        <div className="flex justify-center mt-12">
-          <LiveInfoCards />
+        <div className="flex justify-center mt-12 w-full">
+          <LiveInfoCards isDarkMode={isDarkMode} />
         </div>
       </div>
     </section>

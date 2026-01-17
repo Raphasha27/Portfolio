@@ -13,6 +13,12 @@ import { ShieldCheck, X, Scan } from 'lucide-react';
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [showScanModal, setShowScanModal] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('light-mode');
+  };
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -49,18 +55,32 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white selection:bg-blue-500/30 overflow-x-hidden">
-      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} onScanClick={() => setShowScanModal(true)} />
+    <div className={`min-h-screen transition-colors duration-500 selection:bg-blue-500/30 overflow-x-hidden ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white' 
+        : 'bg-white text-slate-900'
+    }`}>
+      <Navbar 
+        activeSection={activeSection} 
+        scrollToSection={scrollToSection} 
+        onScanClick={() => setShowScanModal(true)} 
+        isDarkMode={isDarkMode}
+        toggleTheme={toggleTheme}
+      />
 
       <main>
-        <Hero scrollToSection={scrollToSection} onScanClick={() => setShowScanModal(true)} />
-        <About />
-        <Skills />
-        <Contact />
-        <Associates />
+        <Hero 
+          scrollToSection={scrollToSection} 
+          onScanClick={() => setShowScanModal(true)} 
+          isDarkMode={isDarkMode}
+        />
+        <About isDarkMode={isDarkMode} />
+        <Skills isDarkMode={isDarkMode} />
+        <Contact isDarkMode={isDarkMode} />
+        <Associates isDarkMode={isDarkMode} />
       </main>
 
-      <Footer />
+      <Footer isDarkMode={isDarkMode} />
       <Chatbot />
 
       {/* Scan ID Modal */}
