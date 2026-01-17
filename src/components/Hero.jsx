@@ -83,37 +83,37 @@ const Hero = ({ scrollToSection, onScanClick }) => {
                   src={profileImg} 
                   alt="Koketso Raphasha"
                   className="w-full h-full object-contain relative z-20 transition-transform duration-700 hover:scale-105"
-                  style={{ backgroundColor: '#bbced5' }}
+                  style={{ backgroundColor: '#dcedf3' }}
                 />
               </div>
               {/* Floating Cards with Glassmorphism */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -right-6 backdrop-blur-xl bg-white/10 border border-white/20 px-6 py-4 rounded-2xl shadow-xl z-20"
+                className="absolute bottom-4 -right-8 md:-right-12 backdrop-blur-md bg-slate-900/80 border border-white/10 px-5 py-3 rounded-2xl shadow-2xl z-20"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-500/20 rounded-lg">
+                  <div className="p-2 bg-blue-500/10 rounded-xl">
                     <Briefcase className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400">Experience</p>
-                    <p className="font-bold text-white">3+ Years</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Experience</p>
+                    <p className="text-sm font-bold text-white">3+ Years</p>
                   </div>
                 </div>
               </motion.div>
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -left-6 backdrop-blur-xl bg-white/10 border border-white/20 px-6 py-4 rounded-2xl shadow-xl z-20"
+                className="absolute top-4 -left-8 md:-left-12 backdrop-blur-md bg-slate-900/80 border border-white/10 px-5 py-3 rounded-2xl shadow-2xl z-20"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-500/20 rounded-lg">
+                  <div className="p-2 bg-green-500/10 rounded-xl">
                     <Code className="w-5 h-5 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-400">Projects</p>
-                    <p className="font-bold text-white">20+ Done</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-wider">Projects</p>
+                    <p className="text-sm font-bold text-white">20+ Done</p>
                   </div>
                 </div>
               </motion.div>
