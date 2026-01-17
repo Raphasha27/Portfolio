@@ -48,13 +48,17 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
               >
                 Let's Talk <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className={`px-8 py-4 border rounded-2xl font-bold transition-all flex items-center gap-2 ${
-                isDarkMode 
-                  ? 'border-white/10 hover:bg-white/5 text-white' 
-                  : 'border-slate-200 hover:bg-slate-50 text-slate-900'
-              }`}>
+              <a 
+                href="/Koketso_Raphasha_Resume.pdf" 
+                download 
+                className={`px-8 py-4 border rounded-2xl font-bold transition-all flex items-center gap-2 ${
+                  isDarkMode 
+                    ? 'border-white/10 hover:bg-white/5 text-white' 
+                    : 'border-slate-200 hover:bg-slate-50 text-slate-900'
+                }`}
+              >
                 <Download className="w-5 h-5" /> Resume
-              </button>
+              </a>
             </motion.div>
 
             <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start">

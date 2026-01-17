@@ -57,7 +57,7 @@ const Chatbot = () => {
     // Education & Certifications
     if (lowerInput.includes('education') || lowerInput.includes('degree') || lowerInput.includes('study') || lowerInput.includes('university') || lowerInput.includes('certifi')) {
       return {
-        text: "🎓 **Academic & Professional Credentials:**\n\n**Formal Education:**\n• BSc Computer Science (Distinction)\n  → Focus: Algorithms, AI, Distributed Systems\n  → GPA: Top 10% of cohort\n\n**Professional Certifications:**\n• Google Advanced Machine Learning Specialization\n  → Deep Learning, NLP, Computer Vision\n• Mobile Application Development (Distinction)\n  → React Native, Flutter, Native Android\n• AWS Solutions Architect (In Progress)\n\n**Continuous Learning:**\nActive on Coursera, completing advanced courses in:\n→ Neural Networks & Deep Learning\n→ Cloud Architecture\n→ Advanced Algorithm Design\n\nCombines theoretical foundations with practical, production-ready skills.",
+        text: "🎓 **Academic & Professional Credentials:**\n\n**Formal Education:**\n• BSc Computer Science (Distinction)\n  → Focus: Algorithms, AI, Distributed Systems\n  → GPA: Top 10% of cohort\n\n**Professional Certifications:**\n• Google Advanced Machine Learning Specialization\n• Mobile Application Development (Distinction)\n• AWS Solutions Architect (In Progress)\n\n📄 **Full Resume:** Available for download via the **'Resume'** button in the Hero section above.",
         confidence: 0.96
       };
     }
