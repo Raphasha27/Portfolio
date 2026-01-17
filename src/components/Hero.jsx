@@ -93,15 +93,23 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
               className="relative group"
             >
               <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <div 
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white/10 relative z-10 shadow-2xl bg-white"
+              <motion.div 
+                animate={{ 
+                  backgroundColor: ["#ffffff", "#93c5fd", "#6EE7B7", "#ffffff"] 
+                }}
+                transition={{ 
+                  duration: 8, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white/10 relative z-10 shadow-2xl"
               >
                 <img 
                   src={profileImg} 
                   alt="Koketso Raphasha"
                   className="w-full h-full object-contain relative z-20 transition-transform duration-700 hover:scale-105"
                 />
-              </div>
+              </motion.div>
               {/* Floating Cards with Glassmorphism */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
