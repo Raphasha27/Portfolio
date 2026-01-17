@@ -91,7 +91,7 @@ const Portfolio = () => {
                 <div className="inline-flex relative mb-6">
                    <div className="absolute inset-0 bg-green-500 blur-xl opacity-20 animate-pulse"></div>
                    <div className="w-48 h-48 bg-white p-4 rounded-2xl relative z-10">
-                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://portfolio-drab-five-89.vercel.app" alt="Portfolio QR" className="w-full h-full" />
+                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://koketso-portfolio-premium.vercel.app" alt="Portfolio QR" className="w-full h-full" />
                    </div>
                    {/* Scanning Line Animation */}
                    <motion.div 
