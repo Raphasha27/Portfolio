@@ -28,7 +28,7 @@ const About = ({ isDarkMode }) => {
 
   return (
     <section id="about" className={`py-20 px-4 backdrop-blur-md relative z-10 w-full transition-colors duration-500 ${
-      isDarkMode ? 'bg-slate-900/30' : 'bg-slate-50'
+      isDarkMode ? 'bg-[#020617]/50' : 'bg-slate-50'
     }`}>
       <div className="max-w-7xl mx-auto">
         <motion.h2 
