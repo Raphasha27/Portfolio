@@ -90,9 +90,7 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
             >
               <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
               <div 
-                className={`w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border relative z-10 shadow-2xl transition-all duration-500 ${
-                  isDarkMode ? 'border-white/5 bg-transparent' : 'border-slate-200 bg-white'
-                }`}
+                className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white/10 relative z-10 shadow-2xl bg-white"
               >
                 <img 
                   src={profileImg} 
