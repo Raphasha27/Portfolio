@@ -57,7 +57,7 @@ const Portfolio = () => {
   return (
     <div className={`min-h-screen transition-colors duration-500 selection:bg-blue-500/30 overflow-x-hidden ${
       isDarkMode 
-        ? 'bg-gradient-to-br from-[#020617] via-[#0a192f] to-[#010409] text-white' 
+        ? 'bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white' 
         : 'bg-white text-slate-900'
     }`}>
       <Navbar 

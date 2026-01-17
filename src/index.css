@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-  background-color: #020617; /* Deep Navy */
+  background-color: #0f172a; /* slate-900 */
   overscroll-behavior-y: none;
   transition: background-color 0.5s ease;
 }

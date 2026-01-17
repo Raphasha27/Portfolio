@@ -119,7 +119,7 @@ const Chatbot = () => {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
-            className="w-[calc(100vw-32px)] sm:w-96 h-[500px] sm:h-[600px] bg-[#020617] rounded-2xl shadow-2xl border border-slate-800 flex flex-col backdrop-blur-xl"
+            className="w-[calc(100vw-32px)] sm:w-96 h-[500px] sm:h-[600px] bg-slate-900 rounded-2xl shadow-2xl border border-slate-700 flex flex-col backdrop-blur-xl"
           >
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 flex items-center justify-between rounded-t-2xl">
               <div className="flex items-center gap-3">
