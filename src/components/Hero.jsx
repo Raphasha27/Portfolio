@@ -102,7 +102,7 @@ const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className={`absolute bottom-8 -left-8 md:-left-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
+                className={`absolute -bottom-6 left-1/2 -translate-x-1/2 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 whitespace-nowrap ${
                   isDarkMode ? 'bg-slate-950/40 border-white/10' : 'bg-white/80 border-slate-200'
                 }`}
               >
