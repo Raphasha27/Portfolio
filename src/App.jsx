@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Helper for resilient asset paths (GitHub Pages / Vercel compatibility)
+const getAssetPath = (path) => {
+    const base = import.meta.env.BASE_URL || '/';
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${base}${cleanPath}`;
+};
+
 const projectsData = [
     {
         name: 'FlowSentinel',
@@ -46,7 +53,7 @@ const educationData = [
         duration: 'Class of 2025',
         location: 'Pretoria Campus',
         logo: 'https://richfield.ac.za/wp-content/uploads/2023/07/Richfield-Logo.png',
-        image: '/richfield_bg.png',
+        image: getAssetPath('richfield_bg.png'),
         distinctions: [
             'Mobile APP Development',
             'Software Development',
@@ -66,7 +73,7 @@ const experienceData = [
         description: 'Completed a 2-month intensive AI Bootcamp followed by a 12-month tenure as a Digital Associate. Mastered AI Programming, full-stack mobile development, and enterprise database systems.',
         skills: ['AI Programming', 'Full Stack Mobile', 'Backend Databases', 'Digital Transformation'],
         logo: 'https://avatars.githubusercontent.com/u/10231505?s=200&v=4',
-        image: '/capaciti_bg.png'
+        image: getAssetPath('capaciti_bg.png')
     },
     {
         company: 'YES4Youth Program',
@@ -75,7 +82,7 @@ const experienceData = [
         description: 'Successfully completed the YES4Youth program, gaining hands-on professional experience and developing key work-readiness skills for the digital economy.',
         skills: ['Professional Development', 'Work Readiness', 'Industry Skills'],
         logo: 'https://www.yes4youth.co.za/wp-content/uploads/2021/05/YES-Logo-Orange-2-1.png',
-        image: '/yes_bg.png'
+        image: getAssetPath('yes_bg.png')
     },
     {
         company: 'WeThinkCode_',
@@ -503,7 +510,7 @@ function App() {
                         >
                             <div className="profile-wrapper">
                                 <div className="profile-glow"></div>
-                                <img src="/profile.jpg" alt="Profile" className="profile-img" />
+                                <img src={getAssetPath('profile.jpg')} alt="Profile" className="profile-img" />
                             </div>
 
                         </motion.div>
