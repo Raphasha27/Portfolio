@@ -5366,6 +5366,10 @@ body {
     .nav-container {
         padding: 0 20px;
     }
+
+    .hero-image {
+        margin-top: 50px !important;
+    }
 }
 
 @media (max-width: 480px) {
