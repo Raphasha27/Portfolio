@@ -6,7 +6,7 @@
   "homepage": "https://Raphasha27.github.io/Portfolio/",
   "scripts": {
     "dev": "vite --host",
-    "predeploy": "npm run build",
+    "predeploy": "vite build --base=/Portfolio/",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
