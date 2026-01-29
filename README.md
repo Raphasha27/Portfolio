@@ -50,12 +50,7 @@ npm install
 npm run dev
 ```
 
-### GitHub Pages Deployment
-The project is pre-configured with `gh-pages` and Vite base paths.
-```bash
-# Deploy to GitHub Pages
-npm run deploy
-```
+
 
 ---
 **Innovative. Performant. Sovereign.**
