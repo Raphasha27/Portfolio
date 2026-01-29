@@ -723,10 +723,6 @@ function App() {
                         {/* Ultra-Featured Live News & System Dashboard */}
                         <motion.div variants={itemVariants} className="project-card live-news-card featured-intelligence">
                             <div className="project-img-container live-dynamic-bg">
-                                <div className="live-pulse-container">
-                                    <div className="pulse-circle"></div>
-                                    <span className="live-label">LIVE DATA FEED</span>
-                                </div>
                                 <div className="news-ticker-overlay">
                                     <AnimatePresence mode="wait">
                                         <motion.div 
@@ -767,6 +763,10 @@ function App() {
                                     <span className="project-tag live-tag">Streaming</span>
                                     <span className="project-tag">API-Driven</span>
                                     <span className="project-tag">AI-Filtered</span>
+                                </div>
+                                <div className="live-pulse-container" style={{ position: 'static', transform: 'none', marginTop: '20px', display: 'inline-flex' }}>
+                                    <div className="pulse-circle"></div>
+                                    <span className="live-label">LIVE DATA FEED</span>
                                 </div>
                             </div>
                         </motion.div>
