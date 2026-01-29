@@ -281,7 +281,7 @@ function App() {
 
         const newsInterval = setInterval(() => {
             setCurrentNewsIdx(prev => (prev + 1) % techNews.length);
-        }, 5000);
+        }, 10000);
 
         const handleScroll = () => {
             setShowScrollTop(window.pageYOffset > 300);
