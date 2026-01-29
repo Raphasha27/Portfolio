@@ -971,7 +971,7 @@ function App() {
                                     </div>
                                     <div className="qr-container" style={{ background: 'white', padding: '8px', borderRadius: '10px', boxShadow: '0 0 20px rgba(52, 211, 153, 0.2)' }}>
                                         <img 
-                                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://192.168.18.87:5173" 
+                                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://portfolio-react-zeta-black-48.vercel.app" 
                                             alt="Mobile QR" 
                                             style={{ width: '80px', height: '80px', display: 'block' }}
                                         />
