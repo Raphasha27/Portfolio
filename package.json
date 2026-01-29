@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Raphasha27.github.io/Portfolio/",
+  "homepage": "https://portfolio-react-zeta-black-48.vercel.app",
   "scripts": {
     "dev": "vite --host",
     "predeploy": "vite build --base=/Portfolio/",
