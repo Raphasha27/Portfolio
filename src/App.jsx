@@ -167,7 +167,7 @@ const testimonialsData = [
     },
     {
         name: 'Linda Mbeki',
-        role: 'Project Manager @ CapaCiTi',
+        role: 'Client at Kid of Dynamics Technologies',
         content: 'One of the most diligent and proactive associates we\'ve had. His AI proficiency and problem-solving skills are top-tier.',
         avatar: 'https://i.pravatar.cc/150?u=linda'
     }
