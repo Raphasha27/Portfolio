@@ -2,41 +2,28 @@ name: Continuous Integration
 
 on:
   workflow_dispatch:
-
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
 jobs:
-  build:
+  build: 
     name: Build & Lint (Vite)
-    runs-on:
-  workflow_dispatch:
- ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    runs-on: - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version:
-  workflow_dispatch:
- '20'
-          cache: 'npm'
-      - name: Install dependencies
+          node-version: - name: Install dependencies
         run: npm install
       - name: Lint
         run: npm run lint
       - name: Build
         run: npm run build
 
-  security_scan:
+  security_scan: 
     name: Security Scan (Trivy)
     needs: build
-    runs-on:
-  workflow_dispatch:
- ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    runs-on: - uses: actions/checkout@v4
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
@@ -45,4 +32,3 @@ jobs:
           format: 'table'
           exit-code: '0'
           severity: 'CRITICAL,HIGH'
-
