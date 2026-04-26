@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-    name: Install dependencies
+      - name: Install dependencies
         run: npm install
       - name: Lint
         run: npm run lint
@@ -24,6 +24,7 @@ jobs:
         run: npm run build
 
   security_scan: 
+  security_scan:
     name: Security Scan (Trivy)
     needs: build
     runs-on: ubuntu-latest
