@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import gautengMap from '../assets/gauteng-map.png';
 import richfieldLogo from '../assets/richfield-logo.png';
-import profileImg from '../assets/koketso_raw.png';
+import profileImg from '../assets/profile_transparent.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import { Icon } from './Icons';
@@ -20,7 +20,7 @@ const About = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-0 items-center">
 
-        {/* LEFT — Profile Image (tall, bleeds to bottom) */}
+        {/* LEFT — Profile Image (Cinematic Cutout) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -28,19 +28,29 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="flex justify-center lg:justify-start"
         >
-          <div className="relative w-64 h-64 lg:w-80 lg:h-80 -mt-20">
-            {/* Outer Glow Ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-green-500/20 to-blue-500/20 blur-2xl animate-pulse" />
+          <div className="relative w-72 h-72 lg:w-[450px] lg:h-[450px] -mt-10 lg:-mt-20">
+            {/* Ambient Backglow */}
+            <div className="absolute inset-10 rounded-full bg-green-500/20 blur-[80px] animate-pulse" />
             
-            {/* The Frame */}
-            <div className="absolute inset-0 rounded-full border-4 border-green-500/30 p-2 glass overflow-hidden z-10">
-              <img
+            {/* The Cutout Image */}
+            <div className="relative w-full h-full z-10">
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
                 src={profileImg}
                 alt="Koketso Raphasha"
-                className="w-full h-full object-cover rounded-full"
-                style={{ filter: 'brightness(1.05) contrast(1.1)' }}
+                className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                style={{ filter: 'brightness(1.1) contrast(1.05)' }}
               />
+              
+              {/* Dynamic Overlay Glow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-transparent to-transparent opacity-40" />
             </div>
+
+            {/* Orbital Ring Element */}
+            <div className="absolute inset-4 rounded-full border border-green-500/10 animate-[spin_20s_linear_infinite] pointer-events-none" />
+            <div className="absolute inset-10 rounded-full border border-blue-500/5 animate-[spin_15s_linear_infinite_reverse] pointer-events-none" />
 
             {/* Floating badge — top left */}
             <motion.div
