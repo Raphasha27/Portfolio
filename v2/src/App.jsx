@@ -9,13 +9,15 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ChatAssistant from './components/ChatAssistant';
 import Navbar from './components/Navbar';
+import CustomCursor from './components/CustomCursor';
 
 import Services from './components/Services';
 import Map from './components/Map';
 
 function App() {
   return (
-    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-green-500/30 selection:text-green-200">
+    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-green-500/30 selection:text-green-200 cursor-none">
+      <CustomCursor />
       <Navbar />
       <main className="pb-24">
         {/* Section 1: Hero — full page, no container */}

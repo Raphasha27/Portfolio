@@ -13,6 +13,11 @@ html {
 }
 
 @layer base {
+  @media (pointer: fine) {
+    body, a, button {
+      cursor: none;
+    }
+  }
   body {
     background-color: #050d12;
     color: #e0f2f1;
