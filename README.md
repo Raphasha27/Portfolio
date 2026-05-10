@@ -1,6 +1,8 @@
 # Koketso Raphasha | High-Performance Portfolio 🚀🛡️
 
-[![Live on Vercel](https://img.shields.io/badge/Vercel-Live-black?style=for-the-badge&logo=vercel)](https://portfolio-react-zeta-black-48.vercel.app)
+### 🌐 [LIVE PRODUCTION DEPLOYMENT](https://v2-seven-eta.vercel.app)
+
+[![Live on Vercel](https://img.shields.io/badge/Vercel-Live-black?style=for-the-badge&logo=vercel)](https://v2-seven-eta.vercel.app)
 
 Welcome to my high-fidelity engineering portfolio. This project represents the intersection of **Elite Performance**, **Sovereign Intelligence**, and **Premium Visual Storytelling**.
 
