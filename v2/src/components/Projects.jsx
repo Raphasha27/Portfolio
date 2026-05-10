@@ -100,47 +100,57 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="glass p-6 h-full flex flex-col">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold">Project <span className="text-green-400">Inventory</span></h2>
-        <div className="text-[8px] text-green-400 font-bold uppercase tracking-[0.2em]">9 Active Deployments</div>
+    <div id="projects" className="glass p-6 h-full flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden">
+      {/* Decorative ambient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 to-transparent pointer-events-none"></div>
+
+      <div className="flex justify-between items-center mb-6 relative z-10">
+        <h2 className="text-xl font-bold glow-text">Project <span className="text-green-400">Inventory</span></h2>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+          <div className="text-[8px] text-green-400 font-bold uppercase tracking-[0.2em]">9 Active Deployments</div>
+        </div>
       </div>
 
-      <div className="flex-1 space-y-3 overflow-y-auto pr-2 custom-scroll">
+      <div className="flex-1 space-y-3 overflow-y-auto pr-2 custom-scroll relative z-10">
         {projects.map((p, i) => (
-          <div key={i} id={`project-${i}`} className="glass p-4 border-white/5 hover:border-green-500/30 transition-all group relative overflow-hidden">
+          <div key={i} id={`project-${i}`} className="glass p-4 border-white/5 hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(0,229,160,0.15)] transition-all duration-300 group relative overflow-hidden rounded-xl">
             {/* Subtle Background Overlay */}
-            <div className="absolute inset-0 opacity-[0.12] group-hover:opacity-[0.2] transition-opacity pointer-events-none">
+            <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-300 pointer-events-none mix-blend-overlay">
               <img 
                 src={i % 2 === 0 ? "/src/assets/experience-bg.png" : "/src/assets/hero-bg.png"} 
                 alt="" 
-                className="w-full h-full object-cover grayscale" 
+                className="w-full h-full object-cover grayscale scale-105 group-hover:scale-100 transition-transform duration-700" 
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-bg/20 to-bg/90 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-bg/40 to-bg/95 group-hover:to-bg/80 pointer-events-none transition-colors duration-300" />
             
-            <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${p.color} blur-2xl opacity-20 group-hover:opacity-40 transition-all`}></div>
+            {/* Highlight Glow Effect */}
+            <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
             
-            <div className="flex justify-between items-start mb-2">
+            <div className="relative z-10 flex justify-between items-start mb-2">
               <div className="flex items-center gap-2">
-                <div className="text-green-400 group-hover:scale-110 transition-transform">
+                <div className="text-green-400 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(0,229,160,0)] group-hover:drop-shadow-[0_0_8px_rgba(0,229,160,0.5)]">
                   <Icon name={p.icon} size={20} />
                 </div>
-                <h3 className="text-[12px] font-bold">{p.title}</h3>
+                <div>
+                  <h3 className="text-[12px] font-bold group-hover:text-white transition-colors">{p.title}</h3>
+                  <div className="text-[7px] text-green-400/80 uppercase font-bold tracking-wider">{p.tagline}</div>
+                </div>
               </div>
-              <div className="text-[6px] px-1 py-0.5 rounded bg-green-500/10 border border-green-500/20 text-green-400 uppercase font-bold">
+              <div className="text-[6px] px-1.5 py-0.5 rounded-sm bg-green-500/10 border border-green-500/30 text-green-400 uppercase font-bold whitespace-nowrap shadow-[0_0_10px_rgba(0,229,160,0.1)] group-hover:bg-green-500/20 transition-colors">
                 {p.role}
               </div>
             </div>
             
-            <p className="text-[9px] text-text-dim mb-3 line-clamp-2 leading-tight">
+            <p className="relative z-10 text-[9px] text-text-dim mb-3 line-clamp-2 leading-relaxed group-hover:text-text/90 transition-colors">
               {p.desc}
             </p>
             
-            <div className="flex justify-between items-center">
-              <div className="flex gap-1">
+            <div className="relative z-10 flex justify-between items-center">
+              <div className="flex gap-1.5">
                 {p.tech.slice(0, 3).map((t, j) => (
-                  <span key={j} className="text-[6px] px-1 py-0.5 rounded bg-white/5 border border-white/10 text-text-dim">{t}</span>
+                  <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors">{t}</span>
                 ))}
               </div>
               <div className="flex gap-3">
@@ -151,12 +161,12 @@ const Projects = () => {
                     setCopied(true);
                     setTimeout(() => setCopied(false), 2000);
                   }}
-                  className="text-text-dim hover:text-green-400 transition-colors"
+                  className="text-text-dim hover:text-green-400 transition-colors drop-shadow-none hover:drop-shadow-[0_0_5px_rgba(0,229,160,0.5)]"
                   title="Copy Link"
                 >
                   <Icon name={copied ? "check" : "share"} size={12} />
                 </button>
-                <a href="https://github.com/Raphasha27" target="_blank" className="text-green-400 hover:text-white transition-colors">
+                <a href="https://github.com/Raphasha27" target="_blank" className="text-green-400 hover:text-white transition-colors drop-shadow-[0_0_5px_rgba(0,229,160,0.2)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
                   <Icon name="externalLink" size={12} />
                 </a>
               </div>
