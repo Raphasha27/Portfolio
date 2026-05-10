@@ -26,12 +26,23 @@ function App() {
         </section>
 
         {/* Section 2: About Me — full page */}
-        <section>
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+        >
           <About />
-        </section>
+        </motion.section>
 
         {/* Section 3: Tech Arsenal & Roles — Cinematic Dark Background */}
-        <section className="relative py-24 overflow-hidden">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="relative py-24 overflow-hidden"
+        >
           {/* Nocturnal Cityscape Overlay (Simulated) */}
           <div className="absolute inset-0 bg-[#050d12]">
             <div className="absolute inset-0 opacity-20" 
@@ -53,30 +64,61 @@ function App() {
             <Skills />
             <Roles />
           </div>
-        </section>
+        </motion.section>
 
         {/* Section 4: What I Do (Services) */}
-        <section className="container mx-auto px-6 lg:px-12 py-24">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
+        >
           <Services />
-        </section>
+        </motion.section>
 
         {/* Section 5: Work History */}
-        <section className="container mx-auto px-6 lg:px-12 py-24">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
+        >
           <Experience />
-        </section>
+        </motion.section>
 
         {/* Section 5: Projects */}
-        <section className="container mx-auto px-6 lg:px-12 py-24">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
+        >
           <Projects />
-        </section>
+        </motion.section>
 
         {/* Section 5.5: Location Map */}
-        <Map />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+        >
+          <Map />
+        </motion.div>
 
         {/* Section 6: Contact Footer */}
-        <section className="container mx-auto px-6 lg:px-12 py-24">
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
+        >
           <Contact />
-        </section>
+        </motion.section>
       </main>
 
       <ChatAssistant />

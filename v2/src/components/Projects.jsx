@@ -114,7 +114,12 @@ const Projects = () => {
 
       <div className="flex-1 space-y-3 overflow-y-auto pr-2 custom-scroll relative z-10">
         {projects.map((p, i) => (
-          <div key={i} id={`project-${i}`} className="glass p-4 border-white/5 hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(0,229,160,0.15)] transition-all duration-300 group relative overflow-hidden rounded-xl">
+          <motion.div 
+            whileHover={{ scale: 1.02, rotateX: -2, rotateY: 2 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            key={i} id={`project-${i}`} className="glass p-4 border-white/5 hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(0,229,160,0.15)] transition-all duration-300 group relative overflow-hidden rounded-xl"
+            style={{ perspective: 1000 }}
+          >
             {/* Subtle Background Overlay */}
             <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-300 pointer-events-none mix-blend-overlay">
               <img 
@@ -143,11 +148,11 @@ const Projects = () => {
               </div>
             </div>
             
-            <p className="relative z-10 text-[9px] text-text-dim mb-3 line-clamp-2 leading-relaxed group-hover:text-text/90 transition-colors">
+            <p className="relative z-10 text-[9px] text-text-dim mb-3 line-clamp-2 leading-relaxed group-hover:text-text/90 transition-colors transform-gpu">
               {p.desc}
             </p>
             
-            <div className="relative z-10 flex justify-between items-center">
+            <div className="relative z-10 flex justify-between items-center transform-gpu">
               <div className="flex gap-1.5">
                 {p.tech.slice(0, 3).map((t, j) => (
                   <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors">{t}</span>
@@ -171,7 +176,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

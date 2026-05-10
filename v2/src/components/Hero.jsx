@@ -65,12 +65,20 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-bold mb-6 tracking-widest">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            SOFTWARE DEVELOPER
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-[#050d12]/80 border border-green-500/30 font-mono text-[10px] text-green-400 mb-6 shadow-[0_0_15px_rgba(0,229,160,0.1)]">
+            <span className="text-white/50">{">"}</span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.span
+                animate={{ opacity: [1, 0] }}
+                transition={{ repeat: Infinity, duration: 0.8 }}
+                className="inline-block w-1.5 h-3 bg-green-400 mr-1 align-middle"
+              />
+              INIT KIROV_OS // STATUS: OPTIMAL
+            </motion.span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tighter min-h-[3.5em]">
