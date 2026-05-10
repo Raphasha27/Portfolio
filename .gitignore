@@ -1,0 +1,7 @@
+node_modules/
+v2/node_modules/
+dist/
+v2/dist/
+.env
+*.log
+.gemini/
