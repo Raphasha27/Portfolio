@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import heroBg from '../assets/hero_bg_sa_flag_lower_1778236334988.png';
-import profileImg from '../assets/profile_cutout_no_bg.png';
+import profileImg from '../assets/koketso_transparent.png';
 import { Icon } from './Icons';
 
 const Hero = () => {

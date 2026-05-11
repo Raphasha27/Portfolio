@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import gautengMap from '../assets/gauteng-map.png';
 import richfieldLogo from '../assets/richfield-logo.png';
-import profileImg from '../assets/profile_transparent.png';
+import profileImg from '../assets/koketso_transparent.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import { Icon } from './Icons';

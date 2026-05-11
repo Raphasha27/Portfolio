@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
+
+const SafeImage = ({ src, alt, size, className }) => {
+  const [error, setError] = useState(false);
+
+  if (error || !src) {
+    return <span style={{ fontSize: size }} className={className}>✨</span>;
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt}
+      style={{ width: size, height: size }}
+      className={`inline-block object-contain select-none pointer-events-none ${className}`}
+      loading="lazy"
+      onError={() => setError(true)}
+    />
+  );
+};
 
 export const Icon = ({ name, size = 16, className = "" }) => {
-  const fluentEmojis = {
+  const fluentEmojis = useMemo(() => ({
     // Basic Actions
     mail: "E-mail",
     phone: "Telephone_receiver",
@@ -42,9 +61,9 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     flagSA: "South_Africa",
     cpu: "Microchip",
     code: "Laptop",
-  };
+  }), []);
 
-  const techLogos = {
+  const techLogos = useMemo(() => ({
     // Tech Brands (Devicon / SVGL style)
     react: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     python: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
@@ -80,37 +99,28 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     grafana: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
     prometheus: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     langchain: "https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/langchain_logo.png",
-  };
+  }), []);
 
-  const logoUrl = techLogos[name];
+  const finalName = name?.toLowerCase();
+  const logoUrl = techLogos[finalName];
+
   if (logoUrl) {
     return (
-      <img 
+      <SafeImage 
         src={logoUrl} 
-        alt={name}
-        style={{ width: size, height: size }}
-        className={`inline-block object-contain select-none pointer-events-none filter brightness-110 contrast-110 ${className}`}
-        loading="lazy"
+        alt={name} 
+        size={size} 
+        className={`filter brightness-110 contrast-110 ${className}`} 
       />
     );
   }
 
-  const emojiFolder = fluentEmojis[name];
+  const emojiFolder = fluentEmojis[finalName];
   if (emojiFolder) {
     const fileName = emojiFolder.toLowerCase();
     const url = `https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@latest/assets/${emojiFolder}/3D/${fileName}_3d.png`;
-    
-    return (
-      <img 
-        src={url} 
-        alt={name}
-        style={{ width: size, height: size }}
-        className={`inline-block object-contain select-none pointer-events-none ${className}`}
-        loading="lazy"
-      />
-    );
+    return <SafeImage src={url} alt={name} size={size} className={className} />;
   }
 
-  // Fallback
   return <span style={{ fontSize: size }} className={className}>✨</span>;
 };
