@@ -4,7 +4,6 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   const finalName = name?.toLowerCase();
 
   // Unified Line-Art System (Neon Green Stroke)
-  // This matches the "Globe" style requested by the user.
   const themedIcons = useMemo(() => ({
     // UI & Action
     mail: (
@@ -20,6 +19,26 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     github: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/>
+      </svg>
+    ),
+    linkedin: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+      </svg>
+    ),
+    twitter: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+      </svg>
+    ),
+    slack: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.5 10c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5z"/><path d="M20.5 10c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M9.5 14c.83 0 1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5S8 6.67 8 7.5v5c0 .83.67 1.5 1.5 1.5z"/><path d="M3.5 14c.83 0 1.5-.67 1.5-1.5S4.33 11 3.5 11 2 11.67 2 12.5s.67 1.5 1.5 1.5z"/>
+      </svg>
+    ),
+    whop: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
       </svg>
     ),
     globe: (
@@ -58,7 +77,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
       </svg>
     ),
 
-    // Stats (Previously 3D Emojis, now line-art)
+    // Stats & Categories
     thumbsup: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/>
@@ -77,6 +96,36 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     zap: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+    ),
+    layout: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+      </svg>
+    ),
+    smartphone: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+      </svg>
+    ),
+    cloud: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17.5 19c2.5 0 4.5-2 4.5-4.5 0-2.4-1.9-4.3-4.3-4.5C17.1 6.3 14 4 10.5 4 7.5 4 5 6.5 5 9.5c0 .3 0 .6.1.9C3.2 11.2 2 13 2 15.5 2 18.5 4.5 21 7.5 21h10"/>
+      </svg>
+    ),
+    bot: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/>
+      </svg>
+    ),
+    activity: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+      </svg>
+    ),
+    target: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
       </svg>
     ),
 
@@ -161,24 +210,14 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/>
       </svg>
     ),
-    coursera: (
+    refreshcw: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
       </svg>
     ),
-    cisco: (
+    scale: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v20"/><path d="M17 5v14"/><path d="M7 5v14"/><path d="M22 8v8"/><path d="M2 8v8"/>
-      </svg>
-    ),
-    ibm: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 14h20"/><path d="M2 10h20"/><path d="M2 6h20"/><path d="M2 18h20"/>
-      </svg>
-    ),
-    google: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10 0-.55-.04-1.09-.12-1.62h-9.88v3.24h6.06c-.26 1.41-1.06 2.6-2.26 3.4l3.66 2.84C21.6 17.6 23 15.1 23 12c0-.34-.03-.67-.09-1H12V2z"/>
+        <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/>
       </svg>
     ),
     figma: (
@@ -196,6 +235,54 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     ),
+  }), []);
+
+  // High-Fidelity Emoji Mapping (滿足 "right emoji" 的需求)
+  const emojiMap = useMemo(() => ({
+    python: "🐍",
+    react: "⚛️",
+    node: "🟢",
+    docker: "🐳",
+    postgres: "🐘",
+    azure: "☁️",
+    tensorflow: "🧠",
+    github: "🐙",
+    mail: "📧",
+    phone: "📞",
+    thumbsup: "👍",
+    heart: "❤️",
+    star: "⭐",
+    rocket: "🚀",
+    zap: "⚡",
+    cpu: "💻",
+    layout: "🎨",
+    smartphone: "📱",
+    cloud: "☁️",
+    palette: "🎨",
+    gear: "⚙️",
+    cabinet: "🗄️",
+    signal: "📶",
+    graduationcap: "🎓",
+    bookopen: "📖",
+    terminal: "💻",
+    building: "🏢",
+    ticket: "🎫",
+    bot: "🤖",
+    activity: "📈",
+    target: "🎯",
+    linkedin: "💼",
+    twitter: "🐦",
+    slack: "💬",
+    whop: "🏬",
+    langchain: "🦜",
+    database: "🗄️",
+    d3js: "📊",
+    csharp: "🎯",
+    pthreads: "🧵",
+    go: "🐹",
+    typescript: "🟦",
+    javascript: "🟨",
+    aws: "☁️",
   }), []);
 
   const techLogos = useMemo(() => ({
@@ -221,7 +308,28 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     tensorflow:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
     cisco:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cisco/cisco-original.svg",
     ibm:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ibm/ibm-original.svg",
+    go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+    csharp:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+    google:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+    coursera:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/coursera/coursera-original.svg",
   }), []);
+
+  // Priority Check: Emotional Keys (Always Emojis for Cinematic UX)
+  const emotionalKeys = ["thumbsup", "heart", "star", "rocket", "zap", "bot", "target", "graduationcap", "langchain", "brain"];
+  const isEmotional = emotionalKeys.includes(finalName);
+  const emoji = emojiMap[finalName];
+
+  if (isEmotional && emoji) {
+    return (
+      <div 
+        style={{ fontSize: size }} 
+        className={`flex items-center justify-center select-none drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] ${className}`}
+      >
+        {emoji}
+      </div>
+    );
+  }
 
   // Priority 1: Themed Line Icons (Matches the requested "Green Line Globe" style)
   const themedIcon = themedIcons[name] || themedIcons[finalName];
@@ -247,6 +355,18 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         className={`inline-block object-contain select-none pointer-events-none brightness-110 contrast-110 ${className}`}
         loading="lazy"
       />
+    );
+  }
+
+  // Priority 3: Emoji Fallback for other items if line-art and logos are missing
+  if (emoji) {
+    return (
+      <div 
+        style={{ fontSize: size }} 
+        className={`flex items-center justify-center select-none ${className}`}
+      >
+        {emoji}
+      </div>
     );
   }
 
