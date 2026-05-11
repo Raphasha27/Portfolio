@@ -5,7 +5,7 @@ import { Icon } from './Icons';
 const skillGroups = [
   {
     title: "Front End",
-    emoji: "🎨",
+    iconName: "layout",
     skills: [
       { name: "React & Vite", pct: 95 },
       { name: "Tailwind CSS", pct: 92 },
@@ -16,7 +16,7 @@ const skillGroups = [
   },
   {
     title: "Back End",
-    emoji: "⚙️",
+    iconName: "zap",
     skills: [
       { name: "Node.js & Express", pct: 90 },
       { name: "Python & FastAPI", pct: 92 },
@@ -27,7 +27,7 @@ const skillGroups = [
   },
   {
     title: "Database",
-    emoji: "🗄️",
+    iconName: "database",
     skills: [
       { name: "PostgreSQL", pct: 94 },
       { name: "MongoDB", pct: 88 },
@@ -38,7 +38,7 @@ const skillGroups = [
   },
   {
     title: "Infrastructure",
-    emoji: "🚀",
+    iconName: "rocket",
     skills: [
       { name: "Vercel & Netlify", pct: 96 },
       { name: "Docker & Linux", pct: 85 },
@@ -49,7 +49,7 @@ const skillGroups = [
   },
   {
     title: "AI Tools & IDEs",
-    emoji: "🤖",
+    iconName: "bot",
     skills: [
       { name: "VS Code & Antigravity", pct: 98 },
       { name: "ChatGPT & Gemini", pct: 95 },
@@ -74,7 +74,9 @@ const Skills = () => {
         {skillGroups.map((group, i) => (
           <div key={i} className="space-y-6">
             <div className="flex items-center gap-4 border-b border-white/10 pb-2">
-              <span className="text-2xl">{group.emoji}</span>
+              <div className="flex items-center justify-center">
+                <Icon name={group.iconName} size={28} />
+              </div>
               <h3 className="text-sm font-bold uppercase tracking-widest text-text-dim">{group.title}</h3>
             </div>
             <div className="space-y-5">
@@ -105,16 +107,16 @@ const Skills = () => {
         <div className="text-[9px] font-bold text-text-dim uppercase tracking-[0.3em] mb-4 text-center">Core Systems & Ecosystem</div>
         <div className="flex justify-center gap-6 items-center">
           {[
-            { name: "React", emoji: "⚛️" },
-            { name: "Python", emoji: "🐍" },
-            { name: "PostgreSQL", emoji: "🐘" },
-            { name: "Node.js", emoji: "🌿" },
-            { name: "Docker", emoji: "🐳" },
-            { name: "Vercel", emoji: "▲" }
+            { name: "React", id: "react" },
+            { name: "Python", id: "python" },
+            { name: "PostgreSQL", id: "postgres" },
+            { name: "Node.js", id: "node" },
+            { name: "Docker", id: "docker" },
+            { name: "Vercel", id: "vercel" }
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-2 group">
-              <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-2xl group-hover:scale-125 transition-all duration-300 border border-white/5 shadow-2xl group-hover:border-green-500/50" title={item.name}>
-                {item.emoji}
+              <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center p-2.5 group-hover:scale-125 transition-all duration-300 border border-white/5 shadow-2xl group-hover:border-green-500/50" title={item.name}>
+                <Icon name={item.id} size={32} />
               </div>
               <span className="text-[8px] text-text-dim font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">{item.name}</span>
             </div>
