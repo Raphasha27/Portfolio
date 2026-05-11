@@ -171,10 +171,8 @@ const About = () => {
 
               {/* Cisco */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#00bceb]/10 flex items-center justify-center p-3 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,188,235,0.1)] border border-[#00bceb]/20 overflow-hidden">
-                  <svg viewBox="0 0 24 24" className="w-full h-full fill-[#00bceb]">
-                    <path d="M11.232 5.105v13.79h1.536V5.105h-1.536zm-3.07 1.534v10.723h1.536V6.639H8.162zm6.14 0v10.723h1.536V6.639h-1.536zM5.093 9.706v4.588h1.536V9.706H5.093zm12.278 0v4.588h1.536V9.706h-1.536zM2.022 11.24v1.535h1.536v-1.535H2.022zm18.42 0v1.535h1.536v-1.535h-1.536z" />
-                  </svg>
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#00bceb]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,188,235,0.1)] border border-[#00bceb]/20 overflow-hidden">
+                  <Icon name="cisco" size={32} />
                 </div>
                 <div className="text-center">
                   <div className="font-bold text-[9px] tracking-tight">Cisco</div>
@@ -184,10 +182,8 @@ const About = () => {
 
               {/* Coursera */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#0056D2]/10 flex items-center justify-center p-3 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,86,210,0.1)] border border-[#0056D2]/20 overflow-hidden">
-                  <svg viewBox="0 0 24 24" className="w-full h-full fill-[#0056D2]">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5c1.17 0 2.23.41 3.08 1.08l-1.65 1.65C12.95 9.29 12.5 9 12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.5 0 .95-.29 1.43-.73l1.65 1.65C14.23 16.59 13.17 17 12 17z"/>
-                  </svg>
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#0056D2]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,86,210,0.1)] border border-[#0056D2]/20 overflow-hidden">
+                  <Icon name="coursera" size={32} />
                 </div>
                 <div className="text-center">
                   <div className="font-bold text-[9px] tracking-tight">Coursera</div>
@@ -197,13 +193,8 @@ const About = () => {
 
               {/* Google */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center p-3 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/5 overflow-hidden">
-                  <svg viewBox="0 0 24 24" className="w-full h-full">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                  </svg>
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/5 overflow-hidden">
+                  <Icon name="google" size={32} />
                 </div>
                 <div className="text-center">
                   <div className="font-bold text-[9px] tracking-tight">Google</div>
@@ -213,11 +204,8 @@ const About = () => {
 
               {/* IBM */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#006699]/10 flex items-center justify-center p-2 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,102,153,0.1)] border border-[#006699]/20 overflow-hidden">
-                  <svg viewBox="0 0 24 24" className="w-full h-full fill-[#006699]">
-                    <path d="M1 4h22v2H1V4zm0 4h22v1H1V8zm0 3h22v1H1v-1zm0 3h22v1H1v-1zm0 3h22v2H1v-2z" />
-                    <text x="12" y="14" fontSize="10" fontWeight="bold" textAnchor="middle" fill="currentColor" className="select-none">IBM</text>
-                  </svg>
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#006699]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,102,153,0.1)] border border-[#006699]/20 overflow-hidden">
+                  <Icon name="ibm" size={32} />
                 </div>
                 <div className="text-center">
                   <div className="font-bold text-[9px] tracking-tight">IBM</div>

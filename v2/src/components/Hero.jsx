@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import heroBg from '../assets/hero_bg_sa_flag_lower_1778236334988.png';
-import profileImg from '../assets/koketso_raw.png';
+import profileImg from '../assets/profile_cutout_no_bg.png';
 import { Icon } from './Icons';
 
 const Hero = () => {
@@ -162,14 +162,27 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative flex justify-center items-center py-20"
         >
+          {/* Cinematic Profile Cutout — Luxury Overlay */}
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-visible flex items-center justify-center opacity-40">
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              src={profileImg}
+              alt=""
+              className="h-[120%] w-auto object-contain mask-bottom"
+              style={{ filter: 'brightness(0.8) contrast(1.2)' }}
+            />
+          </div>
+
           {/* Premium UI Dashboard Preview */}
-          <div className="relative w-full max-w-[420px] space-y-4">
+          <div className="relative w-full max-w-[420px] space-y-4 z-10">
 
             {/* Main Dashboard Card */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass p-5 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.08)]"
+              className="glass p-5 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.15)]"
             >
               <div className="flex justify-between items-center mb-4">
                 <div className="text-[9px] font-bold text-green-400 uppercase tracking-widest">Active Build</div>

@@ -46,6 +46,17 @@ const skillGroups = [
       { name: "Nginx & Server", pct: 82 }
     ],
     color: "bg-orange-500"
+  },
+  {
+    title: "AI Tools & IDEs",
+    emoji: "🤖",
+    skills: [
+      { name: "VS Code & Antigravity", pct: 98 },
+      { name: "ChatGPT & Gemini", pct: 95 },
+      { name: "Conex & AI Agents", pct: 92 },
+      { name: "Terminal & Git", pct: 94 }
+    ],
+    color: "bg-purple-500"
   }
 ];
 
