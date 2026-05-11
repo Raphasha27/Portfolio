@@ -1,16 +1,35 @@
-# React + Vite
+# Kirov Dynamics Portfolio v2 🚀🛡️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The high-fidelity, cinematic React/Vite implementation of the Kirov Dynamics professional branding ecosystem.
 
-Currently, two official plugins are available:
+## 🌟 Key Features
+- **Cinematic Dark-Luxury UI**: Tailored with Vanilla CSS and Framer Motion for a premium, high-performance experience.
+- **Sovereign Intelligence**: Integrated Digital Twin AI assistant powered by context-aware professional data.
+- **Emoji Arsenal Iconography**: Fully transitioned to a high-fidelity, lightweight emoji-based icon system.
+- **9 AI Specializations**: Showcasing expertise across Architect, Orchestrator, Product, and Security roles.
+- **Responsive Architecture**: Optimized for mobile with a dedicated QR Scan Nexus for instant mobile synchronization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
+- **Frontend**: React 19, Vite 8, Framer Motion
+- **Styling**: Tailwind CSS 4 (Utility-first configuration)
+- **Infrastructure**: Vercel Production Environment
+- **Icons**: Standardized Emoji-based mapping via `Icons.jsx`
 
-## React Compiler
+## 🏗️ Getting Started
+```bash
+# Install dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Start development server
+npm run dev
 
-## Expanding the ESLint configuration
+# Build for production
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📜 Deployment
+Deploys automatically to [v2-seven-eta.vercel.app](https://v2-seven-eta.vercel.app) via GitHub integration.
+
+---
+**Innovative. Performant. Sovereign.**
+*Built by Koketso Raphasha*
