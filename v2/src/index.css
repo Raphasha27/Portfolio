@@ -29,11 +29,12 @@ html {
 
 @layer utilities {
   .glow-text { text-shadow: 0 0 24px rgba(0, 229, 160, 0.5); }
+  .glow-text-sm { text-shadow: 0 0 12px rgba(0, 229, 160, 0.3); }
   .glass {
-    background: rgba(13, 31, 45, 0.7);
+    background: rgba(10, 22, 29, 0.7);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
   .bg-overlay {
     position: absolute;
@@ -58,6 +59,9 @@ html {
 /* Ping animation for the live badge */
 @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
 .animate-ping { animation: ping 1.2s cubic-bezier(0,0,0.2,1) infinite; }
+
+@keyframes pulse-slow { 0%, 100% { opacity: 0.1; } 50% { opacity: 0.3; } }
+.animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
 
 /* Scroll Line Animation */
 @keyframes scroll-line {
