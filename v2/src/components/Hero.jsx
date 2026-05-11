@@ -37,15 +37,6 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [typedText, isDeleting, phraseIdx]);
 
-  const techStack = [
-    { name: 'Figma', id: 'figma' },
-    { name: 'React', id: 'react' },
-    { name: 'Flutter', id: 'flutter' },
-    { name: 'Python', id: 'python' },
-    { name: 'Node.js', id: 'node' },
-    { name: 'Vercel', id: 'vercel' }
-  ];
-
   return (
     <div id="home" className="relative overflow-hidden" style={{ minHeight: '100vh' }}>
       {/* Cinematic Background */}
@@ -156,110 +147,58 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+        {/* SWAPPED: Profile Image with Badges (formerly in About) */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center items-center py-20"
+          className="flex justify-center"
         >
-          {/* Cinematic Profile Cutout — Luxury Overlay */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-visible flex items-center justify-center opacity-40">
-            <motion.img
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              src={profileImg}
-              alt=""
-              className="h-[120%] w-auto object-contain mask-bottom"
-              style={{ filter: 'brightness(0.8) contrast(1.2)' }}
-            />
-          </div>
+          <div className="relative w-72 h-72 lg:w-[450px] lg:h-[450px]">
+            {/* Ambient Backglow */}
+            <div className="absolute inset-10 rounded-full bg-green-500/20 blur-[80px] animate-pulse" />
+            
+            {/* The Cutout Image */}
+            <div className="relative w-full h-full z-10">
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                src={profileImg}
+                alt="Koketso Raphasha"
+                className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                style={{ filter: 'brightness(1.1) contrast(1.05)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-transparent to-transparent opacity-40" />
+            </div>
 
-          {/* Premium UI Dashboard Preview */}
-          <div className="relative w-full max-w-[420px] space-y-4 z-10">
+            {/* Orbital Rings */}
+            <div className="absolute inset-4 rounded-full border border-green-500/10 animate-[spin_20s_linear_infinite] pointer-events-none" />
+            <div className="absolute inset-10 rounded-full border border-blue-500/5 animate-[spin_15s_linear_infinite_reverse] pointer-events-none" />
 
-            {/* Main Dashboard Card */}
+            {/* Badges */}
             <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass p-5 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.15)]"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-4 -left-8 glass px-4 py-3 rounded-2xl border border-green-500/30 z-20 shadow-xl"
             >
-              <div className="flex justify-between items-center mb-4">
-                <div className="text-[9px] font-bold text-green-400 uppercase tracking-widest">Active Build</div>
-                <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500/70"></div>
-                  <div className="w-2 h-2 rounded-full bg-yellow-500/70"></div>
-                  <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
-                </div>
-              </div>
-              <div className="text-sm font-bold mb-1">Kirov Dynamics OS v2.0</div>
-              <div className="text-[10px] text-text-dim mb-4">React Native · Flutter · Figma</div>
-              <div className="space-y-2">
-                {[
-                  { label: 'UI/UX Design', val: 92 },
-                  { label: 'Mobile Dev', val: 88 },
-                  { label: 'Autonomous Systems', val: 80 },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between text-[8px] font-bold text-text-dim mb-1">
-                      <span>{item.label}</span><span className="text-green-400">{item.val}%</span>
-                    </div>
-                    <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${item.val}%` }}
-                        transition={{ duration: 1.2, delay: 0.5 + i * 0.2 }}
-                        className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
-                      />
-                    </div>
-                  </div>
-                ))}
+              <div className="text-[8px] font-bold text-green-400 uppercase tracking-widest mb-1">Status</div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-xs font-bold">Open to Work</span>
               </div>
             </motion.div>
 
-            {/* Two small stat cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                className="glass p-4 rounded-2xl border border-blue-500/20 text-center"
-              >
-                <Icon name="smartphone" size={20} className="text-blue-400 mx-auto mb-2" />
-                <div className="text-lg font-bold">Mobile</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest">First Approach</div>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="glass p-4 rounded-2xl border border-green-500/20 text-center"
-              >
-                <Icon name="layout" size={20} className="text-green-400 mx-auto mb-2" />
-                <div className="text-lg font-bold">UI/UX</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest">Design System</div>
-              </motion.div>
-            </div>
-
-            {/* Tech Stack Marquee */}
-            <div className="glass p-4 rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-              <div className="text-[10px] font-bold text-green-400 text-center mb-5 tracking-[0.4em] uppercase opacity-70">Core Mobile & UI Stack</div>
-              <div className="flex relative overflow-hidden py-2">
-                <motion.div 
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="flex gap-10 items-center whitespace-nowrap"
-                >
-                  {[...techStack, ...techStack].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-2 group/icon">
-                      <div className="w-10 h-10 flex items-center justify-center group-hover/icon:scale-125 transition-all cursor-pointer">
-                        <Icon name={tech.id} size={32} />
-                      </div>
-                      <span className="text-[7px] text-text-dim font-bold uppercase">{tech.name}</span>
-                    </div>
-                  ))}
-                </motion.div>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+              className="absolute bottom-16 -right-4 glass px-4 py-3 rounded-2xl border border-blue-500/30 z-20 shadow-xl"
+            >
+              <div className="text-[8px] font-bold text-blue-400 uppercase tracking-widest mb-1">Based In</div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-white">South Africa</span>
               </div>
-            </div>
-
+            </motion.div>
           </div>
         </motion.div>
       </div>
