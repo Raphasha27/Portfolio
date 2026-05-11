@@ -106,6 +106,9 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     prometheus: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     langchain: "https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/langchain_logo.png",
     slack: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
+    cisco: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cisco/cisco-original.svg",
+    coursera: "https://img.icons8.com/color/48/coursera.png",
+    ibm: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ibm/ibm-original.svg",
   }), []);
 
   const finalName = name?.toLowerCase();

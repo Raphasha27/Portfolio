@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useSpring, useTransform, useInView } from 'framer-motion';
 import heroBg from '../assets/hero_bg_sa_flag_lower_1778236334988.png';
 import profileImg from '../assets/koketso_transparent.png';
 import { Icon } from './Icons';
-import { useRef, useEffect } from 'react';
-import { useSpring, useTransform, useInView } from 'framer-motion';
 
 const CountUp = ({ to }) => {
   const nodeRef = useRef(null);

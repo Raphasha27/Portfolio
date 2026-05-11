@@ -80,7 +80,7 @@ const Contact = () => {
                 <a href="#experience" className="hover:text-white transition-colors">Experience</a>
                 <a href="#projects" className="hover:text-white transition-colors">Projects</a>
               </div>
-              <div>© 2024 Kirov Dynamics · All Rights Reserved</div>
+              <div>© 2025 Kirov Dynamics · All Rights Reserved</div>
               <div className="w-2 h-2 rounded-full bg-green-500/30" />
             </React.Fragment>
           ))}
