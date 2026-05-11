@@ -1,11 +1,26 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useSpring, useTransform, useInView } from 'framer-motion';
 import gautengMap from '../assets/gauteng-map.png';
 import richfieldLogo from '../assets/richfield-logo.png';
 import profileImg from '../assets/koketso_transparent.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import { Icon } from './Icons';
+
+const CountUp = ({ to }) => {
+  const nodeRef = useRef(null);
+  const isInView = useInView(nodeRef, { once: true });
+  const count = useSpring(0, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    if (isInView) {
+      count.set(to);
+    }
+  }, [isInView, to, count]);
+
+  return <motion.span ref={nodeRef}>{rounded}</motion.span>;
+};
 
 const About = () => {
   return (
@@ -103,13 +118,15 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { value: '3+', label: 'Years Exp.' },
-              { value: '20+', label: 'Projects' },
-              { value: '100%', label: 'Dedication' },
+              { value: 3, suffix: '+', label: 'Years Exp.' },
+              { value: 20, suffix: '+', label: 'Projects' },
+              { value: 100, suffix: '%', label: 'Dedication' },
             ].map((stat, i) => (
-              <div key={i} className="glass p-4 text-center rounded-2xl border border-white/5">
-                <div className="text-2xl font-bold text-green-400">{stat.value}</div>
-                <div className="text-[10px] text-text-dim uppercase tracking-widest mt-1">{stat.label}</div>
+              <div key={i} className="glass p-4 text-center rounded-2xl border border-white/5 group hover:border-green-500/30 transition-colors">
+                <div className="text-2xl font-bold text-green-400">
+                  <CountUp to={stat.value} />{stat.suffix}
+                </div>
+                <div className="text-[10px] text-text-dim uppercase tracking-widest mt-1 group-hover:text-white transition-colors">{stat.label}</div>
               </div>
             ))}
           </div>

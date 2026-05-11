@@ -110,7 +110,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         src={logoUrl} 
         alt={name} 
         size={size} 
-        className={`filter brightness-110 contrast-110 ${className}`} 
+        className={`filter-none ${className}`} 
       />
     );
   }

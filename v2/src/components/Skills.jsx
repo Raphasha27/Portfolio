@@ -104,21 +104,25 @@ const Skills = () => {
 
       {/* Core Infrastructure / Real Emoji Arsenal */}
       <div className="pt-6 border-t border-white/10">
-        <div className="text-[9px] font-bold text-text-dim uppercase tracking-[0.3em] mb-4 text-center">Core Systems & Ecosystem</div>
-        <div className="flex justify-center gap-6 items-center">
+        <div className="text-[9px] font-bold text-text-dim uppercase tracking-[0.3em] mb-6 text-center">Core Systems & Ecosystem</div>
+        <div className="flex flex-wrap justify-center gap-4 lg:gap-8 items-center px-4">
           {[
             { name: "React", id: "react" },
             { name: "Python", id: "python" },
-            { name: "PostgreSQL", id: "postgres" },
+            { name: "TypeScript", id: "typescript" },
             { name: "Node.js", id: "node" },
+            { name: "Next.js", id: "nextjs" },
+            { name: "Tailwind", id: "tailwindcss" },
+            { name: "Postgres", id: "postgres" },
+            { name: "MongoDB", id: "mongodb" },
             { name: "Docker", id: "docker" },
             { name: "Vercel", id: "vercel" }
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-2 group">
-              <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center p-2.5 group-hover:scale-125 transition-all duration-300 border border-white/5 shadow-2xl group-hover:border-green-500/50" title={item.name}>
+              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-2xl glass flex items-center justify-center p-2 lg:p-2.5 group-hover:scale-125 transition-all duration-300 border border-white/5 shadow-2xl group-hover:border-green-500/50" title={item.name}>
                 <Icon name={item.id} size={32} />
               </div>
-              <span className="text-[8px] text-text-dim font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">{item.name}</span>
+              <span className="text-[7px] text-text-dim font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">{item.name}</span>
             </div>
           ))}
         </div>
