@@ -4,7 +4,7 @@ const SafeImage = ({ src, alt, size, className }) => {
   const [error, setError] = useState(false);
 
   if (error || !src) {
-    return <span style={{ fontSize: size }} className={className}>✨</span>;
+    return <div style={{ width: size, height: size }} className={`rounded-full bg-green-500/10 border border-green-500/20 ${className}`} />;
   }
 
   return (
@@ -79,7 +79,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     // High-Fidelity Emojis for Stats & Highlights
     thumbsUp:    "Thumbs up",
     heart:       "Red heart",
-    star:        "Star",
+    star:        "Glowing star",
     zap:         "High voltage",
     rocket:      "Rocket",
     target:      "Direct hit",
@@ -163,5 +163,5 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   }
 
   // 4 — Ultimate fallback
-  return <span style={{ fontSize: size }} className={className}>✨</span>;
+  return <div style={{ width: size, height: size }} className={`rounded-full bg-green-500/20 border border-green-500/40 ${className}`} />;
 };
