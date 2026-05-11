@@ -9,8 +9,8 @@ const projects = [
     title: "Sovereign-AI-Nexus",
     tagline: "Global Agentic Infra",
     desc: "Decentralized multi-agent infrastructure for autonomous professional branding and automated repository hardening. The flagship of the Kirov ecosystem.",
-    tech: ["Python 🐍", "LangChain 🔗", "Vector DB 🗄️", "Docker 🐳"],
-    icon: "🌐",
+    tech: ["python", "LangChain", "database", "docker"],
+    icon: "globe",
     role: "Agentic Infra Dev",
     color: "from-blue-600/20 to-cyan-400/20",
     featured: true,
@@ -20,8 +20,8 @@ const projects = [
     title: "FlowSentinel",
     tagline: "Traffic Governance · 2.4M Req/s",
     desc: "Enterprise traffic governance engine with distributed rate-limiting, sub-millisecond overhead, and Fail-Open resilience.",
-    tech: [".NET 8 🔷", "Redis Lua 🔴", "OpenTelemetry 📈", "Docker 🐳"],
-    icon: "⚡",
+    tech: ["C#", "redis", "activity", "docker"],
+    icon: "zap",
     role: "Traffic Architect",
     color: "from-blue-500/20 to-green-500/20"
   },
@@ -29,8 +29,8 @@ const projects = [
     title: "CyberShield Modern",
     tagline: "SOC Dashboard · Score 93",
     desc: "Next-gen SOC dashboard handling thousands of security events per second via WebSockets and WebGL visualizations.",
-    tech: ["Angular 🅰️", "D3.js 📊", "WebSockets 🔌", "CyberSec 🛡️"],
-    icon: "🛡️",
+    tech: ["angular", "D3.js", "signal", "shield"],
+    icon: "shield",
     role: "SOC Engineer",
     color: "from-purple-500/20 to-blue-500/20"
   },
@@ -38,8 +38,8 @@ const projects = [
     title: "NoShowIQ",
     tagline: "Healthcare AI · No-Show Prediction",
     desc: "AI-driven healthcare platform predicting appointment no-shows using ML models, reducing clinic inefficiency at scale.",
-    tech: ["Python 🐍", "PyTorch 🕯️", "FastAPI ⚡", "React ⚛️"],
-    icon: "🧠",
+    tech: ["python", "PyTorch", "zap", "react"],
+    icon: "brain",
     role: "ML Specialist",
     color: "from-green-500/20 to-teal-500/20"
   },
@@ -47,8 +47,8 @@ const projects = [
     title: "SupportHive-C",
     tagline: "Background Monitoring · C Engine",
     desc: "High-performance background monitoring engine built in C for real-time repository health and CI/CD status enforcement.",
-    tech: ["C 🇨", "pthreads 🧵", "Git API 🐙", "Linux 🐧"],
-    icon: "💻",
+    tech: ["C", "pthreads", "github", "terminal"],
+    icon: "terminal",
     role: "Systems Architect",
     color: "from-yellow-500/20 to-orange-500/20"
   },
@@ -56,8 +56,8 @@ const projects = [
     title: "Kirov Connect",
     tagline: "Civic Platform · Smart City",
     desc: "AI-powered public services platform revitalizing citizen engagement with smart workflows and autonomous case routing.",
-    tech: ["Next.js ▲", "TypeScript 🟦", "AI Automation 🤖", "Azure ☁️"],
-    icon: "🏢",
+    tech: ["vercel", "TypeScript", "bot", "azure"],
+    icon: "building",
     role: "Civic Tech lead",
     color: "from-orange-500/20 to-red-500/20"
   },
@@ -65,8 +65,8 @@ const projects = [
     title: "RepoPulse",
     tagline: "Real-time Metrics",
     desc: "Satellite-view dashboard for tracking repository pulses, contribution heatmaps, and automated security patches.",
-    tech: ["Go 🐹", "gRPC 📡", "PostgreSQL 🐘", "Grafana 📊"],
-    icon: "📡",
+    tech: ["Go", "signal", "postgres", "activity"],
+    icon: "signal",
     role: "Observability Eng",
     color: "from-indigo-500/20 to-purple-500/20"
   },
@@ -74,8 +74,8 @@ const projects = [
     title: "SeatLock",
     tagline: "Reservations · Zero Downtime",
     desc: "High-reliability seat reservation system with zero-downtime performance guarantees, built for enterprise event management.",
-    tech: ["C# 🔷", ".NET 8 🚀", "Redis 🔴", "Docker 🐳"],
-    icon: "🎫",
+    tech: ["C#", "node", "redis", "docker"],
+    icon: "ticket",
     role: "Backend specialist",
     color: "from-red-500/20 to-purple-500/20"
   },
@@ -83,8 +83,8 @@ const projects = [
     title: "EduStream-Pro-ICT",
     tagline: "EdTech · AI Curriculum Engine",
     desc: "AI-augmented educational platform deploying adaptive curriculum delivery for ICT learners across distributed environments.",
-    tech: ["React ⚛️", "Python 🐍", "TensorFlow 🧪", "AWS ☁️"],
-    icon: "🎓",
+    tech: ["react", "python", "brain", "aws"],
+    icon: "graduationCap",
     role: "EdTech AI Dev",
     color: "from-blue-500/20 to-indigo-500/20"
   }
@@ -123,7 +123,7 @@ const Projects = () => {
             style={{ perspective: 1000 }}
           >
             {/* Subtle Background Overlay */}
-            <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-300 pointer-events-none mix-blend-overlay">
+            <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
               <img 
                 src={i % 2 === 0 ? experienceBg : heroBg} 
                 alt="" 
@@ -137,8 +137,8 @@ const Projects = () => {
             
             <div className="relative z-10 flex justify-between items-start mb-2">
               <div className="flex items-center gap-2">
-                <div className="text-xl group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(0,229,160,0)] group-hover:drop-shadow-[0_0_8px_rgba(0,229,160,0.5)]">
-                  {p.icon}
+                <div className="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(0,229,160,0)] group-hover:drop-shadow-[0_0_8px_rgba(0,229,160,0.5)]">
+                  <Icon name={p.icon} size={28} />
                 </div>
                 <div>
                   <h3 className="text-[12px] font-bold group-hover:text-white transition-colors">{p.title}</h3>
@@ -156,8 +156,14 @@ const Projects = () => {
             
             <div className="relative z-10 flex justify-between items-center transform-gpu">
               <div className="flex gap-1.5">
-                {p.tech.slice(0, 3).map((t, j) => (
-                  <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors">{t}</span>
+                {p.tech.slice(0, 4).map((t, j) => (
+                  <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors flex items-center gap-1">
+                    <Icon name={t.toLowerCase()} size={8} className="opacity-70 group-hover:opacity-100" />
+                    {t}
+                  </span>
+                ))}
+              </div>
+ed-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors">{t}</span>
                 ))}
               </div>
               <div className="flex gap-3">
