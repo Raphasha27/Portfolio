@@ -22,30 +22,21 @@ const CountUp = ({ to }) => {
   return <motion.span ref={nodeRef}>{rounded}</motion.span>;
 };
 
-
-const techStack = [
-  { name: 'Figma', id: 'figma' },
-  { name: 'React', id: 'react' },
-  { name: 'Flutter', id: 'flutter' },
+const techStackLogos = [
   { name: 'Python', id: 'python' },
-  { name: 'Node.js', id: 'node' },
-  { name: 'Vercel', id: 'vercel' }
+  { name: 'TensorFlow', id: 'tensorflow' },
+  { name: 'PyTorch', id: 'pytorch' },
+  { name: 'React', id: 'react' },
+  { name: 'Docker', id: 'docker' },
+  { name: 'Azure', id: 'azure' }
 ];
 
 const Hero = () => {
-  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
   const [typedText, setTypedText] = useState('');
-  const phrases = ["Mobile Experiences", "UI/UX Excellence", "Autonomous Systems", "Premium Interfaces"];
+  const phrases = ["DIGITAL SOLUTIONS", "MOBILE ECOSYSTEMS", "AUTONOMOUS SYSTEMS", "PREMIUM INTERFACES"];
   const [phraseIdx, setPhrasesIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       const current = phrases[phraseIdx];
@@ -66,212 +57,189 @@ const Hero = () => {
   }, [typedText, isDeleting, phraseIdx]);
 
   return (
-    <div id="home" className="relative overflow-hidden" style={{ minHeight: '100vh' }}>
-      {/* Cinematic Background */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+    <div id="home" className="relative overflow-hidden min-h-screen bg-[#050d12]">
+      {/* Cinematic Background with SA Flag Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src={heroBg} 
           alt="Johannesburg backdrop" 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-30 scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050d12] via-[#050d12]/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050d12] via-[#050d12]/80 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-transparent to-transparent"></div>
+        {/* Ambient Glows */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/10 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full animate-pulse-slow" />
       </div>
 
-      <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center px-6 md:px-16 lg:px-24" style={{ paddingTop: '100px', paddingBottom: '80px', minHeight: '100vh' }}>
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-32 pb-20 grid lg:grid-cols-2 gap-12 items-center">
+        {/* LEFT COLUMN: Main Text & CTA */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="space-y-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-[#050d12]/80 border border-green-500/30 font-mono text-[10px] text-green-400 mb-6 shadow-[0_0_15px_rgba(0,229,160,0.1)]">
-            <span className="text-white/50">{">"}</span>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <motion.span
-                animate={{ opacity: [1, 0] }}
-                transition={{ repeat: Infinity, duration: 0.8 }}
-                className="inline-block w-1.5 h-3 bg-green-400 mr-1 align-middle"
-              />
-              INIT KIROV_OS // STATUS: OPTIMAL
-            </motion.span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-text-dim uppercase tracking-widest shadow-xl">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            Software Developer
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tighter min-h-[3.5em]">
-            I CRAFT <br />
-            <motion.span 
-              className="text-green-400 glow-text inline-block"
-              layout
-            >
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-[0.9] uppercase">
+            I BUILD <br />
+            <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent glow-text-sm inline-block min-h-[1.1em]">
               {typedText}
-            </motion.span>
-            <span className="animate-pulse text-green-400">|</span>
-            <span className="text-xl md:text-2xl text-text-dim block mt-6 font-medium tracking-normal opacity-80">
-              & MOBILE ECOSYSTEMS
             </span>
           </h1>
-          
-          <p className="text-text-dim text-sm mb-8 max-w-lg leading-relaxed">
-            Software Developer & UI Designer specializing in <span className="text-white font-medium">high-fidelity mobile apps</span> and 
-            <span className="text-green-400 font-medium"> autonomous digital systems</span>. 
+
+          <p className="text-text-dim text-lg max-w-lg leading-relaxed">
+            Software Developer passionate about building <span className="text-green-400 font-bold">clean</span>, 
+            <span className="text-cyan-400 font-bold ml-1">scalable</span> and <span className="text-white font-bold ml-1">intelligent</span> solutions.
           </p>
-          
-          <div className="flex flex-wrap gap-4 mb-6">
-            <div className="relative group">
-              <div className="absolute -top-3 -right-3 px-2 py-0.5 bg-green-500 text-[8px] font-bold text-bg rounded-full z-20 shadow-lg shadow-green-500/20 animate-bounce">GET STARTED</div>
-              <a href="#projects" className="px-6 py-3 bg-green-500 hover:bg-green-400 text-bg font-bold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-green-500/20">
-                Explore My Work <Icon name="arrowRight" size={16} />
-              </a>
-            </div>
-            <a href="#about" className="px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-bold rounded-xl transition-all flex items-center gap-2">
-              The Design Philosophy <Icon name="layout" size={16} className="opacity-50" />
-            </a>
-          </div>
-          
-          {/* Contact Buttons */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
-            <a href="mailto:raphashakoketso99@gmail.com" className="glass p-2 flex items-center gap-2 hover:bg-white/5 transition-all">
-              <div className="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
-                <Icon name="mail" size={12} />
-              </div>
-              <div className="overflow-hidden">
-                <div className="text-[10px] font-bold truncate">raphashakoketso99@gmail.com</div>
-              </div>
-            </a>
-            <a href="https://github.com/raphasha27" target="_blank" className="glass p-2 flex items-center gap-2 hover:bg-white/5 transition-all">
-              <div className="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
-                <Icon name="github" size={12} />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold">raphasha27</div>
-              </div>
-            </a>
-            <a href="https://whop.com/kirovdynamicstechnology/" target="_blank" className="glass p-2 flex items-center gap-2 hover:bg-white/5 transition-all">
-              <div className="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
-                <Icon name="whop" size={12} />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold uppercase tracking-tighter">Whop Store</div>
-              </div>
-            </a>
-            <a href="tel:0781172470" className="glass p-2 flex items-center gap-2 hover:bg-white/5 transition-all">
-              <div className="w-6 h-6 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400">
-                <Icon name="phone" size={12} />
-              </div>
-              <div>
-                <div className="text-[10px] font-bold">0781172470</div>
-              </div>
-            </a>
-          </div>
-        </motion.div>
 
-        {/* SWAPPED BACK: Premium UI Dashboard Preview (Restored to Hero) */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center items-center py-20"
-        >
-          {/* Subtle profile silhouette in background */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-visible flex items-center justify-center opacity-30">
-            <img src={profileImg} alt="" className="h-[120%] w-auto object-contain mask-bottom filter grayscale brightness-50" />
+          {/* Cinematic Quote Block */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="border-l-4 border-green-500 bg-green-500/5 p-6 rounded-r-2xl max-w-md italic text-sm text-text-dim/80 relative group hover:bg-green-500/10 transition-colors"
+          >
+            <Icon name="chat" size={24} className="absolute -top-3 -right-3 opacity-20 group-hover:opacity-40 transition-opacity" />
+            "Autonomous systems ensure that code remains clean and successful, ready to push to production."
+          </motion.div>
+
+          {/* Primary CTA Buttons */}
+          <div className="flex flex-wrap gap-5">
+            <a href="#projects" className="px-10 py-5 bg-green-400 hover:bg-green-300 text-[#050d12] font-bold rounded-2xl transition-all flex items-center gap-3 text-lg shadow-[0_0_30px_rgba(0,229,160,0.3)] group">
+              View My Work <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
+            </a>
+            <a href="#about" className="px-10 py-5 bg-transparent border border-green-500/30 hover:bg-green-500/5 text-white font-bold rounded-2xl transition-all flex items-center gap-3 text-lg group">
+              Professional Background <Icon name="user" size={20} className="text-green-400 opacity-60 group-hover:opacity-100" />
+            </a>
           </div>
 
-          <div className="relative w-full max-w-[420px] space-y-4 z-10">
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass p-5 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.15)]"
-            >
-              <div className="flex justify-between items-center mb-4">
-                <div className="text-[9px] font-bold text-green-400 uppercase tracking-widest">Active Build</div>
-                <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500/70"></div>
-                  <div className="w-2 h-2 rounded-full bg-yellow-500/70"></div>
-                  <div className="w-2 h-2 rounded-full bg-green-500/70"></div>
+          {/* Contact Bar Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            {[
+              { label: 'Email', val: 'raphashakoketso9@gmail.com', icon: 'mail', href: 'mailto:raphashakoketso9@gmail.com' },
+              { label: 'Phone', val: '0781172470', icon: 'phone', href: 'tel:0781172470' },
+              { label: 'GitHub', val: 'raphasha27', icon: 'github', href: 'https://github.com/raphasha27' },
+            ].map((item, i) => (
+              <a key={i} href={item.href} target="_blank" className="glass p-4 rounded-2xl border border-white/5 hover:border-green-500/30 transition-all group flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform">
+                  <Icon name={item.icon} size={18} />
                 </div>
-              </div>
-              <div className="text-sm font-bold mb-1">Kirov Dynamics OS v2.0</div>
-              <div className="text-[10px] text-text-dim mb-4">React Native · Flutter · Figma</div>
-              <div className="space-y-2">
-                {[
-                  { label: 'UI/UX Design', val: 92 },
-                  { label: 'Mobile Dev', val: 88 },
-                  { label: 'Autonomous Systems', val: 80 },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between text-[8px] font-bold text-text-dim mb-1">
-                      <span>{item.label}</span><span className="text-green-400"><CountUp to={item.val} />%</span>
-                    </div>
-                    <div className="h-1 bg-white/5 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${item.val}%` }}
-                        transition={{ duration: 1.2, delay: 0.5 + i * 0.2 }}
-                        className="h-full bg-gradient-to-r from-green-500 to-green-400 rounded-full"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                className="glass p-4 rounded-2xl border border-blue-500/20 text-center"
-              >
-                <Icon name="smartphone" size={20} className="text-blue-400 mx-auto mb-2" />
-                <div className="text-lg font-bold">Mobile</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest">First Approach</div>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="glass p-4 rounded-2xl border border-green-500/20 text-center"
-              >
-                <Icon name="layout" size={20} className="text-green-400 mx-auto mb-2" />
-                <div className="text-lg font-bold">UI/UX</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest">Design System</div>
-              </motion.div>
-            </div>
-
-            <div className="glass p-4 rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-              <div className="text-[10px] font-bold text-green-400 text-center mb-5 tracking-[0.4em] uppercase opacity-70">Core Mobile & UI Stack</div>
-              <div className="flex relative overflow-hidden py-2">
-                <motion.div 
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="flex gap-10 items-center whitespace-nowrap"
-                >
-                  {[...techStack, ...techStack].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-2 group/icon">
-                      <div className="w-10 h-10 flex items-center justify-center group-hover/icon:scale-125 transition-all cursor-pointer">
-                        <Icon name={tech.id} size={32} />
-                      </div>
-                      <span className="text-[7px] text-text-dim font-bold uppercase">{tech.name}</span>
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
+                <div className="overflow-hidden">
+                  <div className="text-[8px] font-bold text-text-dim uppercase tracking-widest">{item.label}</div>
+                  <div className="text-[10px] font-bold truncate group-hover:text-white transition-colors">{item.val}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </motion.div>
+
+        {/* RIGHT COLUMN: Profile & Stats */}
+        <div className="relative flex justify-center items-center">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative w-full max-w-[500px]"
+          >
+            {/* Main Profile Smartphone/Card Container */}
+            <div className="relative z-10 rounded-[60px] p-2 border-4 border-white/5 bg-[#0a161d] shadow-[0_0_100px_rgba(0,229,160,0.1)] overflow-hidden aspect-[9/16] max-h-[700px]">
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0a161d] to-transparent z-20 flex justify-center pt-6">
+                <div className="text-xs font-mono font-bold text-text-dim/50">09:39 AM</div>
+              </div>
+              <img 
+                src={profileImg} 
+                alt="Koketso Raphasha" 
+                className="w-full h-full object-cover grayscale brightness-110 contrast-110 hover:grayscale-0 transition-all duration-700" 
+              />
+              {/* Inner Glow Border */}
+              <div className="absolute inset-0 rounded-[54px] border-2 border-green-500/20 pointer-events-none" />
+            </div>
+
+            {/* Floating Feature Cards (Mockup Style) */}
+            <div className="absolute top-1/4 -right-12 z-20 space-y-4 hidden md:block">
+              {[
+                { title: 'Clean Code', sub: 'Maintainable & Scalable', icon: 'code' },
+                { title: 'Performance', sub: 'Optimized & Fast', icon: 'rocket' },
+                { title: 'Autonomous OS', sub: 'Reliable & Intelligent', icon: 'shield' },
+              ].map((card, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1 + i * 0.2 }}
+                  className="glass px-6 py-4 rounded-2xl border border-white/5 flex items-center gap-4 hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(0,229,160,0.2)] transition-all cursor-default"
+                >
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 flex items-center justify-center text-green-400">
+                    <Icon name={card.icon} size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white leading-tight">{card.title}</div>
+                    <div className="text-[8px] text-text-dim font-bold uppercase tracking-widest">{card.sub}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Stats Bar (Bottom Right Overlay Style) */}
+            <div className="absolute -bottom-8 right-0 left-0 lg:-left-20 z-30 flex flex-wrap justify-center lg:justify-start gap-4">
+               {[
+                { label: 'Projects', val: 1.2, suffix: 'k+', icon: 'thumbsUp', color: 'text-yellow-400' },
+                { label: 'Happy Users', val: 12.5, suffix: 'k+', icon: 'heart', color: 'text-red-500' },
+                { label: 'Avg. Rating', val: 4.9, suffix: '', icon: 'star', color: 'text-orange-400' },
+              ].map((stat, i) => (
+                <motion.div 
+                  key={i}
+                  whileHover={{ y: -5 }}
+                  className="glass px-8 py-5 rounded-3xl border border-white/5 shadow-2xl min-w-[160px] text-center lg:text-left flex items-center gap-4 group"
+                >
+                  <div className={`w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center transition-all group-hover:scale-110`}>
+                    <Icon name={stat.icon} size={28} />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-white leading-none">
+                      <CountUp to={stat.val} />{stat.suffix}
+                    </div>
+                    <div className="text-[9px] text-text-dim font-bold uppercase tracking-widest mt-1">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* TECH STACK BAR (Matching Mockup Footer) */}
+      <div className="absolute bottom-10 right-10 left-10 hidden lg:flex justify-end pointer-events-none">
+        <div className="glass px-8 py-4 rounded-3xl border border-white/10 flex items-center gap-10 shadow-2xl pointer-events-auto">
+          <div className="text-[8px] font-bold text-green-400 uppercase tracking-[0.4em] opacity-60">Tech Stack</div>
+          <div className="flex gap-8 items-center">
+            {techStackLogos.map((tech, i) => (
+              <div key={i} className="group relative">
+                <div className="w-8 h-8 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 cursor-pointer">
+                   <Icon name={tech.id} size={24} />
+                </div>
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-white/5 border border-white/10 rounded text-[6px] font-bold uppercase opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                  {tech.name}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Ambient Floating Chat Bubble */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-dim/50"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity }}
+        className="fixed bottom-10 right-10 z-50 w-16 h-16 rounded-full bg-green-400 text-[#050d12] flex items-center justify-center shadow-[0_0_40px_rgba(0,229,160,0.4)] cursor-pointer hover:scale-110 transition-transform group"
       >
-        <span className="text-[8px] font-bold tracking-[0.3em] uppercase">Initialize Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-green-500/50 to-transparent animate-scroll-line"></div>
+        <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
+        <Icon name="chat" size={32} />
       </motion.div>
     </div>
   );
