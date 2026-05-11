@@ -315,25 +315,10 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     coursera:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/coursera/coursera-original.svg",
   }), []);
 
-  // Priority Check: Emotional Keys (Always Emojis for Cinematic UX)
-  const emotionalKeys = ["thumbsup", "heart", "star", "rocket", "zap", "bot", "target", "graduationcap", "langchain", "brain"];
-  const isEmotional = emotionalKeys.includes(finalName);
-  const emoji = emojiMap[finalName];
-
-  if (isEmotional && emoji) {
-    return (
-      <div 
-        style={{ fontSize: size }} 
-        className={`flex items-center justify-center select-none drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] ${className}`}
-      >
-        {emoji}
-      </div>
-    );
-  }
-
-  // Priority 1: Themed Line Icons (Matches the requested "Green Line Globe" style)
+  // Priority 1: Themed Line Icons (Favors neon-green system style requested by user)
   const themedIcon = themedIcons[name] || themedIcons[finalName];
   if (themedIcon) {
+    const isSolid = ["github"].includes(finalName);
     return (
       <div 
         style={{ width: size, height: size }} 
@@ -344,7 +329,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     );
   }
 
-  // Priority 2: Brand Logos (Restored original branding colors)
+  // Priority 2: Brand Logos (Original Branding Colors)
   const logoUrl = techLogos[finalName];
   if (logoUrl) {
     return (
