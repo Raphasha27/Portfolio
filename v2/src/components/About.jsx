@@ -93,7 +93,7 @@ const About = () => {
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
-                        className="max-w-full max-h-full object-contain select-none pointer-events-none transition-all duration-500 group-hover:brightness-125 neon-filter"
+                        className="max-w-full max-h-full object-contain select-none pointer-events-none transition-all duration-500 brightness-[0.8] group-hover:brightness-110"
                       />
                     ) : (
                       <div className="text-green-400/80 group-hover:text-green-400 transition-colors">

@@ -256,48 +256,10 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
     google:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
     coursera:      "https://logo.clearbit.com/coursera.org",
+    framer:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
   }), []);
 
-  const emojiMap = useMemo(() => ({
-    palette: "🎨",
-    gear: "⚙️",
-    cabinet: "🗄️",
-    database: "🗄️",
-    infrastructure: "☁️",
-    zap: "⚡",
-    rocket: "🚀",
-    heart: "❤️",
-    thumbsup: "👍",
-    star: "⭐",
-    bot: "🤖",
-    target: "🎯",
-    brain: "🧠",
-    cpu: "💻",
-    graduationcap: "🎓",
-    terminal: "💻",
-    langchain: "🦜",
-    smartphone: "📱",
-    layout: "🎨",
-    cloud: "☁️",
-  }), []);
-
-  const highFidelityKeys = ["palette", "gear", "cabinet", "database", "infrastructure", "thumbsup", "heart", "star", "rocket", "zap", "bot", "target", "brain", "cpu", "graduationcap", "langchain", "smartphone", "layout", "cloud"];
-  const isHighFidelity = highFidelityKeys.includes(finalName);
-  const emoji = emojiMap[finalName];
-
-  // Priority 1: High-Fidelity 3D Emojis (Categories & Metrics)
-  if (isHighFidelity && emoji) {
-    return (
-      <div 
-        style={{ fontSize: size }} 
-        className={`flex items-center justify-center select-none drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] ${className}`}
-      >
-        {emoji}
-      </div>
-    );
-  }
-
-  // Priority 2: Brand Logos (Original Branding Colors)
+  // Priority 1: Brand Logos (Original Branding Colors)
   const logoUrl = techLogos[finalName];
   if (logoUrl) {
     return (
@@ -315,7 +277,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     );
   }
 
-  // Priority 3: Themed Line Icons (UI Actions)
+  // Priority 2: Themed Line Icons (UI Actions & Categories)
   const themedIcon = themedIcons[name] || themedIcons[finalName];
   if (themedIcon) {
     return (

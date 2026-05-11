@@ -150,11 +150,11 @@ const Projects = () => {
               <img 
                 src={p.bgImage ? assetMap[p.bgImage] : (i % 2 === 0 ? experienceBg : heroBg)} 
                 alt="" 
-                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 brightness-[0.6] contrast-125" 
+                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 brightness-[0.4] contrast-125" 
               />
             </div>
-            {/* Deepened Text Protection Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#050d12] via-[#050d12]/95 to-transparent pointer-events-none" />
+            {/* Refined Visibility Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/40 to-transparent pointer-events-none" />
             
             {/* Highlight Glow Effect */}
             <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
@@ -185,15 +185,15 @@ const Projects = () => {
               </div>
             </div>
             
-            <p className="relative z-10 text-[10px] text-white/80 font-medium mb-3 line-clamp-2 leading-relaxed group-hover:text-white transition-colors transform-gpu drop-shadow-md">
+            <p className="relative z-10 text-[10px] text-white/90 font-medium mb-3 line-clamp-2 leading-relaxed group-hover:text-white transition-colors transform-gpu drop-shadow-md">
               {p.desc}
             </p>
             
             <div className="relative z-10 flex justify-between items-center transform-gpu">
               <div className="flex gap-1.5">
                 {p.tech.slice(0, 4).map((t, j) => (
-                  <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors flex items-center gap-1">
-                    <Icon name={t.toLowerCase()} size={8} className="opacity-70 group-hover:opacity-100" />
+                  <span key={j} className="text-[6px] px-1.5 py-0.5 rounded-sm bg-white/10 border border-white/20 text-white/90 group-hover:border-white/40 transition-colors flex items-center gap-1">
+                    <Icon name={t.toLowerCase()} size={8} className="opacity-90 group-hover:opacity-100" />
                     {t}
                   </span>
                 ))}
