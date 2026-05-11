@@ -141,7 +141,6 @@ const Hero = () => {
               ))}
             </div>
 
-            </div>
           </motion.div>
 
           {/* RIGHT COLUMN: Performance & Stack Dashboard */}
