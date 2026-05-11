@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useSpring, useTransform, useInView } from 'framer-motion';
 import gautengMap from '../assets/gauteng-map.png';
 import richfieldLogo from '../assets/richfield-logo.png';
-import profileImg from '../assets/koketso_transparent.png';
+import profileImg from '../assets/koketso_no_wall.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import yesLogo from '../assets/yes-logo.png';
@@ -125,8 +125,9 @@ const About = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
+              { value: 3, suffix: '+', label: 'Years Exp.' },
               { value: 10, suffix: '+', label: 'Certifications' },
               { value: 4, suffix: '+', label: 'Ecosystems' },
               { value: 100, suffix: '%', label: 'Quality' },
@@ -135,7 +136,7 @@ const About = () => {
                 <div className="text-2xl font-bold text-green-400">
                   <CountUp to={stat.value} />{stat.suffix}
                 </div>
-                <div className="text-[10px] text-text-dim uppercase tracking-widest mt-1 group-hover:text-white transition-colors">{stat.label}</div>
+                <div className="text-[9px] text-text-dim uppercase tracking-widest mt-1 group-hover:text-white transition-colors">{stat.label}</div>
               </div>
             ))}
           </div>
