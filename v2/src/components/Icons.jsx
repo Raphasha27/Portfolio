@@ -61,6 +61,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     flagSA: "South_Africa",
     cpu: "Microchip",
     code: "Laptop",
+    server: "Computer",
   }), []);
 
   const techLogos = useMemo(() => ({
