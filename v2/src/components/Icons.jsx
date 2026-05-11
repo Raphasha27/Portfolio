@@ -344,7 +344,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     );
   }
 
-  // Priority 2: Brand Logos with Neon Green Filter
+  // Priority 2: Brand Logos (Restored original branding colors)
   const logoUrl = techLogos[finalName];
   if (logoUrl) {
     return (
@@ -355,10 +355,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <img
           src={logoUrl}
           alt={name}
-          className="w-full h-full object-contain select-none pointer-events-none"
-          style={{ 
-            filter: 'brightness(0) saturate(100%) invert(67%) sepia(93%) saturate(382%) hue-rotate(107deg) brightness(101%) contrast(105%) drop-shadow(0 0 4px rgba(0,229,160,0.6))',
-          }}
+          className="w-full h-full object-contain select-none pointer-events-none brightness-110 contrast-110"
           loading="lazy"
         />
       </div>

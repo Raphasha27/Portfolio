@@ -90,7 +90,7 @@ const Experience = () => {
               >
                 <div className="relative z-10 w-20 h-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.15)] shrink-0 border border-white/20 group-hover:scale-110 transition-transform duration-500 p-0">
                   {exp.logo ? (
-                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain neon-filter" />
+                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
                   ) : (
                     <div className="w-full h-full glass flex items-center justify-center text-green-400">
                       <Icon name={exp.icon} size={24} />
