@@ -38,12 +38,12 @@ const Hero = () => {
   }, [typedText, isDeleting, phraseIdx]);
 
   const techStack = [
-    { name: 'Figma', icon: '🎨' },
-    { name: 'React Native', icon: '⚛️' },
-    { name: 'Flutter', icon: '💙' },
-    { name: 'Python', icon: '🐍' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Swift', icon: '🍎' }
+    { name: 'Figma', id: 'figma' },
+    { name: 'React', id: 'react' },
+    { name: 'Flutter', id: 'flutter' },
+    { name: 'Python', id: 'python' },
+    { name: 'Node.js', id: 'node' },
+    { name: 'Vercel', id: 'vercel' }
   ];
 
   return (
@@ -249,8 +249,10 @@ const Hero = () => {
                   className="flex gap-10 items-center whitespace-nowrap"
                 >
                   {[...techStack, ...techStack].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-1">
-                      <span className="text-2xl hover:scale-125 transition-all cursor-pointer select-none" title={tech.name}>{tech.icon}</span>
+                    <div key={i} className="flex flex-col items-center gap-2 group/icon">
+                      <div className="w-10 h-10 flex items-center justify-center group-hover/icon:scale-125 transition-all cursor-pointer">
+                        <Icon name={tech.id} size={32} />
+                      </div>
                       <span className="text-[7px] text-text-dim font-bold uppercase">{tech.name}</span>
                     </div>
                   ))}
