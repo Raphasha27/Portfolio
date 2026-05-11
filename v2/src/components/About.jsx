@@ -23,6 +23,15 @@ const CountUp = ({ to }) => {
 };
 
 const About = () => {
+  const techStack = [
+    { name: 'Figma', id: 'figma' },
+    { name: 'React', id: 'react' },
+    { name: 'Flutter', id: 'flutter' },
+    { name: 'Python', id: 'python' },
+    { name: 'Node.js', id: 'node' },
+    { name: 'Vercel', id: 'vercel' }
+  ];
+
   return (
     <div id="about" className="relative min-h-screen overflow-hidden flex items-center">
       {/* Map overlay */}
@@ -33,64 +42,96 @@ const About = () => {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-0 items-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
 
-        {/* LEFT — Profile Image (Cinematic Cutout) */}
+        {/* LEFT — SWAPPED: Premium UI Dashboard Preview (formerly in Hero) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center lg:justify-start"
+          className="flex justify-center"
         >
-          <div className="relative w-72 h-72 lg:w-[450px] lg:h-[450px] -mt-10 lg:-mt-20">
-            {/* Ambient Backglow */}
-            <div className="absolute inset-10 rounded-full bg-green-500/20 blur-[80px] animate-pulse" />
-            
-            {/* The Cutout Image */}
-            <div className="relative w-full h-full z-10">
-              <motion.img
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                src={profileImg}
-                alt="Koketso Raphasha"
-                className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
-                style={{ filter: 'brightness(1.1) contrast(1.05)' }}
-              />
+          <div className="relative w-full max-w-[440px] space-y-4">
+            {/* Main Dashboard Card */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="glass p-6 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.15)] bg-bg/80 backdrop-blur-xl"
+            >
+              <div className="flex justify-between items-center mb-6">
+                <div className="text-[10px] font-bold text-green-400 uppercase tracking-widest">System Metrics</div>
+                <div className="flex gap-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/40 border border-red-500/20"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40 border border-yellow-500/20"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/40 border border-green-500/20"></div>
+                </div>
+              </div>
               
-              {/* Dynamic Overlay Glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-transparent to-transparent opacity-40" />
+              <div className="mb-6">
+                <div className="text-lg font-bold mb-1">Kirov Dynamics v2.0</div>
+                <div className="text-[10px] text-text-dim uppercase tracking-wider">Mobile & UI Infrastructure</div>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { label: 'UI/UX Design', val: 92, color: 'from-green-500 to-green-400' },
+                  { label: 'Mobile Dev', val: 88, color: 'from-blue-500 to-blue-400' },
+                  { label: 'Autonomous Systems', val: 80, color: 'from-purple-500 to-purple-400' },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <div className="flex justify-between text-[9px] font-bold text-text-dim mb-1.5 uppercase tracking-tight">
+                      <span>{item.label}</span><span className="text-green-400">{item.val}%</span>
+                    </div>
+                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${item.val}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, delay: 0.5 + i * 0.2 }}
+                        className={`h-full bg-gradient-to-r ${item.color} rounded-full`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Stat Cards Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="glass p-5 rounded-2xl border border-blue-500/20 text-center hover:border-blue-500/50 transition-colors">
+                <Icon name="smartphone" size={24} className="text-blue-400 mx-auto mb-3" />
+                <div className="text-xl font-bold">Mobile</div>
+                <div className="text-[8px] text-text-dim uppercase tracking-widest mt-1">Primary Engine</div>
+              </div>
+              <div className="glass p-5 rounded-2xl border border-green-500/20 text-center hover:border-green-500/50 transition-colors">
+                <Icon name="layout" size={24} className="text-green-400 mx-auto mb-3" />
+                <div className="text-xl font-bold">UI/UX</div>
+                <div className="text-[8px] text-text-dim uppercase tracking-widest mt-1">Core Logic</div>
+              </div>
             </div>
 
-            {/* Orbital Ring Element */}
-            <div className="absolute inset-4 rounded-full border border-green-500/10 animate-[spin_20s_linear_infinite] pointer-events-none" />
-            <div className="absolute inset-10 rounded-full border border-blue-500/5 animate-[spin_15s_linear_infinite_reverse] pointer-events-none" />
-
-            {/* Floating badge — top left */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -top-4 -left-8 glass px-4 py-3 rounded-2xl border border-green-500/30 z-20 shadow-xl"
-            >
-              <div className="text-[8px] font-bold text-green-400 uppercase tracking-widest mb-1">Status</div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs font-bold">Open to Work</span>
+            {/* Tech Stack Marquee */}
+            <div className="glass p-5 rounded-3xl border border-white/5 overflow-hidden shadow-2xl relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-bg via-transparent to-bg z-10 pointer-events-none" />
+              <div className="text-[9px] font-bold text-green-400 text-center mb-5 tracking-[0.4em] uppercase opacity-60">Tech Ecosystem</div>
+              <div className="flex relative overflow-hidden py-1">
+                <motion.div 
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="flex gap-12 items-center whitespace-nowrap"
+                >
+                  {[...techStack, ...techStack].map((tech, i) => (
+                    <div key={i} className="flex flex-col items-center gap-2 group/icon">
+                      <div className="w-10 h-10 flex items-center justify-center group-hover/icon:scale-110 transition-transform duration-300 bg-white/5 rounded-xl border border-white/5">
+                        <Icon name={tech.id} size={28} />
+                      </div>
+                      <span className="text-[7px] text-text-dim font-bold uppercase tracking-tighter">{tech.name}</span>
+                    </div>
+                  ))}
+                </motion.div>
               </div>
-            </motion.div>
-
-            {/* Floating badge — bottom right */}
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-              className="absolute bottom-16 -right-4 glass px-4 py-3 rounded-2xl border border-blue-500/30 z-20 shadow-xl"
-            >
-              <div className="text-[8px] font-bold text-blue-400 uppercase tracking-widest mb-1">Based In</div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-white">South Africa</span>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
 
@@ -100,7 +141,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-8 py-24"
+          className="space-y-8"
         >
           <div>
             <div className="text-green-400 font-bold text-xs tracking-[0.3em] uppercase mb-4">— WHO I AM —</div>
@@ -148,7 +189,7 @@ const About = () => {
             ))}
           </div>
 
-                  {/* Academic & Institutional Credentials — Expanded Grid */}
+          {/* Academic & Institutional Credentials */}
           <div className="pt-12 border-t border-white/5 space-y-8">
             <div className="text-[10px] text-green-400 font-bold uppercase tracking-[0.4em] opacity-60 mb-8 text-center lg:text-left">Certification & Institutional Partners</div>
             
