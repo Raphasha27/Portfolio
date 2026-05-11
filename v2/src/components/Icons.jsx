@@ -344,7 +344,19 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     );
   }
 
-  // Priority 2: Brand Logos
+  // Priority 2: Emoji Fallback (Favors high-fidelity emoji for "right emoji" request)
+  if (emoji) {
+    return (
+      <div 
+        style={{ fontSize: size }} 
+        className={`flex items-center justify-center select-none ${className}`}
+      >
+        {emoji}
+      </div>
+    );
+  }
+
+  // Priority 3: Brand Logos
   const logoUrl = techLogos[finalName];
   if (logoUrl) {
     return (
@@ -355,18 +367,6 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         className={`inline-block object-contain select-none pointer-events-none brightness-110 contrast-110 ${className}`}
         loading="lazy"
       />
-    );
-  }
-
-  // Priority 3: Emoji Fallback for other items if line-art and logos are missing
-  if (emoji) {
-    return (
-      <div 
-        style={{ fontSize: size }} 
-        className={`flex items-center justify-center select-none ${className}`}
-      >
-        {emoji}
-      </div>
     );
   }
 
