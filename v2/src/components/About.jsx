@@ -158,7 +158,7 @@ const About = () => {
                 <div key={i} className="flex flex-col items-center gap-3 group">
                   <div className={`w-14 h-14 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center ${partner.color} group-hover:scale-110 transition-transform shadow-lg border border-white/5 overflow-hidden p-0`}>
                     {partner.logo ? (
-                      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
+                      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain neon-filter" />
                     ) : (
                       <Icon name={partner.icon} size={32} />
                     )}

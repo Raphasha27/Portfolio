@@ -7,8 +7,7 @@ const skillGroups = [
     title: "FRONT END",
     id: "frontend",
     iconName: "palette",
-    color: "blue",
-    neonColor: "#3b82f6",
+    neonColor: "#00e5a0",
     skills: [
       { name: "React & Vite", pct: 95 },
       { name: "Tailwind CSS", pct: 92 },
@@ -20,8 +19,7 @@ const skillGroups = [
     title: "BACK END",
     id: "backend",
     iconName: "gear",
-    color: "green",
-    neonColor: "#22c55e",
+    neonColor: "#00e5a0",
     skills: [
       { name: "Node.js & Express", pct: 90 },
       { name: "Python & FastAPI", pct: 92 },
@@ -33,8 +31,7 @@ const skillGroups = [
     title: "DATABASE",
     id: "database",
     iconName: "cabinet",
-    color: "purple",
-    neonColor: "#a855f7",
+    neonColor: "#00e5a0",
     skills: [
       { name: "PostgreSQL", pct: 94 },
       { name: "MongoDB", pct: 88 },
@@ -45,9 +42,8 @@ const skillGroups = [
   {
     title: "INFRASTRUCTURE",
     id: "infrastructure",
-    iconName: "zap", // Infrastructure as energy/zap
-    color: "orange",
-    neonColor: "#f97316",
+    iconName: "zap",
+    neonColor: "#00e5a0",
     skills: [
       { name: "Vercel & Netlify", pct: 96 },
       { name: "Docker & Linux", pct: 85 },
@@ -128,9 +124,9 @@ const Skills = () => {
       </div>
 
       {/* Mini Arsenal Footer */}
-      <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 opacity-20 hover:opacity-100 transition-opacity duration-1000">
+      <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 opacity-40 hover:opacity-100 transition-opacity duration-1000">
         {["react", "python", "typescript", "node", "nextjs", "tailwindcss", "postgres", "mongodb"].map((id, i) => (
-          <div key={i} className="w-6 h-6 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+          <div key={i} className="w-6 h-6 hover:scale-125 transition-all duration-500 cursor-pointer">
             <Icon name={id} size={20} />
           </div>
         ))}
