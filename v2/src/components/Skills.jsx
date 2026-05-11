@@ -81,7 +81,7 @@ const Skills = () => {
               {/* Header: Icon Container + Group Title */}
               <div className="flex items-center gap-8">
                 <div 
-                  className="w-20 h-20 rounded-3xl border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110"
+                  className="w-20 h-24 rounded-full border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110"
                   style={{ 
                     borderColor: 'rgba(0, 229, 160, 0.4)', 
                     boxShadow: '0 0 30px rgba(0, 229, 160, 0.15), inset 0 0 15px rgba(0, 229, 160, 0.1)' 
@@ -90,12 +90,13 @@ const Skills = () => {
                   <div className="relative z-10">
                     <Icon name={group.iconName} size={42} />
                   </div>
-                  <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-green-400"></div>
-                  <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-green-400"></div>
+                  {/* Outer Corner Accents */}
+                  <div className="absolute -top-3 -left-3 w-4 h-4 border-t-2 border-l-2 border-green-400 opacity-80"></div>
+                  <div className="absolute -bottom-3 -right-3 w-4 h-4 border-b-2 border-r-2 border-green-400 opacity-80"></div>
                 </div>
-                <div>
-                  <h3 className="text-3xl font-bold tracking-[0.4em] uppercase font-mono text-white/95 leading-none">{group.title}</h3>
-                  <div className="text-green-400/80 text-[11px] font-mono mt-3 uppercase tracking-[0.2em]">{group.desc}</div>
+                <div className="space-y-4">
+                  <h3 className="text-4xl lg:text-5xl font-bold tracking-[0.8em] uppercase font-mono text-white leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">{group.title}</h3>
+                  <div className="text-[#00e5a0] text-[10px] font-mono uppercase tracking-[0.5em] font-black">{group.desc}</div>
                 </div>
               </div>
 
@@ -138,7 +139,27 @@ const Skills = () => {
         })}
       </div>
 
-      <div className="mt-20 pt-10 border-t border-white/5 flex flex-wrap justify-center gap-10 opacity-40 hover:opacity-100 transition-opacity duration-1000">
+      {/* Values Divider Bar (Image 2 Style) */}
+      <div className="mt-24 py-8 border-t border-b border-white/5 flex justify-center items-center gap-16 relative z-10">
+        {[
+          { id: "scale", label: "ETHICAL AI" },
+          { id: "shield", label: "SECURE ARCH" },
+          { id: "bookopen", label: "SYSTEM LOGIC" }
+        ].map((item, i) => (
+          <React.Fragment key={i}>
+            <div className="flex flex-col items-center gap-4 group cursor-help">
+              <div className="text-green-400 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(0,229,160,0.5)] transition-all duration-500">
+                <Icon name={item.id} size={32} />
+              </div>
+              <span className="text-[9px] font-mono text-white/30 tracking-[0.4em] uppercase group-hover:text-green-400 transition-colors">{item.label}</span>
+            </div>
+            {i < 2 && <div className="h-12 w-[1px] bg-white/5" />}
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* Arsenal Footer */}
+      <div className="mt-16 flex flex-wrap justify-center gap-10 opacity-20 hover:opacity-100 transition-opacity duration-1000">
         {["react", "python", "typescript", "node", "nextjs", "tailwindcss", "postgres", "mongodb"].map((id, i) => (
           <div key={i} className="w-8 h-8 hover:scale-125 transition-all duration-500 cursor-pointer">
             <Icon name={id} size={28} />
