@@ -72,8 +72,8 @@ export const Icon = ({ name, size = 16, className = "" }) => {
       </svg>
     ),
     chat: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
       </svg>
     ),
 
@@ -231,12 +231,13 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   const techLogos = useMemo(() => ({
     react:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     python:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-    node:          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    node:          "https://cdn.simpleicons.org/nodedotjs/339933",
     docker:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     postgres:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    postgresql:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     redis:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-    mongodb:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-    vercel:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+    mongodb:       "https://cdn.simpleicons.org/mongodb/47A248",
+    vercel:        "https://cdn.simpleicons.org/vercel/white",
     angular:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
     aws:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg",
     azure:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
@@ -246,7 +247,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     typescript:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     javascript:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     tailwindcss:   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-    nextjs:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    nextjs:        "https://cdn.simpleicons.org/nextdotjs/white",
     pytorch:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
     tensorflow:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
     cisco:         "https://cdn.simpleicons.org/cisco/049fd9",
@@ -254,9 +255,27 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
     csharp:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
     c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-    google:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+    cplusplus:     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+    java:          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    vite:          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg",
     coursera:      "https://cdn.simpleicons.org/coursera/0056D2",
     framer:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
+    langchain:     "https://cdn.simpleicons.org/langchain/white",
+    kubernetes:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
+    nginx:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg",
+    github:        "https://cdn.simpleicons.org/github/white",
+    githubactions: "https://cdn.simpleicons.org/githubactions/white",
+    linux:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
+    fastapi:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+    grafana:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
+    prometheus:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
+    rabbitmq:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
+    linkedin:      "https://cdn.simpleicons.org/linkedin/0077B5",
+    twitter:       "https://cdn.simpleicons.org/x/white",
+    slack:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
+    whop:          "https://cdn.simpleicons.org/whop/FF5C00",
+    whatsapp:      "https://cdn.simpleicons.org/whatsapp/25D366",
+    mail:          "https://cdn.simpleicons.org/gmail/EA4335",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)
@@ -270,7 +289,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <img
           src={logoUrl}
           alt={name}
-          className="w-full h-full object-contain select-none pointer-events-none brightness-110 contrast-110"
+          className="w-full h-full object-contain select-none pointer-events-none"
           loading="lazy"
         />
       </div>
@@ -283,7 +302,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     return (
       <div 
         style={{ width: size, height: size }} 
-        className={`flex items-center justify-center text-green-400 drop-shadow-[0_0_8px_rgba(0,229,160,0.4)] ${className}`}
+        className={`flex items-center justify-center text-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,0.4)] ${className}`}
       >
         {themedIcon}
       </div>
@@ -294,9 +313,9 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   return (
     <div 
       style={{ width: size, height: size }} 
-      className={`rounded-full border border-green-500/40 bg-green-500/10 flex items-center justify-center ${className}`}
+      className={`rounded-full border border-blue-500/40 bg-blue-500/10 flex items-center justify-center ${className}`}
     >
-      <div className="w-1/2 h-1/2 rounded-full bg-green-500/60 blur-[2px]" />
+      <div className="w-1/2 h-1/2 rounded-full bg-blue-500/60 blur-[2px]" />
     </div>
   );
 };

@@ -28,31 +28,17 @@ const Roles = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#050d12] via-transparent to-[#050d12] pointer-events-none" />
 
       {/* Section Header */}
-      <div className="relative z-10 text-center mb-16">
-        <div className="inline-flex flex-col items-center relative">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+        <div className="text-center md:text-left">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
-            The 9 <span className="text-green-400 drop-shadow-[0_0_15px_rgba(0,229,160,0.5)]">AI Roles</span>
+            The 9 <span className="text-blue-400 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]">AI Roles</span>
           </h2>
-          <div className="absolute top-2 -right-32 flex items-center gap-2 whitespace-nowrap">
-             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(0,229,160,0.8)]" />
-             <span className="text-[10px] font-bold text-green-400 uppercase tracking-[0.3em]">Engineering Excellence</span>
-          </div>
+          <p className="text-[10px] text-white/40 font-mono tracking-[0.3em] uppercase mt-2">Specialized Autonomous Functionality</p>
         </div>
         
-        {/* Values Bar */}
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 mt-8 py-4 border-y border-white/5 bg-white/[0.02] backdrop-blur-sm px-10 rounded-full inline-flex mx-auto">
-          {[
-            { id: "scale", label: "ETHICAL AI" },
-            { id: "shield", label: "SECURE ARCH" },
-            { id: "bookOpen", label: "SYSTEM LOGIC" }
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-3 group">
-              <div className="text-green-400 drop-shadow-[0_0_8px_rgba(0,229,160,0.3)] group-hover:scale-110 transition-transform">
-                <Icon name={item.id} size={20} />
-              </div>
-              <span className="text-[10px] font-mono text-white/60 tracking-[0.2em] uppercase group-hover:text-white transition-colors">{item.label}</span>
-            </div>
-          ))}
+        <div className="px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 h-fit">
+           <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.8)]" />
+           <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em]">Operational: 100%</span>
         </div>
       </div>
 
@@ -67,33 +53,33 @@ const Roles = () => {
             transition={{ delay: i * 0.1 }}
             className="group relative"
           >
-            <div className="glass p-6 border-white/5 rounded-2xl flex items-center gap-6 hover:border-green-500/40 hover:shadow-[0_0_30px_rgba(0,229,160,0.15)] transition-all duration-500 h-full overflow-hidden bg-gradient-to-br from-white/[0.03] to-transparent">
+            <div className="glass p-6 border-white/5 rounded-2xl flex items-center gap-6 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 h-full overflow-hidden bg-gradient-to-br from-white/[0.03] to-transparent">
               
               {/* Card Background Glow */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-green-500/5 blur-[40px] group-hover:bg-green-500/10 transition-all pointer-events-none" />
+              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/5 blur-[40px] group-hover:bg-blue-500/10 transition-all pointer-events-none" />
 
               {/* Index Number */}
-              <div className="absolute top-3 left-4 text-[9px] font-mono text-green-500/40 group-hover:text-green-400 transition-colors">
+              <div className="absolute top-3 left-4 text-[9px] font-mono text-blue-500/40 group-hover:text-blue-400 transition-colors">
                 {role.num}
               </div>
 
               {/* Icon Section */}
-              <div className="shrink-0 w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-green-400 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(0,229,160,0.5)] transition-all duration-500">
+              <div className="shrink-0 w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] transition-all duration-500">
                 <Icon name={role.icon} size={32} />
               </div>
 
               {/* Text Section */}
               <div className="space-y-1">
-                <div className="text-[15px] font-bold text-white group-hover:text-green-400 transition-colors tracking-tight uppercase">
+                <div className="text-[15px] font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight uppercase">
                   {role.title}
                 </div>
-                <div className="text-[11px] font-mono text-green-400/60 uppercase tracking-widest group-hover:text-white/40 transition-colors">
+                <div className="text-[11px] font-mono text-blue-400/60 uppercase tracking-widest group-hover:text-white/40 transition-colors">
                   {role.project}
                 </div>
               </div>
 
               {/* Animated Border Corner */}
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-green-400/0 group-hover:border-green-400/40 rounded-tr-2xl transition-all duration-500" />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-blue-400/0 group-hover:border-blue-400/40 rounded-tr-2xl transition-all duration-500" />
             </div>
           </motion.div>
         ))}

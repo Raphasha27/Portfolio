@@ -1,60 +1,85 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
-import experienceBg from '../assets/experience-bg.png';
+
+// Service Images
+import serviceMobile from '../assets/service-mobile.png';
+import serviceUiux from '../assets/service-uiux.png';
+import serviceAutonomous from '../assets/service-autonomous.png';
+import serviceCloud from '../assets/service-cloud.png';
 
 const services = [
-  { title: "Mobile App Development", desc: "High-performance mobile apps with beautiful UI and smooth UX.", icon: "smartphone" },
-  { title: "UI/UX Design", desc: "Designing intuitive and engaging user experiences that convert.", icon: "layout" },
-  { title: "Autonomous Systems", desc: "Building intelligent systems with automation and smart infrastructure.", icon: "cpu" },
-  { title: "Cloud & DevOps", desc: "Scalable cloud solutions with CI/CD and modern dev practices.", icon: "cloud" }
+  { 
+    title: "Mobile App Development", 
+    desc: "High-performance mobile apps with beautiful UI and smooth UX.", 
+    icon: "smartphone",
+    image: serviceMobile
+  },
+  { 
+    title: "UI/UX Design", 
+    desc: "Designing intuitive and engaging user experiences that convert.", 
+    icon: "layout",
+    image: serviceUiux
+  },
+  { 
+    title: "Autonomous Systems", 
+    desc: "Building intelligent systems with automation and smart infrastructure.", 
+    icon: "cpu",
+    image: serviceAutonomous
+  },
+  { 
+    title: "Cloud & DevOps", 
+    desc: "Scalable cloud solutions with CI/CD and modern dev practices.", 
+    icon: "cloud",
+    image: serviceCloud
+  }
 ];
 
 const Services = () => {
   return (
-    <div id="services" className="space-y-12">
-      <div className="text-center space-y-4">
-        <div className="text-green-400 font-bold text-xs tracking-[0.3em] uppercase flex items-center justify-center gap-2">
-          <div className="w-8 h-[1px] bg-green-500/50"></div>
-          — WHAT I DO —
-          <div className="w-8 h-[1px] bg-green-500/50"></div>
-        </div>
-        <h2 className="text-4xl font-bold glow-text">Services & <span className="text-green-400">Expertise</span></h2>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-        {/* Subtle grid background for the entire section */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/10 via-bg to-bg pointer-events-none -z-10"></div>
-        
+    <div id="services" className="space-y-16 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative max-w-7xl mx-auto">
         {services.map((service, i) => (
-          <div key={i} className="glass p-8 text-center group hover:border-green-500/50 transition-all duration-500 rounded-[32px] relative overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(0,229,160,0.15)] hover:-translate-y-2">
-            {/* Subtle Background Image Overlay */}
-            <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.3] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
-              <img src={experienceBg} alt="" className="w-full h-full object-cover grayscale scale-110 group-hover:scale-100 transition-transform duration-700" />
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            className="group bg-[#050d12] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl"
+          >
+            {/* Top Image Section */}
+            <div className="relative h-64 overflow-hidden">
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              {/* Subtle Overlay to ensure icon contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-transparent to-transparent opacity-60" />
             </div>
-            
-            {/* Animated Gradient Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-green-500/0 via-green-500/0 to-green-500/5 group-hover:to-green-500/20 pointer-events-none transition-all duration-500" />
 
-            <div className="relative z-10">
-              <div className="w-16 h-20 rounded-full bg-[#0a161d] flex items-center justify-center text-green-400 mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(0,229,160,0.1)] border border-green-500/20 group-hover:border-green-400 relative">
-                {/* Ping animation behind icon */}
-                <div className="absolute inset-0 bg-green-400 rounded-full opacity-0 group-hover:animate-ping pointer-events-none"></div>
-                <div className="relative z-10">
-                   <Icon name={service.icon} size={28} />
-                </div>
-                {/* Outer Corner Accents */}
-                <div className="absolute -top-2 -left-2 w-3 h-3 border-t-2 border-l-2 border-green-400/50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="absolute -bottom-2 -right-2 w-3 h-3 border-b-2 border-r-2 border-green-400/50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+            {/* Content Section */}
+            <div className="relative flex-1 px-8 pb-10 pt-12 flex flex-col items-center text-center">
+              {/* Overlapping Icon Circle */}
+              <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-[#050d12] border-2 flex items-center justify-center shadow-lg transition-all duration-500 z-20 border-blue-500/40 text-blue-400 shadow-[0_0_30_rgba(59,130,246,0.2)] group-hover:border-blue-400">
+                <Icon name={service.icon} size={32} />
               </div>
-              <h3 className="font-bold text-lg mb-3 group-hover:text-green-400 transition-colors duration-300">{service.title}</h3>
-              <p className="text-[11px] text-text-dim leading-relaxed group-hover:text-text/80 transition-colors duration-300">{service.desc}</p>
+
+              <h3 className="font-bold text-xl mb-4 transition-colors duration-300 tracking-tight text-white group-hover:text-blue-400">
+                {service.title}
+              </h3>
+              
+              <div className="w-12 h-[2px] mb-4 group-hover:w-20 transition-all duration-500 bg-blue-500/30 group-hover:bg-blue-400" />
+              
+              <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                {service.desc}
+              </p>
             </div>
             
-            {/* Corner Decorative Elements */}
-            <div className="absolute top-4 left-4 w-2 h-2 border-t border-l border-green-500/30 group-hover:border-green-400 transition-colors opacity-0 group-hover:opacity-100 duration-500"></div>
-            <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-green-500/30 group-hover:border-green-400 transition-colors opacity-0 group-hover:opacity-100 duration-500"></div>
-          </div>
+            {/* Hover Accent Glow */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[2px] bg-blue-500" />
+          </motion.div>
         ))}
       </div>
     </div>
@@ -62,3 +87,4 @@ const Services = () => {
 };
 
 export default Services;
+

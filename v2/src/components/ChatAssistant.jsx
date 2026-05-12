@@ -54,21 +54,21 @@ const ChatAssistant = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="glass w-80 h-[400px] mb-4 flex flex-col overflow-hidden border border-green-500/30 shadow-[0_0_30px_rgba(0,229,160,0.15)]"
+            className="glass w-80 h-[400px] mb-4 flex flex-col overflow-hidden border border-blue-500/30 shadow-[0_0_30px_rgba(37,99,235,0.15)]"
           >
-            <div className="p-4 border-b border-white/5 flex justify-between items-center bg-green-500/5 backdrop-blur-md">
+            <div className="p-4 border-b border-white/5 flex justify-between items-center bg-blue-500/5 backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500 flex items-center justify-center text-green-400">
+                  <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500 flex items-center justify-center text-blue-400">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-bg-deep animate-ping"></div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-bg-deep"></div>
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-blue-400 rounded-full border-2 border-bg-deep animate-ping"></div>
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-blue-400 rounded-full border-2 border-bg-deep"></div>
                 </div>
                 <div>
                   <div className="text-xs font-bold glow-text">Digital Twin AI</div>
-                  <div className="text-[10px] text-green-400 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                  <div className="text-[10px] text-blue-400 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
                     Online & Reactive
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const ChatAssistant = () => {
             <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-4 text-xs bg-bg-deep/50 relative">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] p-3 rounded-xl ${m.role === 'user' ? 'bg-green-500 text-bg font-medium shadow-[0_0_15px_rgba(0,229,160,0.2)] rounded-tr-sm' : 'bg-white/5 border border-white/10 text-text rounded-tl-sm backdrop-blur-sm'}`}>
+                  <div className={`max-w-[85%] p-3 rounded-xl ${m.role === 'user' ? 'bg-blue-500 text-bg font-medium shadow-[0_0_15px_rgba(37,99,235,0.2)] rounded-tr-sm' : 'bg-white/5 border border-white/10 text-text rounded-tl-sm backdrop-blur-sm'}`}>
                     {m.text}
                   </div>
                 </div>
@@ -89,9 +89,9 @@ const ChatAssistant = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="max-w-[80%] px-4 py-3 rounded-xl bg-white/5 border border-white/10 rounded-tl-sm flex items-center gap-1">
-                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full typing-dot"></div>
-                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full typing-dot"></div>
-                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full typing-dot"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full typing-dot"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full typing-dot"></div>
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full typing-dot"></div>
                   </div>
                 </div>
               )}
@@ -105,9 +105,9 @@ const ChatAssistant = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                   placeholder="Ask AI Twin..."
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-green-500/50 transition-colors placeholder:text-text-dim"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-500/50 transition-colors placeholder:text-text-dim"
                 />
-                <button onClick={() => handleSend()} className="p-2 bg-green-500/20 border border-green-500 text-green-400 rounded-lg hover:bg-green-500 hover:text-bg transition-all hover:shadow-[0_0_15px_rgba(0,229,160,0.4)]">
+                <button onClick={() => handleSend()} className="p-2 bg-blue-500/20 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-500 hover:text-bg transition-all hover:shadow-[0_0_15px_rgba(37,99,235,0.4)]">
                   <Icon name="send" size={14} />
                 </button>
               </div>
@@ -118,9 +118,9 @@ const ChatAssistant = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-green-500 text-bg flex items-center justify-center shadow-[0_0_20px_rgba(0,229,160,0.4)] hover:scale-110 transition-transform relative group"
+        className="w-14 h-14 rounded-full bg-blue-600 text-bg flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:scale-110 transition-all relative group ring-4 ring-blue-500/20"
       >
-        <div className="absolute inset-0 rounded-full bg-green-500 opacity-20 group-hover:animate-ping"></div>
+        <div className="absolute inset-0 rounded-full bg-blue-500 opacity-30 group-hover:animate-ping"></div>
         <Icon name={isOpen ? "close" : "chat"} size={24} />
       </button>
     </div>

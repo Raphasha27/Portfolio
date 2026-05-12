@@ -16,7 +16,7 @@ import Map from './components/Map';
 
 function App() {
   return (
-    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-green-500/30 selection:text-green-200 cursor-none relative">
+    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 cursor-none relative">
       {/* Global Grain Overlay for Cinematic Texture */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       
@@ -49,7 +49,7 @@ function App() {
           <div className="absolute inset-0 bg-[#050d12]">
             <div className="absolute inset-0 opacity-20" 
                  style={{ 
-                   backgroundImage: `radial-gradient(circle at 20% 30%, rgba(0, 201, 136, 0.15) 0%, transparent 50%), 
+                   backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
                                      radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
                  }} />
             <div className="absolute inset-0 opacity-10" 
@@ -149,7 +149,7 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 left-8 w-12 h-12 glass rounded-full flex items-center justify-center text-green-400 z-50 hover:bg-green-500/20 transition-all border border-green-500/30"
+          className="fixed bottom-8 left-8 w-12 h-12 glass rounded-full flex items-center justify-center text-blue-400 z-50 hover:bg-blue-500/20 transition-all border border-blue-500/30"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-5 h-5">
             <polyline points="18 15 12 9 6 15" />

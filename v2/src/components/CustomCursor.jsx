@@ -31,7 +31,7 @@ const CustomCursor = () => {
     <>
       {/* User-Friendly Ambient Glow Follower */}
       <motion.div
-        className="fixed top-0 left-0 w-48 h-48 bg-green-500/5 rounded-full pointer-events-none z-[9997] blur-3xl"
+        className="fixed top-0 left-0 w-48 h-48 bg-blue-500/5 rounded-full pointer-events-none z-[9997] blur-3xl"
         animate={{
           x: mousePosition.x - 96,
           y: mousePosition.y - 96,

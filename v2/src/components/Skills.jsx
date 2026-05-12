@@ -4,6 +4,18 @@ import { Icon } from './Icons';
 
 const skillGroups = [
   {
+    title: "LANGUAGES",
+    id: "languages",
+    desc: "Core Dev Engine",
+    iconName: "code",
+    skills: [
+      { name: "C & C++", pct: 85, icon: "terminal" },
+      { name: "Python", pct: 95, icon: "python" },
+      { name: "Java", pct: 88, icon: "gear" },
+      { name: "Go / Golang", pct: 82, icon: "signal" }
+    ]
+  },
+  {
     title: "FRONT END",
     id: "frontend",
     desc: "Immersive UI/UX",
@@ -38,18 +50,6 @@ const skillGroups = [
       { name: "Redis", pct: 85, icon: "redis" },
       { name: "Vector DBs", pct: 82, icon: "database" }
     ]
-  },
-  {
-    title: "INFRA",
-    id: "infrastructure",
-    desc: "Cloud Systems",
-    iconName: "zap",
-    skills: [
-      { name: "Vercel / Netlify", pct: 96, icon: "vercel" },
-      { name: "Docker & Linux", pct: 85, icon: "docker" },
-      { name: "GitHub Actions", pct: 90, icon: "github" },
-      { name: "Nginx Server", pct: 82, icon: "cloud" }
-    ]
   }
 ];
 
@@ -60,14 +60,14 @@ const Skills = () => {
       <div className="flex justify-between items-end mb-12 border-b border-white/5 pb-6">
         <div>
           <h2 className="text-3xl font-bold tracking-tighter uppercase">
-            Tech <span className="text-green-400">Arsenals</span>
+            Tech <span className="text-blue-400">Arsenals</span>
           </h2>
           <p className="text-[10px] text-white/40 font-mono tracking-[0.3em] uppercase mt-2">Core Technical Proficiency</p>
         </div>
         <div className="flex items-center gap-4">
-          <div className="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-            <span className="text-[9px] font-bold text-green-400 uppercase tracking-widest">Operational: 100%</span>
+          <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
+            <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">Operational: 100%</span>
           </div>
         </div>
       </div>
@@ -81,19 +81,19 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="glass p-5 rounded-2xl border border-white/5 relative group hover:border-green-500/30 transition-all duration-500 overflow-hidden"
+            className="glass p-5 rounded-2xl border border-white/5 relative group hover:border-blue-500/30 transition-all duration-500 overflow-hidden"
           >
             {/* Background Glow Overlay */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-green-500/5 blur-[40px] group-hover:bg-green-500/10 transition-all pointer-events-none" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 blur-[40px] group-hover:bg-blue-500/10 transition-all pointer-events-none" />
             
             {/* Group Header */}
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
                 <Icon name={group.iconName} size={24} />
               </div>
               <div>
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-white uppercase">{group.title}</h3>
-                <div className="text-[8px] text-green-400/60 font-mono uppercase tracking-widest mt-0.5">{group.desc}</div>
+                <div className="text-[8px] text-blue-400/60 font-mono uppercase tracking-widest mt-0.5">{group.desc}</div>
               </div>
             </div>
 
@@ -108,7 +108,7 @@ const Skills = () => {
                       </div>
                       <span className="text-[10px] font-bold text-white/60 group-hover:text-white transition-colors uppercase tracking-wider">{s.name}</span>
                     </div>
-                    <span className="text-[9px] font-mono text-green-400/50 group-hover:text-green-400">{s.pct}%</span>
+                    <span className="text-[9px] font-mono text-cyan-400/50 group-hover:text-cyan-400">{s.pct}%</span>
                   </div>
                   
                   {/* Progress Bar Container */}
@@ -118,13 +118,13 @@ const Skills = () => {
                       whileInView={{ width: `${s.pct}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 + i * 0.1 + j * 0.05 }}
-                      className="h-full bg-gradient-to-r from-green-600 to-green-400 relative"
+                      className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 relative"
                     >
                       {/* Animated Glow Tip */}
                       <motion.div 
                         animate={{ opacity: [0.4, 1, 0.4] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute right-0 top-0 bottom-0 w-4 bg-green-200 blur-[4px] opacity-60"
+                        className="absolute right-0 top-0 bottom-0 w-4 bg-cyan-200 blur-[4px] opacity-60"
                       />
                     </motion.div>
                   </div>
@@ -133,27 +133,30 @@ const Skills = () => {
             </div>
 
             {/* Corner Accents */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/10 group-hover:border-green-500/40 transition-colors" />
-            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/10 group-hover:border-green-500/40 transition-colors" />
+            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/10 group-hover:border-blue-500/40 transition-colors" />
+            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/10 group-hover:border-blue-500/40 transition-colors" />
           </motion.div>
         ))}
       </div>
 
       {/* Values Footer Bar */}
-      <div className="mt-12 p-6 glass rounded-2xl border border-white/5 flex justify-center items-center gap-12 lg:gap-24 relative overflow-hidden">
+      <div className="mt-12 p-6 glass rounded-2xl border border-white/5 flex justify-center items-center gap-8 lg:gap-16 relative overflow-hidden">
         {/* Subtle background circuit line */}
         <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
         
         {[
           { id: "scale", label: "ETHICAL AI" },
           { id: "shield", label: "SECURE ARCH" },
-          { id: "bookopen", label: "SYSTEM LOGIC" }
+          { id: "bookopen", label: "SYSTEM LOGIC" },
+          { id: "refreshcw", label: "ADAPTIVE CI/CD" },
+          { id: "target", label: "PRECISION OPS" },
+          { id: "check", label: "QUALITY CORE" }
         ].map((item, i) => (
           <div key={i} className="flex flex-col items-center gap-3 group cursor-help relative z-10">
-            <div className="text-green-400/40 group-hover:text-green-400 group-hover:scale-110 transition-all duration-500">
+            <div className="text-blue-400/40 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-500">
               <Icon name={item.id} size={24} />
             </div>
-            <span className="text-[8px] font-mono text-white/20 tracking-[0.4em] uppercase group-hover:text-green-400 transition-colors">{item.label}</span>
+            <span className="text-[8px] font-mono text-white/20 tracking-[0.4em] uppercase group-hover:text-cyan-400 transition-colors">{item.label}</span>
           </div>
         ))}
       </div>
