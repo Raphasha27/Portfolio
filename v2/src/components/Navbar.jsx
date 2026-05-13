@@ -74,32 +74,51 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+            initial={{ opacity: 0, y: '-100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[70] bg-bg/98 backdrop-blur-2xl md:hidden flex flex-col p-6"
           >
-            <div className="flex flex-col items-center gap-8 text-lg font-bold uppercase tracking-widest">
+            {/* Header in Overlay */}
+            <div className="flex justify-between items-center mb-12">
+              <div className="flex items-center gap-2 text-blue-400 font-bold">
+                <Icon name="code" size={20} />
+                <span className="text-[10px] tracking-tighter">Koketso_Raphasha_Portfolio</span>
+              </div>
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-10 h-10 glass flex items-center justify-center text-blue-400"
+              >
+                <Icon name="close" size={24} />
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center gap-6 text-xl font-bold uppercase tracking-[0.2em]">
               {['home', 'about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item}`} 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-text-dim hover:text-blue-400 transition-all"
+                  className="text-white/60 hover:text-blue-400 transition-all py-2 w-full text-center border-b border-white/5"
                 >
                   {item}
                 </a>
               ))}
             </div>
             
-            <div className="flex gap-4 mt-8">
+            <div className="flex flex-col gap-4 mt-auto pb-10">
                <button 
                 onClick={handleShare}
-                className="px-6 py-3 glass flex items-center gap-2 text-blue-400 font-bold uppercase text-xs"
+                className="w-full py-4 glass flex items-center justify-center gap-3 text-blue-400 font-bold uppercase text-xs tracking-widest border border-blue-500/20"
               >
                 <Icon name={copied ? "check" : "share"} size={18} />
-                {copied ? "Copied!" : "Share Link"}
+                {copied ? "Copied Link!" : "Share Registry"}
               </button>
+              <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-blue-500/5 border border-blue-500/10 text-[8px] font-bold text-blue-400/60 uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                Status: System Health Optimal
+              </div>
             </div>
           </motion.div>
         )}
