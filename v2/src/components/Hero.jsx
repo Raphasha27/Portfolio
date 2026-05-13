@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '../assets/koketso_new_profile.png';
+import profileImg from '../assets/koketso_no_wall.png';
 
 const stats = [
   { label: 'Reliability',    val: 100, suffix: '%', icon: 'thumbsup' },

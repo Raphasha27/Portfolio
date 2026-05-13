@@ -3,7 +3,6 @@ import nodeLogo from '../assets/node-logo.svg';
 import mongodbLogo from '../assets/mongodb-logo.svg';
 import linkedinLogo from '../assets/linkedin-logo.svg';
 import whopLogo from '../assets/whop-logo.svg';
-import kaggleLogo from '../assets/kaggle-logo.svg';
 
 export const Icon = ({ name, size = 16, className = "" }) => {
   const finalName = name?.toLowerCase();
