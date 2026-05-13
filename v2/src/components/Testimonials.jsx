@@ -10,10 +10,10 @@ const testimonials = [
     tag: "Client"
   },
   {
-    name: "Lethabo Modise",
+    name: "Johnny De wildth",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://randomuser.me/api/portraits/men/62.jpg",
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
     tag: "Team Member"
   },
   {
