@@ -115,12 +115,13 @@ const About = () => {
                 >
                   <div className="glass rounded-xl sm:rounded-2xl border border-white/8 hover:border-blue-500/40 transition-all duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.12)] overflow-hidden">
                     <div className={`h-20 sm:h-32 flex items-center justify-center p-3 sm:p-5 ${partner.bg || 'bg-white/5'} relative`}>
-                      <img
-                        src={partner.logo}
-                        alt={partner.name}
-                        className="max-w-full max-h-full object-contain select-none pointer-events-none"
-                        style={{ maxWidth: '85%', maxHeight: '85%' }}
-                      />
+                      <div className="w-full h-full flex items-center justify-center p-3 sm:p-6">
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className="max-w-[80%] max-h-[80%] object-contain select-none pointer-events-none group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
                       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/0 to-transparent group-hover:via-blue-400/60 transition-all duration-700" />
                     </div>
                     <div className="p-2.5 sm:p-4 bg-[#080f15] border-t border-white/5">
