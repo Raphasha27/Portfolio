@@ -13,21 +13,21 @@ const testimonials = [
     name: "Lethabo Modise",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
+    image: "https://randomuser.me/api/portraits/men/62.jpg",
     tag: "Team Member"
   },
   {
-    name: "James Sterling",
-    role: "Director of Ops @ GlobalLogistics",
+    name: "Arjun Mehta",
+    role: "CTO @ Indus Cloud",
     text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
     tag: "Client"
   },
   {
     name: "Amara Okoro",
     role: "Founder @ EcoStream",
     text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
     tag: "Client"
   }
 ];

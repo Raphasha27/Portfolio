@@ -145,7 +145,7 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-8">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-4 lg:pt-6">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
 
           {/* ── LEFT: Identity & Mission ── */}
@@ -153,7 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -167,7 +167,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]">
                   INFORMATION TECHNOLOGY<br />
                   <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]">
                     GRADUATE
@@ -179,40 +179,40 @@ const Hero = () => {
               </div>
             </div>
 
-             <p className="text-text-dim text-sm lg:text-base leading-relaxed max-w-xl">
+             <p className="text-text-dim text-[11px] lg:text-[13px] leading-relaxed max-w-lg">
                IT Graduate from <span className="text-white font-bold">Richfield Graduate Institute</span> majoring in <span className="text-blue-400 font-bold">Software Engineering</span>. 
                Hands-on experience as an <span className="text-white font-bold">AI Intern at CAPACITI</span>. 
                Collaborated with WeThinkCode, member of YES4Youth (2025-2026). 
                Co-Founder of <span className="text-blue-400 font-bold">Kirov Dynamics Technology</span>. 
-               <span className="block mt-2 font-mono text-[10px] opacity-60 uppercase tracking-widest">Seeking Employment · Freelance · Collaboration</span>
+               <span className="block mt-1 font-mono text-[9px] opacity-60 uppercase tracking-widest">Seeking Employment · Freelance · Collaboration</span>
              </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#projects" className="px-8 py-4 bg-blue-600 text-bg font-bold rounded-2xl hover:bg-blue-500 transition-all hover:scale-105 shadow-[0_0_25px_rgba(37,99,235,0.4)]">
+              <a href="#projects" className="px-6 py-3 bg-blue-600 text-bg font-bold rounded-xl hover:bg-blue-500 transition-all hover:scale-105 shadow-[0_0_20px_rgba(37,99,235,0.4)] text-sm">
                 VIEW REPOS
               </a>
-              <a href="#contact" className="px-8 py-4 glass border border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all hover:border-cyan-500/30">
+              <a href="#contact" className="px-6 py-3 glass border border-white/10 text-white font-bold rounded-xl hover:bg-white/5 transition-all hover:border-cyan-500/30 text-sm">
                 INITIALIZE CONTACT
               </a>
             </div>
 
             {/* Neon Stats Grid */}
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+            <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/5">
               {[
-                { label: 'Years Experience', val: 3,  suffix: '+', icon: 'activity', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
-                { label: 'Certifications',   val: 10, suffix: '+', icon: 'graduationcap', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
-                { label: 'Tech Ecosystems',  val: 4,  suffix: '+', icon: 'cpu', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
-                { label: 'Delivery Quality', val: 100, suffix: '%', icon: 'shield', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
+                { label: 'Years Experience', val: 3,  suffix: '+', icon: 'activity', color: 'text-blue-400' },
+                { label: 'Certifications',   val: 10, suffix: '+', icon: 'graduationcap', color: 'text-blue-400' },
+                { label: 'Tech Ecosystems',  val: 4,  suffix: '+', icon: 'cpu', color: 'text-blue-400' },
+                { label: 'Delivery Quality', val: 100, suffix: '%', icon: 'shield', color: 'text-blue-400' },
               ].map((s, i) => (
-                <div key={i} className="glass p-4 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-2 group hover:border-blue-500/30 transition-all duration-300">
-                  <div className={`${s.color} transition-all group-hover:scale-110`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }}>
-                    <Icon name={s.icon} size={20} />
+                <div key={i} className="glass p-3 rounded-xl border border-white/5 flex flex-col items-center text-center gap-1 group hover:border-blue-500/30 transition-all duration-300">
+                  <div className={`${s.color} transition-all group-hover:scale-110 opacity-70`} style={{ filter: 'drop-shadow(0 0 6px currentColor)' }}>
+                    <Icon name={s.icon} size={16} />
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-white leading-none">
+                    <div className="text-lg font-bold text-white leading-none">
                       <CountUp to={s.val} />{s.suffix}
                     </div>
-                    <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em] mt-1">{s.label}</div>
+                    <div className="text-[7px] font-mono text-white/40 uppercase tracking-[0.2em] mt-0.5">{s.label}</div>
                   </div>
                 </div>
               ))}
