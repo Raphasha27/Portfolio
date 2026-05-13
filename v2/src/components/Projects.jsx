@@ -150,7 +150,7 @@ const Projects = () => {
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-16 gap-4 relative z-10">
           <div className="space-y-2 sm:space-y-4 max-w-full">
-            <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold tracking-normal md:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
+            <h2 className="text-[7vw] sm:text-4xl lg:text-5xl font-bold tracking-tighter lg:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
               Project <span className="text-blue-400">Inventory</span>
             </h2>
             <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">System Registry: 9 Active Nodes</div>

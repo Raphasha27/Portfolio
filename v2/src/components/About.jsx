@@ -57,11 +57,11 @@ const About = () => {
           className="space-y-12 sm:space-y-20"
         >
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4">
             <div className="space-y-3">
-              <div className="text-blue-400 font-bold text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase">— WHO I AM —</div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight break-words">
-                Building the <span className="text-blue-400">Future</span><br className="hidden md:block" /> with Code
+              <div className="text-blue-400 font-bold text-xs tracking-[0.1em] lg:tracking-[0.4em] uppercase">— WHO I AM —</div>
+              <h2 className="text-[7vw] sm:text-4xl lg:text-6xl font-bold leading-tight break-words tracking-tighter lg:tracking-normal">
+                Building the <span className="text-blue-400">Future</span><br className="hidden lg:block" /> with Code
               </h2>
               <p className="text-text-dim text-sm sm:text-lg leading-relaxed max-w-2xl">
                 Passionate about designing and building{" "}
@@ -70,7 +70,7 @@ const About = () => {
                 <span className="text-blue-400 font-semibold">user-focused</span> digital solutions.
               </p>
             </div>
-            <div className="hidden md:flex px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 items-center gap-2 shrink-0 self-start">
+            <div className="hidden lg:flex px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 items-center gap-2 shrink-0 self-start">
               <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
               <span className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em]">Profile: Verified</span>
             </div>
@@ -99,11 +99,11 @@ const About = () => {
           {/* Partner Logos */}
           <div className="space-y-6 sm:space-y-10 pt-6 sm:pt-8 border-t border-white/5">
             <div>
-              <div className="text-[11px] text-blue-400 font-bold uppercase tracking-[0.1em] md:tracking-[0.4em] mb-1">Certification &amp; Institutional Partners</div>
-              <div className="text-white/30 text-[9px] font-mono uppercase tracking-[0.05em] md:tracking-widest">8 Accredited Institutions &amp; Platforms</div>
+              <div className="text-[11px] text-blue-400 font-bold uppercase tracking-tight lg:tracking-[0.4em] mb-1">Certification &amp; Institutional Partners</div>
+              <div className="text-white/30 text-[9px] font-mono uppercase tracking-tighter lg:tracking-widest">8 Accredited Institutions &amp; Platforms</div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
               {partners.map((partner, i) => (
                 <motion.div
                   key={i}

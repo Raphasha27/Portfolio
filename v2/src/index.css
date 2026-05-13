@@ -142,14 +142,19 @@ section {
 /* Prevent horizontal overflow on mobile — targeted, not global */
 @media (max-width: 768px) {
   html, body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     position: relative;
-    width: 100%;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+  
+  * {
+    box-sizing: border-box !important;
   }
   
   img, video, iframe, svg {
-    max-width: 100%;
-    height: auto;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   /* Force word breaking for long titles on mobile */

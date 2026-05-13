@@ -83,7 +83,7 @@ const Experience = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-12 sm:mb-20">
           <div className="space-y-2 sm:space-y-4 max-w-full">
-            <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold tracking-tight sm:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
+            <h2 className="text-[7vw] sm:text-4xl lg:text-5xl font-bold tracking-tighter lg:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
               Professional <span className="text-blue-400">Evolution</span>
             </h2>
             <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">Linear Timeline Analysis</div>
@@ -106,11 +106,11 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group"
+                className="relative flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group"
               >
                 {/* Logo Circle — smaller on mobile */}
                 <div 
-                  className={`w-16 h-16 md:w-24 md:h-24 rounded-full border-2 flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 ${exp.logoBg || 'bg-[#0a161d]'} overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]`}
+                  className={`w-16 h-16 lg:w-24 lg:h-24 rounded-full border-2 flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 ${exp.logoBg || 'bg-[#0a161d]'} overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]`}
                   style={{ borderColor: 'rgba(59, 130, 246, 0.6)' }}
                 >
                   <div className={`relative z-10 w-full h-full ${exp.logoPadding || 'p-3'} flex items-center justify-center`}>
@@ -131,7 +131,7 @@ const Experience = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="glass flex-1 p-5 md:p-8 border border-white/5 group-hover:border-blue-500/20 transition-all duration-500 relative overflow-hidden rounded-2xl md:rounded-[32px] w-full">
+                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-blue-500/20 transition-all duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full -mr-32 -mt-32 group-hover:bg-blue-500/10 transition-all duration-1000" />
                   <div className="relative z-10">
                     <div className="flex flex-col gap-2 mb-3 sm:mb-6">
