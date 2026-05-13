@@ -1,17 +1,24 @@
 # Koketso Raphasha | High-Performance Portfolio 🚀🛡️
 
-### 🌐 [LIVE PRODUCTION DEPLOYMENT](https://v2-seven-eta.vercel.app)
+### 🌐 [LIVE PRODUCTION DEPLOYMENT](https://portfolio-iota-eight-90.vercel.app)
 
-[![Live on Vercel](https://img.shields.io/badge/Vercel-Live-black?style=for-the-badge&logo=vercel)](https://v2-seven-eta.vercel.app)
+[![Live on Vercel](https://img.shields.io/badge/Vercel-Live-black?style=for-the-badge&logo=vercel)](https://portfolio-iota-eight-90.vercel.app)
 
-Welcome to my high-fidelity engineering portfolio. This project represents the intersection of **Elite Performance**, **Sovereign Intelligence**, and **Premium Visual Storytelling**.
+Welcome to the **Kirov Dynamics v2** portfolio. This project represents the intersection of **Elite Performance**, **Sovereign Intelligence**, and **Premium Visual Storytelling**.
+
+## 🚀 Mobile-First v2 Overhaul (May 2026)
+This repository recently underwent a major architectural refactor to achieve **Perfect Mobile Responsiveness**:
+- **Fluid Typography**: Dynamic scaling headers using viewport-width (`7vw`) logic.
+- **Glassmorphic Navigation**: A transparent black mobile menu with `z-70` priority.
+- **Responsive Grids**: Forced vertical stacking on mobile via `lg:` breakpoint hardening.
+- **Cinematic Status Badges**: Real-time `Sync: Verified` pulse animations for an OS-level feel.
 
 ## Repository Link
 [https://github.com/Raphasha27/Portfolio](https://github.com/Raphasha27/Portfolio)
 
 ## Structure
-- `index.html`, `styles.css`, `script.js` - Legacy static version
-- `v2/` - React/Vite implementation (The current high-fidelity version)
+- `v2/` - **Active** React/Vite implementation (High-Fidelity)
+- `index.html` - Legacy static version (Deprecated)
 
 ## 🧠 Sovereign Intelligence: AI Assistant
 The core feature of this portfolio is the **Digital Twin AI Assistant**. It's not just a chatbot; it's a data-driven guide powered by my actual professional profile.
