@@ -197,9 +197,9 @@ const Hero = () => {
             {/* Stats strip */}
             <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/5">
               {[
-                { emoji: '⚡', val: 100, suffix: '%', label: 'Reliability' },
+                { emoji: '🚀', val: 100, suffix: '%', label: 'Reliability' },
                 { emoji: '🌍', val: 50,  suffix: '+', label: 'Global Clients' },
-                { emoji: '🛠️', val: 12,  suffix: '+', label: 'Core Projects' },
+                { emoji: '✅', val: 12,  suffix: '+', label: 'Core Projects' },
               ].map((s, i) => (
                 <div key={i} className="space-y-0.5">
                   <div className="flex items-center gap-2">
@@ -208,7 +208,7 @@ const Hero = () => {
                       <CountUp to={s.val} />{s.suffix}
                     </div>
                   </div>
-                  <div className="text-[9px] font-mono text-cyan-400/40 uppercase tracking-widest">{s.label}</div>
+                  <div className="text-[9px] font-mono text-green-400/40 uppercase tracking-widest">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -273,27 +273,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scrolling Tech Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-white/5 bg-black/20 backdrop-blur-md overflow-hidden z-20">
-        <motion.div 
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="flex gap-20 items-center whitespace-nowrap"
-        >
-          {doubled.map((tech, i) => (
-            <div key={i} className="flex items-center gap-2.5 shrink-0 group">
-              <div className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity">
-                <Icon name={tech.id} size={20} />
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors font-mono">
-                {tech.name}
-              </span>
-              <div className="w-1 h-1 rounded-full bg-blue-500/30 ml-4" />
-            </div>
-          ))}
-        </motion.div>
-      </div>
+
     </div>
   );
 };

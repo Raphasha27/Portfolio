@@ -7,6 +7,7 @@ import Roles from './components/Roles';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Testimonials from './components/Testimonials';
 import ChatAssistant from './components/ChatAssistant';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
@@ -109,7 +110,17 @@ function App() {
           <Map />
         </motion.div>
 
-        {/* Section 8: Contact Footer */}
+        {/* Section 8: Feedback (Testimonials) */}
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+        >
+          <Testimonials />
+        </motion.section>
+
+        {/* Section 9: Contact Footer */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
