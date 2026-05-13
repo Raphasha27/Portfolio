@@ -94,10 +94,6 @@ const Experience = () => {
               <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Sync: Verified</span>
             </div>
           </div>
-          <div className="px-4 sm:px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 self-start">
-            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-[10px] sm:text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em]">Sync: Verified</span>
-          </div>
         </div>
 
         <div className="max-w-5xl mx-auto relative">
