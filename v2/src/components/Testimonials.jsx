@@ -1,37 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import sarahImg from '../assets/testimonial_sarah_1778662853023.png';
-import lethaboImg from '../assets/testimonial_lethabo_1778662913006.png';
-import jamesImg from '../assets/testimonial_james_1778662958421.png';
-import amaraImg from '../assets/testimonial_amara_1778662977211.png';
-
 const testimonials = [
   {
     name: "Sarah Jenkins",
     role: "CEO @ TechNexus",
     text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best! 💎",
-    image: sarahImg,
+    image: "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=059669&color=fff&size=128",
     tag: "Client"
   },
   {
     name: "Lethabo Modise",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring. 🚀",
-    image: lethaboImg,
+    image: "https://ui-avatars.com/api/?name=Lethabo+Modise&background=059669&color=fff&size=128",
     tag: "Team Member"
   },
   {
     name: "James Sterling",
     role: "Director of Ops @ GlobalLogistics",
     text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional. ✅",
-    image: jamesImg,
+    image: "https://ui-avatars.com/api/?name=James+Sterling&background=059669&color=fff&size=128",
     tag: "Client"
   },
   {
     name: "Amara Okoro",
     role: "Founder @ EcoStream",
     text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended! 🤝",
-    image: amaraImg,
+    image: "https://ui-avatars.com/api/?name=Amara+Okoro&background=059669&color=fff&size=128",
     tag: "Client"
   }
 ];
