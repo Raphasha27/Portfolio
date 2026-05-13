@@ -78,7 +78,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[70] bg-bg/98 backdrop-blur-2xl md:hidden flex flex-col p-6"
+            className="fixed inset-0 z-[70] bg-black/80 backdrop-blur-xl md:hidden flex flex-col p-6"
           >
             {/* Header in Overlay */}
             <div className="flex justify-between items-center mb-12">
