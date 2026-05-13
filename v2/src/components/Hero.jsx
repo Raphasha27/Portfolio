@@ -145,7 +145,7 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-16">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-8">
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
 
           {/* ── LEFT: Identity & Mission ── */}
@@ -153,7 +153,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <div className="space-y-4">
               <div className="flex items-center gap-4">
@@ -167,25 +167,27 @@ const Hero = () => {
                 </div>
               </div>
               <div className="space-y-2">
-                <h1 className="text-6xl lg:text-8xl font-bold tracking-tighter text-white leading-[0.85]">
-                  KIROV<br />
+                <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                  INFORMATION TECHNOLOGY<br />
                   <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]">
-                    <Typewriter words={["MOBILE APP DEV", "FULL STACK", "AI ENGINEER", "WEB DEV", "DYNAMICS"]} />
+                    GRADUATE
                   </span>
                 </h1>
                 <p className="text-cyan-400/60 font-mono text-[10px] tracking-[0.5em] uppercase font-black pl-1">
-                  Autonomous Systems • Agentic Infra • Full Stack Mastery
+                  Software Engineering · Richfield Alumni · AI Intern
                 </p>
               </div>
             </div>
 
-            <p className="text-text-dim text-lg leading-relaxed max-w-xl">
-              Specializing in the development of <span className="text-white font-bold">High-Frequency Agentic Systems</span> and 
-              <span className="text-blue-400 font-bold"> Decentralized Infrastructure</span>. 
-              Engineering autonomous solutions for the next generation of digital twins.
-            </p>
+             <p className="text-text-dim text-sm lg:text-base leading-relaxed max-w-xl">
+               IT Graduate from <span className="text-white font-bold">Richfield Graduate Institute</span> majoring in <span className="text-blue-400 font-bold">Software Engineering</span>. 
+               Hands-on experience as an <span className="text-white font-bold">AI Intern at CAPACITI</span>. 
+               Collaborated with WeThinkCode, member of YES4Youth (2025-2026). 
+               Co-Founder of <span className="text-blue-400 font-bold">Kirov Dynamics Technology</span>. 
+               <span className="block mt-2 font-mono text-[10px] opacity-60 uppercase tracking-widest">Seeking Employment · Freelance · Collaboration</span>
+             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-4 pt-2">
               <a href="#projects" className="px-8 py-4 bg-blue-600 text-bg font-bold rounded-2xl hover:bg-blue-500 transition-all hover:scale-105 shadow-[0_0_25px_rgba(37,99,235,0.4)]">
                 VIEW REPOS
               </a>
@@ -194,21 +196,24 @@ const Hero = () => {
               </a>
             </div>
 
-            {/* Stats strip */}
-            <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/5">
+            {/* Neon Stats Grid */}
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
               {[
-                { emoji: '🚀', val: 100, suffix: '%', label: 'Reliability' },
-                { emoji: '🌍', val: 50,  suffix: '+', label: 'Global Clients' },
-                { emoji: '✅', val: 12,  suffix: '+', label: 'Core Projects' },
+                { label: 'Years Experience', val: 3,  suffix: '+', icon: 'activity', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
+                { label: 'Certifications',   val: 10, suffix: '+', icon: 'graduationcap', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
+                { label: 'Tech Ecosystems',  val: 4,  suffix: '+', icon: 'cpu', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
+                { label: 'Delivery Quality', val: 100, suffix: '%', icon: 'shield', color: 'text-blue-400', glow: 'shadow-[0_0_15px_rgba(59,130,246,0.3)]' },
               ].map((s, i) => (
-                <div key={i} className="space-y-0.5">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg">{s.emoji}</span>
-                    <div className="text-xl font-bold text-white">
+                <div key={i} className="glass p-4 rounded-2xl border border-white/5 flex flex-col items-center text-center gap-2 group hover:border-blue-500/30 transition-all duration-300">
+                  <div className={`${s.color} transition-all group-hover:scale-110`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }}>
+                    <Icon name={s.icon} size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold text-white leading-none">
                       <CountUp to={s.val} />{s.suffix}
                     </div>
+                    <div className="text-[8px] font-mono text-white/40 uppercase tracking-[0.2em] mt-1">{s.label}</div>
                   </div>
-                  <div className="text-[9px] font-mono text-green-400/40 uppercase tracking-widest">{s.label}</div>
                 </div>
               ))}
             </div>

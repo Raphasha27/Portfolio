@@ -6,28 +6,28 @@ const testimonials = [
     name: "Sarah Jenkins",
     role: "CEO @ TechNexus",
     text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
-    image: "https://i.pravatar.cc/150?u=sarah",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
     tag: "Client"
   },
   {
     name: "Lethabo Modise",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://i.pravatar.cc/150?u=lethabo",
+    image: "https://randomuser.me/api/portraits/men/67.jpg",
     tag: "Team Member"
   },
   {
     name: "James Sterling",
     role: "Director of Ops @ GlobalLogistics",
     text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
-    image: "https://i.pravatar.cc/150?u=james",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     tag: "Client"
   },
   {
     name: "Amara Okoro",
     role: "Founder @ EcoStream",
     text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended!",
-    image: "https://i.pravatar.cc/150?u=amara",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
     tag: "Client"
   }
 ];

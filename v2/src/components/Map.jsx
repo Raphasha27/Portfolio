@@ -23,7 +23,7 @@ const Map = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass p-2 rounded-[40px] border-white/5 overflow-hidden h-[450px] relative group"
+          className="glass p-2 rounded-[40px] border border-blue-500/30 overflow-hidden h-[450px] relative group"
         >
           {/* Real Google Maps Embed */}
           <iframe 
@@ -38,7 +38,7 @@ const Map = () => {
           ></iframe>
           
           {/* Cinematic Overlay to match the theme */}
-          <div className="absolute inset-0 pointer-events-none border-[20px] border-bg/50 rounded-[40px]" />
+          <div className="absolute inset-0 pointer-events-none border-[20px] border-blue-500/10 rounded-[40px]" />
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-bg via-transparent to-transparent opacity-40" />
         </motion.div>
       </div>
