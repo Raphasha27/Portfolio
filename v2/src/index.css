@@ -140,9 +140,23 @@ section {
 }
 
 /* Prevent horizontal overflow on mobile — targeted, not global */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
   img, video, iframe, svg {
     max-width: 100%;
+    height: auto;
+  }
+
+  /* Force word breaking for long titles on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 }
 

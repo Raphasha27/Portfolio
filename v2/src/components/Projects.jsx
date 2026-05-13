@@ -149,8 +149,8 @@ const Projects = () => {
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-16 gap-4 relative z-10">
-          <div className="space-y-2 sm:space-y-4">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.3em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none">
+          <div className="space-y-2 sm:space-y-4 max-w-full">
+            <h2 className="text-xl sm:text-4xl lg:text-5xl font-bold tracking-normal md:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
               Project <span className="text-blue-400">Inventory</span>
             </h2>
             <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">System Registry: 9 Active Nodes</div>

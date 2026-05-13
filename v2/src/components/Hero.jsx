@@ -93,7 +93,7 @@ const Hero = () => {
                 </span>
               </div>
               <div className="space-y-1">
-                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold tracking-normal md:tracking-tight text-white leading-[1.1] break-words">
                   INFORMATION TECHNOLOGY<br />
                   <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]">
                     GRADUATE
