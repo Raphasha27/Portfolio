@@ -144,10 +144,14 @@ section {
   img, video, iframe, svg {
     max-width: 100%;
   }
-  /* Prevent wide letter-spacing from blowing out containers */
-  .tracking-\[0\.8em\],
-  .tracking-\[0\.5em\],
-  .tracking-\[0\.4em\] {
-    letter-spacing: 0.15em;
+}
+
+/* Section heading — clamps letter-spacing on portrait mobile to prevent x-overflow */
+.section-heading {
+  letter-spacing: 0.15em;
+}
+@media (min-width: 640px) {
+  .section-heading {
+    letter-spacing: 0.8em;
   }
 }
