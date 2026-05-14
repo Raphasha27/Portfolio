@@ -3,7 +3,7 @@
 
 :root {
   --nav-h: 80px;
-  --blue-glow: rgba(59, 130, 246, 0.4);
+  --blue-glow: rgba(0, 255, 156, 0.4);
   --border: rgba(255, 255, 255, 0.08);
   --card: rgba(13, 31, 45, 0.7);
 }
@@ -14,11 +14,6 @@ html {
 }
 
 @layer base {
-  @media (pointer: fine) {
-    body, a, button {
-      /* Restore default cursor for better usability */
-    }
-  }
   body {
     background-color: #050d12;
     color: #e0f2f1;
@@ -29,8 +24,8 @@ html {
 }
 
 @layer utilities {
-  .glow-text { text-shadow: 0 0 24px rgba(59, 130, 246, 0.5); }
-  .glow-text-sm { text-shadow: 0 0 12px rgba(59, 130, 246, 0.3); }
+  .glow-text { text-shadow: 0 0 24px rgba(0, 255, 156, 0.5); }
+  .glow-text-sm { text-shadow: 0 0 12px rgba(0, 255, 156, 0.3); }
   .glass {
     background: rgba(10, 22, 29, 0.7);
     backdrop-filter: blur(12px);
@@ -58,7 +53,7 @@ html {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #050d12; }
-::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #00FF9C; border-radius: 4px; }
 
 /* Ping animation for the live badge */
 @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
@@ -79,8 +74,8 @@ html {
 /* Grid Background */
 .grid-lines {
   background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 255, 156, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 156, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   width: 100%;
   height: 100%;

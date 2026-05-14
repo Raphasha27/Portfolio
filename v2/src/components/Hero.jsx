@@ -88,14 +88,14 @@ const Hero = () => {
           >
             <div className="space-y-3">
               <div className="flex items-center gap-3 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[9px] font-bold tracking-[0.3em] uppercase animate-pulse">
+                <span className="px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/30 text-[#00FF9C] text-[9px] font-bold tracking-[0.3em] uppercase animate-pulse">
                   System: Active
                 </span>
               </div>
               <div className="space-y-1">
                 <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold tracking-normal md:tracking-tight text-white leading-[1.1] break-words">
                   INFORMATION TECHNOLOGY<br />
-                  <span className="text-blue-500 drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+                  <span className="text-[#00FF9C] drop-shadow-[0_0_30px_rgba(0,255,156,0.3)]">
                     GRADUATE
                   </span>
                 </h1>
@@ -111,14 +111,14 @@ const Hero = () => {
               Member of YES4Youth (2025-2026). Co-Founder of <span className="text-blue-400 font-bold">Kirov Dynamics Technology</span>.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-1">
-              <a href="#projects" className="px-5 sm:px-6 py-3 bg-blue-600 text-bg font-bold rounded-xl hover:bg-blue-500 transition-all active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.4)] text-xs sm:text-sm">
-                VIEW REPOS
-              </a>
-              <a href="#contact" className="px-5 sm:px-6 py-3 glass border border-white/10 text-white font-bold rounded-xl hover:bg-white/5 transition-all active:scale-95 hover:border-cyan-500/30 text-xs sm:text-sm">
-                INITIALIZE CONTACT
-              </a>
-            </div>
+              <div className="flex flex-wrap gap-4 pt-1">
+                <a href="#projects" className="px-5 sm:px-6 py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 shadow-[0_0_20px_rgba(0,255,156,0.4)] text-xs sm:text-sm">
+                  VIEW REPOS
+                </a>
+                <a href="https://portfolio-iota-eight-90.vercel.app/" target="_blank" className="px-5 sm:px-6 py-3 bg-[#0d1117] border border-[#00FF9C] text-white font-bold rounded-xl hover:bg-[#00FF9C]/5 transition-all active:scale-95 text-xs sm:text-sm flex items-center gap-2">
+                  PORTFOLIO <span className="bg-[#00FF9C] text-[#050d12] px-2 py-0.5 rounded-md text-[10px] uppercase font-black">LIVE</span>
+                </a>
+              </div>
 
             {/* Neon Stats Grid — 2 cols on mobile, 4 on sm+ */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-3 border-t border-white/5">

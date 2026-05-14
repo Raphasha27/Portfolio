@@ -10,10 +10,11 @@ const projects = [
     tech: ["python", "langchain", "postgresql", "docker"],
     icon: "globe",
     role: "Agentic Infra Dev",
-    color: "from-blue-600/20 to-cyan-400/20",
+    color: "from-[#00FF9C]/20 to-emerald-400/20",
     bgImage: "project-os.png",
     featured: true,
-    latest: true
+    latest: true,
+    link: "https://github.com/Raphasha27/Sovereign-AI-Nexus-v2"
   },
   {
     title: "FlowSentinel",
@@ -22,8 +23,9 @@ const projects = [
     tech: ["csharp", "redis", "activity", "docker"],
     icon: "zap",
     role: "Traffic Architect",
-    color: "from-blue-500/20 to-cyan-500/20",
-    bgImage: "project-finance.png"
+    color: "from-emerald-500/20 to-teal-500/20",
+    bgImage: "project-finance.png",
+    link: "https://github.com/Raphasha27/FlowSentinel"
   },
   {
     title: "CyberShield Modern",
@@ -32,7 +34,8 @@ const projects = [
     tech: ["angular", "javascript", "nginx", "shield"],
     icon: "shield",
     role: "SOC Engineer",
-    color: "from-purple-500/20 to-blue-500/20"
+    color: "from-[#00FF9C]/20 to-cyan-500/20",
+    link: "https://github.com/Raphasha27/cybershield_soc"
   },
   {
     title: "NoShowIQ",
@@ -41,7 +44,8 @@ const projects = [
     tech: ["python", "pytorch", "zap", "react"],
     icon: "brain",
     role: "ML Specialist",
-    color: "from-blue-400/20 to-cyan-500/20"
+    color: "from-emerald-400/20 to-cyan-500/20",
+    link: "https://github.com/Raphasha27/NoShowIQ"
   },
   {
     title: "SupportHive-C",
@@ -50,7 +54,8 @@ const projects = [
     tech: ["c", "linux", "github", "terminal"],
     icon: "terminal",
     role: "Systems Architect",
-    color: "from-yellow-500/20 to-orange-500/20"
+    color: "from-yellow-500/20 to-emerald-500/20",
+    link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C"
   },
   {
     title: "Kirov Connect",
@@ -59,7 +64,8 @@ const projects = [
     tech: ["vercel", "typescript", "bot", "azure"],
     icon: "building",
     role: "Civic Tech lead",
-    color: "from-orange-500/20 to-red-500/20"
+    color: "from-orange-500/20 to-[#00FF9C]/20",
+    link: "https://github.com/Raphasha27/Fire4s_Project1_Week1"
   },
   {
     title: "RepoPulse",
@@ -68,7 +74,8 @@ const projects = [
     tech: ["go", "grafana", "prometheus", "activity"],
     icon: "signal",
     role: "Observability Eng",
-    color: "from-indigo-500/20 to-purple-500/20"
+    color: "from-emerald-500/20 to-cyan-500/20",
+    link: "https://github.com/Raphasha27/Github-Harden"
   },
   {
     title: "SeatLock",
@@ -77,8 +84,9 @@ const projects = [
     tech: ["csharp", "node", "redis", "docker"],
     icon: "ticket",
     role: "Backend specialist",
-    color: "from-red-500/20 to-purple-500/20",
-    bgImage: "project-logistics.png"
+    color: "from-red-500/20 to-[#00FF9C]/20",
+    bgImage: "project-logistics.png",
+    link: "https://github.com/Raphasha27/SeatLock"
   },
   {
     title: "EduStream-Pro-ICT",
@@ -87,8 +95,9 @@ const projects = [
     tech: ["react", "python", "fastapi", "aws"],
     icon: "graduationCap",
     role: "EdTech AI Dev",
-    color: "from-blue-500/20 to-indigo-500/20",
-    bgImage: "project-edutech.png"
+    color: "from-emerald-500/20 to-cyan-500/20",
+    bgImage: "project-edutech.png",
+    link: "https://github.com/Raphasha27/EduStream-Pro-ICT"
   }
 ];
 
@@ -151,14 +160,14 @@ const Projects = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-16 gap-4 relative z-10">
           <div className="space-y-2 sm:space-y-4 max-w-full">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.15em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
-              Project <span className="text-blue-400">Inventory</span>
+              Project <span className="text-[#00FF9C]">Inventory</span>
             </h2>
             <div className="flex items-center gap-3 mt-4">
               <div className="text-white/40 text-[9px] font-mono uppercase tracking-[0.4em]">System Registry: 9 Active Nodes</div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 w-fit mt-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-              <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Sync: Verified</span>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 w-fit mt-4">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+              <span className="text-[10px] font-bold text-[#00FF9C] uppercase tracking-widest">Sync: Verified</span>
             </div>
           </div>
         </div>
@@ -180,7 +189,7 @@ const Projects = () => {
               <div className="relative z-10 flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
                   <div 
-                    className="w-10 h-10 rounded-xl border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 bg-[#0a161d] border-blue-500/40 text-blue-400 shadow-[0_0_20px_rgba(59,130,246,0.15)]"
+                    className="w-10 h-10 rounded-xl border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 bg-[#0a161d] border-[#00FF9C]/40 text-[#00FF9C] shadow-[0_0_20px_rgba(0,255,156,0.15)]"
                   >
                     <div className="relative z-10">
                       <Icon name={p.icon} size={20} />
@@ -191,7 +200,7 @@ const Projects = () => {
                     <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80">{p.tagline}</div>
                   </div>
                 </div>
-                <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-blue-500/10 border-blue-500/30 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)] hidden sm:block">
+                <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] shadow-[0_0_10px_rgba(0,255,156,0.1)] hidden sm:block">
                   {p.role}
                 </div>
               </div>
@@ -220,7 +229,7 @@ const Projects = () => {
                   >
                     <Icon name="share" size={14} />
                   </button>
-                  <a href="https://github.com/Raphasha27" target="_blank" className="text-blue-400 hover:text-white transition-colors">
+                  <a href={p.link || "https://github.com/Raphasha27"} target="_blank" className="text-[#00FF9C] hover:text-white transition-colors">
                     <Icon name="externallink" size={14} />
                   </a>
                 </div>
