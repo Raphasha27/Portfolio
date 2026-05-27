@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import koketsoSuit from '../assets/koketso_suit.png';
 import koketsoHoodie from '../assets/koketso_hoodie.png';
+import koketsoVR from '../assets/koketso_vr.png';
 
 const bannerTechs = [
   { name: "React",           id: "react"        },
@@ -78,7 +79,8 @@ const Hero = () => {
   const [activeProfile, setActiveProfile] = useState(0);
   const profiles = [
     { src: koketsoSuit, label: 'Executive Mode', badge: 'Business', color: 'bg-white text-black' },
-    { src: koketsoHoodie, label: 'Developer Mode', badge: 'Engineering', color: 'bg-[#00ffcc] text-black' }
+    { src: koketsoHoodie, label: 'Developer Mode', badge: 'Engineering', color: 'bg-[#00ffcc] text-black' },
+    { src: koketsoVR, label: 'Cyber Mode', badge: 'Virtual Reality', color: 'bg-[#ff00ff] text-white' }
   ];
 
   // Auto-slide profiles
@@ -228,8 +230,6 @@ const Hero = () => {
               transition={{ delay: 1 }}
               className="mt-6 glass rounded-2xl border border-blue-500/30 overflow-hidden w-full max-w-[280px] sm:max-w-[320px] mx-auto lg:ml-auto shadow-[0_0_30px_rgba(59,130,246,0.05)] relative"
             >
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0a161d] to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0a161d] to-transparent z-10 pointer-events-none" />
               <div className="py-3 sm:py-4 flex overflow-hidden">
                 <motion.div
                   initial={{ x: 0 }}

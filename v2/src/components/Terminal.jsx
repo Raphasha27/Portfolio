@@ -38,7 +38,7 @@ const COMMANDS = {
     desc: 'Who is Koketso Raphasha?',
     run: () => [
       { t: 'sys',  text: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' },
-      { t: 'name', text: '  Koketso Raphasha' },
+      { t: 'name', text: '  Koketso Raphasha (Age: 27)' },
       { t: 'sub',  text: '  Autonomous AI Engineer · Software Architect' },
       { t: 'sys',  text: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' },
       { t: 'dim',  text: '' },
