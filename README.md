@@ -1,31 +1,53 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:00ffcc&height=200&section=header&text=Portfolio&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Upgraded%20Startup%20Project&descAlignY=65" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Autonomous%20AI%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
 
-  [![Status](https://img.shields.io/badge/Status-Offline%20for%20Upgrades-ff4b4b?style=for-the-badge)](#)
-  [![Infrastructure](https://img.shields.io/badge/Infra-Migrating-8957e5?style=for-the-badge)](#)
+  [![Status](https://img.shields.io/badge/Status-Live-00ffcc?style=for-the-badge)](#)
+  [![Infrastructure](https://img.shields.io/badge/Infra-Vercel-000000?style=for-the-badge&logo=vercel)](#)
+  [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](#)
+  [![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](#)
 </div>
 
-## ?? Overview
-Welcome to the upgraded repository for **Portfolio**. 
+## 🚀 Overview
+Welcome to the official portfolio repository for **Koketso Raphasha (Raphasha27)**.
+This project is a high-performance, cinematic React/Vite implementation of my professional branding ecosystem, featuring 3D visualizations, interactive AI elements, and sovereign infrastructure concepts.
 
-> **Note on Deployment:** The previous live deployment for this project was temporarily suspended during infrastructure migration. We have disabled the external live links to prevent 404 errors. This repository remains fully functional locally.
+🌐 **Live Deployment:** [https://portfolio-iota-eight-90.vercel.app/](https://portfolio-iota-eight-90.vercel.app/)
 
-## ?? Key Architectural Features
-- **High-Performance Core:** Built for scalability and autonomous operations.
-- **Modern UI/UX:** Features advanced dashboard logic and secure routing.
-- **Sovereign Infrastructure Ready:** Currently being refactored for the Kirov Dynamics cloud ecosystem.
+## ⚡ Key Architectural Features
+- **Cinematic Dark-Luxury UI:** Tailored with Tailwind CSS and Framer Motion for a premium, high-performance experience with neon accents.
+- **Sovereign Intelligence:** Integrated Digital Twin AI assistant powered by context-aware professional data.
+- **Interactive Terminal:** An interactive "hacker" style terminal simulating AI interactions.
+- **SEO Optimized:** Comprehensive metadata, JSON-LD structured data, and search engine optimizations.
+- **Fully Responsive:** Beautifully scales across desktop, tablet, and mobile devices.
 
-## ??? Local Development Setup
-To run this project locally without relying on external cloud providers:
+## 💻 Tech Stack
+- **Frontend:** React 19, Vite, Framer Motion
+- **Styling:** Tailwind CSS (Utility-first configuration)
+- **Infrastructure:** Vercel Production Environment
 
-`ash
-git clone https://github.com/Raphasha27/Portfolio.git
-cd Portfolio
-# Install dependencies according to package manager (npm/pip/cargo)
+## 🛠️ Local Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Raphasha27/portfolio.git
+cd portfolio/v2
+
+# Install dependencies
+npm install
+
 # Start the local development server
-`
+npm run dev
 
-## ?? Roadmap
-- [x] Clear dead Vercel/Heroku links to prevent 404 routing errors.
+# Build for production
+npm run build
+```
+
+## 🗺️ Roadmap
+- [x] SEO Optimization and Structured Data integration.
+- [x] Premium Dark-mode UI/UX and micro-interactions.
+- [x] Interactive Terminal / Feature implementations.
 - [ ] Migrate CI/CD to local GitHub Actions.
-- [ ] Deploy isolated -lab environment.
+
+---
+**Innovative. Performant. Sovereign.**
+*Built by Koketso Raphasha (Raphasha27)*

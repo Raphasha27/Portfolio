@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#050d12',
-        'bg-deep': '#020609',
+        bg: '#0A0A0A',
+        'bg-deep': '#000000',
         green: {
-          400: '#00c988',
-          500: '#00a676',
+          400: '#00ffcc',
+          500: '#00ccaa',
         },
         text: {
-          DEFAULT: '#e0f2f1',
-          dim: '#94a3b8',
+          DEFAULT: '#f3f4f6',
+          dim: '#9ca3af',
         },
       },
       fontFamily: {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '../assets/koketso_no_wall.png';
 
 const bannerTechs = [
   { name: "React",           id: "react"        },
@@ -149,20 +148,17 @@ const Hero = () => {
             className="relative order-1 lg:order-2"
           >
             {/* Profile card */}
-            <div className="rounded-[32px] border border-blue-500/10 shadow-[0_0_80px_rgba(59,130,246,0.12)] relative overflow-hidden aspect-[4/5] w-full max-w-[260px] sm:max-w-[320px] lg:max-w-[360px] mx-auto lg:ml-auto">
+            <div className="rounded-full border-[4px] border-[#0a0a0a] shadow-xl relative overflow-hidden aspect-square w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] mx-auto lg:ml-auto ring-4 ring-[#00ffcc]/20">
               <img
-                src={profileImg}
+                src="/profile.jpg"
                 alt="Koketso Raphasha"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 py-4 sm:py-8">
-                <div className="space-y-0.5 sm:space-y-1">
-                  <div className="text-lg sm:text-3xl font-bold text-white tracking-wide drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">Koketso Raphasha</div>
-                  <div className="text-[8px] sm:text-[10px] font-mono text-blue-400 uppercase tracking-[0.3em] font-bold">System Operator · AI Engineer</div>
-                  <div className="text-[7px] sm:text-[9px] text-white/50 font-mono">Pretoria, ZA · UTC+2</div>
-                </div>
-              </div>
+            </div>
+            
+            <div className="text-center mt-6 lg:text-right">
+                <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
+                <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-1">Autonomous AI Engineer</div>
             </div>
 
             {/* Scrolling Tech Marquee */}

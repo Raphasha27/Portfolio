@@ -1,6 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './components/Hero';
+import Terminal from './components/Terminal';
 import About from './components/About';
 import Experience from './components/Experience';
 import Roles from './components/Roles';
@@ -29,6 +30,11 @@ function App() {
         {/* Section 1: Hero */}
         <section>
           <Hero />
+        </section>
+
+        {/* Section 1.5: Terminal */}
+        <section className="px-4 sm:px-6 lg:px-12">
+          <Terminal />
         </section>
 
         {/* Section 2: About */}

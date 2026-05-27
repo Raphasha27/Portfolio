@@ -1,19 +1,22 @@
-# Kirov Dynamics Portfolio v2 🚀🛡️
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Autonomous%20AI%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
+</div>
+
+# Koketso Raphasha - Portfolio v2 🚀🛡️
 
 The high-fidelity, cinematic React/Vite implementation of the Kirov Dynamics professional branding ecosystem.
 
 ## 🌟 Key Features
-- **Cinematic Dark-Luxury UI**: Tailored with Vanilla CSS and Framer Motion for a premium, high-performance experience.
+- **Cinematic Dark-Luxury UI**: Tailored with Tailwind CSS and Framer Motion for a premium, high-performance experience.
+- **Interactive Terminal**: Custom terminal mimicking a secure engineering nexus.
 - **Sovereign Intelligence**: Integrated Digital Twin AI assistant powered by context-aware professional data.
-- **Emoji Arsenal Iconography**: Fully transitioned to a high-fidelity, lightweight emoji-based icon system.
-- **9 AI Specializations**: Showcasing expertise across Architect, Orchestrator, Product, and Security roles.
-- **Responsive Architecture**: Optimized for mobile with a dedicated QR Scan Nexus for instant mobile synchronization.
+- **SEO Optimized**: Advanced metadata and structured JSON-LD data.
+- **Responsive Architecture**: Optimized for mobile with fluid layouts and high-fidelity typography.
 
 ## 🛠️ Tech Stack
-- **Frontend**: React 19, Vite 8, Framer Motion
-- **Styling**: Tailwind CSS 4 (Utility-first configuration)
+- **Frontend**: React 19, Vite, Framer Motion
+- **Styling**: Tailwind CSS
 - **Infrastructure**: Vercel Production Environment
-- **Icons**: Standardized Emoji-based mapping via `Icons.jsx`
 
 ## 🏗️ Getting Started
 ```bash
@@ -28,8 +31,8 @@ npm run build
 ```
 
 ## 📜 Deployment
-Deploys automatically to [v2-seven-eta.vercel.app](https://v2-seven-eta.vercel.app) via GitHub integration.
+Deploys automatically to [https://portfolio-iota-eight-90.vercel.app/](https://portfolio-iota-eight-90.vercel.app/) via GitHub integration.
 
 ---
 **Innovative. Performant. Sovereign.**
-*Built by Koketso Raphasha*
+*Built by Koketso Raphasha (Raphasha27)*
