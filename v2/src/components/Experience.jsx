@@ -106,9 +106,10 @@ const Experience = () => {
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="relative flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group pb-8"
+                style={{ contain: 'layout style' }}
               >
                 {/* Logo Circle — smaller on mobile */}
                 <div 
@@ -133,19 +134,19 @@ const Experience = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-blue-500/20 transition-all duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full -mr-32 -mt-32 group-hover:bg-blue-500/10 transition-all duration-1000" />
+                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-blue-500/20 transition-[border-color] duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
                   <div className="relative z-10">
                     <div className="flex flex-col gap-2 mb-3 sm:mb-6">
                       <div className="max-w-full overflow-hidden">
-                        <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300 tracking-tight break-words">{exp.role}</h3>
+                        <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-[color] duration-300 tracking-tight break-words">{exp.role}</h3>
                         <div className="text-[9px] sm:text-sm font-bold text-blue-400/70 tracking-normal sm:tracking-[0.3em] uppercase mt-1 sm:mt-2 font-mono break-words">{exp.company}</div>
                       </div>
                       <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-blue-400/60 uppercase tracking-wider self-start">
                         [{exp.period}]
                       </div>
                     </div>
-                    <p className="text-text-dim text-xs sm:text-base leading-relaxed max-w-3xl font-light group-hover:text-white/90 transition-colors">
+                    <p className="text-text-dim text-xs sm:text-base leading-relaxed max-w-3xl font-light opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                       {exp.desc}
                     </p>
                   </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './components/Hero';
 import Terminal from './components/Terminal';
@@ -17,6 +17,11 @@ import Services from './components/Services';
 import Map from './components/Map';
 
 function App() {
+  // Always scroll to top when the app first mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
       {/* Global Grain Overlay */}
