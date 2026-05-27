@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" width="340" height="120">
+  <rect width="340" height="120" fill="#003087" rx="10"/>
+  <!-- Shield shape -->
+  <path d="M28 18 L28 64 Q28 84 52 96 Q76 84 76 64 L76 18 Z" fill="white"/>
+  <!-- Torch handle inside shield -->
+  <rect x="48.5" y="60" width="7" height="24" fill="#003087" rx="2"/>
+  <!-- Torch cup -->
+  <path d="M42 55 Q42 48 52 46 Q62 48 62 55 L60 62 L44 62 Z" fill="#003087"/>
+  <!-- Flame red -->
+  <path d="M52 20 Q43 34 43 46 Q43 56 52 60 Q61 56 61 46 Q61 34 52 20Z" fill="#cc2200"/>
+  <!-- Flame orange highlight -->
+  <path d="M52 28 Q47 38 47 46 Q47 53 52 57 Q57 53 57 46 Q57 38 52 28Z" fill="#ff5500"/>
+  <!-- Flame white tip -->
+  <path d="M52 34 Q50 40 50 46 Q50 50 52 52 Q54 50 54 46 Q54 40 52 34Z" fill="#ffaa44" opacity="0.6"/>
+  <!-- RICHFIELD bold white text -->
+  <text x="92" y="75" font-family="'Arial Black', 'Arial', sans-serif" font-weight="900" font-size="38" fill="white" letter-spacing="1">RICHFIELD</text>
+</svg>

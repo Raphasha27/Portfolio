@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
-import richfieldLogo from '../assets/richfield-logo.png';
+import richfieldLogo from '../assets/richfield-logo.svg';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import yesLogo from '../assets/yes-badge.png';
@@ -11,7 +11,7 @@ import googleLogo from '../assets/google-logo.svg';
 import ibmLogo from '../assets/ibm-logo.svg';
 
 const partners = [
-  { name: "Richfield", sub: "BSc CS · Distinction", logo: richfieldLogo, bg: "bg-[#004a99]" },
+  { name: "Richfield", sub: "BSc CS · Distinction", logo: richfieldLogo, bg: "bg-[#003087]" },
   { name: "WeThinkCode_", sub: "Software Engineering", logo: wethinkcodeLogo, bg: "bg-white" },
   { name: "CAPACITI", sub: "Digital Skills Accelerator", logo: capacitiLogo, bg: "bg-white" },
   { name: "YES Programme", sub: "Youth Employment Service", logo: yesLogo, bg: "bg-white" },

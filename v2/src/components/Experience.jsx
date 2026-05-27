@@ -6,7 +6,7 @@ import { Icon } from './Icons';
 import yesBadge from '../assets/yes-badge.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import wtcLogo from '../assets/wethinkcode-logo.png';
-import richfieldLogo from '../assets/richfield-logo.png';
+import richfieldLogo from '../assets/richfield-logo.svg';
 
 const experiences = [
   {
@@ -69,8 +69,9 @@ const experiences = [
     desc: "Graduated with distinction. Specialized in systems programming, data structures, algorithms, and software architecture. Recipient of academic excellence recognition.",
     icon: "bookOpen",
     logo: richfieldLogo,
-    logoBg: "bg-[#004a99]",
-    logoPadding: "p-5"
+    logoBg: "bg-[#003087]",
+    logoPadding: "p-2",
+    logoFit: "object-contain"
   }
 ];
 
