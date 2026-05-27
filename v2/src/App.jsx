@@ -38,11 +38,6 @@ function App() {
           <Hero />
         </section>
 
-        {/* Section 1.5: Terminal */}
-        <section className="px-4 sm:px-6 lg:px-12">
-          <Terminal />
-        </section>
-
         {/* Section 2: About */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
@@ -121,6 +116,11 @@ function App() {
         >
           <Projects />
         </motion.section>
+
+        {/* Section 7.5: Terminal */}
+        <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
+          <Terminal />
+        </section>
 
         {/* Section 8: Map */}
         <motion.div
