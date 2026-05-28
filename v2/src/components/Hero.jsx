@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import koketsoSuit from '../assets/koketso_suit.png';
 import koketsoHoodie from '../assets/koketso_hoodie.png';
