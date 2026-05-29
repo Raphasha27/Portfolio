@@ -49,5 +49,25 @@ npm run build
 - [ ] Migrate CI/CD to local GitHub Actions.
 
 ---
+
+## 🔗 Ecosystem
+
+Part of the **Kirov Dynamics Technology** ecosystem:
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-⭐29-00ffcc?style=flat-square)](https://github.com/Raphasha27/Portfolio)
+[![AI-Agent](https://img.shields.io/badge/AI--Agent-⭐3-004a99?style=flat-square)](https://github.com/Raphasha27/AI-Agent)
+[![Github-Harden](https://img.shields.io/badge/Github--Harden-Security-00ffcc?style=flat-square)](https://github.com/Raphasha27/Github-Harden)
+[![Go-RAG-System](https://img.shields.io/badge/Go--RAG--System-00ADD8?style=flat-square)](https://github.com/Raphasha27/Go-RAG-System)
+[![Nexus-Quant](https://img.shields.io/badge/Nexus--Quant-Quant-00ffcc?style=flat-square)](https://github.com/Raphasha27/Nexus-Quant)
+[![CyberShield SOC](https://img.shields.io/badge/CyberShield--SOC-Security-004a99?style=flat-square)](https://github.com/Raphasha27/cybershield_soc)
+[![Dev Factory](https://img.shields.io/badge/Dev--Factory-v7-005571?style=flat-square)](https://github.com/Raphasha27/autonomous-dev-factory-v7)
+[![SaaS Backend](https://img.shields.io/badge/SaaS--Backend-Multi--tenant-004a99?style=flat-square)](https://github.com/Raphasha27/saas-multitenant-backend)
+[![FastAPI Starter](https://img.shields.io/badge/FastAPI--Starter-Enterprise-005571?style=flat-square)](https://github.com/Raphasha27/enterprise-fastapi-starter)
+[![Repo Audit](https://img.shields.io/badge/Repo--Audit--Bot-CLI-00ffcc?style=flat-square)](https://github.com/Raphasha27/repo-audit-bot)
+
+*Building the infrastructure of autonomous systems.*
+
+---
+
 **Innovative. Performant. Sovereign.**
 *Built by Koketso Raphasha (Raphasha27)*

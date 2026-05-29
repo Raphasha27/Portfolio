@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import koketsoSuit from '../assets/koketso_suit.png';
@@ -76,20 +76,7 @@ const CountUp = ({ to, duration = 2 }) => {
 
 const Hero = () => {
   const doubled = [...bannerTechs, ...bannerTechs];
-  const [activeProfile, setActiveProfile] = useState(0);
-  const profiles = [
-    { src: koketsoSuit, label: 'Executive Mode', badge: 'Business', color: 'bg-white text-black' },
-    { src: koketsoHoodie, label: 'Developer Mode', badge: 'Engineering', color: 'bg-[#00ffcc] text-black' },
-    { src: koketsoVR, label: 'Cyber Mode', badge: 'Virtual Reality', color: 'bg-[#ff00ff] text-white' }
-  ];
-
-  // Auto-slide profiles
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveProfile((prev) => (prev + 1) % profiles.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [profiles.length]);
+  const profileSrc = koketsoSuit;
 
   return (
     <div id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
@@ -167,55 +154,25 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative order-1 lg:order-2 flex flex-col items-center lg:items-end"
+            className="relative order-1 lg:order-2 flex flex-col items-center"
           >
-            {/* Interactive Profile Switcher */}
-            <div className="relative group w-full max-w-[280px] lg:max-w-[320px]">
-              {/* Dynamic decorative ring based on active profile */}
-              <motion.div 
-                animate={{ borderColor: activeProfile === 0 ? 'rgba(255,255,255,0.2)' : 'rgba(0,255,204,0.3)' }}
-                className="absolute inset-0 rounded-full border-[4px] blur-sm transition-colors duration-500" 
-              />
+            {/* Profile Image */}
+            <div className="relative w-full max-w-[280px] lg:max-w-[320px]">
+              <div className="absolute inset-0 rounded-full border-[4px] border-[#00ffcc]/30 blur-sm" />
               
-              <div className="rounded-full border-[4px] border-[#0a0a0a] shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden aspect-square w-full ring-2 ring-[#00ffcc]/10 z-10 cursor-pointer"
-                   onClick={() => setActiveProfile((prev) => (prev === 0 ? 1 : 0))}>
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={activeProfile}
-                    src={profiles[activeProfile].src}
-                    alt={`Koketso Raphasha - ${profiles[activeProfile].label}`}
-                    initial={{ opacity: 0, scale: 1.05, filter: 'blur(4px)' }}
-                    animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, scale: 0.95, filter: 'blur(4px)' }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="w-full h-full object-cover object-center absolute inset-0"
-                  />
-                </AnimatePresence>
-                
-                {/* Mode Overlay Badge */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 items-center bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Icon name="activity" size={12} className={activeProfile === 0 ? 'text-white' : 'text-[#00ffcc]'} />
-                  <span className="text-[10px] font-mono text-white uppercase tracking-wider">{profiles[activeProfile].label}</span>
-                </div>
-              </div>
-              
-              {/* Manual Toggles */}
-              <div className="flex justify-center gap-2 mt-4 absolute -bottom-8 left-0 right-0 z-20">
-                {profiles.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveProfile(idx)}
-                    className={`w-10 h-1.5 rounded-full transition-all duration-300 ${activeProfile === idx ? 'bg-[#00ffcc] shadow-[0_0_10px_rgba(0,255,204,0.5)]' : 'bg-white/20 hover:bg-white/40'}`}
-                    aria-label={`Switch to profile ${idx + 1}`}
-                  />
-                ))}
+              <div className="rounded-full border-[4px] border-[#0a0a0a] shadow-[0_0_40px_rgba(0,0,0,0.5)] relative overflow-hidden aspect-square w-full ring-2 ring-[#00ffcc]/10 z-10">
+                <img
+                  src={profileSrc}
+                  alt="Koketso Raphasha"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
             
-            <div className="text-center mt-12 lg:text-right w-full max-w-[280px] lg:max-w-[320px]">
+            <div className="text-center w-full max-w-[280px] lg:max-w-[320px] mt-8">
                 <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
-                <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-1 flex items-center justify-center lg:justify-end gap-2">
-                  Autonomous AI Engineer
+                <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-2 flex items-center justify-center gap-2">
+                  Autonomous AI Engineer · Software Engineer
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]"></span>
@@ -228,7 +185,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="mt-6 glass rounded-2xl border border-blue-500/30 overflow-hidden w-full max-w-[280px] sm:max-w-[320px] mx-auto lg:ml-auto shadow-[0_0_30px_rgba(59,130,246,0.05)] relative"
+               className="mt-6 glass rounded-2xl border border-blue-500/30 overflow-hidden w-full max-w-[280px] sm:max-w-[320px] mx-auto shadow-[0_0_30px_rgba(59,130,246,0.05)] relative"
             >
               <div className="py-3 sm:py-4 flex overflow-hidden">
                 <motion.div
