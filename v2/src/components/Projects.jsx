@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Icon } from './Icons';
 
 const projects = [
@@ -139,6 +139,40 @@ const bannerTechs = [
   { name: "Vite",            id: "vite"         },
 ];
 
+const TiltCard = ({ children, className, id }) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+  return (
+    <motion.div
+      id={id}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        x.set((e.clientX - rect.left) / rect.width - 0.5);
+        y.set((e.clientY - rect.top) / rect.height - 0.5);
+      }}
+      onMouseLeave={() => {
+        x.set(0);
+        y.set(0);
+      }}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d"
+      }}
+      whileHover={{ scale: 1.02, zIndex: 10 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const Projects = () => {
   const [copied, setCopied] = useState(false);
   const doubled = [...bannerTechs, ...bannerTechs];
@@ -174,9 +208,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 relative z-10">
           {projects.map((p, i) => (
-            <motion.div 
-              whileHover={{ scale: 1.02, y: -5, rotateX: 2, rotateY: -2, zIndex: 10 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            <TiltCard 
               key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
@@ -234,7 +266,7 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </TiltCard>
           ))}
         </div>
       </div>
