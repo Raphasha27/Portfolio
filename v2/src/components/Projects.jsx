@@ -175,7 +175,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 relative z-10">
           {projects.map((p, i) => (
             <motion.div 
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ scale: 1.02, y: -5, rotateX: 2, rotateY: -2, zIndex: 10 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >

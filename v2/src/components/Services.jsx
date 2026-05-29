@@ -45,6 +45,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            whileHover={{ scale: 1.02, y: -5, rotateX: 2, rotateY: -2, zIndex: 10 }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
             className="group bg-[#0a161d] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl"
           >

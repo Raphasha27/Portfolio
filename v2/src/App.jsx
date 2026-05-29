@@ -1,21 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './components/Hero';
-import Terminal from './components/Terminal';
 import About from './components/About';
-import Experience from './components/Experience';
-import Roles from './components/Roles';
-import Skills from './components/Skills';
-import Certifications from './components/Certifications';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Testimonials from './components/Testimonials';
-import ChatAssistant from './components/ChatAssistant';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
-import Services from './components/Services';
-import Map from './components/Map';
 import cyberBg from './assets/cyber-bg.png';
+
+// Lazy load below-the-fold components
+const Terminal = lazy(() => import('./components/Terminal'));
+const Experience = lazy(() => import('./components/Experience'));
+const Roles = lazy(() => import('./components/Roles'));
+const Skills = lazy(() => import('./components/Skills'));
+const Certifications = lazy(() => import('./components/Certifications'));
+const Projects = lazy(() => import('./components/Projects'));
+const Contact = lazy(() => import('./components/Contact'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const ChatAssistant = lazy(() => import('./components/ChatAssistant'));
+const Services = lazy(() => import('./components/Services'));
+const Map = lazy(() => import('./components/Map'));
 
 function App() {
   // Always scroll to top when the app first mounts
@@ -54,113 +56,120 @@ function App() {
           <About />
         </motion.section>
 
-        {/* Section 3: Experience — full-width, self-contained */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <Experience />
-        </motion.section>
-
-        {/* Section 4: Skills & Roles */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-          className="relative py-16 sm:py-24 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-transparent">
-            <div className="absolute inset-0 opacity-20" 
-                 style={{ 
-                   backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
-                                     radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
-                 }} />
-            <div className="absolute inset-0 opacity-10" 
-                 style={{ 
-                   backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
-                                     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
-                 }} />
+        <Suspense fallback={
+          <div className="w-full py-32 flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
           </div>
-          <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
-            <Skills />
-            <Roles />
-          </div>
-        </motion.section>
+        }>
+          {/* Section 3: Experience — full-width, self-contained */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <Experience />
+          </motion.section>
 
-        {/* Section 5: Certifications */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <Certifications />
-        </motion.section>
+          {/* Section 4: Skills & Roles */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+            className="relative py-16 sm:py-24 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-transparent">
+              <div className="absolute inset-0 opacity-20" 
+                   style={{ 
+                     backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
+                                       radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
+                   }} />
+              <div className="absolute inset-0 opacity-10" 
+                   style={{ 
+                     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+                                       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
+                      backgroundSize: '40px 40px'
+                   }} />
+            </div>
+            <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
+              <Skills />
+              <Roles />
+            </div>
+          </motion.section>
 
-        {/* Section 6: Services */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-          className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
-        >
-          <Services />
-        </motion.section>
+          {/* Section 5: Certifications */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <Certifications />
+          </motion.section>
 
-        {/* Section 7: Projects */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-          className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
-        >
-          <Projects />
-        </motion.section>
+          {/* Section 6: Services */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
+          >
+            <Services />
+          </motion.section>
 
-        {/* Section 7.5: Terminal */}
-        <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
-          <Terminal />
-        </section>
+          {/* Section 7: Projects */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
+          >
+            <Projects />
+          </motion.section>
 
-        {/* Section 8: Map */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <Map />
-        </motion.div>
+          {/* Section 7.5: Terminal */}
+          <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
+            <Terminal />
+          </section>
 
-        {/* Section 9: Testimonials */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <Testimonials />
-        </motion.section>
+          {/* Section 8: Map */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <Map />
+          </motion.div>
 
-        {/* Section 10: Contact — full-width, self-contained */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <Contact />
-        </motion.section>
+          {/* Section 9: Testimonials */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <Testimonials />
+          </motion.section>
 
+          {/* Section 10: Contact — full-width, self-contained */}
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <Contact />
+          </motion.section>
+        </Suspense>
       </main>
 
-      <ChatAssistant />
+      <Suspense fallback={null}>
+        <ChatAssistant />
+      </Suspense>
       <ScrollToTop />
     </div>
   );

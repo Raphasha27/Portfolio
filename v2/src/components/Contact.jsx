@@ -30,71 +30,119 @@ const Contact = () => {
             <div className="grid-lines" />
           </div>
 
-          <div className="relative z-10 flex flex-col gap-10">
-            {/* Top: Call to action */}
-            <div className="flex flex-col gap-6">
-              <div>
-                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">
-                  Let's Build Something <br /><span className="text-blue-400 glow-text">Extraordinary</span>
-                </h2>
-                <p className="text-text-dim text-sm sm:text-lg max-w-md leading-relaxed">
-                  Have a project in mind? Let's work together to bring your digital visions to life with precision and style.
-                </p>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8">
+            {/* Left: Text & Socials */}
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-6">
+                <div>
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">
+                    Let's Build Something <br /><span className="text-blue-400 glow-text">Extraordinary</span>
+                  </h2>
+                  <p className="text-text-dim text-sm sm:text-lg max-w-md leading-relaxed">
+                    Have a project in mind? Let's work together to bring your digital visions to life with precision and style.
+                  </p>
+                </div>
+
+                {/* Location Card */}
+                <div className="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/5 inline-flex items-center gap-4 sm:gap-6 relative overflow-hidden group self-start">
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+                    <img src={gautengMap} alt="Pretoria Map" className="w-full h-full object-cover scale-150 grayscale" />
+                  </div>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 relative z-10">
+                    <Icon name="globe" size={22} />
+                  </div>
+                  <div className="relative z-10 text-left">
+                    <div className="text-[8px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-1">Current Coordinates</div>
+                    <div className="text-sm font-bold text-white tracking-tight">Pretoria, Gauteng</div>
+                    <div className="text-[9px] text-text-dim font-medium uppercase tracking-wider">South Africa · SAST (UTC+2)</div>
+                  </div>
+                </div>
               </div>
-
-              {/* Location Card */}
-              <div className="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/5 inline-flex items-center gap-4 sm:gap-6 relative overflow-hidden group self-start">
-                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                  <img src={gautengMap} alt="Pretoria Map" className="w-full h-full object-cover scale-150 grayscale" />
-                </div>
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 relative z-10">
-                  <Icon name="globe" size={22} />
-                </div>
-                <div className="relative z-10 text-left">
-                  <div className="text-[8px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-1">Current Coordinates</div>
-                  <div className="text-sm font-bold text-white tracking-tight">Pretoria, Gauteng</div>
-                  <div className="text-[9px] text-text-dim font-medium uppercase tracking-wider">South Africa · SAST (UTC+2)</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom: MobileScan + CTA + Socials — stack on mobile */}
-            <div className="flex flex-col items-center gap-8 sm:gap-10">
-              <MobileScan />
-
-              {/* CTA Button */}
-              <a 
-                href="mailto:raphashakoketso99@gmail.com" 
-                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-blue-600 hover:bg-blue-500 text-bg font-bold rounded-xl sm:rounded-2xl transition-all flex items-center justify-center gap-3 text-sm sm:text-lg shadow-[0_0_30px_rgba(37,99,235,0.3)] group active:scale-95"
-              >
-                Get In Touch <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
-              </a>
 
               {/* Social Icons — wrap gracefully */}
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-3">
                 {[
-                  { icon: "github",    link: "https://github.com/raphasha27" },
-                  { icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
-                  { icon: "facebook",  link: "https://www.facebook.com/kirovdynamicstechnology" },
-                  { icon: "twitter",   link: "https://twitter.com/raphasha27" },
-                  { icon: "slack",     link: "https://slack.com/Raphasha27" },
-                  { icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
-                  { icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
-                  { icon: "whop",      link: "https://whop.com/kirovdynamicstechnology/" },
-                  { icon: "whatsapp",  link: "https://wa.me/27781172470" },
-                  { icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" }
+                  { name: "GitHub", icon: "github",    link: "https://github.com/raphasha27" },
+                  { name: "LinkedIn", icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
+                  { name: "Facebook", icon: "facebook",  link: "https://www.facebook.com/kirovdynamicstechnology" },
+                  { name: "Twitter", icon: "twitter",   link: "https://twitter.com/raphasha27" },
+                  { name: "Slack", icon: "slack",     link: "https://slack.com/Raphasha27" },
+                  { name: "Kaggle", icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
+                  { name: "Streamlit", icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
+                  { name: "Whop", icon: "whop",      link: "https://whop.com/kirovdynamicstechnology/" },
+                  { name: "WhatsApp", icon: "whatsapp",  link: "https://wa.me/27781172470" },
+                  { name: "Email", icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" }
                 ].map((social, i) => (
                   <a 
                     key={i} 
                     href={social.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    aria-label={`Visit my ${social.name} profile`}
                     className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-white/70 hover:text-blue-400 hover:border-blue-500/50 transition-all hover:scale-110 active:scale-95 group shadow-lg"
                   >
                     <Icon name={social.icon} size={22} className="group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
                   </a>
                 ))}
               </div>
+            </div>
+
+            {/* Right: Contact Form */}
+            <div className="flex flex-col gap-6">
+              <form 
+                action="https://api.web3forms.com/submit" 
+                method="POST" 
+                className="flex flex-col gap-4 w-full"
+              >
+                {/* Replace with your actual Web3Forms Access Key later if desired, or use Formspree. Using a placeholder for now which falls back to basic HTML submission. */}
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="hidden" name="subject" value="New Submission from Portfolio" />
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex-1 flex flex-col gap-2">
+                    <label htmlFor="name" className="text-[10px] uppercase tracking-widest text-text-dim font-bold ml-2">Name</label>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      id="name" 
+                      required 
+                      placeholder="John Doe" 
+                      className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <label htmlFor="email" className="text-[10px] uppercase tracking-widest text-text-dim font-bold ml-2">Email</label>
+                    <input 
+                      type="email" 
+                      name="email" 
+                      id="email" 
+                      required 
+                      placeholder="john@example.com" 
+                      className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="text-[10px] uppercase tracking-widest text-text-dim font-bold ml-2">Message</label>
+                  <textarea 
+                    name="message" 
+                    id="message" 
+                    required 
+                    rows="4" 
+                    placeholder="Tell me about your project..." 
+                    className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="w-full py-4 mt-2 bg-blue-600 hover:bg-blue-500 text-bg font-bold rounded-xl transition-all flex items-center justify-center gap-3 text-sm shadow-[0_0_30px_rgba(37,99,235,0.3)] group active:scale-95"
+                >
+                  Send Message <Icon name="arrowRight" size={18} className="group-hover:translate-x-2 transition-transform" />
+                </button>
+              </form>
             </div>
           </div>
         </div>

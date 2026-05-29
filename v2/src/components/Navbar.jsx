@@ -60,6 +60,7 @@ const Navbar = () => {
             <button
               key={item}
               onClick={() => scrollTo(item)}
+              aria-label={`Scroll to ${item} section`}
               className="hover:text-[#00FF9C] transition-all capitalize"
             >
               {item}
