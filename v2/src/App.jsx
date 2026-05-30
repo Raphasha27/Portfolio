@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
@@ -32,12 +32,15 @@ function App() {
     return () => cancelAnimationFrame(id);
   }, []);
 
+  const { scrollYProgress } = useScroll();
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
-      {/* Global Cyber Background */}
-      <div 
+      {/* Global Cyber Background — parallax */}
+      <motion.div 
         className="fixed inset-0 pointer-events-none z-[0] opacity-[0.15] bg-center bg-cover bg-no-repeat" 
-        style={{ backgroundImage: `url(${cyberBg})`, backgroundAttachment: 'fixed' }} 
+        style={{ backgroundImage: `url(${cyberBg})`, y: bgY }} 
       />
       {/* Global Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />

@@ -123,6 +123,9 @@ const Hero = () => {
                 <a href="#projects" className="px-5 sm:px-6 py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 shadow-[0_0_20px_rgba(0,255,156,0.4)] text-xs sm:text-sm">
                   VIEW REPOS
                 </a>
+                <a href="https://portfolio-iota-eight-90.vercel.app/" target="_blank" rel="noopener noreferrer" className="px-5 sm:px-6 py-3 bg-blue-600/20 border border-blue-500/50 text-blue-400 font-bold rounded-xl hover:bg-blue-600/30 transition-all active:scale-95 text-xs sm:text-sm flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" /> PORTFOLIO LIVE
+                </a>
                 <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-3 bg-[#0d1117] border border-[#00FF9C] text-white font-bold rounded-xl hover:bg-[#00FF9C]/5 transition-all active:scale-95 text-xs sm:text-sm flex items-center gap-2">
                   <Icon name="download" size={16} /> DOWNLOAD CV
                 </a>

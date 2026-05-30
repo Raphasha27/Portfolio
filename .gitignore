@@ -7,26 +7,48 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 v2/node_modules/
+.pnp
+.pnp.js
+
+# Build output
 dist
 v2/dist/
 dist-ssr
+build
+out
+.nuxt
+.next
+.svelte-kit
+
+# Environment variables
 *.local
 .env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 .gemini/
 
-# Editor directories and files
+# IDEs and Editors
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
+*.sw?
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
 
-.vercel
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
 
+# Deployment
 .vercel
+.output
+.vercel/*
+!.vercel/project.json

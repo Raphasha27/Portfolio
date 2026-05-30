@@ -2,59 +2,139 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
+// ── Rich knowledge base (used as system context + fallback) ──────────────────
+const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, an Autonomous AI Engineer and Software Engineer based in Pretoria, South Africa.
+
+KEY FACTS:
+- Full name: Koketso Raphasha (Age 27)
+- Role: Autonomous AI Engineer | Software Engineer | Co-Founder of Kirov Dynamics Technology
+- Education: BSc Computer Science (Distinction) from Richfield Graduate Institute
+- Also trained at WeThinkCode_ (Johannesburg)
+- Internship: AI Intern at CAPACITI Digital Skills Accelerator (2025-2026)
+- Member of YES4Youth programme (2025-2026)
+- Email: raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470
+- GitHub: github.com/Raphasha27 | LinkedIn: linkedin.com/in/koketso-raphasha
+- Portfolio: https://portfolio-iota-eight-90.vercel.app/
+
+TECH STACK:
+- Languages: C, C++, Python, JavaScript, TypeScript, Rust, Go, Swift, Java, C#
+- Frontend: React, Next.js, Vite, Framer Motion, TailwindCSS
+- Backend: Node.js, FastAPI, Express, .NET 8
+- AI/ML: LangChain, LangGraph, Gemini API, TensorFlow, PyTorch
+- Cloud/DevOps: Docker, Kubernetes, GitHub Actions, Vercel, AWS, Azure
+- DBs: PostgreSQL, MongoDB, Redis, SQLite, Pinecone
+
+PROJECTS:
+- Sovereign-AI-Nexus: Decentralized multi-agent infrastructure for autonomous professional branding
+- FlowSentinel: Enterprise traffic governance engine at 2.4M req/s (.NET 8, Redis)
+- CyberShield Modern: SOC dashboard with WebSockets & WebGL (SOC score 93)
+- NoShowIQ: Healthcare AI appointment no-show prediction (PyTorch, React)
+- SupportHive-C: High-performance monitoring engine in C
+- Kirov Connect: AI-powered civic platform for smart cities
+- RepoPulse: Real-time repository metrics dashboard (Go, Grafana)
+- SeatLock: High-reliability seat reservation system (C#, Redis)
+- EduStream-Pro-ICT: AI-augmented adaptive education platform
+
+PERSONALITY: Be confident, technical, witty, and inspiring. Speak in first person as Koketso. Keep responses concise (2-4 sentences max unless asked for detail). Use "→" instead of "-" for lists. Use tech jargon naturally.`;
+
 const KB = {
-  'tech stack': "My core stack: C# / .NET 8, Rust, C, Python, React, Vite. AI/ML: PyTorch, TensorFlow, LangChain. Cloud: Azure, AWS, Docker, Kubernetes.",
-  'projects': "I've built 9 real projects mapped to 9 AI Roles including FlowSentinel, CyberShield SOC, and NoShowIQ. I've also built Sovereign-AI-Nexus.",
-  'hire': "I am available for freelance and full-time opportunities. 📩 raphashakoketso99@gmail.com | 📞 0781172470",
-  'about': "I am a South African software engineer building 'the foundational infrastructure for the African Digital Future'. I graduated from Richfield with distinction.",
-  'experience': "My background includes roles at Kirov Dynamics, Open Source contributions on GitHub, and institutional training from YES, CAPACITI, and WeThinkCode_.",
-  'latest': "The latest highlight is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Check it out in the Projects section!",
-  'recommend': "I highly recommend exploring the Sovereign-AI-Nexus project. It represents the pinnacle of my work in autonomous agentic systems.",
-  'contact': "You can reach me directly via email at raphashakoketso99@gmail.com or through my LinkedIn.",
-  'hello': "Hello there! I'm Koketso's Digital Twin. I can tell you about his technical expertise, projects, and professional timeline.",
-  'hi': "Hi! I'm Koketso's Digital Twin. What would you like to know about his engineering background?",
-  'oblitareatus': "OBLITAREATUS is my open-source LLM censorship tool. It ensures that all AI interactions remain professional, secure, and compliant by filtering sensitive technical information."
+  'tech stack': "My core stack → C / Python / TypeScript / Rust for systems, React + Vite for frontend, FastAPI + Node.js for backend. AI layer → Gemini + LangChain + LangGraph. Infra → Docker + Kubernetes + Vercel + Railway.",
+  'project': "I've shipped 9 production-grade projects → Sovereign-AI-Nexus (agentic infra), FlowSentinel (2.4M req/s traffic engine), CyberShield (SOC score 93), NoShowIQ (healthcare ML), and more. Check the Projects section!",
+  'hire': "Absolutely open to opportunities! 📩 raphashakoketso99@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
+  'about': "I'm a South African software engineer building the foundational infrastructure for the African digital future. Graduated from Richfield with distinction, trained at WeThinkCode_, interned at CAPACITI.",
+  'experience': "My background spans → Co-Founder & CTO at Kirov Dynamics, AI Intern at CAPACITI, YES4Youth Participant, Open Source contributor on GitHub, and trained at WeThinkCode_ Johannesburg.",
+  'latest': "The flagship is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Built in Python + LangGraph + Docker. Check it out in the Projects section!",
+  'recommend': "I'd recommend exploring Sovereign-AI-Nexus for autonomous AI infra, and FlowSentinel for ultra-high-throughput systems. Both represent the pinnacle of my engineering work.",
+  'contact': "Reach me → raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
+  'hello': "Hey! I'm Koketso's Digital Twin AI. I can tell you about his tech stack, projects, experience, or how to hire him. What would you like to know?",
+  'hi': "Hi there! I'm Koketso's AI Twin. Ask me about his engineering work, projects, or availability — I've got all the answers!",
+  'portfolio': "You're already on the live portfolio → https://portfolio-iota-eight-90.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
+  'kirov': "Kirov Dynamics Technology is the company I co-founded. We build autonomous AI systems, multi-tenant SaaS platforms, and CI/CD infrastructure. The mission: ship infrastructure that thinks for itself.",
+  'education': "BSc Computer Science (Distinction) from Richfield Graduate Institute, 2022-2025. Also trained at WeThinkCode_ Johannesburg (peer-driven problem-based engineering). 10+ certifications including AWS, Azure AZ-900, Meta Frontend Developer.",
+  'availab': "I'm currently open to full-time roles, freelance contracts, and collaboration on interesting projects. Remote → yes. Relocation → open to discussion. DM me!",
+  'capaciti': "CAPACITI is South Africa's digital skills accelerator. I completed their AI-focused cohort (2025-2026), ranked in the top tier for technical output. Built AI pipelines using Gemini and LangChain.",
+  'github': "My GitHub is github.com/Raphasha27 — you'll find all my open-source repos there, including SupportHive-C, RepoPulse, FlowSentinel, and more.",
 };
 
-const censorWithOblitareatus = (text) => {
-  const sensitivePatterns = [/password/gi, /api[_-]key/gi, /secret/gi, /private[_-]key/gi];
-  let censored = text;
-  sensitivePatterns.forEach(pattern => {
-    censored = censored.replace(pattern, '[OBLITAREATUS_PROTECTED]');
-  });
-  return censored;
+const getLocalReply = (text) => {
+  const lower = text.toLowerCase();
+  for (const [key, val] of Object.entries(KB)) {
+    if (lower.includes(key)) return val;
+  }
+  return "Great question! I can tell you about my tech stack, projects, experience, or how to hire Koketso. What are you most curious about?";
 };
+
+// Quick-fire suggestion chips
+const CHIPS = ['Tech Stack', 'Latest Project', 'Hire Me', 'Contact Info'];
 
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([{ role: 'bot', text: "Hi! I'm Koketso's Digital Twin. Ask me about his tech stack, projects, or how to hire him!" }]);
+  const [messages, setMessages] = useState([
+    { role: 'bot', text: "Hey! I'm Koketso's Digital Twin AI 🤖\nAsk me about his projects, tech stack, or how to hire him!" }
+  ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [hasKey, setHasKey] = useState(false);
   const scrollRef = useRef();
+
+  useEffect(() => {
+    // Check if a Gemini key is available (set via env)
+    const key = import.meta.env.VITE_GEMINI_API_KEY;
+    setHasKey(!!key && key !== 'your_gemini_key_here');
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [messages, isTyping]);
 
-  const handleSend = (text) => {
-    const q = text || input;
-    if (!q.trim()) return;
+  const callGemini = async (userText, history) => {
+    const key = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!key || key === 'your_gemini_key_here') return null;
 
-    const censoredText = censorWithOblitareatus(q);
-    const userMsg = { role: 'user', text: censoredText };
-    setMessages(prev => [...prev, userMsg]);
+    try {
+      // Build conversation history for Gemini
+      const contents = [
+        { role: 'user', parts: [{ text: SYSTEM_PROMPT }] },
+        { role: 'model', parts: [{ text: "Understood. I'm ready to represent Koketso as his Digital Twin AI." }] },
+        ...history.slice(-6).map(m => ({
+          role: m.role === 'user' ? 'user' : 'model',
+          parts: [{ text: m.text }]
+        })),
+        { role: 'user', parts: [{ text: userText }] }
+      ];
+
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents, generationConfig: { maxOutputTokens: 200, temperature: 0.8 } })
+        }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
+    } catch {
+      return null;
+    }
+  };
+
+  const handleSend = async (text) => {
+    const q = (text || input).trim();
+    if (!q) return;
+
+    const userMsg = { role: 'user', text: q };
+    const updatedMessages = [...messages, userMsg];
+    setMessages(updatedMessages);
     setInput('');
     setIsTyping(true);
 
-    setTimeout(() => {
-      let reply = "Great question! Try asking about: latest projects, tech stack, or my recommendations.";
-      const lower = q.toLowerCase();
-      for (const [key, val] of Object.entries(KB)) {
-        if (lower.includes(key)) { reply = val; break; }
-      }
-      setIsTyping(false);
-      setMessages(prev => [...prev, { role: 'bot', text: reply }]);
-    }, 1200); // Simulated delay for typing effect
+    // Try Gemini first, fall back to KB
+    const aiReply = await callGemini(q, messages);
+    const reply = aiReply || getLocalReply(q);
+
+    setIsTyping(false);
+    setMessages(prev => [...prev, { role: 'bot', text: reply }]);
   };
 
   return (
@@ -65,60 +145,90 @@ const ChatAssistant = () => {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="glass w-[calc(100vw-2rem)] sm:w-80 max-w-sm h-[400px] mb-4 flex flex-col overflow-hidden border border-[#00FF9C]/30 shadow-[0_0_30px_rgba(0,255,156,0.15)] rounded-2xl"
+            className="glass w-[calc(100vw-2rem)] sm:w-[340px] max-w-sm mb-4 flex flex-col overflow-hidden border border-[#00FF9C]/30 shadow-[0_0_40px_rgba(0,255,156,0.15)] rounded-2xl"
+            style={{ height: '460px' }}
           >
-            <div className="p-4 border-b border-white/5 flex justify-between items-center bg-[#00FF9C]/5 backdrop-blur-md">
+            {/* Header */}
+            <div className="p-4 border-b border-white/5 flex justify-between items-center bg-[#00FF9C]/5 backdrop-blur-md shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="w-8 h-8 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
+                  <div className="w-9 h-9 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-bg-deep animate-ping"></div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-bg-deep"></div>
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12] animate-ping" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12]" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold glow-text">Digital Twin AI</div>
+                  <div className="text-xs font-bold text-white">Digital Twin AI</div>
                   <div className="text-[10px] text-[#00FF9C] flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C]"></span>
-                    Online & Reactive
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C]" />
+                    {hasKey ? 'Gemini Powered' : 'AI Inference Mode'}
                   </div>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="text-text-dim hover:text-white transition-colors">
+              <button onClick={() => setIsOpen(false)} className="text-white/40 hover:text-white transition-colors p-1">
                 <Icon name="close" size={18} />
               </button>
             </div>
 
-            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-4 text-xs bg-bg-deep/50 relative">
+            {/* Messages */}
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#050d12]/60">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] p-3 rounded-xl ${m.role === 'user' ? 'bg-[#00FF9C] text-[#050d12] font-medium shadow-[0_0_15px_rgba(0,255,156,0.2)] rounded-tr-sm' : 'bg-white/5 border border-white/10 text-text rounded-tl-sm backdrop-blur-sm'}`}>
+                  <div className={`max-w-[85%] p-3 rounded-xl text-[11px] leading-relaxed whitespace-pre-wrap ${
+                    m.role === 'user'
+                      ? 'bg-[#00FF9C] text-[#050d12] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
+                      : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
+                  }`}>
                     {m.text}
                   </div>
                 </div>
               ))}
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="max-w-[80%] px-4 py-3 rounded-xl bg-white/5 border border-white/10 rounded-tl-sm flex items-center gap-1">
-                    <div className="w-1.5 h-1.5 bg-[#00FF9C] rounded-full typing-dot"></div>
-                    <div className="w-1.5 h-1.5 bg-[#00FF9C] rounded-full typing-dot"></div>
-                    <div className="w-1.5 h-1.5 bg-[#00FF9C] rounded-full typing-dot"></div>
+                  <div className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 rounded-tl-sm flex items-center gap-1.5">
+                    {[0, 150, 300].map(delay => (
+                      <motion.div
+                        key={delay}
+                        className="w-1.5 h-1.5 bg-[#00FF9C] rounded-full"
+                        animate={{ y: [0, -4, 0] }}
+                        transition={{ duration: 0.6, repeat: Infinity, delay: delay / 1000 }}
+                      />
+                    ))}
                   </div>
                 </div>
               )}
             </div>
 
-            <div className="p-4 border-t border-white/5 bg-bg-deep/80 backdrop-blur-md">
+            {/* Quick Chips */}
+            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#050d12]/40">
+              {CHIPS.map(chip => (
+                <button
+                  key={chip}
+                  onClick={() => handleSend(chip)}
+                  className="shrink-0 text-[9px] px-2.5 py-1 rounded-full border border-[#00FF9C]/30 text-[#00FF9C] hover:bg-[#00FF9C]/10 transition-all font-bold uppercase tracking-wider"
+                >
+                  {chip}
+                </button>
+              ))}
+            </div>
+
+            {/* Input */}
+            <div className="p-3 border-t border-white/5 bg-[#050d12]/80 backdrop-blur-md shrink-0">
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  placeholder="Ask AI Twin..."
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-blue-500/50 transition-colors placeholder:text-text-dim"
+                  placeholder="Ask my AI twin..."
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#00FF9C]/50 transition-colors placeholder:text-white/30"
                 />
-                <button onClick={() => handleSend()} className="p-2 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-lg hover:bg-[#00FF9C] hover:text-[#050d12] transition-all hover:shadow-[0_0_15px_rgba(0,255,156,0.4)]">
+                <button
+                  onClick={() => handleSend()}
+                  disabled={!input.trim()}
+                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#050d12] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
+                >
                   <Icon name="send" size={14} />
                 </button>
               </div>
@@ -127,13 +237,16 @@ const ChatAssistant = () => {
         )}
       </AnimatePresence>
 
-      <button
+      {/* FAB Button */}
+      <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#050d12] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.6)] hover:scale-110 transition-all relative group ring-4 ring-[#00FF9C]/20"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#050d12] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20"
       >
-        <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-30 group-hover:animate-ping"></div>
-        <Icon name={isOpen ? "close" : "chat"} size={24} />
-      </button>
+        <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
+        <Icon name={isOpen ? 'close' : 'chat'} size={24} />
+      </motion.button>
     </div>
   );
 };

@@ -1,5 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, AnimatePresence, useSpring, useMotionValue } from 'framer-motion';
+
+const CursorTrail = () => {
+  const [trail, setTrail] = useState([]);
+  const [isFine, setIsFine] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(pointer: fine)');
+    setIsFine(mq.matches);
+    if (!mq.matches) return;
+
+    let frame;
+    const points = [];
+    const TRAIL_LENGTH = 12;
+
+    const onMove = (e) => {
+      points.unshift({ x: e.clientX, y: e.clientY, id: Date.now() });
+      if (points.length > TRAIL_LENGTH) points.pop();
+      setTrail([...points]);
+    };
+
+    window.addEventListener('mousemove', onMove);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  if (!isFine) return null;
+
+  return (
+    <div className="pointer-events-none fixed inset-0 z-[9999]">
+      {trail.map((pt, i) => {
+        const scale = 1 - i / trail.length;
+        const opacity = (1 - i / trail.length) * 0.5;
+        const size = 6 * scale;
+        return (
+          <div
+            key={pt.id}
+            style={{
+              position: 'fixed',
+              left: pt.x - size / 2,
+              top: pt.y - size / 2,
+              width: size,
+              height: size,
+              borderRadius: '50%',
+              background: i === 0 ? '#00FF9C' : `rgba(0,255,156,${opacity})`,
+              boxShadow: i === 0 ? '0 0 8px rgba(0,255,156,0.8)' : 'none',
+              pointerEvents: 'none',
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -7,7 +62,6 @@ const CustomCursor = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(true);
 
   useEffect(() => {
-    // Only show cursor on devices with fine pointer (mouse/trackpad)
     const mq = window.matchMedia('(pointer: fine)');
     setIsTouchDevice(!mq.matches);
 
@@ -16,10 +70,12 @@ const CustomCursor = () => {
     };
 
     const handleMouseOver = (e) => {
-      if (e.target.tagName.toLowerCase() === 'a' || 
-          e.target.tagName.toLowerCase() === 'button' || 
-          e.target.closest('a') || 
-          e.target.closest('button')) {
+      if (
+        e.target.tagName.toLowerCase() === 'a' ||
+        e.target.tagName.toLowerCase() === 'button' ||
+        e.target.closest('a') ||
+        e.target.closest('button')
+      ) {
         setIsHovering(true);
       } else {
         setIsHovering(false);
@@ -37,45 +93,42 @@ const CustomCursor = () => {
     };
   }, []);
 
-  if (isTouchDevice) return null;
+  if (isTouchDevice) return <CursorTrail />;
 
   return (
     <>
-      {/* Precise Dot */}
+      <CursorTrail />
+      {/* Precise neon dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-blue-400 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
+        style={{
+          width: isHovering ? 20 : 10,
+          height: isHovering ? 20 : 10,
+          background: '#00FF9C',
+          boxShadow: '0 0 12px rgba(0,255,156,0.8)',
+          mixBlendMode: 'screen',
+        }}
         animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
-          scale: isHovering ? 2 : 1,
+          x: mousePosition.x - (isHovering ? 10 : 5),
+          y: mousePosition.y - (isHovering ? 10 : 5),
         }}
-        transition={{
-          type: "spring",
-          stiffness: 250,
-          damping: 20,
-          mass: 0.5
-        }}
+        transition={{ type: 'spring', stiffness: 500, damping: 28, mass: 0.3 }}
       />
-      
-      {/* Subtle Trailing Ring */}
+
+      {/* Lagging outer ring */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-blue-400/30 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] border border-[#00FF9C]/40"
+        style={{ width: 36, height: 36 }}
         animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isHovering ? 1.5 : 1,
-          opacity: isHovering ? 0.8 : 0.4,
+          x: mousePosition.x - 18,
+          y: mousePosition.y - 18,
+          scale: isHovering ? 1.6 : 1,
+          opacity: isHovering ? 0.9 : 0.4,
         }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 25,
-          mass: 0.8
-        }}
+        transition={{ type: 'spring', stiffness: 120, damping: 20, mass: 0.8 }}
       />
     </>
   );
 };
 
 export default CustomCursor;
-
