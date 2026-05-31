@@ -1,73 +1,45 @@
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Autonomous%20AI%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
+# Portfolio - Luxury 3D Experience
 
-  [![Status](https://img.shields.io/badge/Status-Live-00ffcc?style=for-the-badge)](#)
-  [![Infrastructure](https://img.shields.io/badge/Infra-Vercel-000000?style=for-the-badge&logo=vercel)](https://portfolio-iota-eight-90.vercel.app)
-  [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](#)
-  [![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](#)
-</div>
+[![CI](https://github.com/Raphasha27/Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Raphasha27/Portfolio/actions)
+[![CodeQL](https://github.com/Raphasha27/Portfolio/actions/workflows/security-scan.yml/badge.svg)](https://github.com/Raphasha27/Portfolio/actions)
+[![Docker](https://img.shields.io/badge/docker-ready-blue)](https://docker.com)
+[![React](https://img.shields.io/badge/React-19-61DAFB)](https://react.dev)
+[![Vercel](https://img.shields.io/badge/deployed-vercel-black)](https://portfolio-iota-eight-90.vercel.app)
 
-## 🚀 Overview
-Welcome to the official portfolio repository for **Koketso Raphasha (Raphasha27)**.
-This project is a high-performance, cinematic React/Vite implementation of my professional branding ecosystem, featuring 3D visualizations, interactive AI elements, and sovereign infrastructure concepts.
+Luxury 3D portfolio built with React 19, Three.js, and Framer Motion, featuring neural network visualizations. Showcasing Kirov Dynamics engineering philosophy.
 
-🌐 **Live Deployment:** [https://portfolio-iota-eight-90.vercel.app/](https://portfolio-iota-eight-90.vercel.app/)
+## Features
+- **3D Neural Network** - Interactive Three.js visualization
+- **Glassmorphic UI** - Modern frosted-glass design system
+- **Smooth Animations** - Framer Motion page transitions
+- **Responsive** - Mobile-optimized experience
+- **Performance** - Vite-optimized builds
 
-## ⚡ Key Architectural Features
-- **Cinematic Dark-Luxury UI:** Tailored with Tailwind CSS and Framer Motion for a premium, high-performance experience with neon accents.
-- **Sovereign Intelligence:** Integrated Digital Twin AI assistant powered by context-aware professional data.
-- **Interactive Terminal:** An interactive "hacker" style terminal simulating AI interactions.
-- **SEO Optimized:** Comprehensive metadata, JSON-LD structured data, and search engine optimizations.
-- **Fully Responsive:** Beautifully scales across desktop, tablet, and mobile devices.
-
-## 💻 Tech Stack
-- **Frontend:** React 19, Vite, Framer Motion
-- **Styling:** Tailwind CSS (Utility-first configuration)
-- **Infrastructure:** Vercel Production Environment
-
-## 🛠️ Local Development Setup
-
+## Quick Start
 ```bash
-# Clone the repository
-git clone https://github.com/Raphasha27/portfolio.git
-cd portfolio/v2
-
-# Install dependencies
+# Development
 npm install
-
-# Start the local development server
 npm run dev
 
-# Build for production
+# Production build
 npm run build
+
+# Docker
+docker compose up -d
 ```
 
-## 🗺️ Roadmap
-- [x] SEO Optimization and Structured Data integration.
-- [x] Premium Dark-mode UI/UX and micro-interactions.
-- [x] Interactive Terminal / Feature implementations.
-- [ ] Migrate CI/CD to local GitHub Actions.
+## Tech Stack
+| Technology | Purpose |
+|------------|---------|
+| React 19 | UI Framework |
+| Three.js | 3D Rendering |
+| Framer Motion | Animations |
+| Vite 7 | Build Tool |
+| Docker | Containerization |
+| Vercel | Hosting |
 
----
-
-## 🔗 Ecosystem
-
-Part of the **Kirov Dynamics Technology** ecosystem:
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-⭐29-00ffcc?style=flat-square)](https://github.com/Raphasha27/Portfolio)
-[![AI-Agent](https://img.shields.io/badge/AI--Agent-⭐3-004a99?style=flat-square)](https://github.com/Raphasha27/AI-Agent)
-[![Github-Harden](https://img.shields.io/badge/Github--Harden-Security-00ffcc?style=flat-square)](https://github.com/Raphasha27/Github-Harden)
-[![Go-RAG-System](https://img.shields.io/badge/Go--RAG--System-00ADD8?style=flat-square)](https://github.com/Raphasha27/Go-RAG-System)
-[![Nexus-Quant](https://img.shields.io/badge/Nexus--Quant-Quant-00ffcc?style=flat-square)](https://github.com/Raphasha27/Nexus-Quant)
-[![CyberShield SOC](https://img.shields.io/badge/CyberShield--SOC-Security-004a99?style=flat-square)](https://github.com/Raphasha27/cybershield_soc)
-[![Dev Factory](https://img.shields.io/badge/Dev--Factory-v7-005571?style=flat-square)](https://github.com/Raphasha27/autonomous-dev-factory-v7)
-[![SaaS Backend](https://img.shields.io/badge/SaaS--Backend-Multi--tenant-004a99?style=flat-square)](https://github.com/Raphasha27/saas-multitenant-backend)
-[![FastAPI Starter](https://img.shields.io/badge/FastAPI--Starter-Enterprise-005571?style=flat-square)](https://github.com/Raphasha27/enterprise-fastapi-starter)
-[![Repo Audit](https://img.shields.io/badge/Repo--Audit--Bot-CLI-00ffcc?style=flat-square)](https://github.com/Raphasha27/repo-audit-bot)
-
-*Building the infrastructure of autonomous systems.*
-
----
-
-**Innovative. Performant. Sovereign.**
-*Built by Koketso Raphasha (Raphasha27)*
+## Infrastructure
+- **CI/CD**: ESLint + Build + Docker checks
+- **Container**: Multi-stage Docker with Nginx
+- **Security**: CodeQL weekly scans, Dependabot auto-updates
+- **Deployment**: Auto-deployed to Vercel on main push

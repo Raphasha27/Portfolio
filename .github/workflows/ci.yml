@@ -1,22 +1,43 @@
-
-name: Node.js CI
+name: Portfolio CI/CD
 
 on:
   push:
-    branches: [ develop, main ]
+    branches: [main]
   pull_request:
-    branches: [ develop, main ]
+    branches: [main]
 
 jobs:
-  test:
+  lint:
+    name: ESLint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    - name: Install dependencies
-      run: npm install
-    - name: Run tests
-      run: npm test || echo "No 'npm test' script found. Skipping tests."
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+
+  build:
+    name: Vite Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  docker:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - run: docker build -t portfolio -f docker/Dockerfile .
