@@ -102,21 +102,19 @@ const Hero = () => {
               </div>
               <div className="space-y-1">
                 <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold tracking-normal md:tracking-tight text-white leading-[1.1] break-words">
-                  INFORMATION TECHNOLOGY<br />
+                  SYSTEMS ARCHITECT &<br />
                   <span className="text-[#00FF9C] drop-shadow-[0_0_30px_rgba(0,255,156,0.3)]">
-                    GRADUATE
+                    AI ENGINEER
                   </span>
                 </h1>
                 <p className="text-cyan-400/60 font-mono text-[8px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.4em] uppercase font-black pl-1">
-                  Software Engineering · Richfield Alumni · AI Intern
+                  Sovereign Infrastructure · Autonomous AI · Tech Co-founder
                 </p>
               </div>
             </div>
 
             <p className="text-text-dim text-xs sm:text-[13px] leading-relaxed max-w-lg">
-              IT Graduate from <span className="text-white font-bold">Richfield Graduate Institute</span> majoring in <span className="text-blue-400 font-bold">Software Engineering</span>.
-              Hands-on experience as an <span className="text-white font-bold">AI Intern at CAPACITI</span>.
-              Member of YES4Youth (2025-2026). Co-Founder of <span className="text-blue-400 font-bold">Kirov Dynamics Technology</span>.
+              I am <span className="text-white font-bold">Koketso Raphasha</span>, a <span className="text-blue-400 font-bold">Systems Architect</span>, AI Engineer, and Co-founder of Kirov Dynamics Technology based in Johannesburg, South Africa. Building self-healing, scalable, and highly efficient systems that bridge the gap between ambitious technical strategy and production-ready deployments.
             </p>
 
               <div className="flex flex-wrap gap-4 pt-1">
