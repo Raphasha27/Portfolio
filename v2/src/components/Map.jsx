@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import gautengMap from '../assets/gauteng-map.png';
 
 const Map = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
@@ -36,18 +37,13 @@ const Map = () => {
             </div>
           )}
 
-          {/* Real Google Maps Embed */}
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.3956793132!2d28.1122679469733!3d-25.747867623910543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619cae7c0d41%3A0xd6b60706247c3e5d!2sPretoria!5e0!3m2!1sen!2sza!4v1715291234567!5m2!1sen!2sza" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0, filter: 'invert(90%) hue-rotate(200deg) brightness(0.8) contrast(1.2)' }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          {/* Static Map Image */}
+          <img 
+            src={gautengMap} 
+            alt="Map of Pretoria, South Africa" 
+            className={`w-full h-full object-cover rounded-[32px] transition-opacity duration-1000 ${isLoaded ? 'opacity-80 group-hover:opacity-100' : 'opacity-0'}`}
             onLoad={() => setIsLoaded(true)}
-            referrerPolicy="no-referrer-when-downgrade"
-            className={`rounded-[32px] transition-opacity duration-1000 ${isLoaded ? 'opacity-80 group-hover:opacity-100' : 'opacity-0'}`}
-          ></iframe>
+          />
           
           {/* Cinematic Overlay to match the theme */}
           <div className="absolute inset-0 pointer-events-none border-[20px] border-blue-500/10 rounded-[40px]" />
