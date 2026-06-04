@@ -26,6 +26,7 @@ out
 # Environment variables
 *.local
 .env
+.env.production
 .env.development.local
 .env.test.local
 .env.production.local
@@ -46,6 +47,9 @@ out
 .DS_Store
 Thumbs.db
 ehthumbs.db
+
+# Python
+__pycache__/
 
 # Deployment
 .vercel

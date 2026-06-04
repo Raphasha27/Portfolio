@@ -80,7 +80,7 @@ const ChatAssistant = () => {
   useEffect(() => {
     // Check if a Gemini key is available (set via env)
     const key = import.meta.env.VITE_GEMINI_API_KEY;
-    setHasKey(!!key && key !== 'your_gemini_key_here');
+    setHasKey(!!key);
   }, []);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const ChatAssistant = () => {
 
   const callGemini = async (userText, history) => {
     const key = import.meta.env.VITE_GEMINI_API_KEY;
-    if (!key || key === 'your_gemini_key_here') return null;
+    if (!key) return null;
 
     try {
       // Build conversation history for Gemini

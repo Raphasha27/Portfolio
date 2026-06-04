@@ -16,7 +16,7 @@ const Contact = () => {
     const key = import.meta.env.VITE_WEB3FORMS_KEY;
 
     // If no real key, simulate success for demo
-    if (!key || key === 'your_web3forms_key_here') {
+    if (!key) {
       setTimeout(() => {
         setStatus('success');
         setFormState({ name: '', email: '', message: '' });
