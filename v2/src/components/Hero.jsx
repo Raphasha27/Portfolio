@@ -74,20 +74,27 @@ const CountUp = ({ to, duration = 2 }) => {
   return <span ref={ref}>{count}</span>;
 };
 
+const socialLinks = [
+  { name: "GitHub",    icon: "github",    link: "https://github.com/raphasha27",          color: "hover:text-white" },
+  { name: "LinkedIn",  icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha", color: "hover:text-blue-400" },
+  { name: "WhatsApp",  icon: "whatsapp",  link: "https://wa.me/27781172470",              color: "hover:text-green-400" },
+  { name: "Email",     icon: "mail",      link: "mailto:raphashakoketso99@gmail.com",     color: "hover:text-red-400" },
+  { name: "Twitter",   icon: "twitter",   link: "https://twitter.com/raphasha27",          color: "hover:text-sky-400" },
+  { name: "Kaggle",    icon: "kaggle",    link: "https://kaggle.com/Raphasha27",          color: "hover:text-blue-300" },
+];
+
 const Hero = () => {
   const doubled = [...bannerTechs, ...bannerTechs];
   const profileSrc = koketsoSuit;
 
   return (
     <div id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
-      {/* Scanline + glow bg */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 pt-28 sm:pt-32 pb-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
 
-          {/* ── LEFT: Identity & Mission ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -108,7 +115,7 @@ const Hero = () => {
                   </span>
                 </h1>
                 <p className="text-cyan-400/60 font-mono text-[8px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.4em] uppercase font-black pl-1">
-                  Sovereign Infrastructure · Autonomous AI · Tech Co-founder
+                  Sovereign Infrastructure  Autonomous AI  Tech Co-founder
                 </p>
               </div>
             </div>
@@ -129,7 +136,23 @@ const Hero = () => {
                 </a>
               </div>
 
-            {/* Neon Stats Grid — 2 cols on mobile, 4 on sm+ */}
+            {/* Social Links Row - NEW */}
+            <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-white/5">
+              <span className="text-[8px] font-bold text-white/30 uppercase tracking-[0.2em] mr-1">Connect</span>
+              {socialLinks.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.name}
+                  className={`w-9 h-9 glass rounded-xl flex items-center justify-center text-white/50 ${s.color} transition-all hover:scale-110 active:scale-95 border border-white/5 hover:border-current`}
+                >
+                  <Icon name={s.icon} size={18} />
+                </a>
+              ))}
+            </div>
+
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-3 border-t border-white/5">
               {[
                 { label: 'Years Exp.',      val: 3,   suffix: '+', icon: 'activity'     },
@@ -150,14 +173,12 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* ── RIGHT: Profile Cutout & Interactive Showcase ── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="relative order-1 lg:order-2 flex flex-col items-center"
           >
-            {/* Profile Image */}
             <div className="relative w-full max-w-[280px] lg:max-w-[320px]">
               <div className="absolute inset-0 rounded-full border-[4px] border-[#00ffcc]/30 blur-sm" />
               
@@ -173,7 +194,7 @@ const Hero = () => {
             <div className="text-center w-full max-w-[280px] lg:max-w-[320px] mt-8">
                 <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
                 <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-2 flex items-center justify-center gap-2">
-                  Autonomous AI Engineer · Software Engineer
+                  Autonomous AI Engineer  Software Engineer
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]"></span>
@@ -181,7 +202,6 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Scrolling Tech Marquee */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -214,4 +234,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
