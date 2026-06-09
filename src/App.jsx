@@ -423,15 +423,14 @@ function App() {
                         </div>
                     </div>
                     <ul className="nav-menu">
-                        <li><a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
-                        <li><a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+                        <li><a href="#home"       className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
+                        <li><a href="#about"      className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
                         <li><a href="#experience" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a></li>
-                        <li><a href="#skills" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
-                        <li><a href="#projects" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
-                        <li><a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
+                        <li><a href="#skills"     className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
+                        <li><a href="#projects"   className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                        <li><a href="#presence"   className="nav-link presence-nav-item" onClick={(e) => { e.preventDefault(); scrollToSection('presence'); }}>Presence</a></li>
                     </ul>
                     <div className="nav-actions">
-                        <button className="nav-link presence-nav-btn" onClick={() => scrollToSection('presence')} style={{ background: 'none', border: '1px solid rgba(16,185,129,0.4)', borderRadius: '8px', padding: '6px 14px', color: 'var(--green-primary)', fontSize: '14px', fontWeight: '600', cursor: 'pointer', marginRight: '12px', transition: 'all 0.3s' }}>Presence</button>
                         <a href="#contact" className="cta-nav-btn" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} style={{ marginRight: '20px', textDecoration: 'none', fontSize: '14px' }}>Hire Me</a>
                         <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(true)}>
                             <span></span><span></span><span></span>
@@ -456,12 +455,13 @@ function App() {
                             <button className="mobile-menu-close" onClick={() => setIsMenuOpen(false)}>✕</button>
                         </div>
                         <div className="mobile-nav-links">
-                            <a href="#about" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }}>01. About</a>
-                            <a href="#experience" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('experience'); }}>02. Experience</a>
-                            <a href="#skills" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('skills'); }}>03. Skills</a>
-                            <a href="#projects" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>04. Projects</a>
-                            <a href="#contact" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>05. Contact</a>
-                            <a href="#about" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }} style={{ color: 'var(--green-primary)' }}>06. Presence</a>
+                            <a href="#home"       className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('home'); }}>01. Home</a>
+                            <a href="#about"      className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }}>02. About</a>
+                            <a href="#experience" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('experience'); }}>03. Experience</a>
+                            <a href="#skills"     className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('skills'); }}>04. Skills</a>
+                            <a href="#projects"   className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>05. Projects</a>
+                            <a href="#presence"   className="mobile-link presence-mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }}>06. Presence</a>
+                            <a href="#contact"    className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>07. Hire Me</a>
                         </div>
                     </motion.div>
                 )}
@@ -627,59 +627,105 @@ function App() {
                         transition={{ duration: 0.6 }}
                         className="section-header"
                     >
-                        <p className="section-eyebrow">— PRESENCE —</p>
+                        <p className="presence-eyebrow">— PRESENCE —</p>
                         <h2 className="section-title">Global Reach, <span style={{ color: 'var(--green-primary)' }}>Local Roots</span></h2>
                         <div className="title-underline" style={{ margin: '0 auto 20px' }}></div>
-                        <p className="section-description">Based in the heart of Gauteng, South Africa. Delivering high-performance solutions to the world.</p>
+                        <p className="section-description">
+                            Based in the heart of Gauteng, South Africa. Delivering high-performance software solutions to clients and organizations worldwide.
+                        </p>
                     </motion.div>
 
-                    <div className="presence-grid">
-                        {/* Map card */}
+                    <div className="presence-layout">
+                        {/* ── Left: Interactive SVG Map ── */}
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
+                            className="presence-map-wrapper"
+                            initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            className="presence-map-card"
+                            transition={{ duration: 0.7, delay: 0.15 }}
                         >
-                            <div className="presence-map-overlay">
-                                <img
-                                    src={getAssetPath('gauteng-map.png')}
-                                    alt="Gauteng, South Africa"
-                                    className="presence-map-img"
-                                    onError={(e) => {
-                                        e.target.src = 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=800&auto=format&fit=crop';
-                                    }}
-                                />
-                                <div className="presence-map-pin">
-                                    <span className="pin-dot"></span>
-                                    <span className="pin-label">Johannesburg, South Africa</span>
+                            <div className="presence-map-glass">
+                                {/* Tech-grid background */}
+                                <div className="map-grid-bg" />
+
+                                {/* SVG Network Visualization */}
+                                <svg className="presence-svg" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+                                    {/* Connection lines */}
+                                    <g stroke="rgba(16,185,129,0.25)" strokeWidth="1" fill="none">
+                                        <line x1="250" y1="180" x2="120" y2="80"  />
+                                        <line x1="250" y1="180" x2="380" y2="90"  />
+                                        <line x1="250" y1="180" x2="80"  y2="240" />
+                                        <line x1="250" y1="180" x2="430" y2="220" />
+                                        <line x1="250" y1="180" x2="200" y2="290" />
+                                        <line x1="250" y1="180" x2="340" y2="270" />
+                                        <line x1="120" y1="80"  x2="380" y2="90"  />
+                                        <line x1="80"  y1="240" x2="200" y2="290" />
+                                        <line x1="430" y1="220" x2="340" y2="270" />
+                                    </g>
+
+                                    {/* Outer city nodes */}
+                                    {[
+                                        { cx: 120, cy: 80,  label: 'London',     delay: '0s'    },
+                                        { cx: 380, cy: 90,  label: 'New York',   delay: '0.4s'  },
+                                        { cx: 80,  cy: 240, label: 'Cape Town',  delay: '0.8s'  },
+                                        { cx: 430, cy: 220, label: 'Dubai',      delay: '0.2s'  },
+                                        { cx: 200, cy: 290, label: 'Nairobi',    delay: '0.6s'  },
+                                        { cx: 340, cy: 270, label: 'Singapore',  delay: '1s'    },
+                                    ].map((n) => (
+                                        <g key={n.label}>
+                                            <circle cx={n.cx} cy={n.cy} r="18" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" strokeWidth="1" />
+                                            <circle cx={n.cx} cy={n.cy} r="5"  fill="rgba(16,185,129,0.7)">
+                                                <animate attributeName="r" values="4;7;4" dur="3s" begin={n.delay} repeatCount="indefinite" />
+                                                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin={n.delay} repeatCount="indefinite" />
+                                            </circle>
+                                            <text x={n.cx} y={n.cy + 28} textAnchor="middle" fontSize="9" fill="rgba(148,163,184,0.8)" fontFamily="monospace">{n.label}</text>
+                                        </g>
+                                    ))}
+
+                                    {/* Central Johannesburg hub */}
+                                    <circle cx="250" cy="180" r="36" fill="rgba(16,185,129,0.06)" stroke="rgba(16,185,129,0.5)" strokeWidth="1.5">
+                                        <animate attributeName="r" values="34;40;34" dur="4s" repeatCount="indefinite" />
+                                    </circle>
+                                    <circle cx="250" cy="180" r="24" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.6)" strokeWidth="1" />
+                                    <circle cx="250" cy="180" r="8"  fill="var(--green-primary)">
+                                        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+                                    </circle>
+
+                                    {/* Hub label */}
+                                    <text x="250" y="222" textAnchor="middle" fontSize="11" fill="rgba(52,211,153,0.9)" fontFamily="monospace" fontWeight="bold">JOHANNESBURG</text>
+                                    <text x="250" y="234" textAnchor="middle" fontSize="8"  fill="rgba(148,163,184,0.6)" fontFamily="monospace">SOUTH AFRICA · HQ</text>
+                                </svg>
+
+                                {/* Location pill */}
+                                <div className="presence-location-pill">
+                                    <span className="presence-ping"></span>
+                                    <span>Johannesburg, South Africa</span>
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* Stats column */}
+                        {/* ── Right: Info + Stats + Buttons ── */}
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
+                            className="presence-info"
+                            initial={{ opacity: 0, x: 40 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="presence-stats"
+                            transition={{ duration: 0.7, delay: 0.25 }}
                         >
                             {[
-                                { icon: '🌍', label: 'Remote Clients', value: 'Global' },
-                                { icon: '📍', label: 'Base Location', value: 'Gauteng, ZA' },
-                                { icon: '⏱️', label: 'Timezone', value: 'UTC +2 (SAST)' },
-                                { icon: '💬', label: 'Languages', value: 'English · Sepedi' },
-                                { icon: '🚀', label: 'Available for', value: 'Remote & On-site' },
+                                { icon: '🌍', label: 'Remote Clients',  value: 'Global'           },
+                                { icon: '📍', label: 'Base Location',   value: 'Gauteng, ZA'      },
+                                { icon: '⏱️', label: 'Timezone',        value: 'UTC +2 (SAST)'    },
+                                { icon: '💬', label: 'Languages',       value: 'English · Sepedi'  },
+                                { icon: '🚀', label: 'Available for',   value: 'Remote & On-site' },
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
-                                    initial={{ opacity: 0, y: 10 }}
+                                    className="presence-stat-card"
+                                    initial={{ opacity: 0, y: 12 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.1 * i + 0.3 }}
-                                    className="presence-stat-item"
                                 >
                                     <span className="presence-stat-icon">{item.icon}</span>
                                     <div>
@@ -688,6 +734,24 @@ function App() {
                                     </div>
                                 </motion.div>
                             ))}
+
+                            {/* Action Buttons */}
+                            <div className="presence-actions">
+                                <button
+                                    className="presence-btn-primary"
+                                    onClick={() => scrollToSection('presence')}
+                                >
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                    View Global Presence
+                                </button>
+                                <button
+                                    className="presence-btn-secondary"
+                                    onClick={() => scrollToSection('contact')}
+                                >
+                                    Let's Build Together
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </button>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
