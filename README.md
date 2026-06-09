@@ -76,6 +76,6 @@ Live Demo → https://portfolio-iota-eight-90.vercel.app/
 Contact → https://github.com/Raphasha27
 ```
 
-Part of the [Kirov Dynamics Technology](https://github.com/Raphasha27) ecosystem.
+Part of the [Kirov Dynamics](https://github.com/Raphasha27/kirov-dynamics) ecosystem.
 
 **Built by Koketso Raphasha — Practical AI for Africa**
