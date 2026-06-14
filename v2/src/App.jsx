@@ -1,10 +1,11 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy, useState } from 'react';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import cyberBg from './assets/cyber-bg.png';
+import CommandPalette from './components/CommandPalette';
 
 const Terminal = lazy(() => import('./components/Terminal'));
 const Experience = lazy(() => import('./components/Experience'));
@@ -20,6 +21,8 @@ const HireMe = lazy(() => import('./components/HireMe'));
 const Map = lazy(() => import('./components/Map'));
 
 function App() {
+  const [cmdOpen, setCmdOpen] = useState(false);
+
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -38,7 +41,7 @@ function App() {
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
       <CustomCursor />
-      <Navbar />
+      <Navbar setCmdOpen={setCmdOpen} />
 
       <main className="pb-16 sm:pb-24 relative z-10">
         <section>
@@ -162,6 +165,7 @@ function App() {
       </main>
 
       <Suspense fallback={null}>
+        <CommandPalette open={cmdOpen} setOpen={setCmdOpen} />
         <ChatAssistant />
       </Suspense>
       <ScrollToTop />

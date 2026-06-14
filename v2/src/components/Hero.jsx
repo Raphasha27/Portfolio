@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
+import ParticleCanvas from './ParticleCanvas';
 import koketsoSuit from '../assets/koketso_studio.jpg';
 import koketsoHoodie from '../assets/koketso_hoodie.png';
 import koketsoVR from '../assets/koketso_vr.png';
@@ -89,6 +90,7 @@ const Hero = () => {
 
   return (
     <div id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
+      <ParticleCanvas />
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
 

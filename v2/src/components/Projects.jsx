@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
 
 const projects = [
@@ -288,6 +289,40 @@ const Projects = () => {
               </div>
             </TiltCard>
           ))}
+        </div>
+      </div>
+
+      {/* GitHub Contributions */}
+      <div className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+        
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 relative z-10">
+          <div className="space-y-2 max-w-full">
+            <h2 className="text-xl sm:text-2xl font-bold tracking-[0.15em] sm:tracking-[0.4em] uppercase font-mono text-white leading-none break-words flex items-center gap-3">
+              <Icon name="github" size={24} />
+              GitHub <span className="text-[#00FF9C]">Activity</span>
+            </h2>
+            <p className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest mt-2">Live Contribution Matrix</p>
+          </div>
+          <div className="mt-4 sm:mt-0 flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 w-fit">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+            <span className="text-[10px] font-bold text-[#00FF9C] uppercase tracking-widest">Live</span>
+          </div>
+        </div>
+
+        <div className="relative z-10 w-full overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10 pb-4">
+          <div className="min-w-max p-4 bg-[#05080c]/80 rounded-xl border border-white/5">
+            <GitHubCalendar 
+              username="Raphasha27" 
+              colorScheme="dark"
+              theme={{
+                dark: ['#0d1117', '#004d2e', '#00804d', '#00b36b', '#00FF9C'],
+              }}
+              blockSize={12}
+              blockMargin={4}
+              fontSize={12}
+            />
+          </div>
         </div>
       </div>
 

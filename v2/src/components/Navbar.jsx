@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
-const Navbar = () => {
+const Navbar = ({ setCmdOpen }) => {
   const [copied, setCopied] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -78,6 +78,17 @@ const Navbar = () => {
             <Icon name={copied ? 'check' : 'share'} size={18} />
           </button>
 
+          {/* Command Palette Trigger */}
+          <button
+            onClick={() => setCmdOpen && setCmdOpen(true)}
+            className="hidden sm:flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-white/50 hover:text-white hover:bg-white/10 transition-all"
+            title="Open Command Palette"
+          >
+            <Icon name="search" size={14} />
+            <span className="hidden md:inline">Search...</span>
+            <kbd className="hidden md:inline bg-white/10 px-1.5 py-0.5 rounded text-[10px] ml-2">⌘K</kbd>
+          </button>
+
           <button
             onClick={() => scrollTo('contact')}
             className="hidden sm:flex px-6 py-2 bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-xs font-bold rounded-lg hover:bg-[#00FF9C] hover:text-[#050d12] transition-all items-center gap-2"
@@ -140,6 +151,15 @@ const Navbar = () => {
                 <Icon name={copied ? 'check' : 'share'} size={18} />
                 {copied ? 'Copied Link!' : 'Share Registry'}
               </button>
+              
+              <button
+                onClick={() => { setIsMobileMenuOpen(false); if (setCmdOpen) setCmdOpen(true); }}
+                className="w-full py-4 glass flex items-center justify-center gap-3 text-blue-400 font-bold uppercase text-xs tracking-widest border border-blue-400/20 rounded-lg"
+              >
+                <Icon name="search" size={18} />
+                Command Menu
+              </button>
+              
               <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-[#00FF9C]/5 border border-[#00FF9C]/10 text-[8px] font-bold text-[#00FF9C]/60 uppercase tracking-widest">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse"></span>
                 Status: System Health Optimal
