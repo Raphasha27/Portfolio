@@ -3,6 +3,8 @@
   <p>
     <a href="https://portfolio-iota-eight-90.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Site-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white" /></a>
     <a href="#"><img src="https://img.shields.io/badge/Status-Deployed-22C55E?style=for-the-badge" /></a>
+    <a href="https://raphashakoketso.gumroad.com/l/ai-agent-core"><img src="https://img.shields.io/badge/AI_Agent-$25-FF90E8?style=for-the-badge&logo=gumroad&logoColor=white" /></a>
+    <a href="https://raphashakoketso.gumroad.com/l/ironclad-sandbox"><img src="https://img.shields.io/badge/Ironclad_Sandbox-$30-FF90E8?style=for-the-badge&logo=gumroad&logoColor=white" /></a>
   </p>
 </div>
 
