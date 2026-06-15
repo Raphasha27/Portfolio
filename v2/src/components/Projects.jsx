@@ -101,6 +101,66 @@ const projects = [
     link: "https://github.com/Raphasha27/gauteng-transport-dashboard"
   },
   {
+    title: "EskomSense AI",
+    tagline: "Energy · Load Shedding Predictor",
+    desc: "ML-powered load shedding prediction engine using historical Eskom data, weather patterns, and grid telemetry. Optimizes backup battery and generator scheduling for homes and businesses across SA.",
+    tech: ["python", "pytorch", "docker", "react"],
+    icon: "zap",
+    role: "Energy AI Lead",
+    color: "from-yellow-500/20 to-orange-500/20",
+    link: "https://github.com/Raphasha27/EskomSense-AI"
+  },
+  {
+    title: "Townships Market AI",
+    tagline: "Economy · SMME Marketplace",
+    desc: "AI-powered digital marketplace connecting township SMMEs to local customers. Smart inventory management, intelligent delivery routing, and multilingual support for Zulu, Xhosa, and English.",
+    tech: ["react", "python", "fastapi", "typescript"],
+    icon: "building",
+    role: "Platform Architect",
+    color: "from-emerald-500/20 to-[#00FF9C]/20",
+    link: "https://github.com/Raphasha27/Townships-Market-AI"
+  },
+  {
+    title: "SA Language AI",
+    tagline: "NLP · Zulu · Xhosa · Afrikaans",
+    desc: "Open-source NLP toolkit for South Africa's official languages. Fine-tuned transformer models for translation, speech-to-text, text-to-speech, and chatbot capabilities in isiZulu, isiXhosa, Afrikaans, Sesotho, and English.",
+    tech: ["python", "pytorch", "docker", "fastapi"],
+    icon: "globe",
+    role: "NLP Engineer",
+    color: "from-blue-500/20 to-purple-500/20",
+    link: "https://github.com/Raphasha27/SA-Language-AI"
+  },
+  {
+    title: "WaterWatch SA",
+    tagline: "Infrastructure · Leak Detection",
+    desc: "IoT sensor network coupled with AI anomaly detection for real-time water leak identification and pipe failure prediction in South African municipalities. Dashboard for municipal engineers with alerting and reporting.",
+    tech: ["python", "docker", "react", "grafana"],
+    icon: "signal",
+    role: "IoT Systems Eng",
+    color: "from-cyan-500/20 to-blue-500/20",
+    link: "https://github.com/Raphasha27/WaterWatch-SA"
+  },
+  {
+    title: "Mzansi AgriAI",
+    tagline: "Agriculture · AI Advisory",
+    desc: "AI-powered advisory platform for small-scale South African farmers. Crop yield prediction, weather alerting, pest detection, and real-time market pricing — delivered via USSD and mobile-first web app.",
+    tech: ["python", "streamlit", "docker", "react"],
+    icon: "globe",
+    role: "AgriTech Dev",
+    color: "from-green-500/20 to-emerald-500/20",
+    link: "https://github.com/Raphasha27/Mzansi-AgriAI"
+  },
+  {
+    title: "YouthCode ZA",
+    tagline: "Education · Offline-First Coding",
+    desc: "Offline-first coding education platform delivering interactive programming lessons to underserved SA youth. AI mentor chatbot, progress tracking, and certificate pathways — no internet required after initial sync.",
+    tech: ["react", "python", "fastapi", "docker"],
+    icon: "graduationCap",
+    role: "EdTech Architect",
+    color: "from-purple-500/20 to-pink-500/20",
+    link: "https://github.com/Raphasha27/YouthCode-ZA"
+  },
+  {
     title: "Titanic ML (Kaggle)",
     tagline: "78.5% Public LB · Ensemble",
     desc: "End-to-end ML pipeline scoring 78.5% on Kaggle Titanic. KNN imputation, interaction features, tuned GradientBoosting/XGBoost across 7 model versions.",
