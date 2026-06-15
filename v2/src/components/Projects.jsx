@@ -161,6 +161,16 @@ const projects = [
     link: "https://github.com/Raphasha27/YouthCode-ZA"
   },
   {
+    title: "AI Business Engine",
+    tagline: "Business · Zero-Capital",
+    desc: "5 ready-to-launch AI-powered businesses requiring zero capital. Complete playbooks with free tools, pricing models, income calculator, and 30-day launch plans. Content studio, automation agency, digital products, SMME consulting, training workshops.",
+    tech: ["python", "docker", "fastapi", "react"],
+    icon: "zap",
+    role: "Business Architect",
+    color: "from-yellow-500/20 to-[#00FF9C]/20",
+    link: "https://github.com/Raphasha27/AI-Business-Engine"
+  },
+  {
     title: "Titanic ML (Kaggle)",
     tagline: "78.5% Public LB · Ensemble",
     desc: "End-to-end ML pipeline scoring 78.5% on Kaggle Titanic. KNN imputation, interaction features, tuned GradientBoosting/XGBoost across 7 model versions.",
@@ -278,7 +288,7 @@ const Projects = () => {
               Project <span className="text-[#00FF9C]">Inventory</span>
             </h2>
             <div className="flex items-center gap-3 mt-4">
-              <div className="text-white/40 text-[9px] font-mono uppercase tracking-[0.4em]">System Registry: 9 Active Nodes</div>
+              <div className="text-white/40 text-[9px] font-mono uppercase tracking-[0.4em]">System Registry: 18 Active Nodes</div>
             </div>
             <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 w-fit mt-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
