@@ -46,12 +46,12 @@ const platformGroups = [
 ];
 
 const products = [
-  { name: "React Portfolio Template", desc: "Premium 3D portfolio with AI assistant", price: "$29", icon: "layout" },
-  { name: "FastAPI SaaS Starter", desc: "Production-ready backend with auth, RBAC, Docker", price: "$49", icon: "server" },
-  { name: "AI Chatbot Starter", desc: "Ollama + LangChain + React chatbot template", price: "$39", icon: "messageCircle" },
-  { name: "Admin Dashboard Pro", desc: "React admin panel with charts and analytics", price: "$34", icon: "barChart" },
-  { name: "Secure Auth System", desc: "JWT + OAuth + RBAC for FastAPI/React", price: "$44", icon: "shield" },
-  { name: "DevOps Stack", desc: "Docker + CI/CD + monitoring templates", price: "$24", icon: "cloud" },
+  { name: "React Portfolio Template", desc: "Premium 3D portfolio with AI assistant", icon: "layout" },
+  { name: "FastAPI SaaS Starter", desc: "Production-ready backend with auth, RBAC, Docker", icon: "server" },
+  { name: "AI Chatbot Starter", desc: "Ollama + LangChain + React chatbot template", icon: "messageCircle" },
+  { name: "Admin Dashboard Pro", desc: "React admin panel with charts and analytics", icon: "barChart" },
+  { name: "Secure Auth System", desc: "JWT + OAuth + RBAC for FastAPI/React", icon: "shield" },
+  { name: "DevOps Stack", desc: "Docker + CI/CD + monitoring templates", icon: "cloud" },
 ];
 
 const HireMe = () => {
@@ -148,26 +148,29 @@ const HireMe = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((product, i) => (
-              <motion.a
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                href="https://gumroad.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass p-4 sm:p-5 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all group"
+                className="glass p-4 sm:p-5 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all group flex flex-col"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div className="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500/20 transition-colors">
                     <Icon name={product.icon} size={18} />
                   </div>
-                  <span className="text-sm font-bold text-purple-400">{product.price}</span>
                 </div>
-                <h4 className="font-bold text-sm text-white mb-1 group-hover:text-purple-400 transition-colors">{product.name}</h4>
-                <p className="text-[11px] text-white/40 leading-relaxed">{product.desc}</p>
-              </motion.a>
+                <h4 className="font-bold text-sm text-white mb-1">{product.name}</h4>
+                <p className="text-[11px] text-white/40 leading-relaxed mb-4 flex-grow">{product.desc}</p>
+                <a
+                  href={`mailto:raphashakoketso99@gmail.com?subject=Product%20Request%3A%20${encodeURIComponent(product.name)}&body=Hi%20Koketso%2C%0A%0AI'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20provide%20more%20details%20and%20pricing.%0A%0AThank%20you!`}
+                  className="flex items-center justify-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 text-purple-400 font-bold text-xs rounded-lg transition-all group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
+                >
+                  <Icon name="mail" size={14} />
+                  Request Details
+                </a>
+              </motion.div>
             ))}
           </div>
         </div>
