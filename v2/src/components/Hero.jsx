@@ -257,7 +257,7 @@ const Hero = () => (
             <div className="absolute -inset-[3px] rounded-full" style={{ background: 'conic-gradient(from 0deg, #00FF9C, #3b82f6, #00FF9C)', filter: 'blur(8px)', opacity: 0.3 }} />
             {/* Profile image */}
             <div className="relative rounded-full border-[4px] border-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.7)] overflow-hidden aspect-square w-full z-10">
-              <img src={koketsoSuit} alt="Koketso Raphasha" className="w-full h-full object-cover object-center" />
+              <img src="/profile-enhanced.jpg" alt="Koketso Raphasha" className="w-full h-full object-cover object-center" />
             </div>
             {/* Corner accents */}
             <div className="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-[#00FF9C]/60 z-20" />
