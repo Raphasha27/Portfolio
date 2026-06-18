@@ -239,36 +239,20 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        {/* Right: Profile with animated gradient spin ring */}
+        {/* Right: Profile with tech-themed circular frame */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="relative order-1 lg:order-2 flex flex-col items-center"
         >
-          <div className="relative w-full max-w-[260px] lg:max-w-[300px]">
-            {/* Spinning gradient ring */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-              className="absolute -inset-[3px] rounded-full"
-              style={{ background: 'conic-gradient(from 0deg, #00FF9C, #3b82f6, #00FF9C, #3b82f6, #00FF9C)', filter: 'blur(2px)' }}
+          {/* The image already has the glowing ring and tech aesthetic built-in */}
+          <div className="relative w-full max-w-[320px] lg:max-w-[380px]">
+            <img 
+              src="/profile-enhanced.jpg" 
+              alt="Koketso Raphasha - AI Engineer" 
+              className="w-full h-auto drop-shadow-2xl"
             />
-            <div className="absolute -inset-[3px] rounded-full" style={{ background: 'conic-gradient(from 0deg, #00FF9C, #3b82f6, #00FF9C)', filter: 'blur(8px)', opacity: 0.3 }} />
-            {/* Profile image */}
-            <div className="relative rounded-full border-[4px] border-[#0a0a0a] shadow-[0_0_50px_rgba(0,0,0,0.7)] overflow-hidden aspect-square w-full z-10 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a]">
-              <img 
-                src="/profile-enhanced.jpg" 
-                alt="Koketso Raphasha" 
-                className="w-full h-full object-contain object-center scale-100" 
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-            {/* Corner accents */}
-            <div className="absolute -top-2 -left-2 w-5 h-5 border-t-2 border-l-2 border-[#00FF9C]/60 z-20" />
-            <div className="absolute -top-2 -right-2 w-5 h-5 border-t-2 border-r-2 border-[#00FF9C]/60 z-20" />
-            <div className="absolute -bottom-2 -left-2 w-5 h-5 border-b-2 border-l-2 border-[#00FF9C]/60 z-20" />
-            <div className="absolute -bottom-2 -right-2 w-5 h-5 border-b-2 border-r-2 border-[#00FF9C]/60 z-20" />
           </div>
 
           {/* Name + title */}
@@ -278,6 +262,10 @@ const Hero = () => (
               Autonomous AI Engineer
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
+              </span>
+            </div>
+          </div>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
               </span>
             </div>
