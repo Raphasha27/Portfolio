@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
+import ErrorBoundary from './components/ErrorBoundary';
 import cyberBg from './assets/cyber-bg.png';
 import CommandPalette from './components/CommandPalette';
 
@@ -45,133 +46,159 @@ function App() {
       <Navbar setCmdOpen={setCmdOpen} />
 
       <main className="pb-16 sm:pb-24 relative z-10">
-        <section>
-          <Hero />
-        </section>
+        <ErrorBoundary>
+          <section>
+            <Hero />
+          </section>
+        </ErrorBoundary>
 
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-        >
-          <About />
-        </motion.section>
+        <ErrorBoundary>
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <About />
+          </motion.section>
+        </ErrorBoundary>
 
         <Suspense fallback={<div className="w-full min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" /></div>}>
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <Experience />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <Experience />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-            className="relative py-16 sm:py-24 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-transparent">
-              <div className="absolute inset-0 opacity-20" 
-                   style={{ 
-                     backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
-                                       radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
-                   }} />
-              <div className="absolute inset-0 opacity-10" 
-                   style={{ 
-                     backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
-                                       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-                      backgroundSize: '40px 40px'
-                   }} />
-            </div>
-            <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
-              <Skills />
-              <Roles />
-            </div>
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+              className="relative py-16 sm:py-24 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-transparent">
+                <div className="absolute inset-0 opacity-20" 
+                     style={{ 
+                       backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
+                                         radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
+                     }} />
+                <div className="absolute inset-0 opacity-10" 
+                     style={{ 
+                       backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+                                         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
+                        backgroundSize: '40px 40px'
+                     }} />
+              </div>
+              <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
+                <Skills />
+                <Roles />
+              </div>
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <Certifications />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <Certifications />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
-          >
-            <Services />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+              className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
+            >
+              <Services />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
-          >
-            <Projects />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+              className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
+            >
+              <Projects />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto pb-16 sm:pb-24"
-          >
-            <CIStatus />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+              className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto pb-16 sm:pb-24"
+            >
+              <CIStatus />
+            </motion.section>
+          </ErrorBoundary>
 
-          <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
-            <Terminal />
-          </section>
+          <ErrorBoundary>
+            <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
+              <Terminal />
+            </section>
+          </ErrorBoundary>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <Map />
-          </motion.div>
+          <ErrorBoundary>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <Map />
+            </motion.div>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <Testimonials />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <Testimonials />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <HireMe />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <HireMe />
+            </motion.section>
+          </ErrorBoundary>
 
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <Contact />
-          </motion.section>
+          <ErrorBoundary>
+            <motion.section 
+              initial={{ opacity: 0, y: 50 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true, margin: "-100px" }} 
+              transition={{ duration: 0.8 }}
+            >
+              <Contact />
+            </motion.section>
+          </ErrorBoundary>
         </Suspense>
       </main>
 
@@ -255,8 +282,12 @@ function App() {
       </footer>
 
       <Suspense fallback={null}>
-        <CommandPalette open={cmdOpen} setOpen={setCmdOpen} />
-        <ChatAssistant />
+        <ErrorBoundary>
+          <CommandPalette open={cmdOpen} setOpen={setCmdOpen} />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <ChatAssistant />
+        </ErrorBoundary>
       </Suspense>
       <ScrollToTop />
     </div>

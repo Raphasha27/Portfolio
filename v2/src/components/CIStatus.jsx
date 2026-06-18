@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
@@ -163,6 +163,18 @@ const passingProjects = [
 const CIStatus = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedProject, setExpandedProject] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Simulate data loading with error handling
+    try {
+      setIsLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+    }
+  }, []);
 
   const categories = ['all', 'AI/ML', 'Platform', 'Security', 'IoT', 'Education', 'NLP', 'AgriTech', 'Business'];
   
@@ -173,6 +185,22 @@ const CIStatus = () => {
   const avgCoverage = Math.round(
     passingProjects.reduce((sum, p) => sum + parseInt(p.coverage), 0) / passingProjects.length
   );
+
+  if (error) {
+    return (
+      <div className="glass p-6 rounded-2xl border border-white/5 text-center">
+        <p className="text-white/60">CI Dashboard temporarily unavailable</p>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="glass p-6 rounded-2xl border border-white/5 flex items-center justify-center min-h-[400px]">
+        <div className="w-8 h-8 border-2 border-green-500/20 border-t-green-500 rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="glass p-6 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl">
