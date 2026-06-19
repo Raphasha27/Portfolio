@@ -222,7 +222,7 @@ const Hero = () => (
               <img
                 src={koketsoSuit}
                 alt="Koketso Raphasha"
-                className="w-full h-full object-cover relative z-10"
+                className="w-full h-full object-cover scale-[1.35] translate-y-[8%] relative z-10"
               />
             </div>
           </div>
