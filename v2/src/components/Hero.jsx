@@ -228,7 +228,7 @@ const Hero = () => (
               <img
                 src={koketsoSuit}
                 alt="Koketso Raphasha - AI Engineer"
-                className="w-[85%] h-auto object-cover relative z-10 translate-y-[5%] drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                className="w-full h-full object-cover relative z-10"
               />
             </div>
           </div>
