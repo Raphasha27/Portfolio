@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
-import koketsoSuit from '../assets/koketso_transparent.png'; // Using transparent for perfect fit without black borders
+import koketsoSuit from '../assets/koketso_suit.png';
 
 /* ── Typewriter cycling through roles ── */
 const ROLES = ['AI ENGINEER', 'SYSTEMS ARCHITECT', 'CO-FOUNDER', 'FULL STACK DEV'];
@@ -222,7 +222,7 @@ const Hero = () => (
               <img
                 src={koketsoSuit}
                 alt="Koketso Raphasha"
-                className="w-[90%] h-auto object-contain relative z-10 translate-y-[8%] drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                className="w-full h-full object-cover relative z-10"
               />
             </div>
           </div>
