@@ -312,45 +312,36 @@ const Hero = () => (
             <div className="absolute bottom-2 left-6 w-6 h-6 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.55)', borderLeft: '2px solid rgba(255,107,43,0.55)' }} />
             <div className="absolute bottom-2 right-6 w-6 h-6 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.55)', borderRight: '2px solid rgba(255,107,43,0.55)' }} />
 
-            {/* ★ GRAFIK-STYLE OVAL — behind person, dark charcoal ★ */}
+            {/* ★ THICK ORANGE-RED RING — behind person, NOT clipping ★ */}
             <div
               className="absolute left-1/2 -translate-x-1/2 z-0"
               style={{
-                bottom: '20px',
+                bottom: '80px',
                 width: '260px',
-                height: '310px',
+                height: '260px',
                 borderRadius: '50%',
-                background: 'linear-gradient(170deg, #1c1410 0%, #110c08 60%, #0d0906 100%)',
-                border: '2px solid rgba(255,107,43,0.45)',
-                boxShadow: '0 0 0 6px rgba(255,107,43,0.07), 0 20px 60px rgba(0,0,0,0.5)',
+                border: '10px solid transparent',
+                background:
+                  'linear-gradient(#0e0a06, #0e0a06) padding-box, ' +
+                  'linear-gradient(160deg, #ff6a00 0%, #e63c00 45%, #a01800 100%) border-box',
+                boxShadow:
+                  '0 0 40px rgba(255,80,0,0.45), 0 0 80px rgba(220,50,0,0.2), inset 0 0 0 1px rgba(255,100,20,0.1)',
               }}
             />
 
-            {/* Subtle outer glow ring */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-              className="absolute left-1/2 -translate-x-1/2 z-0"
-              style={{
-                bottom: '8px',
-                width: '284px',
-                height: '334px',
-                borderRadius: '50%',
-                border: '1px dashed rgba(255,107,43,0.18)',
-              }}
-            />
-
-            {/* ★ PERSON IMAGE — sits IN FRONT of oval, extends above it ★ */}
+            {/* ★ TRANSPARENT PERSON — in front of ring ★ */}
             <img
               src={koketsoSuit}
               alt="Koketso Raphasha - AI Engineer"
-              className="relative z-10 object-contain"
+              className="relative z-10"
               style={{
-                width: '82%',
+                width: '88%',
                 height: 'auto',
-                maxHeight: '395px',
+                maxHeight: '400px',
+                objectFit: 'contain',
                 objectPosition: 'bottom',
-                filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(255,90,20,0.15))',
+                filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.7))',
+                marginBottom: '0px',
               }}
             />
           </div>
