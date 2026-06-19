@@ -167,7 +167,7 @@ const BlueHalo = () => (
 );
 
 const Hero = () => (
-  <div id="home" className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden bg-transparent">
+  <div id="home" className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent">
     <ParticleCanvas />
 
     {/* Scanline overlay */}
@@ -185,9 +185,9 @@ const Hero = () => (
     <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-[#00FF9C]/5 blur-[100px] rounded-full pointer-events-none" />
 
-    {/* Main Content Container - highly compacted padding for mobile */}
-    <div className="w-full px-3 sm:px-6 lg:px-12 relative z-10 pt-16 sm:pt-32 pb-4 sm:pb-10 max-w-7xl mx-auto flex-1 flex items-center">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-3 sm:gap-12 items-center w-full">
+    {/* Main Content Container - ensuring no top-cutoff on mobile */}
+    <div className="w-full px-3 sm:px-6 lg:px-12 relative z-10 mt-20 lg:mt-0 lg:my-auto pb-8 lg:pb-0 max-w-7xl mx-auto flex-1 flex flex-col justify-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 sm:gap-12 items-center w-full">
 
         {/* ── RIGHT: Portrait (order-1 on mobile = shows first) ── */}
         <motion.div
