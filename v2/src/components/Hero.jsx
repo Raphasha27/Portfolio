@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
-import koketsoSuit from '../assets/koketso_suit.png';
+import koketsoSuit from '../assets/profile_cutout_no_bg.png';
 
 /* ── Typewriter cycling through roles ── */
 const ROLES = ['AI ENGINEER', 'SYSTEMS ARCHITECT', 'CO-FOUNDER', 'FULL STACK DEV'];
@@ -213,7 +213,7 @@ const Hero = () => (
               className="relative w-full h-full rounded-full flex items-end justify-center overflow-hidden"
               style={{
                 zIndex: 10,
-                background: 'radial-gradient(circle, rgba(0,255,204,0.2) 0%, rgba(0,50,50,0.4) 100%)',
+                background: 'rgba(0, 0, 0, 0.65)',
                 backdropFilter: 'blur(4px)',
                 border: '2px solid #00ffcc',
                 boxShadow: '0 0 25px rgba(0,255,204,0.4), inset 0 0 25px rgba(0,255,204,0.1)',
@@ -222,7 +222,7 @@ const Hero = () => (
               <img
                 src={koketsoSuit}
                 alt="Koketso Raphasha"
-                className="w-full h-full object-cover scale-[1.35] translate-y-[8%] relative z-10"
+                className="w-[95%] h-auto object-contain translate-y-[5%] relative z-10"
               />
             </div>
           </div>
@@ -231,7 +231,7 @@ const Hero = () => (
           <div className="text-center w-full max-w-[280px] mt-1.5 sm:mt-6">
             <div className="text-sm sm:text-xl lg:text-2xl font-bold text-white tracking-wide leading-none">Koketso Raphasha</div>
             <div className="text-[7px] sm:text-[10px] lg:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-0.5 flex items-center justify-center gap-1.5">
-              Autonomous AI Engineer
+              TECH STACKS & ARSENALS
               <span className="relative flex h-1 w-1 sm:h-1.5 sm:w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
                 <span className="relative inline-flex rounded-full h-1 w-1 sm:h-1.5 sm:w-1.5 bg-[#00ffcc]" />
