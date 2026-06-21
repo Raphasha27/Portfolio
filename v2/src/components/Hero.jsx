@@ -95,6 +95,41 @@ const STATS = [
 /* ─────────────────────────────────────────────
    Hero
 ───────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   Tech Arsenal data
+───────────────────────────────────────────── */
+const ROW1_TECH = [
+  'react', 'python', 'typescript', 'docker', 'kubernetes',
+  'nextjs', 'fastapi', 'postgresql', 'redis', 'mongodb',
+  'aws', 'azure', 'github', 'linux', 'tensorflow',
+];
+
+const ROW2_TECH = [
+  'pytorch', 'langchain', 'go', 'rust', 'nginx',
+  'rabbitmq', 'grafana', 'prometheus', 'githubactions',
+  'figma', 'flutter', 'csharp', 'java', 'vite', 'tailwindcss',
+];
+
+/* Single pill with logo + label */
+const TechPill = ({ name }) => (
+  <div
+    className="flex items-center gap-2 px-3 py-1.5 rounded-lg shrink-0"
+    style={{
+      background: 'rgba(5,13,18,0.9)',
+      border: '1px solid rgba(255,255,255,0.07)',
+      backdropFilter: 'blur(6px)',
+    }}
+  >
+    <Icon name={name} size={16} />
+    <span
+      className="text-[10px] font-semibold text-white/60 capitalize whitespace-nowrap"
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
+      {name.charAt(0).toUpperCase() + name.slice(1)}
+    </span>
+  </div>
+);
+
 const Hero = () => (
   <div
     id="home"
@@ -273,6 +308,34 @@ const Hero = () => (
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" style={{ width: '16px', height: '16px' }}>
                 <polyline points="20 6 9 17 4 12" />
               </svg>
+            </div>
+          </div>
+
+          {/* ── Tech Stack Marquee ── */}
+          <div className="mt-4 w-full" style={{ maxWidth: '420px' }}>
+            {/* Label */}
+            <div className="flex items-center gap-2 mb-2.5">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-white/30 shrink-0">TECH ARSENAL</span>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            </div>
+
+            {/* Row 1 — scrolls right-to-left */}
+            <div className="overflow-hidden relative">
+              <div className="flex gap-3 hero-marquee-row1" style={{ width: 'max-content' }}>
+                {[...ROW1_TECH, ...ROW1_TECH].map((t, i) => (
+                  <TechPill key={i} name={t} />
+                ))}
+              </div>
+            </div>
+
+            {/* Row 2 — scrolls right-to-left (slightly slower) */}
+            <div className="overflow-hidden relative mt-2">
+              <div className="flex gap-3 hero-marquee-row2" style={{ width: 'max-content' }}>
+                {[...ROW2_TECH, ...ROW2_TECH].map((t, i) => (
+                  <TechPill key={i} name={t} />
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
