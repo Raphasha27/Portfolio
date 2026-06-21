@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
-import koketsoSuit from '../assets/profile_new.png';
+import koketsoSuit from '../assets/profile_new_transparent.png';
 
 /* ─────────────────────────────────────────────
    Typewriter — cycles through roles
@@ -278,11 +278,7 @@ const Hero = () => (
                 <img
                   src={koketsoSuit}
                   alt="Koketso Raphasha"
-                  className="w-full h-auto block object-cover"
-                  style={{
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
-                    maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
-                  }}
+                  className="w-full h-auto block object-cover drop-shadow-[0_0_30px_rgba(0,255,156,0.15)]"
                 />
               </div>
             </div>
