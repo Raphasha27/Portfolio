@@ -1,5 +1,6 @@
 import React, { useEffect, Suspense, lazy, useState } from 'react';
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import cyberBg from './assets/cyber-bg.png';
 import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
@@ -32,6 +33,7 @@ function App() {
   }, []);
 
   const { scrollYProgress } = useScroll();
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
