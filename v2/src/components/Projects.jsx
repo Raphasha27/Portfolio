@@ -366,7 +366,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 relative z-10">
           {projects.map((p, i) => (
             <TiltCard 
-              key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
+              key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-[#00FF9C]/50 hover:shadow-[0_0_30px_rgba(0,255,156,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/40 to-transparent pointer-events-none" />
@@ -380,15 +380,15 @@ const Projects = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-sm font-bold text-white truncate group-hover:text-blue-400 transition-colors">{p.title}</h3>
+                      <h3 className="text-sm font-bold text-white truncate group-hover:text-[#00FF9C] transition-colors">{p.title}</h3>
                       {p.status === 'live' && (
-                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30 shrink-0">
-                          <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
-                          <span className="text-[7px] text-green-400 font-bold uppercase tracking-wider">Live</span>
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#00FF9C]/10 border border-[#00FF9C]/30 shrink-0">
+                          <div className="w-1 h-1 rounded-full bg-[#00FF9C] animate-pulse" />
+                          <span className="text-[7px] text-[#00FF9C] font-bold uppercase tracking-wider">Live</span>
                         </span>
                       )}
                     </div>
-                    <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80 truncate">{p.tagline}</div>
+                    <div className="text-[8px] uppercase font-bold tracking-wider text-[#00FF9C]/80 truncate">{p.tagline}</div>
                   </div>
                   <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] hidden sm:block shrink-0">
                     {p.role}
@@ -414,7 +414,7 @@ const Projects = () => {
                       href={p.liveUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 hover:border-green-500/50 text-green-400 font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]"
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#00FF9C]/10 hover:bg-[#00FF9C]/20 border border-[#00FF9C]/30 hover:border-[#00FF9C]/50 text-[#00FF9C] font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(0,255,156,0.3)]"
                     >
                       <Icon name="globe" size={12} />
                       <span>Live Demo</span>
@@ -434,7 +434,7 @@ const Projects = () => {
                       const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
                       navigator.clipboard.writeText(url);
                     }}
-                    className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 text-white/40 hover:text-blue-400 transition-all"
+                    className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-[#00FF9C]/10 border border-white/10 hover:border-[#00FF9C]/30 text-white/40 hover:text-[#00FF9C] transition-all"
                     title="Copy Link"
                   >
                     <Icon name="share" size={14} />
@@ -496,7 +496,7 @@ const Projects = () => {
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-white/90 transition-colors font-mono">
                 {tech.name}
               </span>
-              <div className="w-1 h-1 rounded-full bg-blue-500/30 ml-4" />
+              <div className="w-1 h-1 rounded-full bg-[#00FF9C]/30 ml-4" />
             </div>
           ))}
         </motion.div>

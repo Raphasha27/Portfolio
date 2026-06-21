@@ -60,13 +60,13 @@ const Contact = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-10 sm:mb-20">
           <div className="space-y-2 sm:space-y-4">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.3em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none">
-              Initialize <span className="text-blue-400">Contact</span>
+              Initialize <span className="text-[#00FF9C]">Contact</span>
             </h2>
-            <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">Communication Protocol 7.4</div>
+            <div className="text-[#00FF9C] text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">Communication Protocol 7.4</div>
           </div>
-          <div className="px-4 sm:px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 self-start">
-            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-            <span className="text-[10px] sm:text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em]">Link: Ready</span>
+          <div className="px-4 sm:px-5 py-2 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/30 flex items-center gap-2 self-start">
+            <div className="w-2 h-2 rounded-full bg-[#00FF9C] animate-pulse" />
+            <span className="text-[10px] sm:text-[11px] font-bold text-[#00FF9C] uppercase tracking-[0.3em]">Link: Ready</span>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ const Contact = () => {
               <div className="flex flex-col gap-6">
                 <div>
                   <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 leading-tight">
-                    Let's Build Something <br /><span className="text-blue-400">Extraordinary</span>
+                    Let's Build Something <br /><span className="text-[#00FF9C]">Extraordinary</span>
                   </h2>
                   <p className="text-white/50 text-sm sm:text-lg max-w-md leading-relaxed">
                     Have a project in mind? Let's work together to bring your digital visions to life with precision and style.
@@ -91,11 +91,11 @@ const Contact = () => {
                   <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
                     <img src={gautengMap} alt="Johannesburg Map" className="w-full h-full object-cover scale-150 grayscale" />
                   </div>
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 relative z-10">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#00FF9C]/10 flex items-center justify-center text-[#00FF9C] relative z-10">
                     <Icon name="globe" size={22} />
                   </div>
                   <div className="relative z-10 text-left">
-                    <div className="text-[8px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-1">Current Coordinates</div>
+                    <div className="text-[8px] font-bold text-[#00FF9C] uppercase tracking-[0.3em] mb-1">Current Coordinates</div>
                     <div className="text-sm font-bold text-white tracking-tight">Johannesburg, Gauteng</div>
                     <div className="text-[9px] text-white/40 font-medium uppercase tracking-wider">South Africa · SAST (UTC+2)</div>
                   </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit my ${social.name} profile`}
-                    className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-white/70 hover:text-blue-400 hover:border-blue-500/50 transition-all hover:scale-110 active:scale-95 group shadow-lg"
+                    className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-white/70 hover:text-[#00FF9C] hover:border-[#00FF9C]/50 transition-all hover:scale-110 active:scale-95 group shadow-lg"
                   >
                     <Icon name={social.icon} size={22} />
                   </a>
@@ -168,7 +168,7 @@ const Contact = () => {
                           type="text" name="name" id="name" required
                           value={formState.name} onChange={handleChange}
                           placeholder="John Doe"
-                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-[#00FF9C]/50 focus:ring-1 focus:ring-[#00FF9C]/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                       <div className="flex-1 flex flex-col gap-2">
@@ -177,7 +177,7 @@ const Contact = () => {
                           type="email" name="email" id="email" required
                           value={formState.email} onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-[#00FF9C]/50 focus:ring-1 focus:ring-[#00FF9C]/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                     </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                         name="message" id="message" required rows="5"
                         value={formState.message} onChange={handleChange}
                         placeholder="Tell me about your project..."
-                        className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
+                        className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-[#00FF9C]/50 focus:ring-1 focus:ring-[#00FF9C]/50 transition-all placeholder:text-white/20 resize-none"
                       />
                     </div>
 
@@ -201,7 +201,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="w-full py-4 mt-2 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-3 text-sm shadow-[0_0_30px_rgba(37,99,235,0.3)] group active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full py-4 mt-2 bg-[#00FF9C] hover:bg-[#00cc7d] text-[#050d12] font-bold rounded-xl transition-all flex items-center justify-center gap-3 text-sm shadow-[0_0_30px_rgba(0,255,156,0.3)] group active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {status === 'loading' ? (
                         <>
@@ -234,7 +234,7 @@ const Contact = () => {
         >
           {Array(3).fill(0).map((_, i) => (
             <React.Fragment key={i}>
-              <div className="flex items-center gap-2 text-blue-400">
+              <div className="flex items-center gap-2 text-[#00FF9C]">
                 <Icon name="code" size={16} />
                 <span>Koketso_Raphasha_Portfolio_Dev</span>
               </div>
@@ -245,7 +245,7 @@ const Contact = () => {
                 <a href="#projects" className="hover:text-white transition-colors">Projects</a>
               </div>
               <div>© {new Date().getFullYear()} Kirov Dynamics · All Rights Reserved</div>
-              <div className="w-2 h-2 rounded-full bg-blue-500/30" />
+              <div className="w-2 h-2 rounded-full bg-[#00FF9C]/30" />
             </React.Fragment>
           ))}
         </motion.div>
