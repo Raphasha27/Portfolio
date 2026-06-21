@@ -110,62 +110,81 @@ const Navbar = ({ setCmdOpen }) => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: '-100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[70] bg-black/80 backdrop-blur-xl md:hidden flex flex-col p-6"
-          >
-            {/* Header in Overlay */}
-            <div className="flex justify-between items-center mb-12">
-              <div className="flex items-center gap-2 text-[#00FF9C] font-bold">
-                <Icon name="code" size={20} />
-                <span className="text-[10px] tracking-tighter">Koketso_Raphasha_Portfolio</span>
-              </div>
+          <>
+            {/* Backdrop click-to-close */}
+            <div 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.25, ease: 'easeOut' }}
+              className="fixed right-0 top-0 bottom-0 z-[70] w-[95px] bg-[#050d12] border-l border-white/5 md:hidden flex flex-col items-center justify-between py-6 px-1 shadow-[0_0_50px_rgba(0,0,0,0.8)]"
+            >
+              {/* Close Button at top */}
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-10 h-10 glass flex items-center justify-center text-[#00FF9C] rounded-lg"
+                className="w-10 h-10 flex items-center justify-center text-[#00FF9C] rounded-lg hover:bg-white/5 active:scale-95 transition-all mb-2"
+                aria-label="Close menu"
               >
-                <Icon name="close" size={24} />
+                <Icon name="close" size={20} />
               </button>
-            </div>
 
-            <div className="flex flex-col items-center gap-6 text-xl font-bold uppercase tracking-[0.2em]">
-              {[...navItems, 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item)}
-                  className="text-white/60 hover:text-[#00FF9C] transition-all py-2 w-full text-center border-b border-white/5"
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex flex-col gap-4 mt-auto pb-10">
-              <button
-                onClick={handleShare}
-                className="w-full py-4 glass flex items-center justify-center gap-3 text-[#00FF9C] font-bold uppercase text-xs tracking-widest border border-[#00FF9C]/20 rounded-lg"
-              >
-                <Icon name={copied ? 'check' : 'share'} size={18} />
-                {copied ? 'Copied Link!' : 'Share Registry'}
-              </button>
-              
-              <button
-                onClick={() => { setIsMobileMenuOpen(false); if (setCmdOpen) setCmdOpen(true); }}
-                className="w-full py-4 glass flex items-center justify-center gap-3 text-blue-400 font-bold uppercase text-xs tracking-widest border border-blue-400/20 rounded-lg"
-              >
-                <Icon name="search" size={18} />
-                Command Menu
-              </button>
-              
-              <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-[#00FF9C]/5 border border-[#00FF9C]/10 text-[8px] font-bold text-[#00FF9C]/60 uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse"></span>
-                Status: System Health Optimal
+              {/* Sidebar Navigation Items */}
+              <div className="flex flex-col items-center gap-4.5 w-full my-auto overflow-y-auto py-2">
+                {[
+                  { id: 'home', label: 'HOME', icon: 'home' },
+                  { id: 'about', label: 'ABOUT', icon: 'user' },
+                  { id: 'skills', label: 'SKILLS', icon: 'code' },
+                  { id: 'projects', label: 'PROJECTS', icon: 'package' },
+                  { id: 'experience', label: 'EXPERIENCE', icon: 'briefcase' },
+                  { id: 'certifications', label: 'EDUCATION', icon: 'graduationcap' },
+                  { id: 'blog', label: 'BLOG', icon: 'blog' },
+                  { id: 'contact', label: 'CONTACT', icon: 'mail' },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      if (item.id === 'blog') {
+                        setIsMobileMenuOpen(false);
+                        if (setCmdOpen) setCmdOpen(true);
+                      } else {
+                        scrollTo(item.id);
+                      }
+                    }}
+                    className="flex flex-col items-center gap-1.5 py-1 w-full text-center text-white/50 hover:text-[#00FF9C] active:scale-95 transition-all group"
+                  >
+                    <Icon name={item.icon} size={22} className="text-white/40 group-hover:text-[#00FF9C] transition-colors" />
+                    <span className="text-[7.5px] font-bold tracking-widest font-mono uppercase group-hover:text-[#00FF9C] transition-colors">{item.label}</span>
+                  </button>
+                ))}
               </div>
-            </div>
-          </motion.div>
+
+              {/* Sidebar Footer: Theme Toggle & Copyright */}
+              <div className="flex flex-col items-center w-full gap-4 mt-auto">
+                {/* Theme Toggle Capsule */}
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/30 text-[10px]">
+                  {/* Sun */}
+                  <span className="cursor-pointer hover:text-white transition-colors">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                  </span>
+                  {/* Dot/Leaf */}
+                  <span className="w-3.5 h-3.5 rounded-full bg-[#00FF9C] shadow-[0_0_8px_rgba(0,255,156,0.6)] cursor-pointer" />
+                  {/* Moon */}
+                  <span className="cursor-pointer hover:text-white transition-colors">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                  </span>
+                </div>
+
+                {/* Copyright */}
+                <div className="text-[6.5px] text-white/30 text-center font-mono leading-tight px-1 select-none">
+                  © 2024 Koketso Raphasha.<br />All rights reserved.
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
