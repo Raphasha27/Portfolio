@@ -134,6 +134,19 @@ section {
   display: none;
 }
 
+/* Safe area insets for iOS notch devices */
+@supports (padding-top: env(safe-area-inset-top)) {
+  :root {
+    --sat: env(safe-area-inset-top);
+    --sab: env(safe-area-inset-bottom);
+    --sal: env(safe-area-inset-left);
+    --sar: env(safe-area-inset-right);
+  }
+  nav, .nav-fixed {
+    padding-top: var(--sat) !important;
+  }
+}
+
 /* Prevent horizontal overflow on mobile — targeted, not global */
 @media (max-width: 768px) {
   html, body {
@@ -157,6 +170,52 @@ section {
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
+  }
+
+  /* Better touch targets on mobile */
+  button, a {
+    touch-action: manipulation;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Scanning line animation for profile card */
+.scanning-line {
+  animation: scanLine 4s ease-in-out infinite;
+}
+
+@keyframes scanLine {
+  0% { top: 15%; opacity: 0; }
+  10% { opacity: 1; }
+  50% { top: 75%; opacity: 1; }
+  60% { opacity: 0; }
+  100% { top: 15%; opacity: 0; }
+}
+
+/* Orbital spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hover effect only for devices that support hover (no mobile) */
+@media (hover: hover) {
+  .hover-only\:opacity-0 { opacity: 0; }
+  .group:hover .hover-only\:opacity-0 { opacity: 1; }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  button, a, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  input, textarea, select {
+    font-size: 16px !important;
   }
 }
 

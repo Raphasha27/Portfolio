@@ -369,87 +369,77 @@ const Projects = () => {
               key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
-              {/* Refined Visibility Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/60 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/40 to-transparent pointer-events-none" />
               
-              {/* Highlight Glow Effect */}
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
               
-              <div className="relative z-10 flex justify-between items-start mb-4">
-                <div className="flex items-center gap-3">
-                  <div 
-                    className="w-10 h-10 rounded-xl border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 bg-[#0a161d] border-[#00FF9C]/40 text-[#00FF9C] shadow-[0_0_20px_rgba(0,255,156,0.15)]"
-                  >
-                    <div className="relative z-10">
-                      <Icon name={p.icon} size={20} />
-                    </div>
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 bg-[#0a161d] border-[#00FF9C]/40 text-[#00FF9C] shadow-[0_0_20px_rgba(0,255,156,0.15)] group-hover:scale-110 transition-transform duration-500">
+                    <Icon name={p.icon} size={20} />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-bold text-white transition-colors drop-shadow-lg group-hover:text-blue-400">{p.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="text-sm font-bold text-white truncate group-hover:text-blue-400 transition-colors">{p.title}</h3>
                       {p.status === 'live' && (
-                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30">
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30 shrink-0">
                           <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
                           <span className="text-[7px] text-green-400 font-bold uppercase tracking-wider">Live</span>
                         </span>
                       )}
                     </div>
-                    <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80">{p.tagline}</div>
+                    <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80 truncate">{p.tagline}</div>
+                  </div>
+                  <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] hidden sm:block shrink-0">
+                    {p.role}
                   </div>
                 </div>
-                <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] shadow-[0_0_10px_rgba(0,255,156,0.1)] hidden sm:block">
-                  {p.role}
-                </div>
-              </div>
               
-              <p className="relative z-10 text-[11px] text-white/90 font-medium mb-4 line-clamp-3 leading-relaxed group-hover:text-white transition-colors drop-shadow-md flex-1">
-                {p.desc}
-              </p>
+                <p className="text-[11px] text-white/90 font-medium mb-3 line-clamp-3 leading-relaxed flex-1">
+                  {p.desc}
+                </p>
 
-              {/* Tech Stack */}
-              <div className="relative z-10 flex gap-2 mb-4">
-                {p.tech.slice(0, 4).map((t, j) => (
-                  <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 group-hover:border-white/30 transition-colors flex items-center gap-1.5 uppercase font-bold tracking-wider">
-                    <Icon name={t.toLowerCase()} size={10} />
-                    {t}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {p.tech.slice(0, 4).map((t, j) => (
+                    <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 flex items-center gap-1 uppercase font-bold tracking-wider">
+                      <Icon name={t.toLowerCase()} size={10} />
+                      {t}
+                    </span>
+                  ))}
+                </div>
               
-              {/* Action Buttons */}
-              <div className="relative z-10 flex gap-2 mt-auto">
-                {p.liveUrl && (
+                <div className="flex gap-2 mt-auto pt-2 border-t border-white/5">
+                  {p.liveUrl && (
+                    <a 
+                      href={p.liveUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 hover:border-green-500/50 text-green-400 font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]"
+                    >
+                      <Icon name="globe" size={12} />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                   <a 
-                    href={p.liveUrl} 
-                    target="_blank" 
+                    href={p.link || "https://github.com/Raphasha27"} 
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 hover:border-green-500/50 text-green-400 font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(74,222,128,0.3)] group/btn"
+                    className={`${p.liveUrl ? 'flex-none px-2' : 'flex-1'} flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00FF9C]/30 text-white/70 hover:text-[#00FF9C] font-bold text-[10px] uppercase tracking-wider transition-all`}
                   >
-                    <Icon name="globe" size={12} />
-                    <span>Live Demo</span>
-                    <Icon name="externallink" size={10} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                    <Icon name="github" size={12} />
+                    {!p.liveUrl && <span>View Code</span>}
                   </a>
-                )}
-                <a 
-                  href={p.link || "https://github.com/Raphasha27"} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${p.liveUrl ? 'flex-none' : 'flex-1'} flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00FF9C]/30 text-white/70 hover:text-[#00FF9C] font-bold text-[10px] uppercase tracking-wider transition-all group/btn`}
-                >
-                  <Icon name="github" size={12} />
-                  {!p.liveUrl && <span>View Code</span>}
-                  <Icon name="externallink" size={10} className="group-hover/btn:translate-x-0.5 transition-transform" />
-                </a>
-                <button 
-                  onClick={() => {
-                    const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
-                    navigator.clipboard.writeText(url);
-                  }}
-                  className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 text-white/40 hover:text-blue-400 transition-all"
-                  title="Copy Link"
-                >
-                  <Icon name="share" size={14} />
-                </button>
+                  <button 
+                    onClick={() => {
+                      const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
+                      navigator.clipboard.writeText(url);
+                    }}
+                    className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 text-white/40 hover:text-blue-400 transition-all"
+                    title="Copy Link"
+                  >
+                    <Icon name="share" size={14} />
+                  </button>
+                </div>
               </div>
             </TiltCard>
           ))}

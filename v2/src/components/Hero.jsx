@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
-import koketsoSuit from '../assets/koketso_transparent.png';
+
 
 /* ── Typewriter cycling through roles ── */
 const ROLES = ['AI ENGINEER', 'SYSTEMS ARCHITECT', 'CO-FOUNDER', 'FULL STACK DEV'];
@@ -114,7 +114,7 @@ const STATS = [
 ];
 
 const Hero = () => (
-  <div id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
+  <div id="home" className="relative min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden bg-transparent">
     <ParticleCanvas />
       {/* Scanline overlay */}
     <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
@@ -136,7 +136,7 @@ const Hero = () => (
     <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-[#00FF9C]/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 pt-28 sm:pt-32 pb-10 max-w-7xl mx-auto">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 pt-20 sm:pt-24 pb-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center">
 
         {/* Left: Text content */}
@@ -239,37 +239,75 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        {/* Right: Profile with tech-themed circular frame */}
+        {/* Right: Profile with HUD-tech card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="relative order-1 lg:order-2 flex flex-col items-center"
         >
-          {/* The image already has the glowing ring and tech aesthetic built-in */}
-          <div className="relative w-full max-w-[320px] lg:max-w-[380px]">
-            <img 
-              src="/profile-enhanced.jpg" 
-              alt="Koketso Raphasha - AI Engineer" 
-              className="w-full h-auto drop-shadow-2xl"
-            />
+          <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[400px] mx-auto">
+            {/* Orbital rings behind */}
+            <div className="absolute -inset-8 rounded-full border border-[#00FF9C]/5 animate-spin-slow pointer-events-none" style={{ animation: 'spin 20s linear infinite' }} />
+            <div className="absolute -inset-12 rounded-full border border-[#00FF9C]/3 pointer-events-none" style={{ animation: 'spin 30s linear infinite reverse' }} />
+
+            {/* Profile card container */}
+            <div className="relative rounded-2xl overflow-hidden border border-[#00FF9C]/20 shadow-[0_0_40px_rgba(0,255,156,0.1)] bg-transparent">
+              {/* Floating panels behind */}
+              <div className="absolute w-32 h-24 top-8 -left-6 rounded-xl border border-[#00FF9C]/5 bg-[#00FF9C]/[0.02] pointer-events-none rotate-[-8deg]" />
+              <div className="absolute w-28 h-20 bottom-10 -right-4 rounded-xl border border-[#00FF9C]/5 bg-[#00FF9C]/[0.02] pointer-events-none rotate-[5deg]" />
+
+              {/* Network lines */}
+              <div className="absolute inset-0 pointer-events-none opacity-20">
+                <div className="absolute w-px h-1/2 top-1/4 left-1/4 bg-gradient-to-b from-transparent via-[#00FF9C] to-transparent" />
+                <div className="absolute h-px w-1/2 top-1/3 right-[10%] bg-gradient-to-r from-transparent via-[#00FF9C] to-transparent" />
+                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] top-1/4 left-1/4 shadow-[0_0_6px_#00FF9C]" />
+                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] top-1/3 right-[12%] shadow-[0_0_6px_#00FF9C]" />
+                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] bottom-1/3 left-[15%] shadow-[0_0_6px_#00FF9C]" />
+              </div>
+
+              {/* Image with transparent cutout */}
+              <div className="relative" style={{ aspectRatio: '3/4' }}>
+                <img 
+                  src="/profile-cutout.png" 
+                  alt="Koketso Raphasha - AI Engineer" 
+                  className="w-full h-full object-contain object-bottom select-none relative z-10"
+                  style={{ filter: 'drop-shadow(0 0 20px rgba(0,255,156,0.06))' }}
+                />
+              </div>
+
+              {/* Glow behind card */}
+              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#00FF9C]/30 via-blue-500/30 to-purple-500/30 -z-10 opacity-50" />
+
+              {/* Corner HUD marks */}
+              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-tl" />
+              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-tr" />
+              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-bl" />
+              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-br" />
+
+              {/* Scanning line */}
+              <div className="absolute left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-[#00FF9C]/30 to-transparent z-20 pointer-events-none scanning-line" />
+            </div>
+
+            {/* Verification badge */}
+            <div className="absolute -top-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-[#00FF9C] to-emerald-500 flex items-center justify-center z-30 shadow-[0_0_15px_rgba(0,255,156,0.4)]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#050d12" strokeWidth="3" className="w-3.5 h-3.5 sm:w-4 sm:h-4">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
           </div>
 
           {/* Name + title */}
           <div className="text-center w-full max-w-[280px] lg:max-w-[320px] mt-6">
             <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
             <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-1 flex items-center justify-center gap-2">
-              Autonomous AI Engineer
+              Software Engineer
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
               </span>
             </div>
-          </div>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
-              </span>
             </div>
-          </div>
 
           {/* Live terminal strip */}
           <motion.div
