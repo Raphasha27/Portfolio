@@ -273,7 +273,7 @@ const Hero = () => (
           />
 
           {/* Frame — matches screenshot exactly */}
-          <div className="relative" style={{ maxWidth: '380px', width: '100%' }}>
+          <div className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px]">
 
             {/* Outer ambient glow */}
             <div className="absolute -inset-4 rounded-2xl pointer-events-none" style={{
@@ -316,11 +316,11 @@ const Hero = () => (
               </div>
 
               {/* Photo — fills card, no padding */}
-              <div className="rounded-2xl overflow-hidden">
+              <div className="rounded-2xl overflow-hidden aspect-square">
                 <img
                   src={koketsoSuit}
                   alt="Koketso Raphasha"
-                  className="w-full h-auto block object-cover"
+                  className="w-full h-full block object-cover"
                 />
               </div>
             </div>
