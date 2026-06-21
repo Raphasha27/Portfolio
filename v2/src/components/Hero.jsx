@@ -98,17 +98,8 @@ const STATS = [
 /* ─────────────────────────────────────────────
    Tech Arsenal data
 ───────────────────────────────────────────── */
-const ROW1_TECH = [
-  'react', 'python', 'typescript', 'docker', 'kubernetes',
-  'nextjs', 'fastapi', 'postgresql', 'redis', 'mongodb',
-  'aws', 'azure', 'github', 'linux', 'tensorflow',
-];
-
-const ROW2_TECH = [
-  'pytorch', 'langchain', 'go', 'rust', 'nginx',
-  'rabbitmq', 'grafana', 'prometheus', 'githubactions',
-  'figma', 'flutter', 'csharp', 'java', 'vite', 'tailwindcss',
-];
+const ROW1_TECH = ['docker', 'kubernetes', 'nextjs', 'fastapi'];
+const ROW2_TECH = ['tailwindcss', 'pytorch', 'langchain', 'go'];
 
 /* Single pill with logo + label */
 const TechPill = ({ name }) => (
@@ -273,7 +264,7 @@ const Hero = () => (
           />
 
           {/* Frame — matches screenshot exactly */}
-          <div className="relative w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px]">
+          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[440px]">
 
             {/* Outer ambient glow */}
             <div className="absolute -inset-4 rounded-2xl pointer-events-none" style={{
@@ -316,11 +307,11 @@ const Hero = () => (
               </div>
 
               {/* Photo — fills card, no padding */}
-              <div className="rounded-2xl overflow-hidden aspect-square">
+              <div className="rounded-2xl overflow-hidden bg-[#050d12] flex items-center justify-center">
                 <img
                   src={koketsoSuit}
                   alt="Koketso Raphasha"
-                  className="w-full h-full block object-cover"
+                  className="w-full h-auto block object-cover"
                 />
               </div>
             </div>
@@ -346,30 +337,22 @@ const Hero = () => (
             </div>
           </div>
 
-          {/* ── Tech Stack Marquee ── */}
-          <div className="mt-8 w-full" style={{ maxWidth: '420px' }}>
+          {/* ── Tech Stack Grid ── */}
+          <div className="mt-8 lg:mt-10 w-full flex flex-col items-center">
             {/* Label */}
-            <div className="flex items-center gap-2 mb-2.5">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-              <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-white/30 shrink-0">TECH ARSENAL</span>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            <div className="flex items-center gap-3 mb-4 w-full max-w-[360px]">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20" />
+              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 shrink-0">TECH ARSENAL</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/20" />
             </div>
 
-            {/* Row 1 — scrolls right-to-left */}
-            <div className="overflow-hidden relative">
-              <div className="flex gap-3 hero-marquee-row1" style={{ width: 'max-content' }}>
-                {[...ROW1_TECH, ...ROW1_TECH].map((t, i) => (
-                  <TechPill key={i} name={t} />
-                ))}
+            {/* Grid of 8 pills */}
+            <div className="flex flex-col gap-3 items-center w-full max-w-[380px]">
+              <div className="flex justify-center gap-3 flex-wrap w-full">
+                {ROW1_TECH.map((t, i) => <TechPill key={`r1-${i}`} name={t} />)}
               </div>
-            </div>
-
-            {/* Row 2 — scrolls right-to-left (slightly slower) */}
-            <div className="overflow-hidden relative mt-2">
-              <div className="flex gap-3 hero-marquee-row2" style={{ width: 'max-content' }}>
-                {[...ROW2_TECH, ...ROW2_TECH].map((t, i) => (
-                  <TechPill key={i} name={t} />
-                ))}
+              <div className="flex justify-center gap-3 flex-wrap w-full">
+                {ROW2_TECH.map((t, i) => <TechPill key={`r2-${i}`} name={t} />)}
               </div>
             </div>
           </div>
