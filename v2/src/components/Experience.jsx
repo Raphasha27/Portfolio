@@ -47,9 +47,20 @@ const experiences = [
     company: "CAPACITI · Digital Skills Accelerator",
     desc: "Completed an intensive digital skills accelerator focused on cloud computing, agile development, and enterprise software delivery. Ranked in top cohort for technical output.",
     icon: "rocket",
-    logo: capacitiLogo,
+    logo: "https://ab4ir.org/wp-content/uploads/2021/06/Naspers-Labs_blue-2.png",
     logoBg: "bg-white",
     logoPadding: "p-2",
+    logoFit: "object-contain"
+  },
+  {
+    period: "2025 – 2026",
+    role: "Cybersecurity Intern",
+    company: "Orange Cyberdefense · Sponsorship",
+    desc: "Interned as part of a sponsorship program including Orange Cyber security. Gained practical experience in threat monitoring, enterprise security, and security operations.",
+    icon: "shield",
+    logo: "https://th.bing.com/th/id/R.e8ae1deef5cd53a7f446b6bfe1791e4d?rik=Xlnu%2f30pV2GYyg&pid=ImgRaw&r=0",
+    logoBg: "bg-white",
+    logoPadding: "p-3",
     logoFit: "object-contain"
   },
   {

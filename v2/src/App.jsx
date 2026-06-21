@@ -35,6 +35,139 @@ function App() {
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
+      {/* Base cyber background layer - Enhanced Visibility */}
+      {/* Base cyber background layer - Enhanced Visibility */}
+      <motion.div 
+        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.85] mix-blend-screen bg-center bg-cover bg-no-repeat" 
+        style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
+        animate={{
+          scale: [1, 1.15, 1],
+        }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      {/* Advanced animated background system */}
+      <AdvancedBackground />
+      
+      {/* Enhanced mesh gradient overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[2] opacity-40">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 15% 15%, rgba(0, 255, 156, 0.2) 0%, transparent 40%),
+              radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
+              radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 30% 70%, rgba(236, 72, 153, 0.1) 0%, transparent 40%),
+              linear-gradient(135deg, rgba(0, 255, 156, 0.08) 0%, transparent 50%, rgba(59, 130, 246, 0.08) 100%)
+            `
+          }}
+        />
+      </div>
+      
+      {/* Massive dynamic gradient orbs */}
+      <motion.div 
+        className="fixed -top-40 -left-40 w-[800px] h-[800px] rounded-full blur-3xl pointer-events-none z-[1]"
+        style={{
+          background: 'radial-gradient(circle, rgba(0, 255, 156, 0.15) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)'
+        }}
+        animate={{
+          x: [0, 100, 0],
+          y: [0, 80, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div 
+        className="fixed -bottom-40 -right-40 w-[800px] h-[800px] rounded-full blur-3xl pointer-events-none z-[1]"
+        style={{
+          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.1) 50%, transparent 100%)'
+        }}
+        animate={{
+          x: [0, -100, 0],
+          y: [0, -80, 0],
+          scale: [1, 1.4, 1],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2
+        }}
+      />
+      <motion.div 
+        className="fixed top-1/3 right-1/4 w-[700px] h-[700px] rounded-full blur-3xl pointer-events-none z-[1]"
+        style={{
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0, 255, 156, 0.08) 50%, transparent 100%)'
+        }}
+        animate={{
+          rotate: [0, 360],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 50,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+      
+      {/* 3D Perspective grid */}
+      <div className="fixed inset-0 pointer-events-none z-[2] opacity-[0.12]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0, 255, 156, 0.4) 1.5px, transparent 1.5px),
+              linear-gradient(90deg, rgba(0, 255, 156, 0.4) 1.5px, transparent 1.5px)
+            `,
+            backgroundSize: '60px 60px',
+            transform: 'perspective(800px) rotateX(60deg) scale(2)',
+            transformOrigin: 'center top',
+            maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
+          }}
+        />
+      </div>
+      
+      {/* Hexagonal pattern overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[2] opacity-[0.05]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 30% 30%, rgba(0, 255, 156, 0.3) 1px, transparent 1px),
+              radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px'
+          }}
+        />
+      </div>
+      
+      {/* Film grain texture */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.06] z-[4] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      
+      {/* Animated scanlines */}
+      <motion.div
+        className="fixed inset-0 pointer-events-none z-[5] opacity-[0.04]"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 156, 0.2) 2px, rgba(0, 255, 156, 0.2) 4px)',
+        }}
+        animate={{
+          y: [0, 8, 0]
+        }}
+        transition={{
+          duration: 0.15,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
       
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
