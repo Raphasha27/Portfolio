@@ -190,21 +190,20 @@ const Hero = () => (
         >
           <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px]">
             {/* The Green Outline Frame */}
-            <div className="relative w-full rounded-[2rem] border border-[#00FF9C] p-0.5 shadow-[0_0_50px_rgba(0,255,156,0.15)]">
+            <div className="relative w-full rounded-2xl border border-[#00FF9C] shadow-[0_0_30px_rgba(0,255,156,0.1)]">
               
               {/* Photo */}
-              <div className="relative w-full overflow-hidden rounded-[2rem] bg-[#050d12]">
+              <div className="relative w-full overflow-hidden rounded-2xl">
                 <img
                   src={koketsoSuit}
                   alt="Koketso Raphasha"
                   className="w-full h-auto object-cover relative z-10 block"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] to-transparent opacity-20 z-20 pointer-events-none"></div>
               </div>
               
               {/* Verification Badge */}
-              <div className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#00FF9C] flex items-center justify-center z-30 shadow-[0_0_20px_rgba(0,255,156,0.5)]">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#050d12" strokeWidth="3" className="w-5 h-5">
+              <div className="absolute -top-3 -right-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center z-30 shadow-[0_0_15px_rgba(0,255,156,0.2)] backdrop-blur-md">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="3" className="w-4 h-4 sm:w-5 sm:h-5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
