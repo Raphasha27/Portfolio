@@ -450,7 +450,7 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--green-primary);
+    border: none;
     box-shadow: var(--shadow-lg), var(--shadow-glow);
     animation: float 6s ease-in-out infinite;
 }

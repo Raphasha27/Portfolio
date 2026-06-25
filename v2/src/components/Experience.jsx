@@ -96,21 +96,21 @@ const Experience = () => {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-12 sm:mb-20">
           <div className="space-y-2 sm:space-y-4 max-w-full">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.15em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
-              Professional <span className="text-blue-400">Evolution</span>
+              Professional <span className="text-[#00FF9C]">Evolution</span>
             </h2>
             <div className="flex items-center gap-3 mt-4">
               <div className="text-white/40 text-[9px] font-mono uppercase tracking-[0.4em]">Linear Timeline Analysis</div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 w-fit mt-4">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-              <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Sync: Verified</span>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 w-fit mt-4">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+              <span className="text-[10px] font-bold text-[#00FF9C] uppercase tracking-widest">Sync: Verified</span>
             </div>
           </div>
         </div>
 
         <div className="max-w-5xl mx-auto relative">
           {/* Vertical timeline line — hidden on mobile */}
-          <div className="absolute left-[31px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-500/50 via-blue-500/10 to-transparent hidden sm:block" />
+          <div className="absolute left-[31px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#00FF9C]/50 via-[#00FF9C]/10 to-transparent hidden sm:block" />
 
           <div className="space-y-8 sm:space-y-16">
             {experiences.map((exp, i) => (
@@ -125,8 +125,8 @@ const Experience = () => {
               >
                 {/* Logo Circle — smaller on mobile */}
                 <div 
-                  className={`w-16 h-16 lg:w-24 lg:h-24 rounded-full border-2 flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 ${exp.logoBg || 'bg-[#0a161d]'} overflow-hidden shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]`}
-                  style={{ borderColor: 'rgba(59, 130, 246, 0.6)' }}
+                  className={`w-16 h-16 lg:w-24 lg:h-24 rounded-full border-2 flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 ${exp.logoBg || 'bg-[#0a161d]'} overflow-hidden shadow-[0_0_20px_rgba(0,255,156,0.2)] group-hover:shadow-[0_0_30px_rgba(0,255,156,0.4)]`}
+                  style={{ borderColor: 'rgba(0, 255, 156, 0.6)' }}
                 >
                   <div className={`relative z-10 w-full h-full ${exp.logoPadding || 'p-3'} flex items-center justify-center`}>
                     {exp.logo ? (
@@ -136,25 +136,25 @@ const Experience = () => {
                         className={`w-full h-full ${exp.logoFit || "object-contain"} transition-all duration-500`} 
                       />
                     ) : (
-                      <div className="text-blue-400">
+                      <div className="text-[#00FF9C]">
                         <Icon name={exp.icon} size={28} />
                       </div>
                     )}
                   </div>
-                  <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-blue-400 opacity-60 group-hover:opacity-100 transition-all" />
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-blue-400 opacity-60 group-hover:opacity-100 transition-all" />
+                  <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-[#00FF9C] opacity-60 group-hover:opacity-100 transition-all" />
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#00FF9C] opacity-60 group-hover:opacity-100 transition-all" />
                 </div>
 
                 {/* Content Card */}
-                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-blue-500/20 transition-[border-color] duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
+                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-[#00FF9C]/20 transition-[border-color] duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#00FF9C]/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
                   <div className="relative z-10">
                     <div className="flex flex-col gap-2 mb-3 sm:mb-6">
                       <div className="max-w-full overflow-hidden">
-                        <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-[color] duration-300 tracking-tight break-words">{exp.role}</h3>
-                        <div className="text-[9px] sm:text-sm font-bold text-blue-400/70 tracking-normal sm:tracking-[0.3em] uppercase mt-1 sm:mt-2 font-mono break-words">{exp.company}</div>
+                        <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-[#00FF9C] transition-[color] duration-300 tracking-tight break-words">{exp.role}</h3>
+                        <div className="text-[9px] sm:text-sm font-bold text-[#00FF9C]/70 tracking-normal sm:tracking-[0.3em] uppercase mt-1 sm:mt-2 font-mono break-words">{exp.company}</div>
                       </div>
-                      <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-blue-400/60 uppercase tracking-wider self-start">
+                      <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-[#00FF9C]/60 uppercase tracking-wider self-start">
                         [{exp.period}]
                       </div>
                     </div>

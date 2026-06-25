@@ -229,3 +229,25 @@ section {
     letter-spacing: 0.8em;
   }
 }
+
+/* ── Hero tech-stack marquee ── */
+@keyframes hero-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-marquee-row1 {
+  animation: hero-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.hero-marquee-row2 {
+  animation: hero-scroll 36s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.hero-marquee-row1:hover,
+.hero-marquee-row2:hover {
+  animation-play-state: paused;
+}

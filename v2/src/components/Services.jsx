@@ -45,7 +45,7 @@ const vercelProjects = [
     desc: "Professional landing page for the Sumbandila platform.",
     url: "https://landing-five-orcin-61.vercel.app",
     icon: "globe",
-    color: "from-blue-500/20 to-cyan-500/20",
+    color: "from-[#00FF9C]/20 to-cyan-500/20",
     tech: ["Next.js", "Tailwind", "Vercel"]
   },
   {
@@ -54,7 +54,7 @@ const vercelProjects = [
     desc: "This portfolio. Systems architecture, AI engineering, and full-stack development showcase.",
     url: "https://koketso-raphasha.vercel.app",
     icon: "cpu",
-    color: "from-[#00FF9C]/20 to-blue-500/20",
+    color: "from-[#00FF9C]/20 to-emerald-500/20",
     tech: ["React", "Vite", "Framer", "Vercel"]
   }
 ];
@@ -78,7 +78,7 @@ const VercelDeployments = () => {
           viewport={{ once: true }}
           className="text-3xl sm:text-5xl font-bold text-white tracking-tight"
         >
-          Deployed <span className="text-blue-400">Projects</span>
+          Deployed <span className="text-[#00FF9C]">Projects</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -102,7 +102,7 @@ const VercelDeployments = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, y: -5, zIndex: 10 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-[#0a161d] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl relative"
+              className="group bg-[#0a161d] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-[#00FF9C]/30 transition-all duration-500 shadow-2xl relative"
             >
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${project.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`} />
 
@@ -111,10 +111,10 @@ const VercelDeployments = () => {
                   <Icon name={project.icon} size={28} />
                 </div>
 
-                <h3 className="font-bold text-xl text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="font-bold text-xl text-white group-hover:text-[#00FF9C] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-[10px] font-mono text-blue-400 uppercase tracking-widest -mt-2">
+                <p className="text-[10px] font-mono text-[#00FF9C] uppercase tracking-widest -mt-2">
                   {project.subtitle}
                 </p>
                 <p className="text-sm text-white/60 leading-relaxed">
@@ -133,7 +133,7 @@ const VercelDeployments = () => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block p-3 bg-[#0A0A0A] rounded-2xl border border-[#00ffcc]/30 hover:border-[#00ffcc]/60 transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,255,204,0.2)] mt-2"
+                  className="inline-block p-3 bg-[#0A0A0A] rounded-2xl border border-[#00FF9C]/30 hover:border-[#00FF9C]/60 transition-all duration-500 hover:shadow-[0_0_30px_rgba(0,255,156,0.2)] mt-2"
                 >
                   <img
                     src={qrUrl}

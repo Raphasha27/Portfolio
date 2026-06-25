@@ -75,6 +75,16 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
       </svg>
     ),
+    home: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+    blog: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+      </svg>
+    ),
     user: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -103,6 +113,11 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     android: (
       <svg viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.523 15.3414C17.0204 15.3414 16.6119 14.9333 16.6119 14.4312C16.6119 13.9291 17.0204 13.521 17.523 13.521C18.0256 13.521 18.4341 13.9291 18.4341 14.4312C18.4341 14.9333 18.0256 15.3414 17.523 15.3414ZM6.47703 15.3414C5.97442 15.3414 5.5659 14.9333 5.5659 14.4312C5.5659 13.9291 5.97442 13.521 6.47703 13.521C6.97964 13.521 7.38816 13.9291 7.38816 14.4312C7.38816 14.9333 6.97964 15.3414 6.47703 15.3414ZM17.9257 11.2332L19.7891 8.0058C19.9234 7.77341 19.8436 7.47545 19.6111 7.34125C19.3787 7.20704 19.0807 7.28682 18.9465 7.51934L17.0601 10.7871C15.6021 10.1234 13.8967 9.756 12 9.756C10.1033 9.756 8.39789 10.1234 6.93989 10.7871L5.05351 7.51934C4.91931 7.28682 4.62135 7.20704 4.38883 7.34125C4.15631 7.47545 4.07653 7.77341 4.21086 8.0058L6.07431 11.2332C2.58552 13.1118 0.160136 16.7196 0 20.934H24C23.8399 16.7196 21.4145 13.1118 17.9257 11.2332Z"/>
+      </svg>
+    ),
+    youtube: (
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
       </svg>
     ),
 
@@ -327,25 +342,13 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     langchain:     "https://cdn.simpleicons.org/langchain/white",
     kubernetes:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
     nginx:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg",
-    github:        "https://cdn.simpleicons.org/github/white",
-    githubactions: "https://cdn.simpleicons.org/githubactions/white",
     linux:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
     fastapi:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
     grafana:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
     prometheus:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     rabbitmq:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
-    linkedin:      linkedinLogo,
-    twitter:       "https://cdn.simpleicons.org/x/white",
-    slack:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
-    whop:          whopLogo,
-    facebook:      "https://cdn.simpleicons.org/facebook/1877F2",
-    whatsapp:      "https://cdn.simpleicons.org/whatsapp/25D366",
-    mail:          "https://cdn.simpleicons.org/gmail/EA4335",
-    kaggle:        "https://cdn.simpleicons.org/kaggle/white",
-    streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
     expo:          "https://cdn.simpleicons.org/expo/white",
     swift:         "https://cdn.simpleicons.org/swift/F05138",
-    android:       "https://cdn.simpleicons.org/android/3DDC84",
     apple:         "https://cdn.simpleicons.org/apple/white",
     r:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg",
     jupyter:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
@@ -353,8 +356,6 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     kalilinux:     "https://cdn.simpleicons.org/kalilinux/white",
     rust:          "https://cdn.simpleicons.org/rust/white",
     androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
-    streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
-    kaggle:        "https://cdn.simpleicons.org/kaggle/20BEFF",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)
