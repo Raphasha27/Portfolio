@@ -3,31 +3,31 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: "Sarah Jenkins",
-    role: "CEO @ TechNexus",
-    text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
-    tag: "Client"
-  },
-  {
-    name: "Johnny De wildth",
-    role: "Senior Dev @ Kirov Dynamics",
-    text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
-    tag: "Team Member"
-  },
-  {
-    name: "Arjun Mehta",
-    role: "CTO @ Indus Cloud",
-    text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
-    image: "https://randomuser.me/api/portraits/men/44.jpg",
-    tag: "Client"
-  },
-  {
     name: "Amara Okoro",
     role: "Founder @ EcoStream",
     text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    image: "https://randomuser.me/api/portraits/women/22.jpg",
+    tag: "Client"
+  },
+  {
+    name: "Thabo Molefe",
+    role: "Senior Dev @ Kirov Dynamics",
+    text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
+    image: "https://randomuser.me/api/portraits/men/20.jpg",
+    tag: "Team Member"
+  },
+  {
+    name: "Priya Sharma",
+    role: "CTO @ Indus Cloud",
+    text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    tag: "Client"
+  },
+  {
+    name: "Arjun Mehta",
+    role: "VP Engineering @ CloudBase",
+    text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
     tag: "Client"
   }
 ];

@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import gautengMap from '../assets/gauteng-map.png';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+const johannesburg = [-26.2041, 28.0473];
+
+const markerIcon = L.divIcon({
+  className: 'custom-marker',
+  html: `<div style="width:24px;height:24px;background:#00FF9C;border:3px solid #00FF9C;border-radius:50%;box-shadow:0 0 20px rgba(0,255,156,0.6),0 0 60px rgba(0,255,156,0.3);"></div>`,
+  iconSize: [24, 24],
+  iconAnchor: [12, 12],
+});
+
+const MapController = () => {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(johannesburg, 10, { animate: true });
+  }, [map]);
+  return null;
+};
 
 const Map = () => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [ready, setReady] = React.useState(false);
 
   return (
     <section id="location" className="py-16 sm:py-24 relative overflow-hidden bg-transparent">
@@ -22,33 +41,47 @@ const Map = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass p-1.5 sm:p-2 rounded-2xl sm:rounded-[40px] border border-blue-500/30 overflow-hidden h-[280px] sm:h-[380px] lg:h-[450px] relative group bg-white/5"
+          className="glass p-1.5 sm:p-2 rounded-2xl sm:rounded-[40px] border border-blue-500/30 overflow-hidden h-[300px] sm:h-[400px] lg:h-[480px] relative group bg-white/5"
         >
-          {!isLoaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-transparent z-20">
+          {!ready && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#000814] z-20">
               <div className="w-20 h-20 border-2 border-blue-500/20 rounded-full border-t-blue-500 animate-spin mb-4" />
-              <div className="text-[10px] font-mono text-blue-400 uppercase tracking-[0.5em] animate-pulse">Initializing Map Data...</div>
-              {/* Fake scan line */}
+              <div className="text-[10px] font-mono text-blue-400 uppercase tracking-[0.5em] animate-pulse">Loading Map...</div>
               <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(transparent_50%,rgba(59,130,246,0.1)_50%)] bg-[length:100%_4px] animate-scan" />
             </div>
           )}
 
-          {/* Static Map Image */}
-          <img 
-            src={gautengMap} 
-            alt="Map of Johannesburg, South Africa" 
-            style={{ filter: 'invert(90%) hue-rotate(200deg) brightness(0.8) contrast(1.2)' }}
-            className={`w-full h-full object-cover rounded-[32px] transition-opacity duration-1000 ${isLoaded ? 'opacity-80 group-hover:opacity-100' : 'opacity-0'}`}
-            onLoad={() => setIsLoaded(true)}
-          />
-          
-          {/* Cinematic Overlay to match the theme */}
+          <div className={`w-full h-full rounded-[32px] overflow-hidden transition-opacity duration-1000 ${ready ? 'opacity-100' : 'opacity-0 absolute inset-0'}`}>
+            <MapContainer
+              center={johannesburg}
+              zoom={10}
+              scrollWheelZoom={false}
+              zoomControl={true}
+              className="w-full h-full"
+              whenReady={() => setReady(true)}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
+                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+              />
+              <MapController />
+              <Marker position={johannesburg} icon={markerIcon}>
+                <Popup>
+                  <div className="text-center font-mono text-xs">
+                    <strong className="text-base">Johannesburg</strong><br />
+                    Gauteng, South Africa
+                  </div>
+                </Popup>
+              </Marker>
+            </MapContainer>
+          </div>
+
           <div className="absolute inset-0 pointer-events-none border-[20px] border-blue-500/10 rounded-[40px]" />
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#050d12] via-transparent to-transparent opacity-40" />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#000814] via-transparent to-transparent opacity-30" />
         </motion.div>
       </div>
     </section>

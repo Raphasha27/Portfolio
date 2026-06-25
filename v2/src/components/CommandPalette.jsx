@@ -42,7 +42,7 @@ const CommandPalette = ({ open, setOpen }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="w-[90vw] max-w-[600px] bg-[#0a0f16]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+            className="w-[90vw] max-w-[600px] bg-[#000814]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
           >
             <div className="flex items-center px-4 py-3 border-b border-white/5">
               <Icon name="search" size={18} className="text-white/40 mr-3" />

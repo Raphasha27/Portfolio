@@ -3,7 +3,6 @@ import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
 const Navbar = ({ setCmdOpen }) => {
-  const [copied, setCopied] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -18,49 +17,28 @@ const Navbar = ({ setCmdOpen }) => {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const handleShare = () => {
-    const url = window.location.origin + window.location.pathname;
-    navigator.clipboard.writeText(url).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
-  const navItems = ['home', 'about', 'experience', 'skills', 'projects'];
+  const navItems = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
 
   return (
-    <nav className="fixed top-0 w-full z-50 glass h-[var(--nav-h)] flex items-center border-b border-white/5">
-      {/* Scroll Progress Bar */}
+    <nav className="fixed top-0 w-full z-50 bg-[#000814]/80 backdrop-blur-xl h-[var(--nav-h)] flex items-center border-b border-white/5">
       <motion.div
         className="absolute top-0 left-0 right-0 h-[2px] bg-[#00FF9C] origin-left z-50"
         style={{ scaleX }}
       />
 
-      <div className="container flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-6">
-          <button
-            onClick={() => scrollTo('home')}
-            className="flex items-center gap-2 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
-          >
-            <Icon name="code" size={20} />
-            <span className="text-[10px] sm:text-sm tracking-tighter truncate max-w-[80px] sm:max-w-none">
-              Koketso_Raphasha_Portfolio_Dev
-            </span>
-          </button>
-          <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[7px] sm:text-[9px] font-bold text-text-dim shrink-0">
-            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse"></span>
-            <span className="whitespace-nowrap">SYSTEM HEALTH: OPTIMAL</span>
-          </div>
-        </div>
+      <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto flex justify-between items-center">
+        <button
+          onClick={() => scrollTo('home')}
+          className="flex items-center gap-2 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
+        >
+          <span className="text-sm sm:text-base tracking-tight">Koketso Raphasha</span>
+        </button>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 text-[10px] font-bold text-text-dim uppercase tracking-widest">
+        <div className="hidden md:flex gap-8 text-xs font-medium text-white/60">
           {navItems.map((item) => (
             <button
               key={item}
               onClick={() => scrollTo(item)}
-              aria-label={`Scroll to ${item} section`}
               className="hover:text-[#00FF9C] transition-all capitalize"
             >
               {item}
@@ -68,38 +46,25 @@ const Navbar = ({ setCmdOpen }) => {
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 md:gap-4">
-          <button
-            onClick={handleShare}
-            className="w-10 h-10 glass hidden sm:flex items-center justify-center text-text-dim hover:text-[#00FF9C] transition-all relative rounded-lg"
-            title="Share Link"
-          >
-            <Icon name={copied ? 'check' : 'share'} size={18} />
-          </button>
-
-          {/* Command Palette Trigger */}
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setCmdOpen && setCmdOpen(true)}
-            className="hidden sm:flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-white/50 hover:text-white hover:bg-white/10 transition-all"
-            title="Open Command Palette"
+            className="flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs text-white/50 hover:text-white hover:bg-white/10 transition-all"
           >
             <Icon name="search" size={14} />
-            <span className="hidden md:inline">Search...</span>
-            <kbd className="hidden md:inline bg-white/10 px-1.5 py-0.5 rounded text-[10px] ml-2">⌘K</kbd>
+            <kbd className="hidden md:inline bg-white/10 px-1.5 py-0.5 rounded text-[10px]">Ctrl+K</kbd>
           </button>
 
           <button
             onClick={() => scrollTo('contact')}
-            className="hidden sm:flex px-6 py-2 bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-xs font-bold rounded-lg hover:bg-[#00FF9C] hover:text-[#050d12] transition-all items-center gap-2"
+            className="hidden sm:flex px-5 py-2 bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-xs font-bold rounded-lg hover:bg-[#00FF9C] hover:text-[#000814] transition-all items-center gap-2"
           >
-            Hire Me <Icon name="arrowRight" size={14} />
+            Hire Me
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 glass flex items-center justify-center text-[#00FF9C] rounded-lg"
+            className="md:hidden w-10 h-10 flex items-center justify-center text-[#00FF9C] rounded-lg bg-white/5 border border-white/10"
             aria-label="Toggle menu"
           >
             <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={24} />
@@ -107,7 +72,6 @@ const Navbar = ({ setCmdOpen }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -115,28 +79,24 @@ const Navbar = ({ setCmdOpen }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[70] bg-black/80 backdrop-blur-xl md:hidden flex flex-col p-6"
+            className="fixed inset-0 z-[70] bg-[#000814]/95 backdrop-blur-xl md:hidden flex flex-col p-6"
           >
-            {/* Header in Overlay */}
             <div className="flex justify-between items-center mb-12">
-              <div className="flex items-center gap-2 text-[#00FF9C] font-bold">
-                <Icon name="code" size={20} />
-                <span className="text-[10px] tracking-tighter">Koketso_Raphasha_Portfolio</span>
-              </div>
+              <span className="text-[#00FF9C] font-bold text-sm">Koketso Raphasha</span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-10 h-10 glass flex items-center justify-center text-[#00FF9C] rounded-lg"
+                className="w-10 h-10 flex items-center justify-center text-[#00FF9C] rounded-lg bg-white/5 border border-white/10"
               >
                 <Icon name="close" size={24} />
               </button>
             </div>
 
-            <div className="flex flex-col items-center gap-6 text-xl font-bold uppercase tracking-[0.2em]">
-              {[...navItems, 'contact'].map((item) => (
+            <div className="flex flex-col items-center gap-6 text-lg font-medium">
+              {navItems.map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollTo(item)}
-                  className="text-white/60 hover:text-[#00FF9C] transition-all py-2 w-full text-center border-b border-white/5"
+                  className="text-white/60 hover:text-[#00FF9C] transition-all py-2 w-full text-center border-b border-white/5 capitalize"
                 >
                   {item}
                 </button>
@@ -145,25 +105,12 @@ const Navbar = ({ setCmdOpen }) => {
 
             <div className="flex flex-col gap-4 mt-auto pb-10">
               <button
-                onClick={handleShare}
-                className="w-full py-4 glass flex items-center justify-center gap-3 text-[#00FF9C] font-bold uppercase text-xs tracking-widest border border-[#00FF9C]/20 rounded-lg"
-              >
-                <Icon name={copied ? 'check' : 'share'} size={18} />
-                {copied ? 'Copied Link!' : 'Share Registry'}
-              </button>
-              
-              <button
                 onClick={() => { setIsMobileMenuOpen(false); if (setCmdOpen) setCmdOpen(true); }}
-                className="w-full py-4 glass flex items-center justify-center gap-3 text-blue-400 font-bold uppercase text-xs tracking-widest border border-blue-400/20 rounded-lg"
+                className="w-full py-4 bg-white/5 border border-white/10 flex items-center justify-center gap-3 text-white/60 font-medium rounded-lg"
               >
                 <Icon name="search" size={18} />
-                Command Menu
+                Search
               </button>
-              
-              <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-full bg-[#00FF9C]/5 border border-[#00FF9C]/10 text-[8px] font-bold text-[#00FF9C]/60 uppercase tracking-widest">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse"></span>
-                Status: System Health Optimal
-              </div>
             </div>
           </motion.div>
         )}

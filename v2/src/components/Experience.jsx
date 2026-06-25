@@ -43,13 +43,13 @@ const experiences = [
   },
   {
     period: "2025 – 2026",
-    role: "Tech Accelerator Graduate",
-    company: "CAPACITI · Digital Skills Accelerator",
-    desc: "Completed an intensive digital skills accelerator focused on cloud computing, agile development, and enterprise software delivery. Ranked in top cohort for technical output.",
+    role: "AI Engineering Intern",
+    company: "CAPACITI · Digital Skills Accelerator (Naspers Labs)",
+    desc: "Completed an intensive AI-focused digital skills accelerator in parallel with the YES programme. Built AI pipelines using Gemini and LangChain, ranked in top tier for technical output. Delivered production-grade ML solutions under the Naspers Labs umbrella.",
     icon: "rocket",
-    logo: "https://ab4ir.org/wp-content/uploads/2021/06/Naspers-Labs_blue-2.png",
+    logo: capacitiLogo,
     logoBg: "bg-white",
-    logoPadding: "p-2",
+    logoPadding: "p-3",
     logoFit: "object-contain"
   },
   {

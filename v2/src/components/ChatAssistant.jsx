@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
 // ── Rich knowledge base (used as system context + fallback) ──────────────────
-const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, an Autonomous AI Engineer and Software Engineer based in Johannesburg, South Africa.
+const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, a Software Engineer based in Johannesburg, South Africa.
 
 KEY FACTS:
 - Full name: Koketso Raphasha (Age 27)
-- Role: Autonomous AI Engineer | Software Engineer | Co-Founder of Kirov Dynamics Technology
+- Role: Software Engineer | Co-Founder of Kirov Dynamics Technology
 - Education: BSc Computer Science (Distinction) from Richfield Graduate Institute
 - Also trained at WeThinkCode_ (Johannesburg)
 - Internship: AI Intern at CAPACITI Digital Skills Accelerator (2025-2026)
 - Member of YES4Youth programme (2025-2026)
 - Email: raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470
 - GitHub: github.com/Raphasha27 | LinkedIn: linkedin.com/in/koketso-raphasha
-- Portfolio: https://portfolio-iota-eight-90.vercel.app/
+- Portfolio: https://koketso-raphasha.vercel.app/
 
 TECH STACK:
 - Languages: C, C++, Python, JavaScript, TypeScript, Rust, Go, Swift, Java, C#
@@ -48,7 +48,7 @@ const KB = {
   'contact': "Reach me → raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
   'hello': "Hey! I'm Koketso's Digital Twin AI. I can tell you about his tech stack, projects, experience, or how to hire him. What would you like to know?",
   'hi': "Hi there! I'm Koketso's AI Twin. Ask me about his engineering work, projects, or availability — I've got all the answers!",
-  'portfolio': "You're already on the live portfolio → https://portfolio-iota-eight-90.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
+  'portfolio': "You're already on the live portfolio → https://koketso-raphasha.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
   'kirov': "Kirov Dynamics Technology is the company I co-founded. We build autonomous AI systems, multi-tenant SaaS platforms, and CI/CD infrastructure. The mission: ship infrastructure that thinks for itself.",
   'education': "BSc Computer Science (Distinction) from Richfield Graduate Institute, 2022-2025. Also trained at WeThinkCode_ Johannesburg (peer-driven problem-based engineering). 10+ certifications including AWS, Azure AZ-900, Meta Frontend Developer.",
   'availab': "I'm currently open to full-time roles, freelance contracts, and collaboration on interesting projects. Remote → yes. Relocation → open to discussion. DM me!",
@@ -68,7 +68,7 @@ const getLocalReply = (text) => {
 const CHIPS = ['Tech Stack', 'Latest Project', 'Hire Me', 'Contact Info'];
 
 const ChatAssistant = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [messages, setMessages] = useState([
     { role: 'bot', text: "Hey! I'm Koketso's Digital Twin AI 🤖\nAsk me about his projects, tech stack, or how to hire him!" }
   ]);
@@ -155,8 +155,8 @@ const ChatAssistant = () => {
                   <div className="w-9 h-9 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12] animate-ping" />
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12]" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814] animate-ping" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Digital Twin AI</div>
@@ -172,12 +172,12 @@ const ChatAssistant = () => {
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#050d12]/60">
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000814]/60">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] p-3 rounded-xl text-[11px] leading-relaxed whitespace-pre-wrap ${
                     m.role === 'user'
-                      ? 'bg-[#00FF9C] text-[#050d12] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
+                      ? 'bg-[#00FF9C] text-[#000814] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
                       : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
                   }`}>
                     {m.text}
@@ -201,7 +201,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Quick Chips */}
-            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#050d12]/40">
+            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000814]/40">
               {CHIPS.map(chip => (
                 <button
                   key={chip}
@@ -214,7 +214,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-white/5 bg-[#050d12]/80 backdrop-blur-md shrink-0">
+            <div className="p-3 border-t border-white/5 bg-[#000814]/80 backdrop-blur-md shrink-0">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -227,7 +227,7 @@ const ChatAssistant = () => {
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim()}
-                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#050d12] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
+                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000814] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
                 >
                   <Icon name="send" size={14} />
                 </button>
@@ -242,7 +242,7 @@ const ChatAssistant = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#050d12] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20"
+        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20"
       >
         <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
         <Icon name={isOpen ? 'close' : 'chat'} size={24} />

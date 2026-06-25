@@ -22,6 +22,9 @@ export default {
       backdropBlur: {
         glass: '12px',
       },
+      animation: {
+        'spin-slow': 'spin 6s linear infinite',
+      },
     },
   },
   plugins: [],

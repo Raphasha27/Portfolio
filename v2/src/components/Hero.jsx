@@ -1,52 +1,46 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
-import ParticleCanvas from './ParticleCanvas';
+import profileImg from '/profile-cutout.png';
 
-
-/* ── Typewriter cycling through roles ── */
-const ROLES = ['AI ENGINEER', 'SYSTEMS ARCHITECT', 'CO-FOUNDER', 'FULL STACK DEV'];
 const Typewriter = () => {
-  const [roleIdx, setRoleIdx] = useState(0);
-  const [displayed, setDisplayed] = useState('');
+  const titles = ['Software Engineer', 'Systems Architect', 'Co-Founder', 'Full Stack Dev'];
+  const [text, setText] = useState('');
+  const [idx, setIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    const target = ROLES[roleIdx];
-    if (paused) {
-      const t = setTimeout(() => { setDeleting(true); setPaused(false); }, 1800);
-      return () => clearTimeout(t);
-    }
-    if (!deleting) {
-      if (displayed.length < target.length) {
-        const t = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 70);
-        return () => clearTimeout(t);
-      } else { setPaused(true); }
-    } else {
-      if (displayed.length > 0) {
-        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 40);
-        return () => clearTimeout(t);
+    const current = titles[idx];
+    let timer;
+    if (deleting) {
+      if (text.length > 0) {
+        timer = setTimeout(() => setText(text.slice(0, -1)), 40);
       } else {
         setDeleting(false);
-        setRoleIdx((i) => (i + 1) % ROLES.length);
+        setIdx((i) => (i + 1) % titles.length);
+      }
+    } else {
+      if (text.length < current.length) {
+        timer = setTimeout(() => setText(current.slice(0, text.length + 1)), 70);
+      } else {
+        timer = setTimeout(() => setDeleting(true), 2000);
       }
     }
-  }, [displayed, deleting, paused, roleIdx]);
+    return () => clearTimeout(timer);
+  }, [text, deleting, idx, titles]);
 
   return (
-    <span className="text-[#00FF9C] drop-shadow-[0_0_30px_rgba(0,255,156,0.4)]">
-      {displayed}
+    <span>
+      {text}
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
-        className="inline-block w-[3px] h-[0.9em] bg-[#00FF9C] ml-1 align-middle rounded-sm"
+        className="inline-block w-[2px] h-[1em] bg-[#00FF9C] ml-1 align-middle"
       />
     </span>
   );
 };
 
-/* ── Animated stat counter ── */
 const CountUp = ({ to, duration = 2 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -65,41 +59,15 @@ const CountUp = ({ to, duration = 2 }) => {
   return <span ref={ref}>{count}</span>;
 };
 
-/* ── Scrolling mini-terminal strip ── */
-const TerminalStrip = () => {
-  const [line, setLine] = useState('> INITIALIZING TEST_SUITE_V2...');
-  useEffect(() => {
-    const cmds = [
-      'EXEC: verify_encryption_layer()',
-      'STATUS: 10.4.0.1 -> RESPONDING',
-      'FIX: rebalancing_load... SUCCESS',
-      'RUN: optimize_kernel_runtime()',
-      'LOG: agent_sync_complete',
-    ];
-    const interval = setInterval(() => {
-      setLine(`> ${cmds[Math.floor(Math.random() * cmds.length)]}`);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
-  return (
-    <AnimatePresence mode="wait">
-      <motion.span
-        key={line}
-        initial={{ opacity: 0, y: 4 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -4 }}
-        transition={{ duration: 0.3 }}
-        className="font-mono text-[9px] text-blue-400/80"
-      >{line}</motion.span>
-    </AnimatePresence>
-  );
-};
-
 const socialLinks = [
-  { name: 'GitHub',   icon: 'github',   link: 'https://github.com/raphasha27',            color: 'hover:text-white' },
-  { name: 'LinkedIn', icon: 'linkedin', link: 'https://linkedin.com/in/koketso-raphasha', color: 'hover:text-blue-400' },
-  { name: 'Twitter',  icon: 'twitter',  link: 'https://twitter.com/raphasha27',            color: 'hover:text-sky-400' },
-  { name: 'Kaggle',   icon: 'kaggle',   link: 'https://kaggle.com/Raphasha27',             color: 'hover:text-blue-300' },
+  { name: 'GitHub',    icon: 'github',     link: 'https://github.com/raphasha27',                    color: 'hover:text-white' },
+  { name: 'LinkedIn',  icon: 'linkedin',   link: 'https://linkedin.com/in/koketso-raphasha',         color: 'hover:text-blue-400' },
+  { name: 'Facebook',  icon: 'facebook',   link: 'https://www.facebook.com/kirovdynamicstechnology',  color: 'hover:text-blue-500' },
+  { name: 'Twitter',   icon: 'twitter',    link: 'https://twitter.com/raphasha27',                    color: 'hover:text-sky-400' },
+  { name: 'Kaggle',    icon: 'kaggle',     link: 'https://kaggle.com/Raphasha27',                     color: 'hover:text-blue-300' },
+  { name: 'Streamlit', icon: 'streamlit',  link: 'https://share.streamlit.io/user/raphasha27',        color: 'hover:text-red-400' },
+  { name: 'WhatsApp',  icon: 'whatsapp',   link: 'https://wa.me/27781172470',                         color: 'hover:text-green-400' },
+  { name: 'Email',     icon: 'mail',       link: 'mailto:raphashakoketso99@gmail.com',                color: 'hover:text-red-400' },
 ];
 
 const STATS = [
@@ -109,327 +77,267 @@ const STATS = [
   { label: 'Delivery',        val: 100, suffix: '%', icon: 'shield'        },
 ];
 
-/* ── BLUE halo ring (behind portrait) ── */
-const BlueHalo = () => (
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ zIndex: 0 }}>
-    {/* Outermost ambient glow */}
-    <div
-      className="absolute rounded-full"
-      style={{
-        width: '115%',
-        height: '115%',
-        background: 'radial-gradient(circle, rgba(0,150,255,0.13) 0%, transparent 70%)',
-        filter: 'blur(18px)',
-      }}
-    />
-    {/* Mid diffuse glow */}
-    <div
-      className="absolute rounded-full"
-      style={{
-        width: '102%',
-        height: '102%',
-        background: 'radial-gradient(circle, rgba(0,180,255,0.22) 30%, transparent 72%)',
-        filter: 'blur(10px)',
-      }}
-    />
-    {/* Main thick ring */}
-    <div
-      className="absolute rounded-full"
-      style={{
-        width: '94%',
-        height: '94%',
-        border: '10px solid transparent',
-        background:
-          'linear-gradient(#050d12, #050d12) padding-box, ' +
-          'linear-gradient(135deg, #0088ff 0%, #00d4ff 40%, #0055ff 75%, #00aaff 100%) border-box',
-        boxShadow:
-          '0 0 0 2px rgba(0,180,255,0.15),' +
-          '0 0 30px rgba(0,150,255,0.6),' +
-          '0 0 60px rgba(0,100,255,0.35),' +
-          '0 0 100px rgba(0,50,255,0.18),' +
-          'inset 0 0 20px rgba(0,200,255,0.08)',
-      }}
-    />
-    {/* Inner highlight arc (top) */}
-    <div
-      className="absolute rounded-full"
-      style={{
-        width: '94%',
-        height: '94%',
-        border: '2px solid transparent',
-        background:
-          'linear-gradient(transparent, transparent) padding-box, ' +
-          'linear-gradient(140deg, rgba(100,220,255,0.8) 0%, transparent 45%, transparent 55%, rgba(0,150,255,0.4) 100%) border-box',
-        borderRadius: '50%',
-      }}
-    />
-  </div>
-);
+const techArsenal = [
+  { name: 'React',          icon: 'react'         },
+  { name: 'Python',         icon: 'python'        },
+  { name: 'Rust',           icon: 'rust'          },
+  { name: 'Go',             icon: 'go'            },
+  { name: 'C#',             icon: 'csharp'        },
+  { name: 'FastAPI',        icon: 'fastapi'       },
+  { name: 'PyTorch',        icon: 'pytorch'       },
+  { name: 'Docker',         icon: 'docker'        },
+  { name: 'Kubernetes',     icon: 'kubernetes'    },
+  { name: 'AWS',            icon: 'aws'           },
+  { name: 'PostgreSQL',     icon: 'postgresql'    },
+  { name: 'Redis',          icon: 'redis'         },
+  { name: 'C',              icon: 'c'             },
+  { name: 'C++',            icon: 'cplusplus'     },
+  { name: 'Java',           icon: 'java'          },
+  { name: 'Swift',          icon: 'swift'         },
+  { name: 'Node.js',        icon: 'node'          },
+  { name: 'TypeScript',     icon: 'typescript'    },
+  { name: 'Next.js',        icon: 'nextjs'        },
+  { name: 'MongoDB',        icon: 'mongodb'       },
+  { name: 'Tailwind CSS',   icon: 'tailwindcss'   },
+  { name: 'GitHub Actions', icon: 'githubactions' },
+  { name: 'LangChain',      icon: 'langchain'     },
+  { name: 'Framer Motion',  icon: 'framer'        },
+  { name: 'TensorFlow',     icon: 'tensorflow'    },
+  { name: 'Linux',          icon: 'linux'         },
+  { name: 'Kali Linux',     icon: 'kalilinux'     },
+  { name: 'Wireshark',      icon: 'wireshark'     },
+  { name: 'Vite',           icon: 'vite'          },
+  { name: 'Streamlit',      icon: 'streamlit'     },
+  { name: 'Kaggle',         icon: 'kaggle'        },
+  { name: 'Jupyter',        icon: 'jupyter'       },
+  { name: 'R',              icon: 'r'             },
+  { name: 'Expo',           icon: 'expo'          },
+  { name: 'Android Studio', icon: 'androidstudio' },
+];
+
+const slideTexts = [
+  'Building sovereign AI infrastructure',
+  'Self-healing scalable systems',
+  'Bridging data & human intuition',
+  'Autonomous agentic frameworks',
+];
+
+const SlidingText = () => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((p) => (p + 1) % slideTexts.length), 4000);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <div className="h-5 overflow-hidden relative">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={idx}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-[10px] sm:text-xs text-white/50 font-mono"
+        >
+          {slideTexts[idx]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const bannerTechs = [
+  { name: "React",           id: "react"        },
+  { name: "Python",          id: "python"       },
+  { name: "TypeScript",      id: "typescript"   },
+  { name: "Next.js",         id: "nextjs"       },
+  { name: "C",               id: "c"            },
+  { name: "C++",             id: "cplusplus"    },
+  { name: "Java",            id: "java"         },
+  { name: "Go",              id: "go"           },
+  { name: "Rust",            id: "rust"         },
+  { name: "Swift",           id: "swift"        },
+  { name: "Node.js",         id: "node"         },
+  { name: "FastAPI",         id: "fastapi"      },
+  { name: "PostgreSQL",      id: "postgres"     },
+  { name: "MongoDB",         id: "mongodb"      },
+  { name: "Redis",           id: "redis"        },
+  { name: "Docker",          id: "docker"       },
+  { name: "Kubernetes",      id: "kubernetes"   },
+  { name: "TensorFlow",      id: "tensorflow"   },
+  { name: "PyTorch",         id: "pytorch"      },
+  { name: "Tailwind CSS",    id: "tailwindcss"  },
+  { name: "Framer Motion",   id: "framer"       },
+  { name: "LangChain",       id: "langchain"    },
+  { name: "GitHub Actions",  id: "githubactions" },
+  { name: "Linux",           id: "linux"        },
+  { name: "Vite",            id: "vite"         },
+  { name: "Kali Linux",      id: "kalilinux"    },
+  { name: "Wireshark",       id: "wireshark"    },
+  { name: "Jupyter",         id: "jupyter"      },
+];
+
+const HeroBanner = () => {
+  const doubled = [...bannerTechs, ...bannerTechs];
+  return (
+    <div className="w-full relative overflow-hidden border-y border-white/5 bg-gradient-to-r from-[#00FF9C]/8 via-blue-500/5 to-[#00FF9C]/8 backdrop-blur-sm">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-20%,rgba(0,255,156,0.08),transparent_60%)]" />
+      <motion.div
+        initial={{ x: 0 }}
+        animate={{ x: "-50%" }}
+        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+        className="flex gap-6 sm:gap-10 items-center whitespace-nowrap py-2.5 sm:py-3"
+      >
+        {doubled.map((tech, i) => (
+          <div key={i} className="flex items-center gap-2 shrink-0">
+            <div className="w-4 h-4 sm:w-5 sm:h-5 opacity-70 group-hover:opacity-100 transition-opacity">
+              <Icon name={tech.id} size={16} />
+            </div>
+            <span className="text-[9px] sm:text-[10px] font-medium text-white/50 font-mono tracking-wide">
+              {tech.name}
+            </span>
+            <div className="w-1 h-1 rounded-full bg-[#00FF9C]/30 ml-1" />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 const Hero = () => (
-  <div id="home" className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent">
-    <ParticleCanvas />
+  <div id="home" className="relative min-h-screen flex flex-col bg-transparent">
+    <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+    <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    {/* Scanline overlay */}
-    <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
-
-    {/* Skyline silhouette */}
-    <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 pointer-events-none opacity-10 z-0">
-      <svg viewBox="0 0 1440 180" fill="none" className="w-full h-full" preserveAspectRatio="none">
-        <path d="M0 180V120L60 100L120 130L180 80L240 110L300 60L360 90L420 50L480 100L540 70L600 120L660 90L720 40L780 80L840 60L900 110L960 50L1020 90L1080 70L1140 120L1200 80L1260 100L1320 60L1380 110L1440 90V180H0Z" fill="url(#buildingGrad)" />
-        <defs><linearGradient id="buildingGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#00FF9C" stopOpacity="0" /><stop offset="100%" stopColor="#00FF9C" stopOpacity="0.15" /></linearGradient></defs>
-      </svg>
+    {/* Sliding Tech Banner */}
+    <div className="w-full relative z-10 mt-[var(--nav-h)]">
+      <HeroBanner />
     </div>
 
-    {/* Ambient glow orbs */}
-    <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
-    <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-[#00FF9C]/5 blur-[100px] rounded-full pointer-events-none" />
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl mx-auto pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-12">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-12 w-full">
 
-    {/* Main Content Container - ensuring no top-cutoff on mobile */}
-    <div className="w-full px-3 sm:px-6 lg:px-12 relative z-10 mt-20 lg:mt-0 lg:my-auto pb-8 lg:pb-0 max-w-7xl mx-auto flex-1 flex flex-col justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 sm:gap-12 items-center w-full">
-
-        {/* ── RIGHT: Portrait (order-1 on mobile = shows first) ── */}
+        {/* Profile Column */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="relative order-1 lg:order-2 flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:max-w-none lg:order-2"
         >
-          {/* Portrait frame wrapper - EVEN SMALLER ON MOBILE (110px vs 340px desktop) */}
-          <div className="relative w-[110px] h-[110px] sm:w-[280px] sm:h-[280px] lg:w-[340px] lg:h-[340px] flex items-center justify-center p-2 sm:p-6">
-
-            {/* Corner brackets */}
-            <div className="absolute top-0 left-0 w-3 h-3 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-t-2 border-l-2 border-[#00FF9C]/70 z-20" />
-            <div className="absolute top-0 right-0 w-3 h-3 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-t-2 border-r-2 border-[#00FF9C]/70 z-20" />
-            <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-b-2 border-l-2 border-[#00FF9C]/70 z-20" />
-            <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-b-2 border-r-2 border-[#00FF9C]/70 z-20" />
-
-            {/* ★ Blue halo ring ★ */}
-            <BlueHalo />
-
-            {/* Green circle frame + photo */}
-            <div
-              className="relative w-full h-full rounded-full flex items-end justify-center overflow-hidden"
-              style={{
-                zIndex: 10,
-                background: 'rgba(0, 0, 0, 0.65)',
-                backdropFilter: 'blur(4px)',
-                border: '2px solid #00ffcc',
-                boxShadow: '0 0 25px rgba(0,255,204,0.4), inset 0 0 25px rgba(0,255,204,0.1)',
-              }}
-            >
+          <div className="relative w-[140px] h-[140px] xs:w-[160px] xs:h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[240px] lg:h-[240px]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
+              <div className="w-full h-full rounded-full bg-[#000814]" />
+            </div>
+            <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden">
               <img
-                src={koketsoSuit}
+                src={profileImg}
                 alt="Koketso Raphasha"
-                fetchPriority="high"
-                loading="eager"
-                className="w-[95%] h-auto object-contain translate-y-[5%] relative z-10"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
 
-          {/* Name + title below portrait (Tighter margins) */}
-          <div className="text-center w-full max-w-[280px] mt-1.5 sm:mt-6">
-            <div className="text-sm sm:text-xl lg:text-2xl font-bold text-white tracking-wide leading-none">Koketso Raphasha</div>
-            <div className="text-[7px] sm:text-[10px] lg:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-0.5 flex items-center justify-center gap-1.5">
-              TECH STACKS & ARSENALS
-              <span className="relative flex h-1 w-1 sm:h-1.5 sm:w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
-                <span className="relative inline-flex rounded-full h-1 w-1 sm:h-1.5 sm:w-1.5 bg-[#00ffcc]" />
-              </span>
+          <div className="text-center mt-3 sm:mt-4">
+            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-xs sm:text-sm text-[#00FF9C] font-medium mt-0.5">Software Engineer</p>
+          </div>
+
+          <div className="mt-1 text-center max-w-[240px]">
+            <SlidingText />
+          </div>
+
+          {/* Social links - always visible */}
+          <div className="flex items-center gap-1.5 sm:gap-2 mt-2 sm:mt-3 flex-wrap justify-center">
+            {socialLinks.map((s, i) => (
+              <a key={i} href={s.link} target="_blank" rel="noopener noreferrer" className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-white/40 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}>
+                <Icon name={s.icon} size={14} />
+              </a>
+            ))}
+          </div>
+
+          {/* Tech Arsenal */}
+          <div className="mt-2 sm:mt-3 w-full max-w-[280px] sm:max-w-[320px]">
+            <div className="flex items-center gap-2 mb-1.5">
+              <div className="h-px flex-1 bg-white/10" />
+              <span className="text-[7px] sm:text-[8px] font-mono text-white/30 uppercase tracking-[0.15em] font-bold">Tech Arsenal</span>
+              <div className="h-px flex-1 bg-white/10" />
+            </div>
+            <div className="overflow-hidden rounded-lg border border-white/5 bg-white/[0.02]">
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: "-50%" }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="flex gap-1.5 sm:gap-2 whitespace-nowrap py-1.5 px-2"
+              >
+                {[...techArsenal, ...techArsenal].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 text-[7px] sm:text-[9px] font-mono border border-white/10 rounded text-white/40 shrink-0 bg-white/[0.03]"
+                  >
+                    <Icon name={tech.icon} size={10} />
+                    {tech.name}
+                  </span>
+                ))}
+              </motion.div>
             </div>
           </div>
         </motion.div>
 
-        {/* ── LEFT: Text content (order-2 on mobile = shows second) ── */}
+        {/* Content Column */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
-          className="space-y-1.5 sm:space-y-4 order-2 lg:order-1 flex flex-col justify-center"
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="flex flex-col gap-3 sm:gap-4 w-full max-w-xl lg:order-1"
         >
-          {/* Status badges - Tighter on mobile */}
-          <div className="flex items-center gap-1 flex-wrap">
-            <span className="px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/30 text-[#00FF9C] text-[7px] sm:text-[9px] font-bold tracking-[0.2em] uppercase flex items-center gap-1">
-              <span className="w-1 h-1 rounded-full bg-[#00FF9C] animate-pulse" />
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[10px] font-medium flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
               Open to Opportunities
             </span>
-            <span className="px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[7px] sm:text-[9px] font-bold tracking-[0.2em] uppercase">
+            <span className="px-2.5 sm:px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-medium">
               Johannesburg, SA
             </span>
           </div>
 
-          {/* Heading - Smaller on mobile */}
-          <div className="space-y-0 sm:space-y-1">
-            <h1 className="hidden sm:block text-3xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-              SYSTEMS ARCHITECT &<br />
-              <Typewriter />
-            </h1>
-            <h1 className="sm:hidden text-lg font-bold tracking-tight text-white leading-[1.1]">
-              Systems Architect<br />
-              <span className="text-[#00FF9C] text-sm">& AI Engineer</span>
+          <div>
+            <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
+              Software Engineer &<br />
+              <span className="text-[#00FF9C]"><Typewriter /></span>
             </h1>
           </div>
 
-          {/* Description - Hidden completely on very small screens, or kept 1 line */}
-          <p className="text-text-dim text-[10px] sm:text-[13px] leading-tight sm:leading-relaxed max-w-lg hidden sm:block">
-            I am <span className="text-white font-bold">Koketso Raphasha</span>, a{' '}
-            <span className="text-blue-400 font-bold">Systems Architect</span>, AI Engineer, and Co-founder of
-            Kirov Dynamics. Building self-healing, scalable, and highly efficient systems.
+          <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-lg">
+            I build self-healing, scalable systems and AI-driven solutions.
+            Based in Johannesburg, South Africa.
           </p>
 
-          {/* CTA Buttons - Ultra compact row on mobile */}
-          <div className="flex flex-row flex-wrap sm:flex-nowrap gap-1.5 sm:gap-3 pt-0.5 w-full">
-            <a
-              href="#projects"
-              className="flex-1 sm:flex-none flex items-center justify-center px-2 py-1.5 sm:px-5 sm:py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-md sm:rounded-lg hover:bg-[#00e089] transition-all active:scale-95 text-[8px] sm:text-sm whitespace-nowrap"
-            >
-              VIEW REPOS
+          <div className="flex flex-wrap gap-2 sm:gap-3">
+            <a href="#projects" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-[#00FF9C] text-[#000814] font-bold rounded-lg hover:bg-[#00e089] transition-all active:scale-95 text-sm">
+              View Projects
             </a>
-            <a
-              href="/Koketso_Raphasha_CV.pdf"
-              download
-              className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-2 py-1.5 sm:px-5 sm:py-3 bg-[#0d1117] border border-[#00FF9C]/40 text-white font-bold rounded-md sm:rounded-lg hover:bg-[#00FF9C]/5 transition-all active:scale-95 text-[8px] sm:text-sm whitespace-nowrap"
-            >
-              <Icon name="download" size={10} /> DOWNLOAD CV
+            <a href="/Koketso_Raphasha_CV.pdf" download className="px-4 sm:px-5 py-2 sm:py-2.5 border border-[#00FF9C]/40 text-white font-bold rounded-lg hover:bg-[#00FF9C]/10 transition-all active:scale-95 text-sm flex items-center gap-2">
+              <Icon name="download" size={14} /> CV
             </a>
-            <a
-              href="#contact"
-              className="flex-1 sm:flex-none flex items-center justify-center gap-1 px-2 py-1.5 sm:px-5 sm:py-3 bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold rounded-md sm:rounded-lg hover:bg-blue-600/30 transition-all active:scale-95 text-[8px] sm:text-sm whitespace-nowrap"
-            >
-              <span className="w-1 h-1 rounded-full bg-blue-400 animate-pulse shrink-0" /> HIRE ME
+            <a href="#contact" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold rounded-lg hover:bg-blue-600/30 transition-all active:scale-95 text-sm">
+              Hire Me
             </a>
           </div>
 
-          {/* WhatsApp + Socials Row - Icon only for WhatsApp */}
-          <div className="flex items-center justify-center sm:justify-start w-full gap-1.5 pt-1.5 pb-1 flex-wrap">
-            <span className="text-[7px] font-bold text-white/30 uppercase tracking-[0.2em] hidden sm:inline mr-1">Connect</span>
-
-            {socialLinks.map((s, i) => (
-              <a
-                key={i}
-                href={s.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-7 h-7 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center text-white/50 ${s.color} transition-all border border-white/5 hover:border-current`}
-              >
-                <Icon name={s.icon} size={14} />
-              </a>
-            ))}
-
-            <a
-              href="https://wa.me/27781172470"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-7 h-7 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center text-[#00FF9C] hover:text-white transition-all border border-[#00FF9C]/25 bg-[#00FF9C]/5 hover:bg-[#00FF9C]/20 hover:border-[#00FF9C] active:scale-95"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 shrink-0">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-            </a>
-          </div>
-
-          {/* Stats — 4 columns on all screens, highly compact on mobile */}
-          <div className="grid grid-cols-4 gap-1.5 sm:gap-2 pt-0.5 border-t border-white/5 w-full">
+          {/* Stats */}
+          <div className="grid grid-cols-4 gap-2 pt-3 border-t border-white/5 mt-1">
             {STATS.map((s, i) => (
-              <div
-                key={i}
-                className="glass p-1 sm:p-3 rounded-md sm:rounded-lg border border-white/5 flex flex-col items-center justify-center text-center gap-0.5"
-              >
-                <div className="text-[#00FF9C]/60 hidden sm:block">
+              <div key={i} className="bg-white/5 p-1.5 sm:p-2 rounded-lg border border-white/5 flex flex-col items-center text-center gap-0.5 sm:gap-1">
+                <div className="text-[#00FF9C]/60">
                   <Icon name={s.icon} size={12} />
                 </div>
-                <div className="text-xs sm:text-lg font-bold text-white leading-none">
+                <div className="text-sm sm:text-base font-bold text-white leading-none">
                   <CountUp to={s.val} />{s.suffix}
                 </div>
-                <div className="text-[5px] sm:text-[7px] font-mono text-white/50 uppercase tracking-wider leading-tight">{s.label}</div>
+                <div className="text-[7px] text-white/40 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>
-
-        </motion.div>
-
-        {/* Right: Profile with HUD-tech card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative order-1 lg:order-2 flex flex-col items-center"
-        >
-          <div className="relative w-full max-w-[300px] sm:max-w-[340px] lg:max-w-[400px] mx-auto">
-            {/* Orbital rings behind */}
-            <div className="absolute -inset-8 rounded-full border border-[#00FF9C]/5 animate-spin-slow pointer-events-none" style={{ animation: 'spin 20s linear infinite' }} />
-            <div className="absolute -inset-12 rounded-full border border-[#00FF9C]/3 pointer-events-none" style={{ animation: 'spin 30s linear infinite reverse' }} />
-
-            {/* Profile card container */}
-            <div className="relative rounded-2xl overflow-hidden border border-[#00FF9C]/20 shadow-[0_0_40px_rgba(0,255,156,0.1)] bg-transparent">
-              {/* Floating panels behind */}
-              <div className="absolute w-32 h-24 top-8 -left-6 rounded-xl border border-[#00FF9C]/5 bg-[#00FF9C]/[0.02] pointer-events-none rotate-[-8deg]" />
-              <div className="absolute w-28 h-20 bottom-10 -right-4 rounded-xl border border-[#00FF9C]/5 bg-[#00FF9C]/[0.02] pointer-events-none rotate-[5deg]" />
-
-              {/* Network lines */}
-              <div className="absolute inset-0 pointer-events-none opacity-20">
-                <div className="absolute w-px h-1/2 top-1/4 left-1/4 bg-gradient-to-b from-transparent via-[#00FF9C] to-transparent" />
-                <div className="absolute h-px w-1/2 top-1/3 right-[10%] bg-gradient-to-r from-transparent via-[#00FF9C] to-transparent" />
-                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] top-1/4 left-1/4 shadow-[0_0_6px_#00FF9C]" />
-                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] top-1/3 right-[12%] shadow-[0_0_6px_#00FF9C]" />
-                <div className="absolute w-1 h-1 rounded-full bg-[#00FF9C] bottom-1/3 left-[15%] shadow-[0_0_6px_#00FF9C]" />
-              </div>
-
-              {/* Image with transparent cutout */}
-              <div className="relative" style={{ aspectRatio: '3/4' }}>
-                <img 
-                  src="/profile-cutout.png" 
-                  alt="Koketso Raphasha - AI Engineer" 
-                  className="w-full h-full object-contain object-bottom select-none relative z-10"
-                  style={{ filter: 'drop-shadow(0 0 20px rgba(0,255,156,0.06))' }}
-                />
-              </div>
-
-              {/* Glow behind card */}
-              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#00FF9C]/30 via-blue-500/30 to-purple-500/30 -z-10 opacity-50" />
-
-              {/* Corner HUD marks */}
-              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-tl" />
-              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-tr" />
-              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-bl" />
-              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-[#00FF9C]/60 z-20 pointer-events-none rounded-br" />
-
-              {/* Scanning line */}
-              <div className="absolute left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-[#00FF9C]/30 to-transparent z-20 pointer-events-none scanning-line" />
-            </div>
-
-            {/* Verification badge */}
-            <div className="absolute -top-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-[#00FF9C] to-emerald-500 flex items-center justify-center z-30 shadow-[0_0_15px_rgba(0,255,156,0.4)]">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#050d12" strokeWidth="3" className="w-3.5 h-3.5 sm:w-4 sm:h-4">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Name + title */}
-          <div className="text-center w-full max-w-[280px] lg:max-w-[320px] mt-6">
-            <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
-            <div className="text-[10px] sm:text-xs font-mono text-[#00ffcc] uppercase tracking-[0.2em] font-bold mt-1 flex items-center justify-center gap-2">
-              Software Engineer
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
-              </span>
-            </div>
-            </div>
-
-          {/* Live terminal strip */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
-            className="mt-5 glass rounded-2xl border border-blue-500/20 overflow-hidden w-full max-w-[280px] sm:max-w-[320px] mx-auto px-4 py-3 flex items-center gap-2"
-          >
-            <span className="text-[#00FF9C] shrink-0 text-[10px] font-mono">sys://</span>
-            <TerminalStrip />
-          </motion.div>
         </motion.div>
 
       </div>
@@ -438,4 +346,3 @@ const Hero = () => (
 );
 
 export default Hero;
-

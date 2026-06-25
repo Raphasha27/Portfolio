@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Koketso Raphasha — Portfolio</h1>
   <p>
-    <a href="https://portfolio-iota-eight-90.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Site-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+    <a href="https://koketso-raphasha.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Site-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white" /></a>
     <a href="#"><img src="https://img.shields.io/badge/Status-Deployed-22C55E?style=for-the-badge" /></a>
     <a href="https://raphashakoketso.gumroad.com/l/ai-agent-blueprint"><img src="https://img.shields.io/badge/AI_Agent-Free-FF90E8?style=for-the-badge&logo=gumroad&logoColor=white" /></a>
     <a href="https://raphashakoketso.gumroad.com/l/etl-pipeline-suite"><img src="https://img.shields.io/badge/ETL_Suite-$45-FF90E8?style=for-the-badge&logo=gumroad&logoColor=white" /></a>
@@ -12,7 +12,7 @@
 
 Immersive 3D portfolio built with React, Framer Motion, and interactive visualizations. Showcases projects, technical skills, and professional journey in an engaging experience.
 
-**Live:** https://portfolio-iota-eight-90.vercel.app/
+**Live:** https://koketso-raphasha.vercel.app/
 
 ## Stack
 
@@ -81,11 +81,11 @@ MIT
 ```
 GitHub (this repo)
     ↓
-Portfolio → https://portfolio-iota-eight-90.vercel.app/
+Portfolio → https://koketso-raphasha.vercel.app/
     ↓
 Case Study → (coming soon)
     ↓
-Live Demo → https://portfolio-iota-eight-90.vercel.app/
+Live Demo → https://koketso-raphasha.vercel.app/
     ↓
 Contact → https://github.com/Raphasha27
 ```

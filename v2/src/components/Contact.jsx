@@ -168,7 +168,7 @@ const Contact = () => {
                           type="text" name="name" id="name" required
                           value={formState.name} onChange={handleChange}
                           placeholder="John Doe"
-                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                       <div className="flex-1 flex flex-col gap-2">
@@ -177,7 +177,7 @@ const Contact = () => {
                           type="email" name="email" id="email" required
                           value={formState.email} onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                     </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                         name="message" id="message" required rows="5"
                         value={formState.message} onChange={handleChange}
                         placeholder="Tell me about your project..."
-                        className="w-full bg-[#050d12]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
+                        className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
                       />
                     </div>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
-const PORTFOLIO_URL = 'https://portfolio-iota-eight-90.vercel.app/';
+const PORTFOLIO_URL = 'https://koketso-raphasha.vercel.app/';
 
 const MobileScan = () => {
   const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(PORTFOLIO_URL)}&bgcolor=0A0A0A&color=00FFCC&margin=10`;

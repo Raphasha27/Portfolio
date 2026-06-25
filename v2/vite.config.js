@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'Koketso Raphasha Portfolio',
         short_name: 'Koketso OS',
-        description: 'Autonomous AI Engineer & Systems Architect',
+        description: 'Software Engineer & Systems Architect',
         theme_color: '#00FF9C',
         background_color: '#0a0f16',
         display: 'standalone',

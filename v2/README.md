@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Autonomous%20AI%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Software%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
 
   [![Status](https://img.shields.io/badge/Status-Live-00ffcc?style=for-the-badge)](#)
   [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](#)
@@ -12,7 +12,7 @@
 
 High-fidelity, cinematic React/Vite implementation of the Kirov Dynamics professional branding ecosystem — featuring 3D neural network visualizations, interactive AI elements, and sovereign infrastructure concepts.
 
-**Live:** [https://portfolio-iota-eight-90.vercel.app/](https://portfolio-iota-eight-90.vercel.app/)
+**Live:** [https://koketso-raphasha.vercel.app/](https://koketso-raphasha.vercel.app/)
 
 ## Features
 

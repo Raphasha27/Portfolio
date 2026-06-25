@@ -1,17 +1,15 @@
 import React, { useEffect, Suspense, lazy, useState } from 'react';
-import { AnimatePresence, motion, useScroll } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
-import AdvancedBackground from './components/AdvancedBackground';
 import CommandPalette from './components/CommandPalette';
 
 const Terminal = lazy(() => import('./components/Terminal'));
 const Experience = lazy(() => import('./components/Experience'));
 const Roles = lazy(() => import('./components/Roles'));
-const Skills = lazy(() => import('./components/Skills'));
 const Certifications = lazy(() => import('./components/Certifications'));
 const Projects = lazy(() => import('./components/Projects'));
 const CIStatus = lazy(() => import('./components/CIStatus'));
@@ -29,146 +27,18 @@ function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
-  const { scrollYProgress } = useScroll();
-
   return (
-    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
-      {/* Base cyber background layer - Enhanced Visibility */}
-      {/* Base cyber background layer - Enhanced Visibility */}
-      <motion.div 
-        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.85] mix-blend-screen bg-center bg-cover bg-no-repeat" 
-        style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
-        animate={{
-          scale: [1, 1.15, 1],
-        }}
-        transition={{
-          duration: 40,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      
-      {/* Advanced animated background system */}
-      <AdvancedBackground />
-      
-      {/* Enhanced mesh gradient overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[2] opacity-40">
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(circle at 15% 15%, rgba(0, 255, 156, 0.2) 0%, transparent 40%),
-              radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.2) 0%, transparent 40%),
-              radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 30% 70%, rgba(236, 72, 153, 0.1) 0%, transparent 40%),
-              linear-gradient(135deg, rgba(0, 255, 156, 0.08) 0%, transparent 50%, rgba(59, 130, 246, 0.08) 100%)
-            `
-          }}
-        />
+    <div className="bg-[#000814] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-hidden">
+      {/* Subtle ambient gradient background */}
+      <div className="fixed inset-0 pointer-events-none z-[0]">
+        <div className="absolute inset-0 opacity-30" style={{
+          background: 'radial-gradient(ellipse at 20% 50%, rgba(0, 255, 156, 0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%)'
+        }} />
       </div>
-      
-      {/* Massive dynamic gradient orbs */}
-      <motion.div 
-        className="fixed -top-40 -left-40 w-[800px] h-[800px] rounded-full blur-3xl pointer-events-none z-[1]"
-        style={{
-          background: 'radial-gradient(circle, rgba(0, 255, 156, 0.15) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)'
-        }}
-        animate={{
-          x: [0, 100, 0],
-          y: [0, 80, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div 
-        className="fixed -bottom-40 -right-40 w-[800px] h-[800px] rounded-full blur-3xl pointer-events-none z-[1]"
-        style={{
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.1) 50%, transparent 100%)'
-        }}
-        animate={{
-          x: [0, -100, 0],
-          y: [0, -80, 0],
-          scale: [1, 1.4, 1],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
-      <motion.div 
-        className="fixed top-1/3 right-1/4 w-[700px] h-[700px] rounded-full blur-3xl pointer-events-none z-[1]"
-        style={{
-          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(0, 255, 156, 0.08) 50%, transparent 100%)'
-        }}
-        animate={{
-          rotate: [0, 360],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 50,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      
-      {/* 3D Perspective grid */}
-      <div className="fixed inset-0 pointer-events-none z-[2] opacity-[0.12]">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(0, 255, 156, 0.4) 1.5px, transparent 1.5px),
-              linear-gradient(90deg, rgba(0, 255, 156, 0.4) 1.5px, transparent 1.5px)
-            `,
-            backgroundSize: '60px 60px',
-            transform: 'perspective(800px) rotateX(60deg) scale(2)',
-            transformOrigin: 'center top',
-            maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
-          }}
-        />
-      </div>
-      
-      {/* Hexagonal pattern overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[2] opacity-[0.05]">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at 30% 30%, rgba(0, 255, 156, 0.3) 1px, transparent 1px),
-              radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px'
-          }}
-        />
-      </div>
-      
-      {/* Film grain texture */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.06] z-[4] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      
-      {/* Animated scanlines */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none z-[5] opacity-[0.04]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 156, 0.2) 2px, rgba(0, 255, 156, 0.2) 4px)',
-        }}
-        animate={{
-          y: [0, 8, 0]
-        }}
-        transition={{
-          duration: 0.15,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      
+
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
 
@@ -180,22 +50,22 @@ function App() {
         </ErrorBoundary>
 
         <ErrorBoundary>
-          <motion.section 
-            initial={{ opacity: 0, y: 50 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-100px" }} 
+          <motion.section
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
             <About />
           </motion.section>
         </ErrorBoundary>
 
-        <Suspense fallback={<div className="w-full min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" /></div>}>
+        <Suspense fallback={<div className="w-full min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin" /></div>}>
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <Experience />
@@ -203,38 +73,25 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="relative py-16 sm:py-24 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-transparent">
-                <div className="absolute inset-0 opacity-20" 
-                     style={{ 
-                       backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 
-                                         radial-gradient(circle at 80% 70%, rgba(0, 86, 210, 0.15) 0%, transparent 50%)` 
-                     }} />
-                <div className="absolute inset-0 opacity-10" 
-                     style={{ 
-                       backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
-                                         linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px'
-                     }} />
-              </div>
               <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
-                <Skills />
+                <TechMarquee />
                 <Roles />
               </div>
             </motion.section>
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <Certifications />
@@ -242,10 +99,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
             >
@@ -254,10 +111,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
             >
@@ -266,10 +123,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
               className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto pb-16 sm:pb-24"
             >
@@ -285,9 +142,9 @@ function App() {
 
           <ErrorBoundary>
             <motion.div
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <Map />
@@ -295,10 +152,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <Testimonials />
@@ -306,10 +163,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <HireMe />
@@ -317,10 +174,10 @@ function App() {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <motion.section 
-              initial={{ opacity: 0, y: 50 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true, margin: "-100px" }} 
+            <motion.section
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
               <Contact />
@@ -329,21 +186,16 @@ function App() {
         </Suspense>
       </main>
 
-      {/* ── Premium Footer ── */}
-      <footer className="relative z-10 border-t border-white/5 bg-[#050d12]/80 backdrop-blur-xl overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-[#00FF9C]/3 blur-[100px] rounded-full" />
-        </div>
+      {/* Footer */}
+      <footer className="relative z-10 border-t border-white/5 bg-[#000814]/80 backdrop-blur-xl overflow-hidden">
         <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-12 sm:py-16 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
-            {/* Brand */}
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-[#00FF9C] font-bold">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
-                <span className="text-sm tracking-tighter">Koketso_Raphasha</span>
+                <span className="text-sm tracking-tighter">Koketso Raphasha</span>
               </div>
               <p className="text-xs text-white/40 leading-relaxed max-w-[200px]">
-                Systems Architect & AI Engineer building the future from Johannesburg, SA.
+                Software Engineer building the future from Johannesburg, SA.
               </p>
               <div className="flex items-center gap-1.5 text-[9px] font-mono text-[#00FF9C]/60">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
@@ -351,7 +203,6 @@ function App() {
               </div>
             </div>
 
-            {/* Quick Nav */}
             <div className="space-y-3">
               <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Quick Nav</div>
               <div className="grid grid-cols-2 gap-1">
@@ -367,7 +218,6 @@ function App() {
               </div>
             </div>
 
-            {/* Socials */}
             <div className="space-y-3">
               <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Connect</div>
               <div className="flex flex-wrap gap-2">
@@ -394,15 +244,13 @@ function App() {
             </div>
           </div>
 
-          {/* Divider + copyright */}
           <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div className="text-[10px] font-mono text-white/20">
-              © {new Date().getFullYear()} <span className="text-[#00FF9C]/60">Koketso Raphasha</span> · Kirov Dynamics Technology
+              &copy; {new Date().getFullYear()} <span className="text-[#00FF9C]/60">Koketso Raphasha</span>
             </div>
             <div className="flex items-center gap-2 text-[10px] font-mono text-white/20">
               <span>Built with</span>
               <span className="text-[#00FF9C]/60">React + Vite + Framer Motion</span>
-              <span className="text-[#00FF9C] animate-pulse">♥</span>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
+import TechMarquee from './TechMarquee';
 
 const projects = [
   {
@@ -79,7 +80,7 @@ const projects = [
     color: "from-purple-500/20 to-pink-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
-    liveUrl: "https://portfolio-iota-eight-90.vercel.app",
+    liveUrl: "https://koketso-raphasha.vercel.app",
     status: "live"
   },
   {
@@ -99,7 +100,7 @@ const projects = [
     desc: "Premium analytics platform utilizing RAG and Vector Embeddings for real-time market trends, salary insights, and intelligent candidate matching.",
     tech: ["python", "fastapi", "react", "docker"],
     icon: "zap",
-    role: "AI Engineer",
+    role: "Software Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
     bgImage: "project-finance.png",
     link: "https://github.com/Raphasha27/ai-job-market-intelligence"
@@ -259,43 +260,6 @@ const projects = [
 ];
 
 
-
-const bannerTechs = [
-  { name: "React",           id: "react"        },
-  { name: "C",               id: "c"            },
-  { name: "C++",             id: "cplusplus"    },
-  { name: "Python",          id: "python"       },
-  { name: "Java",            id: "java"         },
-  { name: "Go",              id: "go"           },
-  { name: "Rust",            id: "rust"         },
-  { name: "Swift",           id: "swift"        },
-  { name: "Node.js",         id: "node"         },
-  { name: "FastAPI",         id: "fastapi"      },
-  { name: "Expo",            id: "expo"         },
-  { name: "Android Studio",  id: "androidstudio"},
-  { name: "Streamlit",       id: "streamlit"    },
-  { name: "Kaggle",          id: "kaggle"       },
-  { name: "Jupyter",         id: "jupyter"      },
-  { name: "R",               id: "r"            },
-  { name: "PostgreSQL",      id: "postgres"     },
-  { name: "TypeScript",      id: "typescript"   },
-  { name: "Next.js",         id: "nextjs"       },
-  { name: "Docker",          id: "docker"       },
-  { name: "MongoDB",         id: "mongodb"      },
-  { name: "Tailwind CSS",    id: "tailwindcss"  },
-  { name: "GitHub Actions",  id: "githubactions" },
-  { name: "LangChain",       id: "langchain"    },
-  { name: "Redis",           id: "redis"        },
-  { name: "Framer Motion",   id: "framer"       },
-  { name: "TensorFlow",      id: "tensorflow"   },
-  { name: "PyTorch",         id: "pytorch"      },
-  { name: "Kubernetes",      id: "kubernetes"   },
-  { name: "Linux",           id: "linux"        },
-  { name: "Kali Linux",      id: "kalilinux"    },
-  { name: "Wireshark",       id: "wireshark"    },
-  { name: "Vite",            id: "vite"         },
-];
-
 const TiltCard = ({ children, className, id }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -332,7 +296,6 @@ const TiltCard = ({ children, className, id }) => {
 
 const Projects = () => {
   const [copied, setCopied] = useState(false);
-  const doubled = [...bannerTechs, ...bannerTechs];
 
   const handleShare = () => {
     const url = window.location.href;
@@ -369,7 +332,7 @@ const Projects = () => {
               key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-[#000814]/40 to-transparent pointer-events-none" />
               
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
               
@@ -480,27 +443,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Scrolling Tech Marquee — Moved from Hero */}
-      <div className="py-8 glass border-t border-b border-white/5 bg-black/20 backdrop-blur-md overflow-hidden rounded-3xl">
-        <motion.div 
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="flex gap-20 items-center whitespace-nowrap"
-        >
-          {doubled.map((tech, i) => (
-            <div key={i} className="flex items-center gap-2.5 shrink-0 group">
-              <div className="w-7 h-7 opacity-80 group-hover:opacity-100 transition-opacity">
-                <Icon name={tech.id} size={28} />
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-white/90 transition-colors font-mono">
-                {tech.name}
-              </span>
-              <div className="w-1 h-1 rounded-full bg-blue-500/30 ml-4" />
-            </div>
-          ))}
-        </motion.div>
-      </div>
+      <TechMarquee />
     </div>
   );
 };

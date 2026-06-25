@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "leaflet/dist/leaflet.css";
 
 :root {
   --nav-h: 80px;
@@ -15,7 +16,7 @@ html {
 
 @layer base {
   body {
-    background-color: #050d12;
+    background-color: #000814;
     color: #e0f2f1;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
@@ -52,7 +53,7 @@ html {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #050d12; }
+::-webkit-scrollbar-track { background: #000814; }
 ::-webkit-scrollbar-thumb { background: #00FF9C; border-radius: 4px; }
 
 /* Ping animation for the live badge */
