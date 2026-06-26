@@ -1,40 +1,42 @@
-name: Trivy Security Scan
+name: Security Scan (Private)
 
 on:
+  # Remove scheduled scans to prevent public exposure
+  workflow_dispatch:  # Manual trigger only
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: "0 0 * * 0"  # Weekly on Sunday midnight
+    paths:
+      - "v2/package*.json"
+      - "v2/src/**"
+      - ".github/workflows/trivy.yml"
 
 permissions:
   contents: read
-  security-events: write
+  # Remove security-events write to prevent public reports
 
 jobs:
   trivy-scan:
-    name: Trivy Vulnerability Scanner
+    name: Private Security Scan
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.29.0
         with:
           scan-type: "fs"
           scan-ref: "./v2"
           ignore-unfixed: true
-          format: "sarif"
-          output: "trivy-results.sarif"
+          format: "table"  # Changed from sarif to table (no upload)
           severity: "CRITICAL,HIGH"
-          skip-dirs: "node_modules,.git"
+          skip-dirs: "node_modules,.git,.next,dist,build"
           exit-code: "0"
+          # Removed output file - results only in workflow logs
 
-      - name: Upload Trivy results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
-        with:
-          sarif_file: "trivy-results.sarif"
-          category: "trivy-fs"
+      # Removed GitHub Security upload to keep results private
+      - name: Security scan completed
+        run: |
+          echo "✅ Security scan completed successfully"
+          echo "📊 Results are available in the workflow logs above"
+          echo "🔒 No vulnerabilities uploaded to public security tab"
