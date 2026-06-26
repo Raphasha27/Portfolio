@@ -4,7 +4,6 @@ import { Icon } from './Icons';
 
 // Logo Assets
 import yesBadge from '../assets/yes-badge.png';
-import capacitiLogo from '../assets/capaciti-logo.png';
 import wtcLogo from '../assets/wethinkcode-logo.png';
 import richfieldLogo from '../assets/richfield-logo-new.png';
 
@@ -43,18 +42,6 @@ const experiences = [
     logoBg: "bg-white",
     logoPadding: "p-4",
     cardBg: "from-blue-500/10 via-blue-400/5 to-transparent"
-  },
-  {
-    period: "2025 – 2026",
-    role: "AI Engineering Intern",
-    company: "CAPACITI · Digital Skills Accelerator (Naspers Labs)",
-    desc: "Completed an intensive AI-focused digital skills accelerator in parallel with the YES programme. Built AI pipelines using Gemini and LangChain, ranked in top tier for technical output. Delivered production-grade ML solutions under the Naspers Labs umbrella.",
-    icon: "rocket",
-    logo: capacitiLogo,
-    logoBg: "bg-white",
-    logoPadding: "p-3",
-    logoFit: "object-contain",
-    cardBg: "from-cyan-500/10 via-cyan-400/5 to-transparent"
   },
   {
     period: "2025 – 2026",
