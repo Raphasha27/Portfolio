@@ -174,11 +174,7 @@ const Experience = () => {
 
                   {/* No illustration - clean text layout */}
                   
-                  {/* Background Icon - Hidden for expanded items on desktop */}
-                  <div className={`absolute ${exp.expanded ? 'lg:hidden' : ''} -bottom-6 -right-6 w-32 h-32 lg:w-48 lg:h-48 text-white/5 group-hover:text-white/[0.08] transition-all duration-700 pointer-events-none`}>
-                    <Icon name={exp.icon} size={200} />
-                  </div>
-                  
+                  {/* Background effects */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-[#00FF9C]/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
                 </div>
               </motion.div>
