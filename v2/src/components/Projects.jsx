@@ -59,12 +59,12 @@ const projects = [
     status: "live"
   },
   {
-    title: "Sumbandila App",
-    tagline: "Landing Page",
-    desc: "Professional landing page for the Sumbandila platform.",
-    tech: ["nextjs", "tailwindcss", "vercel"],
-    icon: "globe",
-    role: "Frontend Dev",
+    title: "Sumbandila",
+    tagline: "Identity Verification System",
+    desc: "Enterprise-grade digital identity verification platform with document authentication, biometric validation, and secure API infrastructure for government and financial institutions.",
+    tech: ["nextjs", "tailwindcss", "api-integration", "security"],
+    icon: "shield",
+    role: "Full Stack Dev",
     color: "from-blue-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/Sumbandila-App",
     liveUrl: "https://landing-five-orcin-61.vercel.app",

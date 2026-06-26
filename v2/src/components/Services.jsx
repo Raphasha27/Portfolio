@@ -40,13 +40,13 @@ const vercelProjects = [
     tech: ["Next.js", "Python", "FastAPI", "Vercel"]
   },
   {
-    title: "Sumbandila App",
-    subtitle: "Landing Page",
-    desc: "Professional landing page for the Sumbandila platform.",
+    title: "Sumbandila",
+    subtitle: "Identity Verification Platform",
+    desc: "Digital identity verification system with document authentication, biometric validation, and secure API integration for enterprise clients.",
     url: "https://landing-five-orcin-61.vercel.app",
-    icon: "globe",
+    icon: "shield",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
-    tech: ["Next.js", "Tailwind", "Vercel"]
+    tech: ["Next.js", "Tailwind", "API Integration", "Vercel"]
   },
   {
     title: "Kirov Dynamics",
