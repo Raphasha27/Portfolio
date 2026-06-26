@@ -55,7 +55,7 @@ const projects = [
     color: "from-emerald-400/20 to-cyan-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/NoShowIQ",
-    liveUrl: "https://noshowiq-fullstack.vercel.app",
+    liveUrl: "https://noshowiq.vercel.app",
     status: "live"
   },
   {

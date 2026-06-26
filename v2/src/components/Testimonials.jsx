@@ -13,7 +13,7 @@ const testimonials = [
     name: "Thabo Molefe",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://randomuser.me/api/portraits/men/20.jpg",
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
     tag: "Team Member"
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     name: "Arjun Mehta",
     role: "VP Engineering @ CloudBase",
     text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    image: "https://randomuser.me/api/portraits/men/52.jpg",
     tag: "Client"
   }
 ];

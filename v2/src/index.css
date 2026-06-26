@@ -29,6 +29,7 @@ html {
   .glow-text-sm { text-shadow: 0 0 12px rgba(0, 255, 156, 0.3); }
   .glass {
     background: rgba(10, 22, 29, 0.7);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,0.05);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -51,10 +52,21 @@ html {
   }
 }
 
-/* Scrollbar */
+/* Scrollbar - cross browser */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #000814; }
 ::-webkit-scrollbar-thumb { background: #00FF9C; border-radius: 4px; }
+html { scrollbar-color: #00FF9C #000814; scrollbar-width: thin; }
+
+/* Dynamic viewport height for iOS Safari — prevents address-bar clipping */
+@supports (height: 100dvh) {
+  .section-pad {
+    min-height: 100dvh;
+  }
+  #home {
+    min-height: 100dvh !important;
+  }
+}
 
 /* Ping animation for the live badge */
 @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
@@ -94,9 +106,11 @@ html {
 /* Masking */
 .mask-bottom {
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 .mask-top {
   mask-image: linear-gradient(to top, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 60%, transparent 100%);
 }
 
 .container {

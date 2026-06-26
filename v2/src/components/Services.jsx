@@ -34,7 +34,7 @@ const vercelProjects = [
     title: "NoShowIQ",
     subtitle: "Healthcare No-Show Prediction",
     desc: "Fullstack app predicting patient appointment no-shows using ML models.",
-    url: "https://noshowiq-fullstack.vercel.app",
+    url: "https://noshowiq.vercel.app",
     icon: "brain",
     color: "from-purple-500/20 to-pink-500/20",
     tech: ["Next.js", "Python", "FastAPI", "Vercel"]

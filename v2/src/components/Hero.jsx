@@ -209,15 +209,15 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-center">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-12 w-full">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
+      <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
 
-        {/* Profile Column */}
+        {/* Profile Column — first in HTML so it shows first on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:max-w-none lg:order-2"
+          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:w-auto lg:order-2"
         >
           <div className="relative w-[140px] h-[140px] xs:w-[160px] xs:h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[240px] lg:h-[240px]">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
@@ -278,58 +278,76 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        {/* Content Column */}
+        {/* Content Column — second in HTML, but first visually on desktop via lg:order-1 */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 w-full max-w-xl lg:order-1"
+          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 lg:pr-8 lg:order-1"
         >
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[10px] font-medium flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
-              Open to Opportunities
-            </span>
-            <span className="px-2.5 sm:px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-medium">
-              Johannesburg, SA
-            </span>
-          </div>
-
           <div>
-            <h1 className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-              Software Engineer &<br />
-              <span className="text-[#00FF9C]"><Typewriter /></span>
+            <div className="flex items-center gap-2 flex-wrap w-full">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[10px] font-medium flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+                Open to Opportunities
+              </span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-medium">
+                Johannesburg, SA
+              </span>
+            </div>
+
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight w-full">
+              Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
             </h1>
-          </div>
 
-          <p className="text-sm sm:text-base text-white/60 leading-relaxed max-w-lg">
-            I build self-healing, scalable systems and AI-driven solutions.
-            Based in Johannesburg, South Africa.
-          </p>
+            <div className="hidden lg:block my-2">
+              <SlidingText />
+            </div>
 
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            <a href="#projects" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-[#00FF9C] text-[#000814] font-bold rounded-lg hover:bg-[#00e089] transition-all active:scale-95 text-sm">
-              View Projects
-            </a>
-            <a href="/Koketso_Raphasha_CV.pdf" download className="px-4 sm:px-5 py-2 sm:py-2.5 border border-[#00FF9C]/40 text-white font-bold rounded-lg hover:bg-[#00FF9C]/10 transition-all active:scale-95 text-sm flex items-center gap-2">
-              <Icon name="download" size={14} /> CV
-            </a>
-            <a href="#contact" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold rounded-lg hover:bg-blue-600/30 transition-all active:scale-95 text-sm">
-              Hire Me
-            </a>
+            <p className="text-sm sm:text-base lg:text-lg text-white/60 leading-relaxed w-full">
+              Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems that push the boundaries of what software can do. Currently engineering the next generation of agentic platforms — where infrastructure thinks, adapts, and heals itself without human intervention.
+            </p>
+
+            <p className="text-sm sm:text-base text-white/40 w-full">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+
+            {/* QR Code - mobile only */}
+            <div className="sm:hidden flex flex-col items-center gap-2 py-3">
+              <div className="relative p-2 rounded-xl border border-white/10 bg-white/5">
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}`}
+                  alt="Portfolio QR"
+                  className="w-20 h-20"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 rounded-xl ring-1 ring-[#00FF9C]/20 pointer-events-none" />
+              </div>
+              <span className="text-[8px] text-white/30 font-mono uppercase tracking-[0.15em]">Scan for desktop view</span>
+            </div>
+
+            <div className="flex flex-wrap gap-3 sm:gap-4 w-full">
+              <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
+                View Projects →
+              </a>
+              <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-2.5 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-2">
+                <Icon name="download" size={14} /> CV
+              </a>
+              <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
+                Hire Me
+              </a>
+            </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-2 pt-3 border-t border-white/5 mt-1">
+          <div className="grid grid-cols-4 gap-3 pt-4 border-t border-white/10 mt-2 w-full">
             {STATS.map((s, i) => (
-              <div key={i} className="bg-white/5 p-1.5 sm:p-2 rounded-lg border border-white/5 flex flex-col items-center text-center gap-0.5 sm:gap-1">
-                <div className="text-[#00FF9C]/60">
-                  <Icon name={s.icon} size={12} />
+              <div key={i} className="bg-white/5 p-2 rounded-lg flex flex-col items-center text-center gap-1">
+                <div className="text-[#00FF9C]/50">
+                  <Icon name={s.icon} size={14} />
                 </div>
-                <div className="text-sm sm:text-base font-bold text-white leading-none">
+                <div className="text-sm sm:text-base font-semibold text-white leading-none">
                   <CountUp to={s.val} />{s.suffix}
                 </div>
-                <div className="text-[7px] text-white/40 uppercase tracking-wider">{s.label}</div>
+                <div className="text-[8px] text-white/30 uppercase tracking-widest">{s.label}</div>
               </div>
             ))}
           </div>
