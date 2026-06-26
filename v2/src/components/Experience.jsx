@@ -96,62 +96,46 @@ const experiences = [
 ];
 
 const Experience = () => {
-  // AI Robot SVG Component
+  // Clean AI Robot SVG Component - No scattered elements
   const AIRobotIllustration = () => (
     <div className="relative w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 200 200" className="w-32 h-32 lg:w-40 lg:h-40">
+      <svg viewBox="0 0 160 160" className="w-32 h-32 lg:w-40 lg:h-40">
         <defs>
-          <linearGradient id="robotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00FF9C" stopOpacity="0.8"/>
-            <stop offset="50%" stopColor="#00D4AA" stopOpacity="0.6"/>
-            <stop offset="100%" stopColor="#0099CC" stopOpacity="0.4"/>
+          <linearGradient id="cleanRobotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#00FF9C" stopOpacity="0.9"/>
+            <stop offset="100%" stopColor="#00D4AA" stopOpacity="0.8"/>
           </linearGradient>
-          <filter id="robotGlow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-            <feMerge> 
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
         </defs>
         
-        {/* Robot Head */}
-        <rect x="60" y="40" width="80" height="60" rx="15" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
+        {/* Clean Robot Head */}
+        <rect x="50" y="30" width="60" height="45" rx="10" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1.5"/>
         
         {/* Eyes */}
-        <circle cx="80" cy="65" r="6" fill="#00FF9C" className="animate-pulse"/>
-        <circle cx="120" cy="65" r="6" fill="#00FF9C" className="animate-pulse"/>
+        <circle cx="65" cy="50" r="4" fill="#00FF9C"/>
+        <circle cx="95" cy="50" r="4" fill="#00FF9C"/>
         
-        {/* Mouth/Speaker */}
-        <rect x="90" y="80" width="20" height="8" rx="4" fill="#00FF9C" opacity="0.6"/>
+        {/* Simple Display */}
+        <rect x="70" y="60" width="20" height="4" rx="2" fill="#00FF9C" opacity="0.8"/>
         
-        {/* Antenna */}
-        <line x1="100" y1="40" x2="100" y2="25" stroke="#00FF9C" strokeWidth="2"/>
-        <circle cx="100" cy="22" r="3" fill="#00FF9C" className="animate-ping"/>
+        {/* Clean Body */}
+        <rect x="55" y="75" width="50" height="50" rx="8" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1.5"/>
         
-        {/* Body */}
-        <rect x="70" y="100" width="60" height="70" rx="10" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
+        {/* Simple Chest Panel */}
+        <rect x="70" y="85" width="20" height="12" rx="3" fill="#00FF9C" opacity="0.4"/>
+        <rect x="72" y="87" width="16" height="1.5" rx="0.5" fill="#00FF9C"/>
+        <rect x="72" y="91" width="16" height="1.5" rx="0.5" fill="#00FF9C"/>
+        <rect x="72" y="95" width="16" height="1.5" rx="0.5" fill="#00FF9C"/>
         
-        {/* Chest Panel */}
-        <rect x="85" y="115" width="30" height="20" rx="5" fill="#00FF9C" opacity="0.3"/>
-        <rect x="88" y="118" width="24" height="3" rx="1" fill="#00FF9C"/>
-        <rect x="88" y="125" width="24" height="3" rx="1" fill="#00FF9C"/>
-        <rect x="88" y="132" width="24" height="3" rx="1" fill="#00FF9C"/>
+        {/* Simple Arms */}
+        <rect x="35" y="85" width="15" height="25" rx="6" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1"/>
+        <rect x="110" y="85" width="15" height="25" rx="6" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1"/>
         
-        {/* Arms */}
-        <rect x="45" y="110" width="20" height="40" rx="8" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
-        <rect x="135" y="110" width="20" height="40" rx="8" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
+        {/* Clean Legs */}
+        <rect x="65" y="125" width="10" height="20" rx="4" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1"/>
+        <rect x="85" y="125" width="10" height="20" rx="4" fill="url(#cleanRobotGrad)" stroke="#00FF9C" strokeWidth="1"/>
         
-        {/* Hands */}
-        <circle cx="55" cy="155" r="8" fill="#00FF9C" opacity="0.8"/>
-        <circle cx="145" cy="155" r="8" fill="#00FF9C" opacity="0.8"/>
-        
-        {/* Legs */}
-        <rect x="80" y="170" width="15" height="25" rx="6" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
-        <rect x="105" y="170" width="15" height="25" rx="6" fill="url(#robotGrad)" filter="url(#robotGlow)" stroke="#00FF9C" strokeWidth="1"/>
-        
-        {/* Tech Labels */}
-        <text x="100" y="210" fill="#00FF9C" fontSize="8" textAnchor="middle" className="font-mono opacity-60">GEMINI • LANGCHAIN</text>
+        {/* Simple Label */}
+        <text x="80" y="155" fill="#00FF9C" fontSize="6" textAnchor="middle" className="font-mono opacity-70">AI SYSTEMS</text>
       </svg>
     </div>
   );
