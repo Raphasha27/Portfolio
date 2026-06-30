@@ -345,6 +345,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     coursera:      "https://cdn.simpleicons.org/coursera/0056D2",
     framer:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
     langchain:     "https://cdn.simpleicons.org/langchain/white",
+    huggingface:   "https://cdn.simpleicons.org/huggingface/FFD21E",
     kubernetes:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
     nginx:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg",
     linux:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",

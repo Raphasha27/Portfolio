@@ -206,7 +206,7 @@ const HeroBanner = () => {
 
 const MARQUEE_TECHS = [
   'docker', 'kubernetes', 'nextjs', 'fastapi', 'tailwindcss', 'pytorch',
-  'langchain', 'go', 'python', 'react', 'typescript', 'postgresql',
+  'huggingface', 'langchain', 'go', 'python', 'react', 'typescript', 'postgresql',
   'redis', 'nginx', 'linux', 'github', 'tensorflow', 'grafana',
 ];
 

@@ -1,4 +1,66 @@
 @import "tailwindcss";
+
+
+/* ==========================================================================
+   Cross-Browser Normalization & Polyfills (Safari, Firefox, Chrome)
+   ========================================================================== */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  /* Smooth scrolling for iOS Safari */
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  /* Prevent text selection highlight glitches on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Fix Safari backdrop-filter bugs by enforcing hardware acceleration */
+  transform: translateZ(0);
+}
+
+/* Fallback for dynamic viewport height (dvh) on older iOS */
+@supports not (height: 100dvh) {
+  .min-h-\[100dvh\] {
+    min-height: 100vh !important;
+  }
+  .h-\[100dvh\] {
+    height: 100vh !important;
+  }
+}
+
+/* Fix flex gap bugs in older Safari (pre-14.1) */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Standardize custom scrollbars across Chrome and Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 156, 0.3) rgba(5, 13, 18, 0.9);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 13, 18, 0.9);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 156, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 156, 0.6);
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
 @import "leaflet/dist/leaflet.css";
 
