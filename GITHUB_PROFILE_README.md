@@ -235,6 +235,15 @@ Offline-first coding education
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Raphasha27&theme=react-dark&hide_border=true&bg_color=0D1117&color=00ff9c&line=3b82f6&point=00ff9c)
 
 </div>
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Raphasha27&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=00ff9c&icon_color=3b82f6)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Raphasha27&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=00ff9c)
+
+![Snake animation](https://raw.githubusercontent.com/Raphasha27/Portfolio/output/github-contribution-grid-snake-dark.svg)
+
+</div>
+
 
 ---
 
