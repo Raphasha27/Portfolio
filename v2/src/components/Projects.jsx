@@ -3,6 +3,14 @@ import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
 import { getTechInfo, PRIORITY_TECHS } from '../config/technologies';
 
+// Human-context project backgrounds (AI-generated, SA-themed)
+import projAiBusiness from '../assets/proj-ai-business.png';
+import projAgriAi from '../assets/proj-agri-ai.png';
+import projEskom from '../assets/proj-eskom.png';
+import projNoshowiq from '../assets/proj-noshowiq.png';
+import projSumbandila from '../assets/proj-sumbandila.png';
+import projKirov from '../assets/proj-kirov.png';
+
 const projects = [
   {
     title: "AI Business Engine",
@@ -17,7 +25,7 @@ const projects = [
     link: "https://github.com/Raphasha27/AI-Business-Engine",
     liveUrl: "https://web-gamma-nine-c2cqi2h058.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop"
+    imgUrl: projAiBusiness
   },
   {
     title: "Mzansi AgriAI",
@@ -31,7 +39,7 @@ const projects = [
     link: "https://github.com/Raphasha27/Mzansi-AgriAI",
     liveUrl: "https://mzansi-agriai-demo.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80&fit=crop"
+    imgUrl: projAgriAi
   },
   {
     title: "EskomSense AI",
@@ -45,7 +53,7 @@ const projects = [
     link: "https://github.com/Raphasha27/EskomSense-AI",
     liveUrl: "https://eskomsense-ai-demo.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80&fit=crop"
+    imgUrl: projEskom
   },
   {
     title: "NoShowIQ",
@@ -59,7 +67,7 @@ const projects = [
     link: "https://github.com/Raphasha27/NoShowIQ",
     liveUrl: "https://noshowiq.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80&fit=crop"
+    imgUrl: projNoshowiq
   },
   {
     title: "Sumbandila",
@@ -72,7 +80,7 @@ const projects = [
     link: "https://github.com/Raphasha27/Sumbandila-App",
     liveUrl: "https://landing-five-orcin-61.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80&fit=crop"
+    imgUrl: projSumbandila
   },
   {
     title: "Kirov Dynamics",
@@ -86,7 +94,7 @@ const projects = [
     link: "https://github.com/Raphasha27/Portfolio",
     liveUrl: "https://koketso-raphasha.vercel.app",
     status: "live",
-    imgUrl: "https://images.unsplash.com/photo-1614854262318-831574f15f1f?w=600&q=80&fit=crop"
+    imgUrl: projKirov
   },
   {
     title: "DevForge AI",
