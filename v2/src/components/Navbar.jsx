@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
+import profileImg from '../assets/koketso_studio.jpg';
 
 const Navbar = ({ setCmdOpen }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,8 +38,16 @@ const Navbar = ({ setCmdOpen }) => {
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto flex justify-between items-center">
         <button
           onClick={() => scrollTo('home')}
-          className="flex items-center gap-2 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2.5 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
         >
+          <div className="relative w-7 h-7 shrink-0">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] to-blue-500 p-[1.5px]">
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img src={profileImg} alt="Koketso" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <span className="absolute bottom-0 right-0 w-2 h-2 bg-[#00FF9C] rounded-full border border-[#000814]" />
+          </div>
           <span className="text-sm sm:text-base tracking-tight">Koketso Raphasha</span>
         </button>
 

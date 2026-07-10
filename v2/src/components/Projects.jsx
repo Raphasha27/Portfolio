@@ -16,7 +16,8 @@ const projects = [
     latest: true,
     link: "https://github.com/Raphasha27/AI-Business-Engine",
     liveUrl: "https://web-gamma-nine-c2cqi2h058.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop"
   },
   {
     title: "Mzansi AgriAI",
@@ -29,7 +30,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/Mzansi-AgriAI",
     liveUrl: "https://mzansi-agriai-demo.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80&fit=crop"
   },
   {
     title: "EskomSense AI",
@@ -42,7 +44,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/EskomSense-AI",
     liveUrl: "https://eskomsense-ai-demo.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80&fit=crop"
   },
   {
     title: "NoShowIQ",
@@ -55,7 +58,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/NoShowIQ",
     liveUrl: "https://noshowiq.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80&fit=crop"
   },
   {
     title: "Sumbandila",
@@ -67,7 +71,8 @@ const projects = [
     color: "from-blue-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/Sumbandila-App",
     liveUrl: "https://landing-five-orcin-61.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80&fit=crop"
   },
   {
     title: "Kirov Dynamics",
@@ -80,7 +85,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
     liveUrl: "https://koketso-raphasha.vercel.app",
-    status: "live"
+    status: "live",
+    imgUrl: "https://images.unsplash.com/photo-1614854262318-831574f15f1f?w=600&q=80&fit=crop"
   },
   {
     title: "DevForge AI",
@@ -90,8 +96,8 @@ const projects = [
     icon: "globe",
     role: "AI Systems Dev",
     color: "from-[#00FF9C]/20 to-emerald-400/20",
-    bgImage: "project-os.png",
-    link: "https://github.com/Raphasha27/devforge-ai"
+    link: "https://github.com/Raphasha27/devforge-ai",
+    imgUrl: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&fit=crop"
   },
   {
     title: "AI Job Market Intelligence",
@@ -101,8 +107,8 @@ const projects = [
     icon: "zap",
     role: "Software Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
-    bgImage: "project-finance.png",
-    link: "https://github.com/Raphasha27/ai-job-market-intelligence"
+    link: "https://github.com/Raphasha27/ai-job-market-intelligence",
+    imgUrl: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80&fit=crop"
   },
   {
     title: "CyberShield Modern",
@@ -112,7 +118,8 @@ const projects = [
     icon: "shield",
     role: "SOC Engineer",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
-    link: "https://github.com/Raphasha27/cybershield_soc"
+    link: "https://github.com/Raphasha27/cybershield_soc",
+    imgUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80&fit=crop"
   },
   {
     title: "SupportHive-C",
@@ -122,7 +129,8 @@ const projects = [
     icon: "terminal",
     role: "Systems Architect",
     color: "from-yellow-500/20 to-emerald-500/20",
-    link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C"
+    link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C",
+    imgUrl: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&q=80&fit=crop"
   },
   {
     title: "Kirov Connect",
@@ -132,7 +140,8 @@ const projects = [
     icon: "building",
     role: "Civic Tech lead",
     color: "from-orange-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/Fire4s_Project1_Week1"
+    link: "https://github.com/Raphasha27/Fire4s_Project1_Week1",
+    imgUrl: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80&fit=crop"
   },
   {
     title: "RepoPulse",
@@ -142,7 +151,8 @@ const projects = [
     icon: "signal",
     role: "Observability Eng",
     color: "from-emerald-500/20 to-cyan-500/20",
-    link: "https://github.com/Raphasha27/Github-Harden"
+    link: "https://github.com/Raphasha27/Github-Harden",
+    imgUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80&fit=crop"
   },
   {
     title: "Autonomous Dev Factory",
@@ -152,8 +162,8 @@ const projects = [
     icon: "ticket",
     role: "Platform Engineer",
     color: "from-red-500/20 to-[#00FF9C]/20",
-    bgImage: "project-logistics.png",
-    link: "https://github.com/Raphasha27/autonomous-dev-factory-v7"
+    link: "https://github.com/Raphasha27/autonomous-dev-factory-v7",
+    imgUrl: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=600&q=80&fit=crop"
   },
   {
     title: "Gauteng Transport Dashboard",
@@ -163,78 +173,52 @@ const projects = [
     icon: "graduationCap",
     role: "Data Engineer",
     color: "from-emerald-500/20 to-cyan-500/20",
-    bgImage: "project-edutech.png",
-    link: "https://github.com/Raphasha27/gauteng-transport-dashboard"
-  },
-  {
-    title: "EskomSense AI",
-    tagline: "Energy · Load Shedding Predictor",
-    desc: "ML-powered load shedding prediction engine using historical Eskom data, weather patterns, and grid telemetry. Optimizes backup battery and generator scheduling for homes and businesses across SA.",
-    tech: ["python", "pytorch", "docker", "react"],
-    icon: "zap",
-    role: "Energy AI Lead",
-    color: "from-yellow-500/20 to-orange-500/20",
-    link: "https://github.com/Raphasha27/EskomSense-AI"
+    link: "https://github.com/Raphasha27/gauteng-transport-dashboard",
+    imgUrl: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80&fit=crop"
   },
   {
     title: "Townships Market AI",
     tagline: "Economy · SMME Marketplace",
-    desc: "AI-powered digital marketplace connecting township SMMEs to local customers. Smart inventory management, intelligent delivery routing, and multilingual support for Zulu, Xhosa, and English.",
+    desc: "AI-powered digital marketplace connecting township SMMEs to local customers with intelligent delivery routing and multilingual support.",
     tech: ["react", "python", "fastapi", "typescript"],
     icon: "building",
     role: "Platform Architect",
     color: "from-emerald-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/Townships-Market-AI"
+    link: "https://github.com/Raphasha27/Townships-Market-AI",
+    imgUrl: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&fit=crop"
   },
   {
     title: "SA Language AI",
     tagline: "NLP · Zulu · Xhosa · Afrikaans",
-    desc: "Open-source NLP toolkit for South Africa's official languages. Fine-tuned transformer models for translation, speech-to-text, text-to-speech, and chatbot capabilities in isiZulu, isiXhosa, Afrikaans, Sesotho, and English.",
+    desc: "Open-source NLP toolkit for South Africa's official languages. Fine-tuned transformer models for translation, speech-to-text, and chatbot capabilities.",
     tech: ["python", "pytorch", "docker", "fastapi"],
     icon: "globe",
     role: "NLP Engineer",
     color: "from-blue-500/20 to-purple-500/20",
-    link: "https://github.com/Raphasha27/SA-Language-AI"
+    link: "https://github.com/Raphasha27/SA-Language-AI",
+    imgUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80&fit=crop"
   },
   {
     title: "WaterWatch SA",
     tagline: "Infrastructure · Leak Detection",
-    desc: "IoT sensor network coupled with AI anomaly detection for real-time water leak identification and pipe failure prediction in South African municipalities. Dashboard for municipal engineers with alerting and reporting.",
+    desc: "IoT sensor network with AI anomaly detection for real-time water leak identification and pipe failure prediction in SA municipalities.",
     tech: ["python", "docker", "react", "grafana"],
     icon: "signal",
     role: "IoT Systems Eng",
     color: "from-cyan-500/20 to-blue-500/20",
-    link: "https://github.com/Raphasha27/WaterWatch-SA"
-  },
-  {
-    title: "Mzansi AgriAI",
-    tagline: "Agriculture · AI Advisory",
-    desc: "AI-powered advisory platform for small-scale South African farmers. Crop yield prediction, weather alerting, pest detection, and real-time market pricing — delivered via USSD and mobile-first web app.",
-    tech: ["python", "streamlit", "docker", "react"],
-    icon: "globe",
-    role: "AgriTech Dev",
-    color: "from-green-500/20 to-emerald-500/20",
-    link: "https://github.com/Raphasha27/Mzansi-AgriAI"
+    link: "https://github.com/Raphasha27/WaterWatch-SA",
+    imgUrl: "https://images.unsplash.com/photo-1581093577421-f561a654a353?w=600&q=80&fit=crop"
   },
   {
     title: "YouthCode ZA",
     tagline: "Education · Offline-First Coding",
-    desc: "Offline-first coding education platform delivering interactive programming lessons to underserved SA youth. AI mentor chatbot, progress tracking, and certificate pathways — no internet required after initial sync.",
+    desc: "Offline-first coding education platform with AI mentor chatbot and certificate pathways for underserved SA youth — no internet required after sync.",
     tech: ["react", "python", "fastapi", "docker"],
     icon: "graduationCap",
     role: "EdTech Architect",
     color: "from-purple-500/20 to-pink-500/20",
-    link: "https://github.com/Raphasha27/YouthCode-ZA"
-  },
-  {
-    title: "AI Business Engine",
-    tagline: "Business · Zero-Capital",
-    desc: "5 ready-to-launch AI-powered businesses requiring zero capital. Complete playbooks with free tools, pricing models, income calculator, and 30-day launch plans. Content studio, automation agency, digital products, SMME consulting, training workshops.",
-    tech: ["python", "docker", "fastapi", "react"],
-    icon: "zap",
-    role: "Business Architect",
-    color: "from-yellow-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/AI-Business-Engine"
+    link: "https://github.com/Raphasha27/YouthCode-ZA",
+    imgUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&fit=crop"
   },
   {
     title: "Titanic ML (Kaggle)",
@@ -244,7 +228,8 @@ const projects = [
     icon: "brain",
     role: "Data Scientist",
     color: "from-[#00FF9C]/20 to-blue-500/20",
-    link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml"
+    link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml",
+    imgUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80&fit=crop"
   },
   {
     title: "ETL Pipeline Suite",
@@ -254,7 +239,8 @@ const projects = [
     icon: "database",
     role: "Data Engineer",
     color: "from-emerald-500/20 to-purple-500/20",
-    link: "https://github.com/Raphasha27/data-engineering-kaggle"
+    link: "https://github.com/Raphasha27/data-engineering-kaggle",
+    imgUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&fit=crop"
   }
 ];
 
@@ -332,6 +318,30 @@ const Projects = () => {
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
               
               <div className="relative z-10 flex flex-col h-full">
+                {/* Project Image */}
+                {p.imgUrl && (
+                  <div className="relative w-full h-36 mb-4 rounded-xl overflow-hidden -mx-5 -mt-5 w-[calc(100%+2.5rem)]">
+                    <img
+                      src={p.imgUrl}
+                      alt={p.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      onError={(e) => { e.target.style.display = 'none'; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#000814]/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-2 left-2 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[9px] text-white/70 font-mono">
+                      <span>⚙️</span>
+                      <span>Koketso Raphasha · Showcase Only</span>
+                    </div>
+                    {p.status === 'live' && (
+                      <div className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded-full bg-green-500/20 border border-green-500/40 backdrop-blur-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                        <span className="text-[8px] text-green-400 font-bold uppercase tracking-wider">Live</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <div className="flex items-start gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 bg-[#0a161d] border-[#00FF9C]/40 text-[#00FF9C] shadow-[0_0_20px_rgba(0,255,156,0.15)] group-hover:scale-110 transition-transform duration-500">
                     <Icon name={p.icon} size={20} />
@@ -339,7 +349,7 @@ const Projects = () => {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-sm font-bold text-white truncate group-hover:text-blue-400 transition-colors">{p.title}</h3>
-                      {p.status === 'live' && (
+                      {!p.imgUrl && p.status === 'live' && (
                         <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30 shrink-0">
                           <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
                           <span className="text-[7px] text-green-400 font-bold uppercase tracking-wider">Live</span>
