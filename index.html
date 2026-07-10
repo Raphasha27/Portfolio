@@ -1,12 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background:#0a0f1a">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Koketso Raphasha - Portfolio</title>
+    <style>
+      html,body{background:#0a0f1a;margin:0;min-height:100vh;color:#fff;font-family:system-ui,sans-serif}
+      #root{min-height:100vh}
+      #fallback{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;background:#0a0f1a;z-index:9999;transition:opacity .5s}
+      #fallback.hide{opacity:0;pointer-events:none}
+      .spinner{width:48px;height:48px;border:3px solid rgba(16,185,129,.1);border-top-color:#10b981;border-radius:50%;animation:spin .8s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      #fallback p{color:#10b981;font-size:14px;font-weight:600;letter-spacing:1px}
+    </style>
   </head>
-  <body>
+  <body style="background:#0a0f1a">
+    <div id="fallback"><div class="spinner"></div><p>Loading</p></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('load', function() {
+        var check = setInterval(function() {
+          if (document.getElementById('root').children.length > 0) {
+            document.getElementById('fallback').classList.add('hide');
+            clearInterval(check);
+          }
+        }, 100);
+        setTimeout(function() { clearInterval(check); }, 8000);
+      });
+      window.addEventListener('error', function(e) {
+        var fb = document.getElementById('fallback');
+        if (fb) {
+          fb.innerHTML = '<p style="color:#ef4444;font-size:16px">Failed to load</p><p style="color:#94a3b8;font-size:13px">Please try refreshing the page</p>';
+        }
+      });
+    </script>
   </body>
 </html>
