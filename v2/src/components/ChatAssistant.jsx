@@ -40,7 +40,7 @@ PERSONALITY: Be confident, technical, witty, and inspiring. Speak in first perso
 const KB = {
   'tech stack': "My core stack → C / Python / TypeScript / Rust for systems, React + Vite for frontend, FastAPI + Node.js for backend. AI layer → Gemini + LangChain + LangGraph. Infra → Docker + Kubernetes + Vercel + Railway.",
   'project': "I've shipped 9 production-grade projects → Sovereign-AI-Nexus (agentic infra), FlowSentinel (2.4M req/s traffic engine), CyberShield (SOC score 93), NoShowIQ (healthcare ML), and more. Check the Projects section!",
-  'hire': "Absolutely open to opportunities! 📩 raphashakoketso99@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
+  'hire': "Absolutely open to opportunities! 📫 raphashakoketso99@gmail.com | 📱 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
   'about': "I'm a South African software engineer building the foundational infrastructure for the African digital future. Graduated from Richfield with distinction, trained at WeThinkCode_, interned at CAPACITI.",
   'experience': "My background spans → Co-Founder & CTO at Kirov Dynamics, AI Intern at CAPACITI, YES4Youth Participant, Open Source contributor on GitHub, and trained at WeThinkCode_ Johannesburg.",
   'latest': "The flagship is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Built in Python + LangGraph + Docker. Check it out in the Projects section!",
@@ -70,7 +70,7 @@ const CHIPS = ['Tech Stack', 'Latest Project', 'Hire Me', 'Contact Info'];
 const ChatAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: 'bot', text: "Hey! I'm Koketso's Digital Twin AI 🤖\nAsk me about his projects, tech stack, or how to hire him!" }
+    { role: 'bot', text: "Hey! I'm Koketso's Digital Twin AI 🧠\nAsk me about his projects, tech stack, or how to hire him!" }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);

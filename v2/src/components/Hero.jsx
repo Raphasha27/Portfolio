@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { MapPin } from 'lucide-react';
 import { Icon } from './Icons';
 import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
 import profileImg from '/profile-enhanced.jpg';
@@ -194,7 +195,7 @@ const Hero = () => (
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems that push the boundaries of what software can do. Currently engineering the next generation of agentic platforms — where infrastructure thinks, adapts, and heals itself without human intervention.
             </p>
 
-            <p className="text-sm sm:text-base text-white/40 w-full">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+            <p className="text-sm sm:text-base text-white/40 w-full flex items-center gap-2"><MapPin size={16} className="text-[#00FF9C]" /> Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
             {/* QR Code - mobile only */}
             <div className="sm:hidden flex flex-col items-center gap-2 py-3">

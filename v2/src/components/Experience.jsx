@@ -44,6 +44,18 @@ const experiences = [
   },
   {
     period: "2025 – 2026",
+    role: "AI Engineering Intern",
+    company: "CAPACITI · DIGITAL SKILLS ACCELERATOR (NASPERS LABS)",
+    desc: "Completed an intensive AI-focused digital skills accelerator in parallel with the YES programme. Built AI pipelines using Gemini and LangChain, ranked in top tier for technical output. Delivered production-grade ML solutions under the Naspers Labs umbrella.",
+    icon: "brain",
+    logo: null,
+    logoBg: "bg-[#052e16]",
+    logoPadding: "p-3",
+    logoFit: "object-contain",
+    cardBg: "from-[#052e16]/60 via-[#052e16]/30 to-transparent"
+  },
+  {
+    period: "2025 – 2026",
     role: "Cybersecurity Intern",
     company: "Orange Cyberdefense · Sponsorship",
     desc: "Interned as part of a sponsorship program including Orange Cyber security. Gained practical experience in threat monitoring, enterprise security, and security operations.",
@@ -145,17 +157,21 @@ const Experience = () => {
                   
                   {/* Main Content Section */}
                   <div className="relative z-10 lg:flex-1 lg:pr-8">
-                    <div className="flex flex-col gap-2 mb-3 sm:mb-6">
-                      <div className="max-w-full overflow-hidden">
-                        <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-[#00FF9C] transition-[color] duration-300 tracking-tight break-words">{exp.role}</h3>
-                        <div className="text-[9px] sm:text-sm font-bold text-[#00FF9C]/70 tracking-normal sm:tracking-[0.3em] uppercase mt-1 sm:mt-2 font-mono break-words">{exp.company}</div>
+                    <div className="flex flex-col gap-2 mb-3 sm:mb-6 items-start">
+                      <h3 className="inline-block bg-[#022c22] px-3 py-1 text-base sm:text-2xl font-bold text-white group-hover:text-[#00FF9C] transition-[color] duration-300 tracking-tight">
+                        {exp.role}
+                      </h3>
+                      <div className="inline-block bg-[#022c22] px-3 py-1 text-[9px] sm:text-sm font-bold text-[#00FF9C] tracking-normal sm:tracking-[0.2em] uppercase font-mono">
+                        {exp.company}
                       </div>
-                      <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-[#00FF9C]/60 uppercase tracking-wider self-start">
+                      <div className="inline-block bg-[#022c22] px-3 py-1 text-[9px] font-mono font-bold text-[#00FF9C]/80 uppercase tracking-wider rounded-md border border-[#00FF9C]/20">
                         [{exp.period}]
                       </div>
                     </div>
-                    <p className="text-text-dim text-xs sm:text-base leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                      {exp.desc}
+                    <p className="text-[#00FF9C]/80 text-xs sm:text-base leading-relaxed font-mono opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="bg-[#022c22] px-2 py-1 leading-loose box-decoration-clone">
+                        {exp.desc}
+                      </span>
                     </p>
                   </div>
 
