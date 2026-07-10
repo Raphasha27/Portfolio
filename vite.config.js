@@ -1,20 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  plugins: [react()],
-
-  build: {
-    sourcemap: false,
-    minify: 'esbuild',
-    chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        // removed manualChunks to let Vite handle React 19 correctly
-      },
-    },
-  },
-
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico'],
+      manifest: {
+        name: 'Koketso Raphasha Portfolio',
+        short_name: 'Koketso OS',
+        description: 'Software Engineer & Systems Architect',
+        theme_color: '#00FF9C',
+        background_color: '#0a0f16',
+        display: 'standalone',
+      }
+    })
+  ],
   server: {
     headers: {
       'X-Content-Type-Options': 'nosniff',
