@@ -3,43 +3,21 @@ import { Icon } from './Icons';
 
 const platformGroups = [
   {
+    title: "Platforms",
+    icon: "globe",
+    platforms: [
+      { name: "GitHub", url: "https://github.com/Raphasha27", desc: "Open source portfolio" },
+      { name: "LinkedIn", url: "https://linkedin.com/in/koketso-raphasha", desc: "Professional network" },
+      { name: "Kaggle", url: "https://kaggle.com/Raphasha27", desc: "Data science competitions" },
+      { name: "Dev.to", url: "https://dev.to/", desc: "Tech blog & articles" },
+    ]
+  },
+  {
     title: "Freelance",
     icon: "briefcase",
     platforms: [
       { name: "Upwork", url: "https://www.upwork.com/freelancers/~yourprofile", desc: "Full-stack & AI development" },
       { name: "Fiverr", url: "https://www.fiverr.com/yourprofile", desc: "React, FastAPI, automation gigs" },
-      { name: "Toptal", url: "https://www.toptal.com/", desc: "Premium freelance network" },
-      { name: "PeoplePerHour", url: "https://www.peopleperhour.com/", desc: "Hourly & project-based work" },
-    ]
-  },
-  {
-    title: "Products",
-    icon: "package",
-    platforms: [
-      { name: "Gumroad", url: "https://gumroad.com/", desc: "React templates & boilerplates" },
-      { name: "CodeCanyon", url: "https://codecanyon.net/", desc: "Premium code assets" },
-      { name: "Lemon Squeezy", url: "https://www.lemonsqueezy.com/", desc: "Digital product sales" },
-      { name: "ThemeForest", url: "https://themeforest.net/", desc: "Website templates" },
-    ]
-  },
-  {
-    title: "Platforms",
-    icon: "globe",
-    platforms: [
-      { name: "GitHub", url: "https://github.com/Raphasha27", desc: "Open source portfolio" },
-      { name: "LinkedIn", url: "https://linkedin.com/in/koketso-raphasha-517954387", desc: "Professional network" },
-      { name: "Dev.to", url: "https://dev.to/", desc: "Tech blog & articles" },
-      { name: "Product Hunt", url: "https://www.producthunt.com/", desc: "Launch AI products" },
-    ]
-  },
-  {
-    title: "Jobs",
-    icon: "search",
-    platforms: [
-      { name: "LinkedIn Jobs", url: "https://linkedin.com/in/koketso-raphasha-517954387", desc: "Senior dev roles" },
-      { name: "Wellfound", url: "https://wellfound.com/", desc: "Startup positions" },
-      { name: "Remote OK", url: "https://remoteok.com/", desc: "Remote opportunities" },
-      { name: "Stack Overflow", url: "https://stackoverflow.com/jobs", desc: "Developer jobs" },
     ]
   }
 ];
