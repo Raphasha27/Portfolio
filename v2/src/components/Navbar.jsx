@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '../assets/profile_new_transparent.png';
+import profileImg from '../assets/koketso_studio.jpg';
 
 const Navbar = ({ setCmdOpen }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -63,13 +63,10 @@ const Navbar = ({ setCmdOpen }) => {
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
             </svg>
-            <span className="hidden lg:block text-[#00FF9C] text-[13px] sm:text-[15px] font-bold tracking-tight whitespace-nowrap">
-              Koketso_Raphasha_Portfolio_Dev
-            </span>
           </button>
 
           {/* Health badge */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] shadow-[0_0_6px_rgba(0,255,156,0.8)] shrink-0" />
             System Health: Optimal
           </div>

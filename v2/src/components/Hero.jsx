@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 import { Icon } from './Icons';
 import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
-import profileImg from '../assets/profile_new.png';
+import profileImg from '../assets/koketso_studio.jpg';
 
 const CountUp = ({ to, duration = 2 }) => {
   const [count, setCount] = useState(0);
