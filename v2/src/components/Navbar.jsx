@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '../assets/koketso_studio.jpg';
+import profileImg from '../assets/koketso_studio_whitened.png';
 
 const Navbar = ({ setCmdOpen }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
