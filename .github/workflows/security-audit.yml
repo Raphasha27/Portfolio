@@ -27,7 +27,6 @@ jobs:
 
       - name: Run npm audit
         run: npm audit --audit-level=moderate
-        continue-on-error: true
 
       - name: Run npm audit (JSON report)
         run: npm audit --json > npm-audit-report.json || true
@@ -57,4 +56,3 @@ jobs:
 
       - name: Run safety check
         run: safety check -r requirements.txt --full-report
-        continue-on-error: true
