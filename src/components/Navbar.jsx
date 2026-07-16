@@ -110,10 +110,10 @@ const Navbar = ({ setCmdOpen }) => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-[#00FF9C] rounded-lg bg-white/5 border border-white/10"
+            className="md:hidden w-12 h-12 flex items-center justify-center text-[#00FF9C] rounded-xl bg-[#00FF9C]/10 border border-[#00FF9C]/40 shadow-[0_0_20px_rgba(0,255,156,0.3)] hover:bg-[#00FF9C]/20 transition-all active:scale-95"
             aria-label="Toggle menu"
           >
-            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={24} />
+            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={28} />
           </button>
         </div>
       </div>
