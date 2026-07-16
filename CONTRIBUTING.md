@@ -1,22 +1,21 @@
-# Contributing to Koketso Raphasha's Portfolio 🚀
+# Contributing
 
-Thank you for your interest in contributing to this high-performance project! This repository follows the **Kirov Dynamics** engineering standards.
+Thanks for your interest in contributing!
 
-## 🛡️ Engineering Standards
-- **Performance First:** Every interaction must be fluid (60fps).
-- **Glassmorphic Aesthetic:** Maintain the dark-luxury, translucent UI theme.
-- **Sovereign Intelligence:** Ensure the AI Assistant is always contextually accurate.
+## How to contribute
 
-## 🏗️ Development Workflow
-1.  **Environment Sync:** Use Node.js 18+.
-2.  **Feature Isolation:** Work in the `v2/src/components` directory for new features.
-3.  **Vite Precision:** Use `npm run build` to verify production readiness before pushing.
+1. Fork the repo
+2. Create a feature branch: git checkout -b feature/amazing-feature
+3. Commit your changes: git commit -m 'feat: add amazing feature'
+4. Push: git push origin feature/amazing-feature
+5. Open a Pull Request
 
-## 📱 Mobile-First Sync
-When adding new sections, ensure they are responsive. Use the `MobileScan` component to test on physical devices via the QR code nexus.
+## Code style
 
-## 🚀 Deployment
-Deployments are managed via Vercel. Pushes to `main` trigger an automatic build.
+- Follow existing patterns in the codebase
+- Write tests for new functionality
+- Keep PRs focused on a single concern
 
----
-*Stay Innovative. Stay Sovereign.*
+## Issues
+
+Report bugs and suggest features via [GitHub Issues](../../issues).
