@@ -1,19 +1,11 @@
-* text=auto
-
-# Go
-*.go text diff=golang
-
-# Python
-*.py text diff=python
-*.pyc binary
-
-# JavaScript
-*.js text
-*.ts text
-
-# Docker
-Dockerfile text
-
-# Shell
-*.sh text
-*.ps1 text
+* text=auto eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.html text eol=lf
+*.png binary
+*.jpg binary
+*.svg text eol=lf
