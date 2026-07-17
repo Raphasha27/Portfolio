@@ -71,7 +71,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 @layer base {
@@ -79,7 +79,7 @@ html {
     background-color: #000814;
     color: #e0f2f1;
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 }

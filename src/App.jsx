@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#000814] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-hidden">
+    <div className="bg-[#000814] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-clip">
       {/* Subtle ambient gradient background */}
       <div className="fixed inset-0 pointer-events-none z-[0]">
         <div className="absolute inset-0 opacity-30" style={{
