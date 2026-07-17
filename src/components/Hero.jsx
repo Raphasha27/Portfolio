@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
-import profileImg from '/profile.jpg';
+import profileImg from '/profile_grad.png';
 
 const CountUp = ({ to, duration = 2 }) => {
   const [count, setCount] = useState(0);
