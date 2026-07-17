@@ -97,7 +97,7 @@ const projects = [
     role: "AI Systems Dev",
     color: "from-[#00FF9C]/20 to-emerald-400/20",
     link: "https://github.com/Raphasha27/devforge-ai",
-    image: "/proj-devforge.png"
+    image: "https://picsum.photos/seed/DevForge/800/600"
   },
   {
     title: "AI Job Market Intelligence",
@@ -108,7 +108,7 @@ const projects = [
     role: "Software Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
     link: "https://github.com/Raphasha27/ai-job-market-intelligence",
-    image: "/proj-job-market.png"
+    image: "/finance.png"
   },
   {
     title: "CyberShield Modern",
@@ -119,7 +119,7 @@ const projects = [
     role: "SOC Engineer",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
     link: "https://github.com/Raphasha27/cybershield_soc",
-    image: "/proj-cybershield.png"
+    image: "/cyberflow.png"
   },
   {
     title: "SupportHive-C",
@@ -130,7 +130,7 @@ const projects = [
     role: "Systems Architect",
     color: "from-yellow-500/20 to-emerald-500/20",
     link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C",
-    image: "/proj-supporthive.png"
+    image: "https://picsum.photos/seed/SupportHive/800/600"
   },
   {
     title: "Kirov Connect",
@@ -141,7 +141,7 @@ const projects = [
     role: "Civic Tech lead",
     color: "from-orange-500/20 to-[#00FF9C]/20",
     link: "https://github.com/Raphasha27/Fire4s_Project1_Week1",
-    image: "/proj-kirov-connect.png"
+    image: "https://picsum.photos/seed/KirovConnect/800/600"
   },
   {
     title: "RepoPulse",
@@ -152,7 +152,7 @@ const projects = [
     role: "Observability Eng",
     color: "from-emerald-500/20 to-cyan-500/20",
     link: "https://github.com/Raphasha27/Github-Harden",
-    image: "/proj-repopulse.png"
+    image: "https://picsum.photos/seed/RepoPulse/800/600"
   },
   {
     title: "Autonomous Dev Factory",
@@ -163,7 +163,7 @@ const projects = [
     role: "Platform Engineer",
     color: "from-red-500/20 to-[#00FF9C]/20",
     link: "https://github.com/Raphasha27/autonomous-dev-factory-v7",
-    image: "/proj-dev-factory.png"
+    image: "https://picsum.photos/seed/DevFactory/800/600"
   },
   {
     title: "Gauteng Transport Dashboard",
@@ -174,7 +174,7 @@ const projects = [
     role: "Data Engineer",
     color: "from-emerald-500/20 to-cyan-500/20",
     link: "https://github.com/Raphasha27/gauteng-transport-dashboard",
-    image: "/proj-transport.png"
+    image: "/gauteng-map.png"
   },
   {
     title: "EskomSense AI",
@@ -196,7 +196,7 @@ const projects = [
     role: "Platform Architect",
     color: "from-emerald-500/20 to-[#00FF9C]/20",
     link: "https://github.com/Raphasha27/Townships-Market-AI",
-    image: "/proj-townships-market.png"
+    image: "https://picsum.photos/seed/Townships/800/600"
   },
   {
     title: "SA Language AI",
@@ -207,7 +207,7 @@ const projects = [
     role: "NLP Engineer",
     color: "from-blue-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/SA-Language-AI",
-    image: "/proj-sa-language.png"
+    image: "https://picsum.photos/seed/LanguageAI/800/600"
   },
   {
     title: "WaterWatch SA",
@@ -218,7 +218,7 @@ const projects = [
     role: "IoT Systems Eng",
     color: "from-cyan-500/20 to-blue-500/20",
     link: "https://github.com/Raphasha27/WaterWatch-SA",
-    image: "/proj-waterwatch.png"
+    image: "https://picsum.photos/seed/WaterWatch/800/600"
   },
   {
     title: "Mzansi AgriAI",
@@ -240,7 +240,7 @@ const projects = [
     role: "EdTech Architect",
     color: "from-purple-500/20 to-pink-500/20",
     link: "https://github.com/Raphasha27/YouthCode-ZA",
-    image: "/proj-youthcode.png"
+    image: "https://picsum.photos/seed/YouthCode/800/600"
   },
   {
     title: "AI Business Engine",
@@ -262,7 +262,7 @@ const projects = [
     role: "Data Scientist",
     color: "from-[#00FF9C]/20 to-blue-500/20",
     link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml",
-    image: "/proj-titanic-ml.png"
+    image: "https://picsum.photos/seed/Titanic/800/600"
   },
   {
     title: "ETL Pipeline Suite",
@@ -273,7 +273,7 @@ const projects = [
     role: "Data Engineer",
     color: "from-emerald-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/data-engineering-kaggle",
-    image: "/proj-etl-pipeline.png"
+    image: "https://picsum.photos/seed/ETL/800/600"
   }
 ];
 
