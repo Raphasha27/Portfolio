@@ -36,10 +36,10 @@ const Navbar = ({ setCmdOpen }) => {
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto flex justify-between items-center">
         {/* ── Logo + Health Badge ── */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => scrollTo('home')}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0"
             aria-label="Scroll to top"
           >
             {/* Code bracket icon */}
@@ -47,25 +47,29 @@ const Navbar = ({ setCmdOpen }) => {
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
             </svg>
-            <span className="text-[#00FF9C] text-[13px] sm:text-[15px] font-bold tracking-tight whitespace-nowrap">
-              Koketso_Raphasha_Portfolio_Dev
+            {/* Short name on lg, full name on xl+ */}
+            <span className="text-[#00FF9C] font-bold tracking-tight whitespace-nowrap block xl:hidden text-[13px]">
+              KR.dev
+            </span>
+            <span className="text-[#00FF9C] font-bold tracking-tight whitespace-nowrap hidden xl:block text-[13px]">
+              Koketso_Raphasha
             </span>
           </button>
 
-          {/* Health badge */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
+          {/* Health badge — only on 2xl+ */}
+          <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] shadow-[0_0_6px_rgba(0,255,156,0.8)] shrink-0" />
             System Health: Optimal
           </div>
         </div>
 
         {/* ── Desktop nav links ── */}
-        <div className="hidden lg:flex gap-7 text-[13px] font-semibold text-white/70 capitalize">
+        <div className="hidden lg:flex gap-4 xl:gap-6 text-[12px] xl:text-[13px] font-semibold text-white/70 capitalize">
           {navItems.map(item => (
             <button
               key={item}
               onClick={() => scrollTo(item)}
-              className="hover:text-[#00FF9C] transition-all capitalize"
+              className="hover:text-[#00FF9C] transition-all capitalize whitespace-nowrap"
             >
               {item}
             </button>
@@ -111,47 +115,118 @@ const Navbar = ({ setCmdOpen }) => {
         </div>
       </div>
 
+      {/* Backdrop */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: '-100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[70] bg-[#000814]/95 backdrop-blur-xl lg:hidden flex flex-col p-6"
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="fixed inset-0 z-[65] bg-black/60 backdrop-blur-sm lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar panel */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.aside
+            key="sidebar"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 28, stiffness: 260 }}
+            className="fixed top-0 right-0 bottom-0 z-[70] w-[300px] max-w-[90vw] bg-[#020d1a] border-l border-[#00FF9C]/20 shadow-[-20px_0_60px_rgba(0,0,0,0.6)] lg:hidden flex flex-col overflow-y-auto"
           >
-            <div className="flex justify-between items-center mb-12">
-              <span className="text-[#00FF9C] font-bold text-sm">Koketso Raphasha</span>
+            {/* ── Sidebar Header ── */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/40 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="2" className="w-4 h-4">
+                    <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-white text-[13px] font-bold leading-none">Koketso Raphasha</div>
+                  <div className="text-[#00FF9C] text-[10px] font-mono mt-0.5">Full-Stack · AI Engineer</div>
+                </div>
+              </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-10 h-10 flex items-center justify-center text-[#00FF9C] rounded-lg bg-white/5 border border-white/10"
+                className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white rounded-lg bg-white/5 border border-white/10 transition-colors"
+                aria-label="Close menu"
               >
-                <Icon name="close" size={24} />
+                <Icon name="close" size={18} />
               </button>
             </div>
 
-            <div className="flex flex-col items-center gap-6 text-lg font-medium">
-              {navItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item)}
-                  className="text-white/60 hover:text-[#00FF9C] transition-all py-2 w-full text-center border-b border-white/5 capitalize"
-                >
-                  {item}
-                </button>
-              ))}
+            {/* ── Status Badge ── */}
+            <div className="mx-6 mt-4 px-4 py-2.5 rounded-xl bg-[#00FF9C]/5 border border-[#00FF9C]/15 flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#00FF9C] shadow-[0_0_8px_rgba(0,255,156,0.8)] shrink-0 animate-pulse" />
+              <span className="text-[11px] font-semibold text-[#00FF9C] uppercase tracking-wider">Available for hire</span>
             </div>
 
-            <div className="flex flex-col gap-4 mt-auto pb-10">
+            {/* ── Navigation ── */}
+            <nav className="flex flex-col px-4 mt-6 gap-1">
+              <div className="text-[9px] font-bold text-white/25 uppercase tracking-[0.25em] px-3 mb-2">Navigation</div>
+              {navItems.map((item, i) => {
+                const icons = { home: 'home', about: 'user', experience: 'briefcase', skills: 'cpu', projects: 'code', contact: 'mail' };
+                return (
+                  <button
+                    key={item}
+                    onClick={() => scrollTo(item)}
+                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl text-white/70 hover:text-white hover:bg-[#00FF9C]/8 hover:border-[#00FF9C]/20 border border-transparent transition-all text-left group"
+                  >
+                    <span className="w-8 h-8 rounded-lg bg-white/5 group-hover:bg-[#00FF9C]/10 flex items-center justify-center text-white/40 group-hover:text-[#00FF9C] transition-colors shrink-0">
+                      <Icon name={icons[item] || 'code'} size={16} />
+                    </span>
+                    <span className="text-[14px] font-semibold capitalize">{item}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-40 transition-opacity">
+                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </button>
+                );
+              })}
+            </nav>
+
+            {/* ── Quick Links ── */}
+            <div className="px-4 mt-6">
+              <div className="text-[9px] font-bold text-white/25 uppercase tracking-[0.25em] px-3 mb-3">Quick Links</div>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { label: 'GitHub', icon: 'github', href: 'https://github.com/Raphasha27' },
+                  { label: 'LinkedIn', icon: 'linkedin', href: 'https://za.linkedin.com/in/koketso-raphasha-517954387' },
+                  { label: 'WhatsApp', icon: 'whatsapp', href: 'https://wa.me/27781172470' },
+                ].map(s => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-1.5 py-3 rounded-xl bg-white/4 border border-white/8 hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-all"
+                  >
+                    <Icon name={s.icon} size={20} />
+                    <span className="text-[10px] text-white/50 font-medium">{s.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Bottom Actions ── */}
+            <div className="px-4 mt-auto pb-8 pt-6 flex flex-col gap-3 border-t border-white/8">
               <button
                 onClick={() => { setIsMobileMenuOpen(false); if (setCmdOpen) setCmdOpen(true); }}
-                className="w-full py-4 bg-white/5 border border-white/10 flex items-center justify-center gap-3 text-white/60 font-medium rounded-lg"
+                className="w-full py-3 bg-white/5 border border-white/10 flex items-center justify-center gap-2.5 text-white/60 font-medium rounded-xl hover:bg-white/8 hover:text-white transition-all text-[13px]"
               >
-                <Icon name="search" size={18} />
-                Search
+                <Icon name="search" size={16} />
+                Search  <kbd className="ml-auto bg-white/10 px-2 py-0.5 rounded text-[10px]">Ctrl+K</kbd>
+              </button>
+              <button
+                onClick={() => scrollTo('contact')}
+                className="w-full py-3.5 bg-[#00FF9C] text-[#000814] font-bold rounded-xl hover:bg-[#00e88e] transition-all text-[14px] shadow-[0_0_20px_rgba(0,255,156,0.25)]"
+              >
+                💼 Hire Me
               </button>
             </div>
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
     </nav>

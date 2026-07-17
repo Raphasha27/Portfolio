@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
 const roles = [
-  { num: "01", icon: "layout", title: "AI Systems Architect", project: "Sovereign-AI-Nexus" },
-  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2" },
-  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ" },
-  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect" },
-  { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel" },
-  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock" },
-  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield" },
-  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC" },
-  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT" }
+  { num: "01", icon: "layout", title: "AI Systems Architect", project: "Sovereign-AI-Nexus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" },
+  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2", image: "https://images.unsplash.com/photo-1620712943543-bcc4638ef80b?auto=format&fit=crop&w=600&q=80" },
+  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" },
+  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" },
+  { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" },
+  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" },
+  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" },
+  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1614064641913-6b714041d889?auto=format&fit=crop&w=600&q=80" },
+  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80" }
 ];
 
 const Roles = () => {
@@ -51,33 +51,34 @@ const Roles = () => {
             transition={{ delay: i * 0.1 }}
             className="group relative"
           >
-            <div className="glass p-6 border-white/5 rounded-2xl flex items-center gap-6 hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 h-full overflow-hidden bg-gradient-to-br from-white/[0.03] to-transparent">
+            <div className="glass p-0 border border-white/5 rounded-[24px] flex flex-col hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 h-full overflow-hidden bg-[#0a161d]">
               
-              {/* Card Background Glow */}
-              <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-blue-500/5 blur-[40px] group-hover:bg-blue-500/10 transition-all pointer-events-none" />
-
-              {/* Index Number */}
-              <div className="absolute top-3 left-4 text-[9px] font-mono text-blue-500/40 group-hover:text-blue-400 transition-colors">
-                {role.num}
+              <div className="relative w-full h-32 sm:h-40 overflow-hidden shrink-0 bg-[#05080c]">
+                 <img
+                   src={role.image}
+                   alt={role.title}
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
+                 
+                 <div className="absolute top-3 right-3 text-[10px] font-mono text-blue-400 font-bold bg-[#000814]/80 px-2 py-1 rounded border border-blue-500/30 backdrop-blur-sm">
+                    {role.num}
+                 </div>
               </div>
 
-              {/* Icon Section */}
-              <div className="shrink-0 w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] transition-all duration-500">
-                <Icon name={role.icon} size={32} />
+              <div className="p-6 pt-4 flex items-start gap-4 flex-1 relative z-10">
+                 <div className="shrink-0 w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/20 group-hover:drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] transition-all duration-500">
+                   <Icon name={role.icon} size={20} />
+                 </div>
+                 <div className="space-y-1 mt-0.5">
+                   <div className="text-[14px] font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight uppercase">
+                     {role.title}
+                   </div>
+                   <div className="text-[10px] font-mono text-blue-400/60 uppercase tracking-widest group-hover:text-white/40 transition-colors">
+                     {role.project}
+                   </div>
+                 </div>
               </div>
-
-              {/* Text Section */}
-              <div className="space-y-1">
-                <div className="text-[15px] font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight uppercase">
-                  {role.title}
-                </div>
-                <div className="text-[11px] font-mono text-blue-400/60 uppercase tracking-widest group-hover:text-white/40 transition-colors">
-                  {role.project}
-                </div>
-              </div>
-
-              {/* Animated Border Corner */}
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-blue-400/0 group-hover:border-blue-400/40 rounded-tr-2xl transition-all duration-500" />
             </div>
           </motion.div>
         ))}

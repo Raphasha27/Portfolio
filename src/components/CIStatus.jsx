@@ -13,7 +13,8 @@ const passingProjects = [
     tech: ["python", "pytorch", "docker"],
     coverage: "94%",
     lastBuild: "2h ago",
-    icon: "zap"
+    icon: "zap",
+    image: "/proj-eskom-full.png"
   },
   { 
     name: "Townships Market AI", 
@@ -24,7 +25,8 @@ const passingProjects = [
     tech: ["react", "fastapi", "docker"],
     coverage: "91%",
     lastBuild: "5h ago",
-    icon: "building"
+    icon: "building",
+    image: "/proj-townships.png"
   },
   { 
     name: "YouthCode ZA", 
@@ -35,7 +37,8 @@ const passingProjects = [
     tech: ["react", "python", "docker"],
     coverage: "89%",
     lastBuild: "1d ago",
-    icon: "graduationCap"
+    icon: "graduationCap",
+    image: "/proj-youthcode.png"
   },
   { 
     name: "SA Language AI", 
@@ -46,7 +49,8 @@ const passingProjects = [
     tech: ["python", "pytorch", "docker"],
     coverage: "92%",
     lastBuild: "3h ago",
-    icon: "globe"
+    icon: "globe",
+    image: "/proj-salanguage.png"
   },
   { 
     name: "WaterWatch SA", 
@@ -57,7 +61,8 @@ const passingProjects = [
     tech: ["python", "react", "docker"],
     coverage: "88%",
     lastBuild: "6h ago",
-    icon: "signal"
+    icon: "signal",
+    image: "/proj-waterwatch.png"
   },
   { 
     name: "Mzansi AgriAI", 
@@ -68,7 +73,8 @@ const passingProjects = [
     tech: ["python", "streamlit", "docker"],
     coverage: "90%",
     lastBuild: "4h ago",
-    icon: "globe"
+    icon: "globe",
+    image: "/proj-agri-ai.png"
   },
   { 
     name: "AI Business Engine", 
@@ -79,7 +85,8 @@ const passingProjects = [
     tech: ["python", "fastapi", "react"],
     coverage: "87%",
     lastBuild: "8h ago",
-    icon: "zap"
+    icon: "zap",
+    image: "/proj-ai-business.png"
   },
   { 
     name: "Network Port Scanner", 
@@ -90,7 +97,8 @@ const passingProjects = [
     tech: ["python", "terminal"],
     coverage: "95%",
     lastBuild: "1h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Password Analyzer", 
@@ -101,7 +109,8 @@ const passingProjects = [
     tech: ["python", "terminal"],
     coverage: "96%",
     lastBuild: "2h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Password Hasher", 
@@ -112,7 +121,8 @@ const passingProjects = [
     tech: ["python", "terminal"],
     coverage: "93%",
     lastBuild: "3h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1614064641913-6b714041d889?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Suspicious URL Checker", 
@@ -123,7 +133,8 @@ const passingProjects = [
     tech: ["python", "terminal"],
     coverage: "91%",
     lastBuild: "5h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Phishing Awareness Game", 
@@ -134,7 +145,8 @@ const passingProjects = [
     tech: ["react", "javascript"],
     coverage: "88%",
     lastBuild: "7h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "DDoS Detection Simulator", 
@@ -145,7 +157,8 @@ const passingProjects = [
     tech: ["python", "docker"],
     coverage: "90%",
     lastBuild: "4h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Insider Threat Detector", 
@@ -156,7 +169,8 @@ const passingProjects = [
     tech: ["python", "docker"],
     coverage: "92%",
     lastBuild: "6h ago",
-    icon: "shield"
+    icon: "shield",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80"
   },
 ];
 
@@ -259,8 +273,16 @@ const CIStatus = () => {
               transition={{ delay: i * 0.02 }}
               className="glass p-5 rounded-xl border border-white/5 hover:border-green-500/30 hover:shadow-[0_0_30px_rgba(74,222,128,0.1)] transition-all group relative overflow-hidden"
             >
+              {/* Image Background */}
+              {project.image && (
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                  <img src={project.image} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
+                </div>
+              )}
+              
               {/* Hover glow effect */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <div className="relative z-10">
                 {/* Header */}

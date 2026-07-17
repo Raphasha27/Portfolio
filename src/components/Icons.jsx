@@ -360,12 +360,30 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     apple:         "https://cdn.simpleicons.org/apple/white",
     r:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg",
     jupyter:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
-    wireshark:     "https://cdn.simpleicons.org/wireshark/1679A7",
+    streamlit:     null,  // rendered as inline SVG crown below
     kalilinux:     "https://cdn.simpleicons.org/kalilinux/white",
     rust:          "https://cdn.simpleicons.org/rust/white",
     androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
     devto:         "https://cdn.simpleicons.org/devdotto/white",
   }), []);
+
+  // Special case: Streamlit crown logo (exact brand mark)
+  if (finalName === 'streamlit') {
+    return (
+      <div style={{ width: size, height: size }} className={`flex items-center justify-center ${className}`}>
+        <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Left petal - coral red */}
+          <polygon points="50,5 10,75 50,55" fill="#FF4B4B" />
+          {/* Middle petal - slightly darker */}
+          <polygon points="50,5 50,55 65,75" fill="#C0392B" />
+          {/* Right petal - dark maroon */}
+          <polygon points="65,75 90,75 50,55" fill="#7B241C" />
+          {/* Left outer petal */}
+          <polygon points="10,75 35,75 50,55" fill="#E74C3C" />
+        </svg>
+      </div>
+    );
+  }
 
   // Priority 1: Brand Logos (Original Branding Colors)
   const logoUrl = techLogos[finalName];
