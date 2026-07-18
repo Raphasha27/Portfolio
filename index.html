@@ -74,10 +74,25 @@
     }
     </script>
     <meta name="keywords" content="Raphasha27, Koketso Raphasha, Software Engineer, Systems Architect, Portfolio, South Africa, Kirov Dynamics, Full Stack Developer, Cybersecurity, React, Python" />
-  </head>
+  <script>
+window.onerror = function(msg, url, line, col, error) {
+    fetch('http://localhost:9999/', {
+        method: 'POST',
+        body: msg + ' ' + (error ? error.stack : '')
+    });
+};
+window.addEventListener('unhandledrejection', function(e) {
+    fetch('http://localhost:9999/', {
+        method: 'POST',
+        body: e.reason ? e.reason.stack : 'Unhandled Rejection'
+    });
+});
+</script>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
 

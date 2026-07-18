@@ -40,11 +40,12 @@ function App() {
       infinite: false,
     });
 
+    let reqId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      reqId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    reqId = requestAnimationFrame(raf);
 
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
@@ -52,6 +53,7 @@ function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     return () => {
+      cancelAnimationFrame(reqId);
       lenis.destroy();
     };
   }, []);
