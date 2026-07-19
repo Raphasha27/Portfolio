@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig({
-  base: '/Portfolio/',
+  base: process.env.VERCEL ? '/' : (process.env.VITE_BASE_URL || '/Portfolio/'),
   plugins: [
     react(),
     viteCompression({
