@@ -27,38 +27,34 @@ function App() {
   const [cmdOpen, setCmdOpen] = useState(false);
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+    const lenis = new Lenis({
+      duration: 0.4,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: true,
+      touchMultiplier: 1,
+      infinite: false,
+    });
 
-    if (!isMobile) {
-      const lenis = new Lenis({
-        duration: 0.6,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,
-        smoothTouch: false,
-        touchMultiplier: 2,
-        infinite: false,
-      });
-
-      let rafId;
-      function raf(time) {
-        lenis.raf(time);
-        rafId = requestAnimationFrame(raf);
-      }
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
       rafId = requestAnimationFrame(raf);
-
-      return () => {
-        cancelAnimationFrame(rafId);
-        lenis.destroy();
-      };
     }
+    rafId = requestAnimationFrame(raf);
 
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   return (
