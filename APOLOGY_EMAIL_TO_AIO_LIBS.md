@@ -40,7 +40,7 @@ Thank you for your time and understanding.
 **Best regards,**  
 Koketso Raphasha  
 GitHub: @Raphasha27  
-Email: raphashakoketso99@gmail.com  
+Email: raphashakoketso69@gmail.com  
 Portfolio: https://koketso-raphasha.vercel.app
 
 ---

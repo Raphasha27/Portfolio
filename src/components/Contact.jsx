@@ -108,7 +108,7 @@ const Contact = () => {
                   { name: "GitHub",    handle: "Raphasha27",           icon: "github",    link: "https://github.com/Raphasha27" },
                   { name: "WhatsApp",  handle: "0781172470",           icon: "whatsapp",  link: "https://wa.me/27781172470" },
                   { name: "LinkedIn",  handle: "koketso-raphasha",     icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
-                  { name: "Email",     handle: "raphashakoketso99...", icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" },
+                  { name: "Email",     handle: "raphashakoketso99...", icon: "mail",      link: "mailto:raphashakoketso69@gmail.com" },
                   { name: "Twitter",   handle: "raphasha27",           icon: "twitter",   link: "https://twitter.com/raphasha27" },
                   { name: "Kaggle",    handle: "Raphasha27",           icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
                   { name: "Streamlit", handle: "raphasha27",           icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
@@ -200,7 +200,7 @@ const Contact = () => {
 
                     {status === 'error' && (
                       <div className="text-red-400 text-xs text-center bg-red-400/10 border border-red-400/20 rounded-xl py-3">
-                        Something went wrong. Try emailing directly: raphashakoketso99@gmail.com
+                        Something went wrong. Try emailing directly: raphashakoketso69@gmail.com
                       </div>
                     )}
 

@@ -30,7 +30,7 @@ const socialLinks = [
   { name: 'Kaggle',    icon: 'kaggle',     link: 'https://kaggle.com/Raphasha27',                     color: 'hover:text-blue-300' },
   { name: 'Streamlit', icon: 'streamlit',  link: 'https://share.streamlit.io/user/raphasha27',        color: 'hover:text-red-400' },
   { name: 'WhatsApp',  icon: 'whatsapp',   link: 'https://wa.me/27781172470',                         color: 'hover:text-green-400' },
-  { name: 'Email',     icon: 'mail',       link: 'mailto:raphashakoketso99@gmail.com',                color: 'hover:text-red-400' },
+  { name: 'Email',     icon: 'mail',       link: 'mailto:raphashakoketso69@gmail.com',                color: 'hover:text-red-400' },
 ];
 
 const STATS = [

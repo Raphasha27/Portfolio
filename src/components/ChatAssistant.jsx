@@ -12,7 +12,7 @@ KEY FACTS:
 - Also trained at WeThinkCode_ (Johannesburg)
 - Internship: AI Intern at CAPACITI Digital Skills Accelerator (2025-2026)
 - Member of YES4Youth programme (2025-2026)
-- Email: raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470
+- Email: raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470
 - GitHub: github.com/Raphasha27 | LinkedIn: linkedin.com/in/koketso-raphasha
 - Portfolio: https://koketso-raphasha.vercel.app/
 
@@ -40,12 +40,12 @@ PERSONALITY: Be confident, technical, witty, and inspiring. Speak in first perso
 const KB = {
   'tech stack': "My core stack → C / Python / TypeScript / Rust for systems, React + Vite for frontend, FastAPI + Node.js for backend. AI layer → Gemini + LangChain + LangGraph. Infra → Docker + Kubernetes + Vercel + Railway.",
   'project': "I've shipped 9 production-grade projects → Sovereign-AI-Nexus (agentic infra), FlowSentinel (2.4M req/s traffic engine), CyberShield (SOC score 93), NoShowIQ (healthcare ML), and more. Check the Projects section!",
-  'hire': "Absolutely open to opportunities! 📩 raphashakoketso99@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
+  'hire': "Absolutely open to opportunities! 📩 raphashakoketso69@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
   'about': "I'm a South African software engineer building the foundational infrastructure for the African digital future. Graduated from Richfield with distinction, trained at WeThinkCode_, interned at CAPACITI.",
   'experience': "My background spans → Co-Founder & CTO at Kirov Dynamics, AI Intern at CAPACITI, YES4Youth Participant, Open Source contributor on GitHub, and trained at WeThinkCode_ Johannesburg.",
   'latest': "The flagship is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Built in Python + LangGraph + Docker. Check it out in the Projects section!",
   'recommend': "I'd recommend exploring Sovereign-AI-Nexus for autonomous AI infra, and FlowSentinel for ultra-high-throughput systems. Both represent the pinnacle of my engineering work.",
-  'contact': "Reach me → raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
+  'contact': "Reach me → raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
   'hello': "Hey! I'm Koketso's Digital Twin AI. I can tell you about his tech stack, projects, experience, or how to hire him. What would you like to know?",
   'hi': "Hi there! I'm Koketso's AI Twin. Ask me about his engineering work, projects, or availability — I've got all the answers!",
   'portfolio': "You're already on the live portfolio → https://koketso-raphasha.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",

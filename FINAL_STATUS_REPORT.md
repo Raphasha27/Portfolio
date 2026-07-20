@@ -132,7 +132,7 @@
 - **aio-libs:** Reply to their block email with prepared template
 - **GitHub Support:** https://support.github.com/contact
 - **Portfolio URL:** https://koketso-raphasha.vercel.app
-- **Email:** raphashakoketso99@gmail.com
+- **Email:** raphashakoketso69@gmail.com
 
 ---
 
