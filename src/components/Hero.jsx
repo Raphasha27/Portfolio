@@ -85,15 +85,15 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-center lg:pt-24 lg:pb-24 lg:pb-32">
-      <div className="flex flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-12 w-full">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
+      <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
 
-        {/* Profile Column */}
+        {/* Profile Column — first in HTML so it shows first on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center shrink-0 order-2 w-auto"
+          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:w-auto lg:order-2"
         >
           <div className="relative w-[220px] h-[220px] xs:w-[250px] xs:h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px] lg:-translate-x-12">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
@@ -165,12 +165,12 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        {/* Content Column */}
+        {/* Content Column — second in HTML, but first visually on desktop via lg:order-1 */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 flex-1 pr-2 sm:pr-4 lg:pr-8 order-1 min-w-0"
+          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 lg:pr-8 lg:order-1"
         >
           <div>
             <div className="flex items-center gap-2 flex-wrap w-full">
