@@ -9,7 +9,7 @@ const roles = [
   { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" },
   { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" },
   { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" },
-  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80" },
+  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" },
   { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" }
 ];
 
