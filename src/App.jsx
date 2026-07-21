@@ -34,7 +34,7 @@ function App() {
       gestureDirection: 'vertical',
       smooth: true,
       mouseMultiplier: 1,
-      smoothTouch: true,
+      smoothTouch: false,
       touchMultiplier: 2,
       wheelMultiplier: 1,
       infinite: false,
