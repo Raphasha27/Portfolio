@@ -16,8 +16,6 @@ html {
 body {
   /* Prevent text selection highlight glitches on mobile */
   -webkit-tap-highlight-color: transparent;
-  /* Fix Safari backdrop-filter bugs by enforcing hardware acceleration */
-  transform: translateZ(0);
 }
 
 /* Fallback for dynamic viewport height (dvh) on older iOS */

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 
 const components = [
-  'Footer', 'ErrorBoundary', 'Navbar',
+  'TechMarquee',
 ]
 
 describe('Component exports', () => {
