@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
@@ -313,6 +314,15 @@ const TiltCard = ({ children, className, id }) => {
 };
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const bannerTechs = PRIORITY_TECHS.map(techKey => {
     const techInfo = getTechInfo(techKey);
     return { name: techInfo.name, id: techInfo.icon };
@@ -460,6 +470,14 @@ const Projects = () => {
               blockSize={12}
               blockMargin={4}
               fontSize={12}
+              transformData={(data) => {
+                if (isMobile) {
+                  const currentYear = new Date().getFullYear();
+                  const startOfJan = `${currentYear}-01-01`;
+                  return data.filter(day => day.date >= startOfJan);
+                }
+                return data;
+              }}
             />
           </div>
         </div>

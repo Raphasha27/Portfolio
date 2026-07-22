@@ -101,7 +101,7 @@ const Hero = () => (
                 src={profileImg}
                 alt="Koketso Raphasha - Software Engineer & Co-Founder"
                 className="w-full h-full object-cover scale-110"
-                style={{ objectPosition: 'center 25%' }}
+                style={{ objectPosition: 'center 10%' }}
                 loading="eager"
                 decoding="async"
               />
