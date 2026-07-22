@@ -14,7 +14,7 @@ KEY FACTS:
 - Member of YES4Youth programme (2025-2026)
 - Email: raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470
 - GitHub: github.com/Raphasha27 | LinkedIn: linkedin.com/in/koketso-raphasha
-- Portfolio: https://koketso-raphasha.vercel.app/
+- Portfolio: https://portfolio-iota-eight-90.vercel.app/
 
 TECH STACK:
 - Languages: C, C++, Python, JavaScript, TypeScript, Rust, Go, Swift, Java, C#
@@ -48,7 +48,7 @@ const KB = {
   'contact': "Reach me → raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
   'hello': "Hey! I'm Koketso's Digital Twin AI. I can tell you about his tech stack, projects, experience, or how to hire him. What would you like to know?",
   'hi': "Hi there! I'm Koketso's AI Twin. Ask me about his engineering work, projects, or availability — I've got all the answers!",
-  'portfolio': "You're already on the live portfolio → https://koketso-raphasha.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
+  'portfolio': "You're already on the live portfolio → https://portfolio-iota-eight-90.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
   'kirov': "Kirov Dynamics Technology is the company I co-founded. We build autonomous AI systems, multi-tenant SaaS platforms, and CI/CD infrastructure. The mission: ship infrastructure that thinks for itself.",
   'education': "BSc Computer Science (Distinction) from Richfield Graduate Institute, 2022-2025. Also trained at WeThinkCode_ Johannesburg (peer-driven problem-based engineering). 10+ certifications including AWS, Azure AZ-900, Meta Frontend Developer.",
   'availab': "I'm currently open to full-time roles, freelance contracts, and collaboration on interesting projects. Remote → yes. Relocation → open to discussion. DM me!",

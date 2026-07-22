@@ -172,7 +172,7 @@ const COMMANDS = {
       { t: 'dim',   text: '' },
       { t: 'sys',   text: '  GitHub    →  github.com/Raphasha27' },
       { t: 'sys',   text: '  LinkedIn  →  linkedin.com/in/koketso-raphasha' },
-      { t: 'sys',   text: '  Portfolio →  koketso-raphasha.vercel.app' },
+      { t: 'sys',   text: '  Portfolio →  portfolio-iota-eight-90.vercel.app' },
       { t: 'dim',   text: '' },
       { t: 'hint',  text: '  DMs open for collabs, opportunities & freelance work.' },
     ]

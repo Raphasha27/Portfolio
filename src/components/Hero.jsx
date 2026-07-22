@@ -201,7 +201,7 @@ const Hero = () => (
             <div className="sm:hidden flex flex-col items-center gap-2 py-3">
               <div className="relative p-2 rounded-xl border border-white/10 bg-white/5">
                 <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}`}
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent('https://portfolio-iota-eight-90.vercel.app')}`}
                   alt="Portfolio QR"
                   className="w-20 h-20"
                   loading="lazy"

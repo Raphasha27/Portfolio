@@ -84,7 +84,7 @@ const projects = [
     color: "from-purple-500/20 to-pink-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
-    liveUrl: "https://koketso-raphasha.vercel.app",
+    liveUrl: "https://portfolio-iota-eight-90.vercel.app",
     status: "live",
     image: "/proj-kirov.png"
   },
