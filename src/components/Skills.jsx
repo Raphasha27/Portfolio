@@ -85,9 +85,51 @@ const Skills = () => {
   const [activeGroup, setActiveGroup] = useState(null);
 
   return (
-    <div id="skills" className="relative py-6 sm:py-10">
+    <div id="skills" className="relative py-6 sm:py-10 overflow-hidden">
+      {/* ── Dev Background Layer ── */}
+      {/* Grid overlay */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0,255,156,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,156,0.04) 1px, transparent 1px)',
+          backgroundSize: '40px 40px'
+        }} />
+      {/* Radial glows */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-[#00FF9C]/5 blur-[80px] pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-blue-500/5 blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-purple-500/3 blur-[100px] pointer-events-none" />
+      {/* Floating code symbols */}
+      {[
+        { text: '</>',    top: '8%',  left: '2%',  color: '#00FF9C', delay: '0s',   size: '11px' },
+        { text: '{}',     top: '18%', left: '92%', color: '#3b82f6', delay: '1.2s', size: '13px' },
+        { text: '()',     top: '72%', left: '4%',  color: '#a855f7', delay: '0.6s', size: '10px' },
+        { text: '=>',     top: '85%', left: '88%', color: '#06b6d4', delay: '1.8s', size: '12px' },
+        { text: '&&',     top: '40%', left: '96%', color: '#00FF9C', delay: '2.4s', size: '10px' },
+        { text: '/* */',  top: '55%', left: '1%',  color: '#f59e0b', delay: '0.9s', size: '9px'  },
+        { text: '[ ]',    top: '30%', left: '94%', color: '#ef4444', delay: '3s',   size: '10px' },
+      ].map((sym, i) => (
+        <div key={i} className="absolute font-mono font-bold pointer-events-none select-none"
+          style={{
+            top: sym.top, left: sym.left, color: sym.color,
+            fontSize: sym.size, opacity: 0.15,
+            animation: `pulse 3s ease-in-out ${sym.delay} infinite`
+          }}>
+          {sym.text}
+        </div>
+      ))}
+      {/* Horizontal scanline */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.015]"
+        style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,156,0.5) 2px, rgba(0,255,156,0.5) 3px)',
+          backgroundSize: '100% 6px'
+        }} />
+      {/* Corner bracket decorations */}
+      <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#00FF9C]/20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-blue-500/20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-purple-500/20 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-cyan-500/20 pointer-events-none" />
+
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 border-b border-white/5 pb-4 sm:pb-6 gap-3">
+      <div className="relative z-10 flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 border-b border-white/5 pb-4 sm:pb-6 gap-3">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter uppercase">
             Tech <span className="text-[#00FF9C]">Arsenals</span>
@@ -105,7 +147,7 @@ const Skills = () => {
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {skillGroups.map((group, i) => (
           <motion.div
             key={i}
@@ -172,7 +214,7 @@ const Skills = () => {
       </div>
 
       {/* Values Footer */}
-      <div className="mt-8 sm:mt-12 glass rounded-2xl border border-white/5 relative overflow-hidden">
+      <div className="relative z-10 mt-8 sm:mt-12 glass rounded-2xl border border-white/5 relative overflow-hidden">
         <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
         <div className="flex items-center gap-6 sm:gap-8 lg:gap-16 p-4 sm:p-6 overflow-x-auto scrollbar-hide justify-start sm:justify-center">
           {[
