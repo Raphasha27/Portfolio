@@ -242,28 +242,12 @@ const CIStatus = () => {
           </div>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all ${
-                selectedCategory === cat
-                  ? 'bg-green-500/20 border-green-500/40 text-green-400 shadow-[0_0_15px_rgba(74,222,128,0.2)]'
-                  : 'bg-white/5 border-white/10 text-white/50 hover:border-white/20 hover:text-white/70'
-              } border`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10 mt-6">
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, i) => (
+          {passingProjects.map((project, i) => (
             <motion.div
               key={project.repo}
               layout
@@ -275,9 +259,9 @@ const CIStatus = () => {
             >
               {/* Image Background */}
               {project.image && (
-                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                  <img loading="lazy" decoding="async" src={project.image} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
+                <div className="absolute inset-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none">
+                  <img loading="lazy" decoding="async" src={project.image} alt="" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/30 to-transparent" />
                 </div>
               )}
               
