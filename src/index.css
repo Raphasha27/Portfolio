@@ -219,7 +219,11 @@ section {
 
 /* Prevent horizontal overflow on mobile — targeted, not global */
 @media (max-width: 768px) {
-  html, body {
+  html {
+    overflow-x: visible !important;
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling */
+  }
+  body {
     overflow-x: hidden !important;
     position: relative;
     width: 100% !important;
