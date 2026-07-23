@@ -111,6 +111,7 @@ const Contact = () => {
                   { name: "Email",     handle: "raphashakoketso69@gmail.com", icon: "mail",      link: "mailto:raphashakoketso69@gmail.com" },
                   { name: "Twitter",   handle: "raphasha27",           icon: "twitter",   link: "https://twitter.com/raphasha27" },
                   { name: "Kaggle",    handle: "Raphasha27",           icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
+                  { name: "Streamlit", handle: "raphasha27",           icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
                   { name: "Facebook",  handle: "kirovdynamics...",     icon: "facebook",  link: "https://www.facebook.com/kirovdynamicstechnology" },
                 ].map((social, i) => (
                   <a
