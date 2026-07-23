@@ -222,6 +222,23 @@ const Contact = () => {
                         <>Send Message <Icon name="arrowRight" size={18} className="group-hover:translate-x-2 transition-transform" /></>
                       )}
                     </button>
+
+                    {/* QR Code — below Send Message */}
+                    <div className="flex items-center gap-4 pt-2">
+                      <div className="relative p-2 rounded-xl border border-white/10 bg-white/5 hover:border-[#00FF9C]/30 transition-colors shrink-0">
+                        <img
+                          src={`https://api.qrserver.com/v1/create-qr-code/?size=72x72&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}&color=00FF9C&bgcolor=000814`}
+                          alt="Portfolio QR Code"
+                          className="w-[72px] h-[72px] rounded-lg"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 rounded-xl ring-1 ring-[#00FF9C]/20 pointer-events-none" />
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[10px] font-mono text-white/50 uppercase tracking-[0.15em]">Scan to connect</span>
+                        <span className="text-[9px] text-white/30 font-mono">koketso-raphasha.vercel.app</span>
+                      </div>
+                    </div>
                   </motion.form>
                 )}
               </AnimatePresence>
