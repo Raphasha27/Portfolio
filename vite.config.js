@@ -17,14 +17,21 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico'],
+      includeAssets: ['favicon.ico', 'profile_tie.png'],
       manifest: {
-        name: 'Koketso Raphasha Portfolio',
+        name: 'Koketso Raphasha — Software Engineer',
         short_name: 'Koketso OS',
-        description: 'Software Engineer & Systems Architect',
+        description: 'Software Engineer & Systems Architect | AI, Full-Stack, Distributed Systems',
         theme_color: '#00FF9C',
-        background_color: '#0a0f16',
+        background_color: '#000000',
         display: 'standalone',
+        orientation: 'portrait',
+        start_url: '/',
+        scope: '/',
+        icons: [
+          { src: '/profile_tie.png', sizes: '683x1024', type: 'image/png', purpose: 'any' },
+          { src: '/profile_tie.png', sizes: '683x1024', type: 'image/png', purpose: 'maskable' }
+        ]
       }
     })
   ],
