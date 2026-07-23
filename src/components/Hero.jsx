@@ -128,48 +128,20 @@ const Hero = () => (
             <SlidingText />
           </div>
 
-          {/* Social links - always visible */}
-          <div className="flex items-center gap-1.5 sm:gap-2 mt-2 sm:mt-3 flex-wrap justify-center">
-            {socialLinks.map((s, i) => (
-              <a 
-                key={i} 
-                href={s.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-white/40 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}
-                aria-label={`Visit my ${s.name} profile`}
-                title={`Connect with me on ${s.name}`}
-              >
-                <Icon name={s.icon} size={14} />
-              </a>
-            ))}
-          </div>
 
-          {/* Tech Arsenal */}
-          <div className="mt-2 sm:mt-3 w-full max-w-[280px] sm:max-w-[320px]">
-            <div className="flex items-center gap-2 mb-1.5">
-              <div className="h-px flex-1 bg-white/10" />
-              <span className="text-[7px] sm:text-[8px] font-mono text-white/30 uppercase tracking-[0.15em] font-bold">Tech Arsenal</span>
-              <div className="h-px flex-1 bg-white/10" />
-            </div>
-            <div className="overflow-hidden rounded-lg border border-white/5 bg-white/[0.02]">
-              <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: "-50%" }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="flex gap-1.5 sm:gap-2 whitespace-nowrap py-1.5 px-2"
-              >
-                {[...techArsenal, ...techArsenal].map((tech, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 text-[7px] sm:text-[9px] font-mono border border-white/10 rounded text-white/40 shrink-0 bg-white/[0.03]"
-                  >
-                    <Icon name={tech.icon} size={10} />
-                    {tech.name}
-                  </span>
-                ))}
-              </motion.div>
-            </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-3 mt-4 w-full max-w-[320px]">
+            {STATS.map((s, i) => (
+              <div key={i} className="bg-white/5 p-3 rounded-lg flex flex-col items-center text-center gap-1.5 border border-white/10">
+                <div className="text-[#00FF9C]/50 mb-1">
+                  <Icon name={s.icon} size={16} />
+                </div>
+                <div className="text-lg sm:text-xl font-bold text-white leading-none">
+                  <CountUp to={s.val} />{s.suffix}
+                </div>
+                <div className="text-[9px] text-white/40 uppercase tracking-widest">{s.label}</div>
+              </div>
+            ))}
           </div>
         </motion.div>
 
@@ -207,32 +179,62 @@ const Hero = () => (
 
 
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full">
-              <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
-                View Projects →
-              </a>
-              <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-2.5 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-2">
-                <Icon name="download" size={14} /> CV
-              </a>
-              <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
-                Hire Me
-              </a>
+            <div className="flex flex-col gap-4 w-full mt-2">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full">
+                <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
+                  View Projects →
+                </a>
+                <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-2.5 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-2">
+                  <Icon name="download" size={14} /> CV
+                </a>
+                <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
+                  Hire Me
+                </a>
+                
+                {/* Social links - moved here next to Hire Me */}
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                  {socialLinks.map((s, i) => (
+                    <a 
+                      key={i} 
+                      href={s.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                      aria-label={`Visit my ${s.name} profile`}
+                      title={`Connect with me on ${s.name}`}
+                    >
+                      <Icon name={s.icon} size={16} />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-4 gap-3 pt-4 border-t border-white/10 mt-2 w-full">
-            {STATS.map((s, i) => (
-              <div key={i} className="bg-white/5 p-2 rounded-lg flex flex-col items-center text-center gap-1">
-                <div className="text-[#00FF9C]/50">
-                  <Icon name={s.icon} size={14} />
-                </div>
-                <div className="text-sm sm:text-base font-semibold text-white leading-none">
-                  <CountUp to={s.val} />{s.suffix}
-                </div>
-                <div className="text-[8px] text-white/30 uppercase tracking-widest">{s.label}</div>
-              </div>
-            ))}
+          {/* Tech Arsenal (Moved from left column) */}
+          <div className="pt-6 mt-4 w-full border-t border-white/10">
+            <div className="flex items-center gap-4 mb-3">
+              <span className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] font-bold shrink-0">Tech Arsenal</span>
+              <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
+            </div>
+            <div className="overflow-hidden rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: "-50%" }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="flex gap-3 sm:gap-4 whitespace-nowrap py-3 px-4"
+              >
+                {[...techArsenal, ...techArsenal].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-mono border border-white/10 rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
+                  >
+                    <Icon name={tech.icon} size={14} />
+                    {tech.name}
+                  </span>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </motion.div>
 
