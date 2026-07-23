@@ -85,8 +85,8 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-start pb-6 sm:pb-8">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.25rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-start pb-2 sm:pb-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-3 sm:gap-8 lg:gap-12 w-full">
 
         {/* Profile Column — first in HTML so it shows first on mobile */}
         <motion.div
@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 w-full max-w-[420px] lg:w-auto lg:order-2"
         >
-          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             {/* Outer orbit ring — slow pulse */}
             <div className="absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
@@ -119,9 +119,9 @@ const Hero = () => (
             </div>
           </div>
 
-          <div className="text-center mt-3 sm:mt-4">
-            <h2 className="text-base sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
-            <p className="text-xs sm:text-sm text-[#00FF9C] font-medium mt-0.5">Software Engineer</p>
+          <div className="text-center mt-2 sm:mt-4">
+            <h2 className="text-sm sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-[10px] sm:text-sm text-[#00FF9C] font-medium mt-0.5">Software Engineer</p>
           </div>
 
           <div className="mt-1 text-center max-w-[240px]">
@@ -136,7 +136,7 @@ const Hero = () => (
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-6 xl:pr-8 lg:order-1 pt-2"
+          className="flex flex-col gap-2 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2"
         >
           <div className="w-full">
             <div className="flex items-center gap-2 flex-wrap w-full">
@@ -149,7 +149,7 @@ const Hero = () => (
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full mt-2 lg:mt-3 break-words">
+            <h1 className="text-xl sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full mt-1.5 lg:mt-3 break-words">
               Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
             </h1>
 
@@ -157,28 +157,28 @@ const Hero = () => (
               <SlidingText />
             </div>
 
-            <p className="text-sm sm:text-base lg:text-lg text-white/60 leading-relaxed w-full">
+            <p className="text-[11px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full line-clamp-3 lg:line-clamp-none">
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems that push the boundaries of what software can do. Currently engineering the next generation of agentic platforms — where infrastructure thinks, adapts, and heals itself without human intervention.
             </p>
 
-            <p className="text-sm sm:text-base text-white/40 w-full">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+            <p className="text-[10px] sm:text-base text-white/40 w-full mt-1 sm:mt-0 leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
 
 
-            <div className="flex flex-col gap-4 w-full mt-2">
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full">
-                <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
+            <div className="flex flex-col gap-2 sm:gap-4 w-full mt-1.5 sm:mt-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full">
+                <a href="#projects" className="px-3 py-1.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-xs sm:text-base">
                   View Projects →
                 </a>
-                <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-2.5 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-2">
-                  <Icon name="download" size={14} /> CV
+                <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1.5 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-xs sm:text-base flex items-center gap-1 sm:gap-2">
+                  <Icon name="download" size={12} /> CV
                 </a>
-                <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
+                <a href="#contact" className="px-3 py-1.5 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-xs sm:text-base">
                   Hire Me
                 </a>
                 
                 {/* Social links - moved here next to Hire Me */}
-                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap ml-auto sm:ml-0">
                   {socialLinks.map((s, i) => (
                     <a 
                       key={i} 
@@ -198,12 +198,12 @@ const Hero = () => (
           </div>
 
           {/* Tech Arsenal (Moved from left column) */}
-          <div className="pt-6 mt-4 w-full border-t border-white/10">
-            <div className="flex items-center gap-4 mb-3">
-              <span className="text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] font-bold shrink-0">Tech Arsenal</span>
+          <div className="pt-3 sm:pt-6 mt-2 sm:mt-4 w-full border-t border-white/10">
+            <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-3">
+              <span className="text-[8px] sm:text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] font-bold shrink-0">Tech Arsenal</span>
               <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
             </div>
-            <div className="overflow-hidden rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
+            <div className="overflow-hidden rounded-lg sm:rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
               <motion.div
                 initial={{ x: 0 }}
                 animate={{ x: "-50%" }}
@@ -213,9 +213,9 @@ const Hero = () => (
                 {[...techArsenal, ...techArsenal].map((tech, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-mono border border-white/10 rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-sm font-mono border border-white/10 rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
                   >
-                    <Icon name={tech.icon} size={14} />
+                    <Icon name={tech.icon} size={12} className="sm:w-3.5 sm:h-3.5" />
                     {tech.name}
                   </span>
                 ))}
