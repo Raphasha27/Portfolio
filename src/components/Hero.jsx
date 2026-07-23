@@ -129,20 +129,6 @@ const Hero = () => (
           </div>
 
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-3 mt-4 w-full max-w-[320px]">
-            {STATS.map((s, i) => (
-              <div key={i} className="bg-white/5 p-3 rounded-lg flex flex-col items-center text-center gap-1.5 border border-white/10">
-                <div className="text-[#00FF9C]/50 mb-1">
-                  <Icon name={s.icon} size={16} />
-                </div>
-                <div className="text-lg sm:text-xl font-bold text-white leading-none">
-                  <CountUp to={s.val} />{s.suffix}
-                </div>
-                <div className="text-[9px] text-white/40 uppercase tracking-widest">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Content Column — second in HTML, but first visually on desktop via lg:order-1 */}
