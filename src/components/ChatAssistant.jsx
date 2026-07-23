@@ -231,21 +231,6 @@ const ChatAssistant = () => {
         )}
       </AnimatePresence>
 
-      {/* Scan indicator - mobile only */}
-      <div className="sm:hidden flex justify-end mb-1">
-        <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#00FF9C]/5 border border-[#00FF9C]/20">
-          <div className="relative w-3 h-3">
-            <div className="absolute inset-0 rounded-full border border-[#00FF9C]/30" />
-            <motion.div
-              className="absolute inset-0 rounded-full border border-[#00FF9C]"
-              animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <div className="absolute inset-[3px] rounded-full bg-[#00FF9C]" />
-          </div>
-          <span className="text-[8px] font-mono text-[#00FF9C]/60 uppercase tracking-widest">Scan</span>
-        </div>
-      </div>
 
       {/* FAB Button */}
       <div className="flex flex-col items-end gap-2">
