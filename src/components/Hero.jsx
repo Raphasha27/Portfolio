@@ -93,26 +93,26 @@ const Hero = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:w-auto lg:order-2"
+          className="flex flex-col items-center shrink-0 w-full max-w-[420px] lg:w-auto lg:order-2"
         >
-          <div className="relative w-[140px] h-[140px] xs:w-[160px] xs:h-[160px] sm:w-[200px] sm:h-[200px] lg:w-[240px] lg:h-[240px]">
+          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[420px] lg:h-[420px]">
             {/* Outer orbit ring — slow pulse */}
             <div className="absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
-              style={{ inset: '-16px', boxShadow: '0 0 24px 2px rgba(0,255,156,0.06)' }} />
+              style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
 
             {/* Counter-spin ring */}
-            <div className="absolute rounded-full border border-cyan-400/15 pointer-events-none"
-              style={{ inset: '-8px', animation: 'spin 18s linear infinite reverse' }} />
+            <div className="absolute rounded-full border border-cyan-400/20 pointer-events-none"
+              style={{ inset: '-12px', animation: 'spin 18s linear infinite reverse', boxShadow: '0 0 20px 2px rgba(0,220,255,0.1)' }} />
 
             {/* Inner spinning gradient ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[3px] animate-spin-slow shadow-[0_0_50px_rgba(0,255,156,0.4)]">
               <div className="w-full h-full rounded-full bg-[#000814]" />
             </div>
-            <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden bg-black">
+            <div className="absolute inset-[4px] rounded-full shadow-[inset_0_0_30px_rgba(0,255,156,0.2)] overflow-hidden bg-black">
               <img
                 src={profileImg}
                 alt="Koketso Raphasha - Software Engineer & Co-Founder"
-                className="w-full h-full object-contain bg-black"
+                className="w-full h-full object-cover object-top bg-black"
                 loading="lazy"
                 decoding="async"
               />
