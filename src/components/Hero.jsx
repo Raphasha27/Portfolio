@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 w-full max-w-[420px] lg:w-auto lg:order-2"
         >
-          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[420px] lg:h-[420px]">
+          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             {/* Outer orbit ring — slow pulse */}
             <div className="absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
@@ -150,9 +150,9 @@ const Hero = () => (
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-8 lg:order-1 pt-2"
+          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-6 xl:pr-8 lg:order-1 pt-2"
         >
-          <div>
+          <div className="w-full">
             <div className="flex items-center gap-2 flex-wrap w-full">
               <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[10px] font-medium flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
@@ -163,7 +163,7 @@ const Hero = () => (
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight w-full">
+            <h1 className="text-2xl sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full mt-2 lg:mt-3 break-words">
               Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
             </h1>
 
