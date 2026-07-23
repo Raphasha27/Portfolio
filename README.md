@@ -14,6 +14,8 @@ Immersive 3D portfolio built with React, Framer Motion, and interactive visualiz
 
 **Live:** https://portfolio-iota-eight-90.vercel.app/
 
+🔗 **Live Demo:** [https://koketso-raphasha.vercel.app](https://koketso-raphasha.vercel.app)
+
 ## Stack
 
 - **Framework:** React + Vite
