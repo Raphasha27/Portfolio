@@ -85,8 +85,8 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+1rem)] flex-1 flex flex-col justify-center pb-6 sm:pb-8">
-      <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-start pb-6 sm:pb-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
 
         {/* Profile Column — first in HTML so it shows first on mobile */}
         <motion.div
@@ -150,7 +150,7 @@ const Hero = () => (
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 lg:pr-8 lg:order-1"
+          className="flex flex-col gap-3 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-8 lg:order-1 pt-2"
         >
           <div>
             <div className="flex items-center gap-2 flex-wrap w-full">
