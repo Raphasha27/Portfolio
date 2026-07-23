@@ -85,7 +85,7 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+1rem)] flex-1 flex flex-col justify-center pb-6 sm:pb-8">
       <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
 
         {/* Profile Column — first in HTML so it shows first on mobile */}
@@ -99,11 +99,11 @@ const Hero = () => (
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
               <div className="w-full h-full rounded-full bg-[#000814]" />
             </div>
-            <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden">
+            <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden bg-black">
               <img
                 src={profileImg}
                 alt="Koketso Raphasha - Software Engineer & Co-Founder"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-black"
                 loading="lazy"
                 decoding="async"
               />
@@ -196,21 +196,9 @@ const Hero = () => (
 
             <p className="text-sm sm:text-base text-white/40 w-full">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
-            {/* QR Code - mobile only */}
-            <div className="sm:hidden flex flex-col items-center gap-2 py-3">
-              <div className="relative p-2 rounded-xl border border-white/10 bg-white/5">
-                <img
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}`}
-                  alt="Portfolio QR"
-                  className="w-20 h-20"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 rounded-xl ring-1 ring-[#00FF9C]/20 pointer-events-none" />
-              </div>
-              <span className="text-[8px] text-white/30 font-mono uppercase tracking-[0.15em]">Scan for desktop view</span>
-            </div>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4 w-full">
+
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full">
               <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
                 View Projects →
               </a>
@@ -220,6 +208,19 @@ const Hero = () => (
               <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
                 Hire Me
               </a>
+              {/* QR Code — inline next to Hire Me */}
+              <div className="flex items-center gap-2 ml-auto">
+                <div className="relative p-1.5 rounded-lg border border-white/10 bg-white/5 hover:border-[#00FF9C]/30 transition-colors">
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=56x56&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}&color=00FF9C&bgcolor=000814`}
+                    alt="Portfolio QR"
+                    className="w-14 h-14 rounded"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 rounded-lg ring-1 ring-[#00FF9C]/20 pointer-events-none" />
+                </div>
+                <span className="text-[8px] text-white/30 font-mono uppercase tracking-[0.15em] leading-tight max-w-[40px]">Scan me</span>
+              </div>
             </div>
           </div>
 

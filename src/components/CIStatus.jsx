@@ -175,18 +175,81 @@ const passingProjects = [
 ];
 
 const CIStatus = () => {
+  const [projects, setProjects] = useState(passingProjects);
+  const [runningPipelines, setRunningPipelines] = useState({});
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isLoading] = useState(false);
   const error = null;
 
+  const startPipeline = (repo) => {
+    if (runningPipelines[repo]) return;
+
+    setRunningPipelines((prev) => ({
+      ...prev,
+      [repo]: {
+        logs: ["Starting runner environment..."],
+        step: 0,
+      },
+    }));
+
+    const logsList = [
+      "Starting runner environment...",
+      "Cloning repo: GitHub/Raphasha27/" + repo,
+      "Validating branch configuration...",
+      "Installing packages & dependencies...",
+      "Executing pipeline build & compilation...",
+      "Running security linting and test coverage checks...",
+      "Packaging optimized production Docker image...",
+      "Build success! Pushing artifacts...",
+      "Deploying to server / cloud infrastructure...",
+      "Running live health checks (200 OK)...",
+      "Deployment completed successfully!"
+    ];
+
+    let currentStep = 0;
+    const interval = setInterval(() => {
+      currentStep++;
+      if (currentStep < logsList.length) {
+        setRunningPipelines((prev) => {
+          if (!prev[repo]) {
+            clearInterval(interval);
+            return prev;
+          }
+          return {
+            ...prev,
+            [repo]: {
+              ...prev[repo],
+              logs: [...prev[repo].logs, logsList[currentStep]],
+              step: currentStep,
+            },
+          };
+        });
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          setProjects((prevProjects) =>
+            prevProjects.map((p) =>
+              p.repo === repo ? { ...p, lastBuild: "just now" } : p
+            )
+          );
+          setRunningPipelines((prev) => {
+            const next = { ...prev };
+            delete next[repo];
+            return next;
+          });
+        }, 1200);
+      }
+    }, 450);
+  };
+
   const categories = ['all', 'AI/ML', 'Platform', 'Security', 'IoT', 'Education', 'NLP', 'AgriTech', 'Business'];
   
   const filteredProjects = selectedCategory === 'all' 
-    ? passingProjects 
-    : passingProjects.filter(p => p.category === selectedCategory);
+    ? projects 
+    : projects.filter(p => p.category === selectedCategory);
 
   const avgCoverage = Math.round(
-    passingProjects.reduce((sum, p) => sum + parseInt(p.coverage), 0) / passingProjects.length
+    projects.reduce((sum, p) => sum + parseInt(p.coverage), 0) / projects.length
   );
 
   if (error) {
@@ -229,8 +292,14 @@ const CIStatus = () => {
           <div className="flex flex-wrap gap-4 mt-4">
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20">
               <Icon name="check" size={14} className="text-green-400" />
-              <span className="text-xs font-bold text-green-400">{passingProjects.length} Passing</span>
+              <span className="text-xs font-bold text-green-400">{projects.length} Passing</span>
             </div>
+            {Object.keys(runningPipelines).length > 0 && (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 animate-pulse">
+                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-ping" />
+                <span className="text-xs font-bold text-yellow-400">{Object.keys(runningPipelines).length} Running</span>
+              </div>
+            )}
             <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
               <Icon name="activity" size={14} className="text-blue-400" />
               <span className="text-xs font-bold text-blue-400">{avgCoverage}% Avg Coverage</span>
@@ -273,18 +342,22 @@ const CIStatus = () => {
               transition={{ delay: i * 0.02 }}
               className="glass p-5 rounded-xl border border-white/5 hover:border-green-500/30 hover:shadow-[0_0_30px_rgba(74,222,128,0.1)] transition-all group relative overflow-hidden"
             >
-              {/* Image Background */}
-              {project.image && (
-                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                  <img loading="lazy" decoding="async" src={project.image} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
-                </div>
-              )}
-              
               {/* Hover glow effect */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-green-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Project Image Preview - Fully visible like Projects.jsx */}
+                {project.image && (
+                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden border border-white/10 shrink-0 bg-[#05080c]">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src={project.image.startsWith('http') ? project.image : `${import.meta.env.BASE_URL}${project.image.replace(/^\//, '')}`}
+                      alt={project.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    />
+                  </div>
+                )}
                 {/* Header */}
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
@@ -302,28 +375,51 @@ const CIStatus = () => {
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-[11px] text-white/60 mb-3 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {project.tech.map((tech, idx) => (
-                    <div key={idx} className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 border border-white/10 text-white/70 text-[9px] font-mono uppercase">
-                      <Icon name={tech} size={10} />
-                      {tech}
+                {runningPipelines[project.repo] ? (
+                  /* Terminal Simulation */
+                  <div className="bg-[#05080c] border border-green-500/20 rounded-lg p-2.5 my-2 font-mono text-[9px] h-28 flex flex-col justify-end text-green-400">
+                    <div className="flex items-center justify-between pb-1 mb-1.5 border-b border-green-500/10 text-white/50 text-[8px] uppercase tracking-wider">
+                      <span>Pipeline Logs</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
                     </div>
-                  ))}
-                </div>
+                    <div className="space-y-1 overflow-y-auto max-h-20 scrollbar-none flex-1 flex flex-col justify-end">
+                      {runningPipelines[project.repo].logs.slice(-3).map((log, idx) => (
+                        <div key={idx} className="truncate text-left">
+                          <span className="text-green-500/50 mr-1">&gt;</span> {log}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Description */}
+                    <p className="text-[11px] text-white/60 mb-3 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {project.tech.map((tech, idx) => (
+                        <div key={idx} className="flex items-center gap-1 px-2 py-1 rounded bg-white/5 border border-white/10 text-white/70 text-[9px] font-mono uppercase">
+                          <Icon name={tech} size={10} />
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
 
                 {/* Status Bar */}
                 <div className="flex items-center justify-between pt-3 border-t border-white/5">
                   <div className="flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      <span className="text-[9px] text-green-400 font-mono uppercase tracking-wider font-bold">
-                        {project.status}
+                      <div className={`w-2 h-2 rounded-full ${
+                        runningPipelines[project.repo] ? 'bg-yellow-400 animate-pulse' : 'bg-green-400 animate-pulse'
+                      }`} />
+                      <span className={`text-[9px] font-mono uppercase tracking-wider font-bold ${
+                        runningPipelines[project.repo] ? 'text-yellow-400' : 'text-green-400'
+                      }`}>
+                        {runningPipelines[project.repo] ? 'building' : project.status}
                       </span>
                     </div>
                     <span className="text-[9px] text-white/30 font-mono">·</span>
@@ -332,6 +428,18 @@ const CIStatus = () => {
                   
                   <div className="flex items-center gap-2">
                     <span className="text-[8px] text-white/30 font-mono">{project.lastBuild}</span>
+                    {!runningPipelines[project.repo] && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          startPipeline(project.repo);
+                        }}
+                        className="w-7 h-7 rounded-lg bg-green-500/10 hover:bg-green-500/20 border border-green-500/20 hover:border-green-500/40 flex items-center justify-center text-green-400 transition-all hover:scale-110 cursor-pointer"
+                        title="Run Pipeline Simulation"
+                      >
+                        <Icon name="zap" size={12} />
+                      </button>
+                    )}
                     <a
                       href={`https://github.com/Raphasha27/${project.repo}`}
                       target="_blank"
@@ -353,7 +461,7 @@ const CIStatus = () => {
       <div className="mt-8 pt-6 border-t border-white/5 relative z-10">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-green-400 mb-1">{passingProjects.length}</div>
+            <div className="text-2xl font-bold text-green-400 mb-1">{projects.length}</div>
             <div className="text-[9px] text-white/40 font-mono uppercase tracking-wider">Active Projects</div>
           </div>
           <div className="text-center">
