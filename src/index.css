@@ -11,16 +11,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  /* Smooth scrolling for iOS Safari */
-  -webkit-overflow-scrolling: touch;
 }
 
 body {
   /* Prevent text selection highlight glitches on mobile */
   -webkit-tap-highlight-color: transparent;
-  /* Fix Safari backdrop-filter bugs by enforcing hardware acceleration */
-  transform: translateZ(0);
 }
 
 /* Fallback for dynamic viewport height (dvh) on older iOS */
@@ -74,15 +69,13 @@ html {
   overflow-x: clip;
 }
 
-@layer base {
-  body {
-    background-color: #000814;
-    color: #e0f2f1;
-    font-family: 'Inter', sans-serif;
-    overflow-x: clip;
-  }
-  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+body {
+  background-color: #000000;
+  color: #e0f2f1;
+  font-family: 'Inter', sans-serif;
+  overflow-x: clip;
 }
+h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
 @layer utilities {
   .glow-text { text-shadow: 0 0 24px rgba(0, 255, 156, 0.5); }
@@ -114,9 +107,9 @@ html {
 
 /* Scrollbar - cross browser */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #000814; }
+::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #00FF9C; border-radius: 4px; }
-html { scrollbar-color: #00FF9C #000814; scrollbar-width: thin; }
+html { scrollbar-color: #00FF9C #000000; scrollbar-width: thin; }
 
 /* Dynamic viewport height for iOS Safari — prevents address-bar clipping */
 @supports (height: 100dvh) {
@@ -224,13 +217,6 @@ section {
 
 /* Prevent horizontal overflow on mobile — targeted, not global */
 @media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    position: relative;
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
-  
   * {
     box-sizing: border-box !important;
   }
@@ -320,4 +306,22 @@ section {
 
 .hero-marquee:hover {
   animation-play-state: paused;
+}
+
+@media (pointer: coarse) {
+  .hero-marquee {
+    animation: none;
+  }
+  .hero-particle {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

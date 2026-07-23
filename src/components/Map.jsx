@@ -48,7 +48,7 @@ const Map = () => {
           className="glass p-1.5 sm:p-2 rounded-2xl sm:rounded-[40px] border border-blue-500/30 overflow-hidden h-[300px] sm:h-[400px] lg:h-[480px] relative group bg-white/5"
         >
           {!ready && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#000814] z-20">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#000000] z-20">
               <div className="w-20 h-20 border-2 border-blue-500/20 rounded-full border-t-blue-500 animate-spin mb-4" />
               <div className="text-[10px] font-mono text-blue-400 uppercase tracking-[0.5em] animate-pulse">Loading Map...</div>
               <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(transparent_50%,rgba(59,130,246,0.1)_50%)] bg-[length:100%_4px] animate-scan" />
@@ -81,7 +81,7 @@ const Map = () => {
           </div>
 
           <div className="absolute inset-0 pointer-events-none border-[20px] border-blue-500/10 rounded-[40px]" />
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#000814] via-transparent to-transparent opacity-30" />
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-30" />
         </motion.div>
       </div>
     </section>

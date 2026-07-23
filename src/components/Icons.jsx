@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import nodeLogo from '../assets/node-logo.svg';
 import mongodbLogo from '../assets/mongodb-logo.svg';
 import whopLogo from '../assets/whop-logo.svg';
+import ibmLogo from '../assets/ibm-logo.svg';
 
 export const Icon = ({ name, size = 16, className = "" }) => {
   const finalName = name?.toLowerCase();
@@ -325,7 +326,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     mongodb:       mongodbLogo,
     vercel:        "https://cdn.simpleicons.org/vercel/white",
     angular:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
-    aws:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg",
+    aws:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     azure:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg",
     google:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
     figma:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
@@ -337,7 +338,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     pytorch:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
     tensorflow:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
     cisco:         "https://cdn.simpleicons.org/cisco/049fd9",
-    ibm:           "https://cdn.simpleicons.org/ibm",
+    ibm:           ibmLogo,
     go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
     csharp:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
     c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",

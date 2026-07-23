@@ -108,7 +108,7 @@ const Contact = () => {
                   { name: "GitHub",    handle: "Raphasha27",           icon: "github",    link: "https://github.com/Raphasha27" },
                   { name: "WhatsApp",  handle: "0781172470",           icon: "whatsapp",  link: "https://wa.me/27781172470" },
                   { name: "LinkedIn",  handle: "koketso-raphasha",     icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
-                  { name: "Email",     handle: "raphashakoketso99...", icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" },
+                  { name: "Email",     handle: "raphashakoketso69@gmail.com", icon: "mail",      link: "mailto:raphashakoketso69@gmail.com" },
                   { name: "Twitter",   handle: "raphasha27",           icon: "twitter",   link: "https://twitter.com/raphasha27" },
                   { name: "Kaggle",    handle: "Raphasha27",           icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
                   { name: "Streamlit", handle: "raphasha27",           icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
@@ -174,7 +174,7 @@ const Contact = () => {
                           type="text" name="name" id="name" required
                           value={formState.name} onChange={handleChange}
                           placeholder="John Doe"
-                          className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#000000]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                       <div className="flex-1 flex flex-col gap-2">
@@ -183,7 +183,7 @@ const Contact = () => {
                           type="email" name="email" id="email" required
                           value={formState.email} onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
+                          className="w-full bg-[#000000]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20"
                         />
                       </div>
                     </div>
@@ -194,13 +194,13 @@ const Contact = () => {
                         name="message" id="message" required rows="5"
                         value={formState.message} onChange={handleChange}
                         placeholder="Tell me about your project..."
-                        className="w-full bg-[#000814]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
+                        className="w-full bg-[#000000]/50 border border-white/10 rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-white/20 resize-none"
                       />
                     </div>
 
                     {status === 'error' && (
                       <div className="text-red-400 text-xs text-center bg-red-400/10 border border-red-400/20 rounded-xl py-3">
-                        Something went wrong. Try emailing directly: raphashakoketso99@gmail.com
+                        Something went wrong. Try emailing directly: raphashakoketso69@gmail.com
                       </div>
                     )}
 

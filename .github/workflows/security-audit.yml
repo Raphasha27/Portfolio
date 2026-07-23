@@ -1,4 +1,4 @@
-﻿name: "Dependency Security Audit"
+name: "Dependency Security Audit"
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
         run: npm ci --prefer-offline || npm install
 
       - name: Run npm audit
-        run: npm audit --audit-level=moderate
+        run: npm audit --audit-level=moderate --json > npm-audit-report.json || true
 
       - name: Run npm audit (JSON report)
         run: npm audit --json > npm-audit-report.json || true

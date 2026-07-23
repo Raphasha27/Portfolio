@@ -16,7 +16,7 @@ const platformGroups = [
     title: "Freelance",
     icon: "briefcase",
     platforms: [
-      { name: "Email", url: "mailto:raphashakoketso99@gmail.com", desc: "Direct inquiries preferred" },
+      { name: "Email", url: "mailto:raphashakoketso69@gmail.com", desc: "Direct inquiries preferred" },
     ]
   }
 ];
@@ -140,7 +140,7 @@ const HireMe = () => {
                 <h4 className="font-bold text-sm text-white mb-1">{product.name}</h4>
                 <p className="text-[11px] text-white/40 leading-relaxed mb-4 flex-grow">{product.desc}</p>
                 <a
-                  href={`mailto:raphashakoketso99@gmail.com?subject=Product%20Request%3A%20${encodeURIComponent(product.name)}&body=Hi%20Koketso%2C%0A%0AI'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20provide%20more%20details%20and%20pricing.%0A%0AThank%20you!`}
+                  href={`mailto:raphashakoketso69@gmail.com?subject=Product%20Request%3A%20${encodeURIComponent(product.name)}&body=Hi%20Koketso%2C%0A%0AI'm%20interested%20in%20the%20${encodeURIComponent(product.name)}.%20Please%20provide%20more%20details%20and%20pricing.%0A%0AThank%20you!`}
                   className="flex items-center justify-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30 text-purple-400 font-bold text-xs rounded-lg transition-all group-hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
                 >
                   <Icon name="mail" size={14} />
@@ -153,8 +153,8 @@ const HireMe = () => {
 
         <div className="text-center mb-10">
           <a
-            href="mailto:raphashakoketso99@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Koketso%2C%20I%27d%20like%20to%20discuss..."
-            className="inline-flex items-center gap-3 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-[0_0_30px_rgba(34,197,94,0.3)] group active:scale-95"
+            href="mailto:raphashakoketso69@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Koketso%2C%20I%27d%20like%20to%20discuss..."
+            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] group active:scale-95"
           >
             <Icon name="mail" size={18} />
             Hire Me Now

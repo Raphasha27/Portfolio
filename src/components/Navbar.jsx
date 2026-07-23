@@ -28,7 +28,7 @@ const Navbar = ({ setCmdOpen }) => {
   const navItems = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#000814]/80 backdrop-blur-xl h-[var(--nav-h)] flex items-center border-b border-white/5">
+    <nav className="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl h-[var(--nav-h)] flex items-center border-b border-white/5">
       <motion.div
         className="absolute top-0 left-0 right-0 h-[2px] bg-[#00FF9C] origin-left z-50"
         style={{ scaleX }}
@@ -221,7 +221,7 @@ const Navbar = ({ setCmdOpen }) => {
               </button>
               <button
                 onClick={() => scrollTo('contact')}
-                className="w-full py-3.5 bg-[#00FF9C] text-[#000814] font-bold rounded-xl hover:bg-[#00e88e] transition-all text-[14px] shadow-[0_0_20px_rgba(0,255,156,0.25)]"
+                className="w-full py-3.5 bg-[#00FF9C] text-[#000000] font-bold rounded-xl hover:bg-[#00e88e] transition-all text-[14px] shadow-[0_0_20px_rgba(0,255,156,0.25)]"
               >
                 💼 Hire Me
               </button>

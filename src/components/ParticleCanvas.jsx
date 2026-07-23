@@ -8,7 +8,7 @@ const ParticleCanvas = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60 hero-particle">
       <Particles
         id="tsparticles"
         className="w-full h-full"

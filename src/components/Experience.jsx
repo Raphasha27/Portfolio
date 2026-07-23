@@ -5,6 +5,7 @@ import { Icon } from './Icons';
 import yesBadge from '../assets/yes-badge.png';
 import wtcLogo from '../assets/wethinkcode-logo.png';
 import richfieldLogo from '../assets/richfield-logo-new.png';
+import orangeLogo from '../assets/orange-cyberdefense-logo.png';
 
 const experiences = [
   {
@@ -48,7 +49,7 @@ const experiences = [
     company: "Orange Cyberdefense · Sponsorship",
     desc: "Interned as part of a sponsorship program including Orange Cyber security. Gained practical experience in threat monitoring, enterprise security, and security operations.",
     icon: "shield",
-    logo: "https://th.bing.com/th/id/R.e8ae1deef5cd53a7f446b6bfe1791e4d?rik=Xlnu%2f30pV2GYyg&pid=ImgRaw&r=0",
+    logo: orangeLogo,
     logoBg: "bg-white",
     logoPadding: "p-3",
     logoFit: "object-contain",

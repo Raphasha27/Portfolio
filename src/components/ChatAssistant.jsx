@@ -12,9 +12,9 @@ KEY FACTS:
 - Also trained at WeThinkCode_ (Johannesburg)
 - Internship: AI Intern at CAPACITI Digital Skills Accelerator (2025-2026)
 - Member of YES4Youth programme (2025-2026)
-- Email: raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470
+- Email: raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470
 - GitHub: github.com/Raphasha27 | LinkedIn: linkedin.com/in/koketso-raphasha
-- Portfolio: https://koketso-raphasha.vercel.app/
+- Portfolio: https://portfolio-iota-eight-90.vercel.app/
 
 TECH STACK:
 - Languages: C, C++, Python, JavaScript, TypeScript, Rust, Go, Swift, Java, C#
@@ -40,15 +40,15 @@ PERSONALITY: Be confident, technical, witty, and inspiring. Speak in first perso
 const KB = {
   'tech stack': "My core stack → C / Python / TypeScript / Rust for systems, React + Vite for frontend, FastAPI + Node.js for backend. AI layer → Gemini + LangChain + LangGraph. Infra → Docker + Kubernetes + Vercel + Railway.",
   'project': "I've shipped 9 production-grade projects → Sovereign-AI-Nexus (agentic infra), FlowSentinel (2.4M req/s traffic engine), CyberShield (SOC score 93), NoShowIQ (healthcare ML), and more. Check the Projects section!",
-  'hire': "Absolutely open to opportunities! 📩 raphashakoketso99@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
+  'hire': "Absolutely open to opportunities! 📩 raphashakoketso69@gmail.com | 📞 +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha",
   'about': "I'm a South African software engineer building the foundational infrastructure for the African digital future. Graduated from Richfield with distinction, trained at WeThinkCode_, interned at CAPACITI.",
   'experience': "My background spans → Co-Founder & CTO at Kirov Dynamics, AI Intern at CAPACITI, YES4Youth Participant, Open Source contributor on GitHub, and trained at WeThinkCode_ Johannesburg.",
   'latest': "The flagship is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Built in Python + LangGraph + Docker. Check it out in the Projects section!",
   'recommend': "I'd recommend exploring Sovereign-AI-Nexus for autonomous AI infra, and FlowSentinel for ultra-high-throughput systems. Both represent the pinnacle of my engineering work.",
-  'contact': "Reach me → raphashakoketso99@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
+  'contact': "Reach me → raphashakoketso69@gmail.com | WhatsApp: +27 78 117 2470 | LinkedIn: linkedin.com/in/koketso-raphasha | GitHub: github.com/Raphasha27",
   'hello': "Hey! I'm Koketso's Digital Twin AI. I can tell you about his tech stack, projects, experience, or how to hire him. What would you like to know?",
   'hi': "Hi there! I'm Koketso's AI Twin. Ask me about his engineering work, projects, or availability — I've got all the answers!",
-  'portfolio': "You're already on the live portfolio → https://koketso-raphasha.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
+  'portfolio': "You're already on the live portfolio → https://portfolio-iota-eight-90.vercel.app/ — built with React + Vite + Framer Motion. The source is on GitHub!",
   'kirov': "Kirov Dynamics Technology is the company I co-founded. We build autonomous AI systems, multi-tenant SaaS platforms, and CI/CD infrastructure. The mission: ship infrastructure that thinks for itself.",
   'education': "BSc Computer Science (Distinction) from Richfield Graduate Institute, 2022-2025. Also trained at WeThinkCode_ Johannesburg (peer-driven problem-based engineering). 10+ certifications including AWS, Azure AZ-900, Meta Frontend Developer.",
   'availab': "I'm currently open to full-time roles, freelance contracts, and collaboration on interesting projects. Remote → yes. Relocation → open to discussion. DM me!",
@@ -149,8 +149,8 @@ const ChatAssistant = () => {
                   <div className="w-9 h-9 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814] animate-ping" />
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814]" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000000] animate-ping" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000000]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Digital Twin AI</div>
@@ -166,12 +166,12 @@ const ChatAssistant = () => {
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000814]/60">
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000000]/60">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] p-3 rounded-xl text-[11px] leading-relaxed whitespace-pre-wrap ${
                     m.role === 'user'
-                      ? 'bg-[#00FF9C] text-[#000814] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
+                      ? 'bg-[#00FF9C] text-[#000000] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
                       : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
                   }`}>
                     {m.text}
@@ -195,7 +195,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Quick Chips */}
-            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000814]/40">
+            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000000]/40">
               {CHIPS.map(chip => (
                 <button
                   key={chip}
@@ -208,7 +208,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-white/5 bg-[#000814]/80 backdrop-blur-md shrink-0">
+            <div className="p-3 border-t border-white/5 bg-[#000000]/80 backdrop-blur-md shrink-0">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -221,7 +221,7 @@ const ChatAssistant = () => {
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim()}
-                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000814] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
+                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000000] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
                 >
                   <Icon name="send" size={14} />
                 </button>
@@ -248,16 +248,16 @@ const ChatAssistant = () => {
       </div>
 
       {/* FAB Button with tag */}
-      <div className="flex items-center gap-2">
+      <div className="flex flex-col items-end gap-2">
         <AnimatePresence>
           {!isOpen && (
             <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
               className="glass px-3 py-1.5 rounded-xl border border-[#00FF9C]/20 text-[10px] font-mono text-white/70 whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.1)]"
             >
-              How can I help you? →
+              How can I help you? ↓
             </motion.div>
           )}
         </AnimatePresence>
@@ -265,7 +265,7 @@ const ChatAssistant = () => {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
+          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000000] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
         >
           <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
           <Icon name={isOpen ? 'close' : 'chat'} size={24} />

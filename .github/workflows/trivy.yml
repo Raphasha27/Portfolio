@@ -6,8 +6,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "v2/package*.json"
-      - "v2/src/**"
+      - "package*.json"
+      - "src/**"
       - ".github/workflows/trivy.yml"
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
         uses: aquasecurity/trivy-action@0.29.0
         with:
           scan-type: "fs"
-          scan-ref: "./v2"
+          scan-ref: "."
           ignore-unfixed: true
           format: "table"  # Changed from sarif to table (no upload)
           severity: "CRITICAL,HIGH"

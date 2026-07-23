@@ -56,7 +56,7 @@ const vercelProjects = [
     title: "Kirov Dynamics",
     subtitle: "Portfolio Hub",
     desc: "This portfolio. Systems architecture, AI engineering, and full-stack development showcase.",
-    url: "https://koketso-raphasha.vercel.app",
+    url: "https://portfolio-iota-eight-90.vercel.app",
     icon: "cpu",
     color: "from-[#00FF9C]/20 to-emerald-500/20",
     tech: ["React", "Vite", "Framer", "Vercel"],

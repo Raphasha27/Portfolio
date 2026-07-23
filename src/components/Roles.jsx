@@ -3,14 +3,14 @@ import { Icon } from './Icons';
 
 const roles = [
   { num: "01", icon: "layout", title: "AI Systems Architect", project: "Sovereign-AI-Nexus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" },
-  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2", image: "https://images.unsplash.com/photo-1620712943543-bcc4638ef80b?auto=format&fit=crop&w=600&q=80" },
-  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" },
-  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" },
+  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80" },
+  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" },
+  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" },
   { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" },
-  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" },
-  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=600&q=80" },
-  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1614064641913-6b714041d889?auto=format&fit=crop&w=600&q=80" },
-  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80" }
+  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" },
+  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" },
+  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80" },
+  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" }
 ];
 
 const Roles = () => {
@@ -24,7 +24,7 @@ const Roles = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000814] via-transparent to-[#000814] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-[#000000] pointer-events-none" />
 
       {/* Section Header */}
       <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 sm:mb-16 gap-4">
@@ -57,11 +57,11 @@ const Roles = () => {
                  <img loading="lazy" decoding="async"
                    src={role.image}
                    alt={role.title}
-                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
+                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
                  
-                 <div className="absolute top-3 right-3 text-[10px] font-mono text-blue-400 font-bold bg-[#000814]/80 px-2 py-1 rounded border border-blue-500/30 backdrop-blur-sm">
+                 <div className="absolute top-3 right-3 text-[10px] font-mono text-blue-400 font-bold bg-[#000000]/80 px-2 py-1 rounded border border-blue-500/30 backdrop-blur-sm">
                     {role.num}
                  </div>
               </div>

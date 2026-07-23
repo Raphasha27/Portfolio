@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://koketso-raphasha.vercel.app",
+  "homepage": "https://portfolio-iota-eight-90.vercel.app",
   "scripts": {
     "dev": "vite --host",
     "predeploy": "vite build --base=/Portfolio/",

@@ -42,7 +42,7 @@ const CommandPalette = ({ open, setOpen }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="w-[90vw] max-w-[600px] bg-[#000814]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+            className="w-[90vw] max-w-[600px] bg-[#000000]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
           >
             <div className="flex items-center px-4 py-3 border-b border-white/5">
               <Icon name="search" size={18} className="text-white/40 mr-3" />
@@ -82,7 +82,7 @@ const CommandPalette = ({ open, setOpen }) => {
                 <Command.Item onSelect={() => runCommand(() => window.open('/Koketso_Raphasha_CV.pdf', '_blank'))} className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/80 cursor-pointer hover:bg-[#00FF9C]/10 hover:text-[#00FF9C] aria-selected:bg-[#00FF9C]/10 aria-selected:text-[#00FF9C]">
                   <Icon name="download" size={16} /> Download Resume
                 </Command.Item>
-                <Command.Item onSelect={() => runCommand(() => window.open('mailto:raphashakoketso99@gmail.com', '_blank'))} className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/80 cursor-pointer hover:bg-red-500/10 hover:text-red-400 aria-selected:bg-red-500/10 aria-selected:text-red-400">
+                <Command.Item onSelect={() => runCommand(() => window.open('mailto:raphashakoketso69@gmail.com', '_blank'))} className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/80 cursor-pointer hover:bg-red-500/10 hover:text-red-400 aria-selected:bg-red-500/10 aria-selected:text-red-400">
                   <Icon name="mail" size={16} /> Send Email
                 </Command.Item>
                 <Command.Item onSelect={() => runCommand(() => window.open('https://github.com/Raphasha27', '_blank'))} className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-white/80 cursor-pointer hover:bg-white/10 hover:text-white aria-selected:bg-white/10 aria-selected:text-white">

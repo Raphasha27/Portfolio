@@ -25,19 +25,17 @@ jobs:
         with:
           node-version: "20"
           cache: npm
-          cache-dependency-path: v2/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./v2
 
       - name: npm audit (high+ only)
         run: npm audit --audit-level=high --json > npm-audit-report.json || true
-        working-directory: ./v2
 
       - name: Upload audit report
         uses: actions/upload-artifact@v4
         with:
           name: security-audit-report
-          path: v2/npm-audit-report.json
+          path: npm-audit-report.json
           retention-days: 30

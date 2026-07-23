@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
@@ -84,7 +85,7 @@ const projects = [
     color: "from-purple-500/20 to-pink-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
-    liveUrl: "https://koketso-raphasha.vercel.app",
+    liveUrl: "https://portfolio-iota-eight-90.vercel.app",
     status: "live",
     image: "/proj-kirov.png"
   },
@@ -313,6 +314,15 @@ const TiltCard = ({ children, className, id }) => {
 };
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const bannerTechs = PRIORITY_TECHS.map(techKey => {
     const techInfo = getTechInfo(techKey);
     return { name: techInfo.name, id: techInfo.icon };
@@ -346,9 +356,9 @@ const Projects = () => {
               key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-[#000814]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent pointer-events-none" />
               
-              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
+              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-40 transition-opacity duration-500 pointer-events-none`}></div>
               
               <div className="relative z-10 flex flex-col h-full">
                 {p.image && (
@@ -372,7 +382,7 @@ const Projects = () => {
                     </div>
                     <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80 truncate">{p.tagline}</div>
                   </div>
-                  <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] hidden sm:block shrink-0">
+                  <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/30 border-[#00FF9C]/60 text-[#00FF9C] hidden sm:block shrink-0">
                     {p.role}
                   </div>
                 </div>
@@ -385,7 +395,7 @@ const Projects = () => {
                   {p.tech.slice(0, 4).map((t, j) => {
                     const techInfo = getTechInfo(t);
                     return (
-                      <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 flex items-center gap-1 uppercase font-bold tracking-wider">
+                      <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/20 border border-white/30 text-white/90 flex items-center gap-1 uppercase font-bold tracking-wider">
                         <Icon name={techInfo.icon} size={10} />
                         {techInfo.name}
                       </span>
@@ -460,6 +470,14 @@ const Projects = () => {
               blockSize={12}
               blockMargin={4}
               fontSize={12}
+              transformData={(data) => {
+                if (isMobile) {
+                  const currentYear = new Date().getFullYear();
+                  const startOfJan = `${currentYear}-01-01`;
+                  return data.filter(day => day.date >= startOfJan);
+                }
+                return data;
+              }}
             />
           </div>
         </div>
