@@ -1,161 +1,232 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight, Download, Github, Linkedin, Mail, Briefcase, Code, MessageCircle } from 'lucide-react';
-import LiveInfoCards from './LiveInfoCards';
-import profileImg from '../assets/profile.png';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { Icon } from './Icons';
+import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
+import profileImg from '/profile_tie.png';
 
-const Hero = ({ scrollToSection, onScanClick, isDarkMode }) => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+const CountUp = ({ to, duration = 2 }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  useEffect(() => {
+    if (!isInView) return;
+    let start = 0;
+    const increment = to / (duration * 60);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= to) { setCount(to); clearInterval(timer); }
+      else setCount(Math.floor(start));
+    }, 1000 / 60);
+    return () => clearInterval(timer);
+  }, [to, duration, isInView]);
+  return <span ref={ref}>{count}</span>;
+};
+
+const socialLinks = [
+  { name: 'GitHub',    icon: 'github',     link: 'https://github.com/Raphasha27',                    color: 'hover:text-white' },
+  { name: 'LinkedIn',  icon: 'linkedin',   link: 'https://linkedin.com/in/koketso-raphasha',         color: 'hover:text-blue-400' },
+  { name: 'Facebook',  icon: 'facebook',   link: 'https://www.facebook.com/kirovdynamicstechnology',  color: 'hover:text-blue-500' },
+  { name: 'Twitter',   icon: 'twitter',    link: 'https://twitter.com/raphasha27',                    color: 'hover:text-sky-400' },
+  { name: 'Kaggle',    icon: 'kaggle',     link: 'https://kaggle.com/Raphasha27',                     color: 'hover:text-blue-300' },
+  { name: 'Streamlit', icon: 'streamlit',  link: 'https://share.streamlit.io/user/raphasha27',        color: 'hover:text-red-400' },
+  { name: 'WhatsApp',  icon: 'whatsapp',   link: 'https://wa.me/27781172470',                         color: 'hover:text-green-400' },
+  { name: 'Email',     icon: 'mail',       link: 'mailto:raphashakoketso69@gmail.com',                color: 'hover:text-red-400' },
+];
+
+const STATS = [
+  { label: 'Years Exp.',      val: 3,   suffix: '+', icon: 'activity'      },
+  { label: 'Certifications',  val: 10,  suffix: '+', icon: 'graduationcap' },
+  { label: 'Tech Ecosystems', val: 4,   suffix: '+', icon: 'cpu'           },
+  { label: 'Delivery',        val: 100, suffix: '%', icon: 'shield'        },
+];
+
+// Generate tech arsenal from standardized config
+const techArsenal = PRIORITY_TECHS.map(techKey => {
+  const techInfo = getTechInfo(techKey);
+  return {
+    name: techInfo.name,
+    icon: techInfo.icon
   };
+});
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
-  };
+const slideTexts = [
+  'Building sovereign AI infrastructure',
+  'Self-healing scalable systems',
+  'Bridging data & human intuition',
+  'Autonomous agentic frameworks',
+];
 
+const SlidingText = () => {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setIdx((p) => (p + 1) % slideTexts.length), 4000);
+    return () => clearInterval(t);
+  }, []);
   return (
-    <section id="home" className="min-h-screen pt-20 pb-16 px-4 relative overflow-hidden w-full">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-20">
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="flex-1 text-center lg:text-left"
-          >
-            <motion.div variants={itemVariants} className="inline-block px-3 py-1.5 lg:px-4 lg:py-2 bg-blue-500/10 rounded-full mb-3 lg:mb-6">
-              <span className="text-blue-500 font-bold text-[10px] lg:text-sm tracking-widest uppercase">Available for Hire</span>
-            </motion.div>
-            <motion.h1 variants={itemVariants} className={`text-3xl lg:text-5xl xl:text-7xl font-bold mb-2 lg:mb-6 leading-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
-              Hi, I'm <span className="text-blue-500">Koketso</span> <br />
-              <span className="text-xl lg:text-3xl xl:text-5xl opacity-80">Software Developer</span>
-            </motion.h1>
-            <motion.p variants={itemVariants} className={`text-sm lg:text-lg mb-4 lg:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-              I build intelligent, high-performance web and mobile solutions. Specialized in React, AI integration, and creating seamless digital experiences that drive growth.
-            </motion.p>
-            
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 lg:gap-4 justify-center lg:justify-start mb-4 lg:mb-10">
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="px-5 py-2.5 lg:px-8 lg:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl lg:rounded-2xl font-bold transition-all shadow-xl shadow-blue-500/25 flex items-center gap-2 group text-sm lg:text-base"
-              >
-                Let's Talk <ChevronRight className="w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <a 
-                href="/Koketso_Raphasha_Resume.pdf" 
-                download 
-                className={`px-5 py-2.5 lg:px-8 lg:py-4 border rounded-xl lg:rounded-2xl font-bold transition-all flex items-center gap-2 text-sm lg:text-base ${
-                  isDarkMode 
-                    ? 'border-white/10 hover:bg-white/5 text-white' 
-                    : 'border-slate-200 hover:bg-slate-50 text-slate-900'
-                }`}
-              >
-                <Download className="w-4 h-4 lg:w-5 lg:h-5" /> Resume
-              </a>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="flex gap-3 lg:gap-4 justify-center lg:justify-start">
-              {[
-                { Icon: Github, href: "https://github.com/Raphasha27" },
-                { Icon: Linkedin, href: "https://linkedin.com/in/koketso-raphasha-27" },
-                { Icon: Mail, href: "mailto:raphashakoketso99@gmail.com" },
-                { Icon: MessageCircle, href: "https://wa.me/27781172470", color: "group-hover:text-green-400" }
-              ].map(({ Icon, href, color }, i) => (
-                <a 
-                  key={i} 
-                  href={href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={`w-9 h-9 lg:w-12 lg:h-12 backdrop-blur-xl border rounded-lg lg:rounded-xl flex items-center justify-center transition-all group ${
-                    isDarkMode 
-                      ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20' 
-                      : 'bg-slate-50 border-slate-200 hover:bg-slate-100'
-                  }`}
-                >
-                  <Icon className={`w-4 h-4 lg:w-5 lg:h-5 transition-colors ${color || (isDarkMode ? 'text-slate-400 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900')}`} />
-                </a>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          <div className="flex-1 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-blue-500 rounded-full blur-3xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-              <motion.div 
-                animate={{ 
-                  backgroundColor: ["#ffffff", "#93c5fd", "#6EE7B7", "#ffffff"] 
-                }}
-                transition={{ 
-                  duration: 8, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
-                }}
-                className="w-32 h-32 sm:w-40 sm:h-40 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-2 border-white/10 relative z-10 shadow-2xl"
-              >
-                <img 
-                  src={profileImg} 
-                  alt="Koketso Raphasha"
-                  className="w-full h-full object-cover relative z-20 transition-transform duration-700 hover:scale-105"
-                />
-              </motion.div>
-              {/* Floating Cards - hidden on small screens */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className={`hidden md:flex absolute -bottom-6 left-1/2 -translate-x-1/2 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 whitespace-nowrap ${
-                  isDarkMode ? 'bg-slate-950/40 border-white/10' : 'bg-white/80 border-slate-200'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-xl ${isDarkMode ? 'bg-blue-500/10' : 'bg-blue-50'}`}>
-                    <Briefcase className="w-5 h-5 text-blue-500" />
-                  </div>
-                  <div>
-                    <p className={`text-[10px] uppercase tracking-wider font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Experience</p>
-                    <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>3+ Years</p>
-                  </div>
-                </div>
-              </motion.div>
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className={`hidden md:flex absolute top-8 -left-8 md:-left-12 backdrop-blur-md border px-5 py-3 rounded-2xl shadow-2xl z-20 ${
-                  isDarkMode ? 'bg-slate-950/40 border-white/10' : 'bg-white/80 border-slate-200'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-xl ${isDarkMode ? 'bg-green-500/10' : 'bg-green-50'}`}>
-                    <Code className="w-5 h-5 text-green-500" />
-                  </div>
-                  <div>
-                    <p className={`text-[10px] uppercase tracking-wider font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Projects</p>
-                    <p className={`text-sm font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>20+ Done</p>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Live Info Cards Section - hidden on mobile */}
-        <div className="hidden md:flex justify-center mt-12 w-full">
-          <LiveInfoCards isDarkMode={isDarkMode} />
-        </div>
-      </div>
-    </section>
+    <div className="h-5 overflow-hidden relative">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={idx}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -20, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-[10px] sm:text-xs text-white/50 font-mono"
+        >
+          {slideTexts[idx]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
   );
 };
+
+const Hero = () => (
+  <div id="home" className="relative min-h-screen flex flex-col bg-transparent">
+    <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+    <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.25rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-start pb-2 sm:pb-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-3 sm:gap-8 lg:gap-12 w-full">
+
+        {/* Profile Column — first in HTML so it shows first on mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center shrink-0 w-full max-w-[420px] lg:w-auto lg:order-2"
+        >
+          <div className="relative w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+            {/* Outer orbit ring — slow pulse */}
+            <div className="absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
+              style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
+
+            {/* Counter-spin ring */}
+            <div className="absolute rounded-full border border-cyan-400/20 pointer-events-none"
+              style={{ inset: '-12px', animation: 'spin 18s linear infinite reverse', boxShadow: '0 0 20px 2px rgba(0,220,255,0.1)' }} />
+
+            {/* Inner spinning gradient ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[3px] animate-spin-slow shadow-[0_0_50px_rgba(0,255,156,0.4)]">
+              <div className="w-full h-full rounded-full bg-[#000814]" />
+            </div>
+            <div className="absolute inset-[4px] rounded-full shadow-[inset_0_0_30px_rgba(0,255,156,0.2)] overflow-hidden bg-black">
+              <img
+                src={profileImg}
+                alt="Koketso Raphasha - Software Engineer & Co-Founder"
+                className="w-full h-full object-cover object-top bg-black"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          <div className="text-center mt-2 sm:mt-4">
+            <h2 className="text-sm sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-[10px] sm:text-sm text-[#00FF9C] font-medium mt-0.5">Software Engineer</p>
+          </div>
+
+          <div className="mt-1 text-center max-w-[240px]">
+            <SlidingText />
+          </div>
+
+
+        </motion.div>
+
+        {/* Content Column — second in HTML, but first visually on desktop via lg:order-1 */}
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="flex flex-col gap-2 sm:gap-4 w-full lg:flex-1 min-w-0 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2"
+        >
+          <div className="w-full">
+            <div className="flex items-center gap-2 flex-wrap w-full">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[10px] font-medium flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+                Open to Opportunities
+              </span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-medium">
+                Johannesburg, SA
+              </span>
+            </div>
+
+            <h1 className="text-xl sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full mt-1.5 lg:mt-3 break-words">
+              Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
+            </h1>
+
+            <div className="hidden lg:block my-2">
+              <SlidingText />
+            </div>
+
+            <p className="text-[11px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full line-clamp-3 lg:line-clamp-none">
+              Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems that push the boundaries of what software can do. Currently engineering the next generation of agentic platforms — where infrastructure thinks, adapts, and heals itself without human intervention.
+            </p>
+
+            <p className="text-[10px] sm:text-base text-white/40 w-full mt-1 sm:mt-0 leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+
+
+
+            <div className="flex flex-col gap-2 sm:gap-4 w-full mt-1.5 sm:mt-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full">
+                <a href="#projects" className="px-3 py-1.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-xs sm:text-base">
+                  View Projects →
+                </a>
+                <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1.5 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-xs sm:text-base flex items-center gap-1 sm:gap-2">
+                  <Icon name="download" size={12} /> CV
+                </a>
+                <a href="#contact" className="px-3 py-1.5 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-xs sm:text-base">
+                  Hire Me
+                </a>
+                
+                {/* Social links - moved here next to Hire Me */}
+                <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap ml-auto sm:ml-0">
+                  {socialLinks.map((s, i) => (
+                    <a 
+                      key={i} 
+                      href={s.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                      aria-label={`Visit my ${s.name} profile`}
+                      title={`Connect with me on ${s.name}`}
+                    >
+                      <Icon name={s.icon} size={16} />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech Arsenal (Moved from left column) */}
+          <div className="pt-3 sm:pt-6 mt-2 sm:mt-4 w-full border-t border-white/10">
+            <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-3">
+              <span className="text-[8px] sm:text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] font-bold shrink-0">Tech Arsenal</span>
+              <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
+            </div>
+            <div className="overflow-hidden rounded-lg sm:rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
+              <motion.div
+                initial={{ x: 0 }}
+                animate={{ x: "-50%" }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="flex gap-3 sm:gap-4 whitespace-nowrap py-3 px-4"
+              >
+                {[...techArsenal, ...techArsenal].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-sm font-mono border border-white/10 rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
+                  >
+                    <Icon name={tech.icon} size={12} className="sm:w-3.5 sm:h-3.5" />
+                    {tech.name}
+                  </span>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+      </div>
+    </div>
+  </div>
+);
 
 export default Hero;
