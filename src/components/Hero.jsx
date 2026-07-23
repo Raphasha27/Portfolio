@@ -217,19 +217,6 @@ const Hero = () => (
               <a href="#contact" className="px-5 sm:px-6 py-2.5 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
                 Hire Me
               </a>
-              {/* QR Code — inline next to Hire Me */}
-              <div className="flex items-center gap-2 ml-auto">
-                <div className="relative p-1.5 rounded-lg border border-white/10 bg-white/5 hover:border-[#00FF9C]/30 transition-colors">
-                  <img
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=56x56&data=${encodeURIComponent('https://koketso-raphasha.vercel.app')}&color=00FF9C&bgcolor=000814`}
-                    alt="Portfolio QR"
-                    className="w-14 h-14 rounded"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 rounded-lg ring-1 ring-[#00FF9C]/20 pointer-events-none" />
-                </div>
-                <span className="text-[8px] text-white/30 font-mono uppercase tracking-[0.15em] leading-tight max-w-[40px]">Scan me</span>
-              </div>
             </div>
           </div>
 

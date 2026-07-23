@@ -247,20 +247,8 @@ const ChatAssistant = () => {
         </div>
       </div>
 
-      {/* FAB Button with tag */}
+      {/* FAB Button */}
       <div className="flex flex-col items-end gap-2">
-        <AnimatePresence>
-          {!isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="glass px-3 py-1.5 rounded-xl border border-[#00FF9C]/20 text-[10px] font-mono text-white/70 whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.1)]"
-            >
-              How can I help you? ↓
-            </motion.div>
-          )}
-        </AnimatePresence>
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
