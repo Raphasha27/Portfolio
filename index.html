@@ -77,13 +77,28 @@
     }
     </script>
     <meta name="keywords" content="Raphasha27, Koketso Raphasha, Software Engineer, Systems Architect, Portfolio, South Africa, Kirov Dynamics, Full Stack Developer, Cybersecurity, React, Python" />
-    <script type="module" crossorigin src="/Portfolio/assets/index-M7Q0wZoc.js"></script>
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/jsx-runtime-sKfM10nh.js">
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/proxy-9dvZiXLl.js">
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-Dt3D3m7X.css">
-  <link rel="manifest" href="/Portfolio/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/Portfolio/registerSW.js"></script></head>
-  <body style="background-color:#000000">
+  <script>
+window.onerror = function(msg, url, line, col, error) {
+    fetch('http://localhost:9999/', {
+        method: 'POST',
+        body: msg + ' ' + (error ? error.stack : '')
+    });
+};
+window.addEventListener('unhandledrejection', function(e) {
+    fetch('http://localhost:9999/', {
+        method: 'POST',
+        body: e.reason ? e.reason.stack : 'Unhandled Rejection'
+    });
+});
+</script>
+  <script type="module" crossorigin src="/Portfolio/assets/index-927j1JWp.js"></script>
+  <link rel="modulepreload" crossorigin href="/Portfolio/assets/jsx-runtime-sKfM10nh.js">
+  <link rel="modulepreload" crossorigin href="/Portfolio/assets/proxy-9dvZiXLl.js">
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-uFpS3tua.css">
+<link rel="manifest" href="/Portfolio/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/Portfolio/registerSW.js"></script></head>
+  <body>
     <div id="root"></div>
   </body>
 </html>
+
 
