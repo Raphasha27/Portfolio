@@ -123,7 +123,7 @@ const Hero = () => (
           </div>
 
           <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
-            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3 w-full">
+            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3 w-full pl-3 sm:pl-0">
               <a href="#projects" className="px-2 py-0.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[8px] sm:text-base">
                 View Projects →
               </a>
