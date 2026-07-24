@@ -167,6 +167,16 @@ const Hero = () => (
                   Hire Me
                 </a>
               </div>
+              <div className="grid grid-cols-4 gap-0.5 sm:gap-3 w-full">
+                {STATS.map((stat, i) => (
+                  <div key={i} className="flex flex-col items-center justify-center py-0.5 sm:py-1.5 px-0.5 sm:px-2 rounded sm:rounded-lg border border-white/5 bg-white/[0.02]">
+                    <span className="text-[11px] sm:text-lg font-bold text-white leading-none">
+                      <CountUp to={stat.val} duration={2.5} />{stat.suffix}
+                    </span>
+                    <span className="text-[5px] sm:text-[9px] text-white/40 font-mono leading-tight text-center">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
               <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 flex-wrap w-full">
                 {socialLinks.map((s, i) => (
                   <a 
