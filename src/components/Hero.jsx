@@ -86,7 +86,7 @@ const Hero = () => (
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
     <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-between pb-1 sm:pb-8">
-      <div className="flex flex-row lg:flex-nowrap items-start justify-between gap-2 sm:gap-8 lg:gap-12 w-full h-full">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-2 sm:gap-8 lg:gap-12 w-full h-full">
 
         {/* Profile Column */}
         <motion.div
@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-[110px] h-[110px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -154,18 +154,18 @@ const Hero = () => (
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems.
             </p>
 
-            <p className="text-[8px] sm:text-base text-white/40 w-full mt-1 sm:mt-0 leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities.</p>
+            <p className="text-[8px] sm:text-base text-white/40 w-full mt-1 sm:mt-0 leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
             <div className="flex flex-col gap-1 sm:gap-4 w-full mt-1 sm:mt-2">
               <div className="flex flex-wrap items-center gap-1 sm:gap-3 w-full">
                 <a href="#projects" className="px-2 py-0.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[8px] sm:text-base">
-                  Projects →
+                  View Projects →
                 </a>
                 <a href="/Koketso_Raphasha_CV.pdf" download className="px-2 py-0.5 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[8px] sm:text-base flex items-center gap-1 sm:gap-2">
                   <Icon name="download" size={8} /> CV
                 </a>
                 <a href="#contact" className="px-2 py-0.5 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[8px] sm:text-base">
-                  Hire
+                  Hire Me
                 </a>
                 
                 <div className="flex items-center gap-0.5 sm:gap-2 flex-wrap ml-auto sm:ml-0">
