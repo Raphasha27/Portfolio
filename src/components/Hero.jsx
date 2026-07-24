@@ -93,7 +93,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-[380px] h-[380px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-full max-w-[400px] h-[380px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -115,45 +115,6 @@ const Hero = () => (
           <div className="text-center mt-1 sm:mt-4">
             <h2 className="text-[11px] sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
             <p className="text-[9px] sm:text-sm text-[#00FF9C] font-medium">Software Engineer</p>
-          </div>
-
-          <div className="mt-0.5 sm:mt-1 text-center max-w-[200px] sm:max-w-[240px] lg:hidden">
-            <SlidingText />
-          </div>
-
-          <div className="flex flex-col gap-1 w-full items-center mt-1 lg:hidden">
-            <div className="flex flex-wrap items-center justify-center gap-1.5 w-full">
-              <a href="#projects" className="px-3 py-1 bg-[#00FF9C] text-[#000814] font-semibold rounded hover:bg-[#00e089] transition-all active:scale-[0.97] text-[9px]">
-                View Projects →
-              </a>
-              <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1 border border-white/20 text-white/80 font-medium rounded hover:bg-white/5 transition-all active:scale-[0.97] text-[9px] flex items-center gap-1">
-                <Icon name="download" size={9} /> CV
-              </a>
-              <a href="#contact" className="px-3 py-1 border border-blue-500/30 text-blue-400 font-medium rounded hover:bg-blue-600/20 transition-all active:scale-[0.97] text-[9px]">
-                Hire Me
-              </a>
-              <a href="mailto:raphashakoketso69@gmail.com" className="px-3 py-1 border border-red-500/30 text-red-400 font-medium rounded hover:bg-red-600/20 transition-all active:scale-[0.97] text-[9px] flex items-center gap-1">
-                <Icon name="mail" size={9} /> Email
-              </a>
-              <a href="https://github.com/Raphasha27" target="_blank" rel="noopener noreferrer" className="px-3 py-1 border border-white/30 text-white/80 font-medium rounded hover:bg-white/10 transition-all active:scale-[0.97] text-[9px] flex items-center gap-1">
-                <Icon name="github" size={9} /> GitHub
-              </a>
-            </div>
-            <div className="flex items-center justify-center gap-x-3 gap-y-1.5 flex-wrap w-full max-w-[320px] lg:hidden">
-              {socialLinks.map((s, i) => (
-                <a 
-                  key={i} 
-                  href={s.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={`w-8 h-8 flex items-center justify-center text-white/50 ${s.color} transition-all rounded border border-white/10 hover:border-current bg-white/5`}
-                  aria-label={`Visit my ${s.name} profile`}
-                  title={`Connect with me on ${s.name}`}
-                >
-                  <Icon name={s.icon} size={14} />
-                </a>
-              ))}
-            </div>
           </div>
 
         </motion.div>
@@ -190,7 +151,7 @@ const Hero = () => (
 
             <p className="text-[9px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
-            <div className="hidden lg:flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
+            <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
               <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 w-full">
                 <a href="#projects" className="px-3 py-1 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[9px] sm:text-base">
                   View Projects →
@@ -208,7 +169,7 @@ const Hero = () => (
                 <Icon name="github" size={9} /> GitHub
               </a>
             </div>
-              <div className="hidden lg:flex items-center justify-center gap-x-3 gap-y-1.5 flex-wrap w-full max-w-[320px]">
+              <div className="flex items-center justify-center gap-x-3 gap-y-1.5 flex-wrap w-full max-w-[320px]">
                 {socialLinks.map((s, i) => (
                   <a 
                     key={i} 
