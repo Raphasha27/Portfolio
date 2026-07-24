@@ -123,26 +123,16 @@ const Hero = () => (
           </div>
 
           <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
-            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-3 w-full pl-3 sm:pl-0">
-              <a href="#projects" className="px-2 py-0.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[8px] sm:text-base">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 w-full pl-3 sm:pl-0">
+              <a href="#projects" className="px-3 py-1 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[9px] sm:text-base">
                 View Projects →
               </a>
-              <a href="/Koketso_Raphasha_CV.pdf" download className="px-2 py-0.5 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[8px] sm:text-base flex items-center gap-1 sm:gap-2">
-                <Icon name="download" size={8} /> CV
+              <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
+                <Icon name="download" size={9} /> CV
               </a>
-              <a href="#contact" className="px-2 py-0.5 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[8px] sm:text-base">
+              <a href="#contact" className="px-3 py-1 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base">
                 Hire Me
               </a>
-            </div>
-            <div className="grid grid-cols-4 gap-0.5 sm:gap-3 w-full max-w-[280px] sm:max-w-none">
-              {STATS.map((stat, i) => (
-                <div key={i} className="flex flex-col items-center justify-center py-0.5 sm:py-1.5 px-0.5 sm:px-2 rounded sm:rounded-lg border border-white/5 bg-white/[0.02]">
-                  <span className="text-[11px] sm:text-lg font-bold text-white leading-none">
-                    <CountUp to={stat.val} duration={2.5} />{stat.suffix}
-                  </span>
-                  <span className="text-[5px] sm:text-[9px] text-white/40 font-mono leading-tight text-center">{stat.label}</span>
-                </div>
-              ))}
             </div>
             <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap w-full">
               {socialLinks.map((s, i) => (
