@@ -86,7 +86,7 @@ const Hero = () => (
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
     <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-between pb-1 sm:pb-8">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-2 sm:gap-8 lg:gap-12 w-full h-full">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 sm:gap-8 lg:gap-12 w-full h-full">
 
         {/* Profile Column */}
         <motion.div
@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[120px] h-[120px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -115,11 +115,11 @@ const Hero = () => (
           </div>
 
           <div className="text-center mt-1 sm:mt-4">
-            <h2 className="text-[10px] sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
-            <p className="text-[8px] sm:text-sm text-[#00FF9C] font-medium mt-0 sm:mt-0.5">Software Engineer</p>
+            <h2 className="text-[9px] sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-[7px] sm:text-sm text-[#00FF9C] font-medium mt-0 sm:mt-0.5">Software Engineer</p>
           </div>
 
-          <div className="mt-0.5 sm:mt-1 text-center max-w-[200px] sm:max-w-[240px]">
+          <div className="mt-0.5 sm:mt-1 text-center max-w-[180px] sm:max-w-[240px]">
             <SlidingText />
           </div>
         </motion.div>
@@ -129,9 +129,9 @@ const Hero = () => (
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col flex-1 min-w-0 gap-1 sm:gap-4 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2 justify-between"
+          className="flex flex-col flex-1 min-w-0 gap-0.5 sm:gap-4 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2 justify-between w-full"
         >
-          <div className="w-full flex flex-col flex-1">
+          <div className="w-full flex flex-col flex-1 gap-0.5 sm:gap-2">
             <div className="flex items-center gap-1 sm:gap-2 flex-wrap w-full">
               <span className="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[7px] sm:text-[10px] font-medium flex items-center gap-1">
                 <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
@@ -142,7 +142,7 @@ const Hero = () => (
               </span>
             </div>
 
-            <h1 className="text-[15px] sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full mt-1 lg:mt-3 break-words">
+            <h1 className="text-sm sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full break-words">
               Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
             </h1>
 
@@ -150,13 +150,13 @@ const Hero = () => (
               <SlidingText />
             </div>
 
-            <p className="text-[9px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full mt-0.5 sm:mt-0">
+            <p className="text-[8px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full">
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems.
             </p>
 
-            <p className="text-[8px] sm:text-base text-white/40 w-full mt-1 sm:mt-0 leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+            <p className="text-[7px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
-            <div className="flex flex-col gap-1 sm:gap-4 w-full mt-1 sm:mt-2">
+            <div className="flex flex-col gap-1 sm:gap-4 w-full">
               <div className="flex flex-wrap items-center gap-1 sm:gap-3 w-full">
                 <a href="#projects" className="px-2 py-0.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[8px] sm:text-base">
                   View Projects →
@@ -187,7 +187,7 @@ const Hero = () => (
           </div>
 
           {/* Tech Arsenal */}
-          <div className="pt-1 sm:pt-6 mt-1 sm:mt-4 w-full border-t border-white/10">
+          <div className="pt-1 sm:pt-6 mt-0.5 sm:mt-4 w-full border-t border-white/10">
             <div className="flex items-center gap-1 sm:gap-4 mb-0.5 sm:mb-3">
               <span className="text-[6px] sm:text-[10px] font-mono text-white/40 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold shrink-0">Arsenal</span>
               <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
