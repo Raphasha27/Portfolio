@@ -94,7 +94,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -128,10 +128,10 @@ const Hero = () => (
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex flex-col flex-1 min-w-0 gap-0.5 sm:gap-4 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2 justify-between w-full"
+          className="flex flex-col min-w-0 gap-0.5 sm:gap-4 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2 justify-between w-full text-center sm:text-left"
         >
-          <div className="w-full flex flex-col flex-1 gap-0.5 sm:gap-2">
-            <div className="flex items-center gap-1 sm:gap-2 flex-wrap w-full">
+          <div className="w-full flex flex-col gap-0.5 sm:gap-2">
+            <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 flex-wrap w-full">
               <span className="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[7px] sm:text-[10px] font-medium flex items-center gap-1">
                 <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
                 Open
@@ -155,8 +155,8 @@ const Hero = () => (
 
             <p className="text-[9px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
-            <div className="flex flex-col gap-1 sm:gap-4 w-full">
-              <div className="flex flex-wrap items-center gap-1 sm:gap-3 w-full">
+            <div className="flex flex-col gap-1 sm:gap-4 w-full items-center sm:items-start">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1 sm:gap-3 w-full">
                 <a href="#projects" className="px-2 py-0.5 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[8px] sm:text-base">
                   View Projects →
                 </a>
@@ -167,7 +167,7 @@ const Hero = () => (
                   Hire Me
                 </a>
               </div>
-              <div className="flex items-center gap-1 sm:gap-2 flex-wrap w-full">
+              <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 flex-wrap w-full">
                 {socialLinks.map((s, i) => (
                   <a 
                     key={i} 
