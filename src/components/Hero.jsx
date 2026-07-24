@@ -83,8 +83,8 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] lg:flex-1 lg:flex lg:flex-col lg:justify-between pb-0.5 sm:pb-8">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-0.5 sm:gap-8 lg:gap-12 w-full h-full">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.5rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] lg:flex-1 lg:flex lg:flex-col lg:justify-between pb-4 sm:pb-8">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-8 lg:gap-12 w-full h-full">
 
         {/* Profile Column */}
         <motion.div
@@ -93,7 +93,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2 w-full sm:w-auto"
         >
-          <div className="relative w-full aspect-square sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px] max-w-[500px]">
+          <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
