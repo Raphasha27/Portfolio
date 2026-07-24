@@ -106,6 +106,7 @@ window.addEventListener('unhandledrejection', function(e) {
 <link rel="manifest" href="/Portfolio/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/Portfolio/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
+    <script>if(localStorage.getItem('v')!=='7'){localStorage.setItem('v','7');location.reload(true)}</script>
   </body>
 </html>
 
