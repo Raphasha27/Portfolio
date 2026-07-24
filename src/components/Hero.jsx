@@ -93,7 +93,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-full max-w-[400px] h-[380px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[85vw] h-[85vw] max-w-[360px] max-h-[360px] sm:w-[360px] sm:h-[360px] lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -112,9 +112,9 @@ const Hero = () => (
             </div>
           </div>
 
-          <div className="text-center mt-1 sm:mt-4">
-            <h2 className="text-[11px] sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
-            <p className="text-[9px] sm:text-sm text-[#00FF9C] font-medium">Software Engineer</p>
+          <div className="text-center mt-3 sm:mt-4">
+            <h2 className="text-xl sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-sm text-[#00FF9C] font-medium">Software Engineer</p>
           </div>
 
         </motion.div>
@@ -128,16 +128,16 @@ const Hero = () => (
         >
           <div className="w-full flex flex-col gap-0.5 sm:gap-2">
             <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-2 flex-wrap w-full">
-              <span className="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[7px] sm:text-[10px] font-medium flex items-center gap-1">
-                <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+              <span className="px-2 sm:px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-xs sm:text-[10px] font-medium flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
                 Open
               </span>
-              <span className="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[7px] sm:text-[10px] font-medium">
+              <span className="px-2 sm:px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs sm:text-[10px] font-medium">
                 Joburg, SA
               </span>
             </div>
 
-            <h1 className="text-sm sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full break-words">
+            <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[56px] font-bold text-white leading-tight w-full break-words">
               Software Engineer<span className="text-[#00FF9C]"> & Co-Founder</span>
             </h1>
 
@@ -145,28 +145,28 @@ const Hero = () => (
               <SlidingText />
             </div>
 
-            <p className="text-[10px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full">
+            <p className="text-sm sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full">
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems.
             </p>
 
-            <p className="text-[9px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+            <p className="text-xs sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
             <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
-              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 w-full">
-                <a href="#projects" className="px-3 py-1 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[9px] sm:text-base">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full">
+                <a href="#projects" className="px-4 py-2 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
                   View Projects →
                 </a>
-                <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
-                  <Icon name="download" size={9} /> CV
+                <a href="/Koketso_Raphasha_CV.pdf" download className="px-4 py-2 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-1 sm:gap-2">
+                  <Icon name="download" size={12} /> CV
                 </a>
-              <a href="#contact" className="px-3 py-1 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base">
+              <a href="#contact" className="px-4 py-2 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-sm sm:text-base">
                 Hire Me
               </a>
-              <a href="mailto:raphashakoketso69@gmail.com" className="px-3 py-1 sm:px-6 sm:py-3 border border-red-500/30 text-red-400 font-medium rounded sm:rounded-lg hover:bg-red-600/20 hover:border-red-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
-                <Icon name="mail" size={9} /> Email
+              <a href="mailto:raphashakoketso69@gmail.com" className="px-4 py-2 sm:px-6 sm:py-3 border border-red-500/30 text-red-400 font-medium rounded sm:rounded-lg hover:bg-red-600/20 hover:border-red-400/50 transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-1 sm:gap-2">
+                <Icon name="mail" size={12} /> Email
               </a>
-              <a href="https://github.com/Raphasha27" target="_blank" rel="noopener noreferrer" className="px-3 py-1 sm:px-6 sm:py-3 border border-white/30 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/10 hover:border-white/50 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
-                <Icon name="github" size={9} /> GitHub
+              <a href="https://github.com/Raphasha27" target="_blank" rel="noopener noreferrer" className="px-4 py-2 sm:px-6 sm:py-3 border border-white/30 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/10 hover:border-white/50 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-1 sm:gap-2">
+                <Icon name="github" size={12} /> GitHub
               </a>
             </div>
               <div className="flex items-center justify-center gap-x-3 gap-y-1.5 flex-wrap w-full max-w-[320px]">
@@ -176,7 +176,7 @@ const Hero = () => (
                     href={s.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                    className={`w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
                     aria-label={`Visit my ${s.name} profile`}
                     title={`Connect with me on ${s.name}`}
                   >
@@ -189,8 +189,8 @@ const Hero = () => (
 
           {/* Tech Arsenal */}
           <div className="pt-1 sm:pt-6 mt-0.5 sm:mt-4 w-full border-t border-white/10">
-            <div className="flex items-center gap-1 sm:gap-4 mb-0.5 sm:mb-3">
-              <span className="text-[6px] sm:text-[10px] font-mono text-white/40 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold shrink-0">Arsenal</span>
+            <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-3">
+              <span className="text-xs sm:text-[10px] font-mono text-white/40 uppercase tracking-[0.1em] sm:tracking-[0.2em] font-bold shrink-0">Arsenal</span>
               <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
             </div>
             <div className="overflow-hidden rounded sm:rounded-xl border border-white/5 bg-white/[0.02] backdrop-blur-sm">
@@ -203,9 +203,9 @@ const Hero = () => (
                 {[...techArsenal, ...techArsenal].map((tech, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-0.5 sm:gap-2 px-1 sm:px-4 py-0.5 sm:py-1.5 text-[7px] sm:text-sm font-mono border border-white/10 rounded sm:rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
+                    className="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-1.5 text-xs sm:text-sm font-mono border border-white/10 rounded sm:rounded-lg text-white/60 shrink-0 bg-white/[0.03] hover:text-[#00FF9C] hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-colors"
                   >
-                    <Icon name={tech.icon} size={6} className="sm:w-3.5 sm:h-3.5" />
+                    <Icon name={tech.icon} size={12} className="sm:w-3.5 sm:h-3.5" />
                     {tech.name}
                   </span>
                 ))}
