@@ -150,7 +150,7 @@ const Hero = () => (
               <SlidingText />
             </div>
 
-            <p className="text-[9px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full line-clamp-2 sm:line-clamp-3 lg:line-clamp-none mt-0.5 sm:mt-0">
+            <p className="text-[9px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full mt-0.5 sm:mt-0">
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems.
             </p>
 
@@ -167,22 +167,21 @@ const Hero = () => (
                 <a href="#contact" className="px-2 py-0.5 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[8px] sm:text-base">
                   Hire Me
                 </a>
-                
-                <div className="flex items-center gap-0.5 sm:gap-2 flex-wrap ml-auto sm:ml-0">
-                  {socialLinks.map((s, i) => (
-                    <a 
-                      key={i} 
-                      href={s.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className={`w-5 h-5 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
-                      aria-label={`Visit my ${s.name} profile`}
-                      title={`Connect with me on ${s.name}`}
-                    >
-                      <Icon name={s.icon} size={8} />
-                    </a>
-                  ))}
-                </div>
+              </div>
+              <div className="flex items-center gap-1 sm:gap-2 flex-wrap w-full">
+                {socialLinks.map((s, i) => (
+                  <a 
+                    key={i} 
+                    href={s.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`w-6 h-6 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                    aria-label={`Visit my ${s.name} profile`}
+                    title={`Connect with me on ${s.name}`}
+                  >
+                    <Icon name={s.icon} size={10} />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
