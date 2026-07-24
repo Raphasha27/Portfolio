@@ -85,16 +85,16 @@ const Hero = () => (
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
     <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-between pb-1 sm:pb-8">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 sm:gap-8 lg:gap-12 w-full h-full">
+      <div className="flex flex-col lg:flex-row items-start gap-2 sm:gap-8 lg:gap-12 w-full h-full">
 
         {/* Profile Column */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center shrink-0 lg:order-2"
+          className="flex flex-col items-start shrink-0 lg:order-2"
         >
-          <div className="relative w-[120px] h-[120px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[200px] h-[200px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -113,12 +113,12 @@ const Hero = () => (
             </div>
           </div>
 
-          <div className="text-center mt-1 sm:mt-4">
-            <h2 className="text-[9px] sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
-            <p className="text-[7px] sm:text-sm text-[#00FF9C] font-medium mt-0 sm:mt-0.5">Software Engineer</p>
+          <div className="mt-1 sm:mt-4">
+            <h2 className="text-sm sm:text-lg lg:text-xl font-bold text-white">Koketso Raphasha</h2>
+            <p className="text-xs sm:text-sm text-[#00FF9C] font-medium">Software Engineer</p>
           </div>
 
-          <div className="mt-0.5 sm:mt-1 text-center max-w-[180px] sm:max-w-[240px]">
+          <div className="mt-0.5 sm:mt-1 max-w-[200px] sm:max-w-[240px]">
             <SlidingText />
           </div>
         </motion.div>
@@ -149,11 +149,11 @@ const Hero = () => (
               <SlidingText />
             </div>
 
-            <p className="text-[8px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full">
+            <p className="text-[10px] sm:text-base lg:text-lg text-white/60 leading-snug sm:leading-relaxed w-full">
               Designing and building scalable, self-healing systems powered by modern AI and clean architecture. Passionate about sovereign infrastructure, autonomous agents, and high-throughput distributed systems.
             </p>
 
-            <p className="text-[7px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
+            <p className="text-[9px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
             <div className="flex flex-col gap-1 sm:gap-4 w-full">
               <div className="flex flex-wrap items-center gap-1 sm:gap-3 w-full">
