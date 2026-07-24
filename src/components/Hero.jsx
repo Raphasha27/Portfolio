@@ -85,8 +85,8 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-start pb-1 sm:pb-8">
-      <div className="flex flex-row flex-wrap lg:flex-nowrap items-start justify-between gap-1 sm:gap-8 lg:gap-12 w-full">
+    <div className="w-full px-2 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[calc(var(--nav-h)+0.15rem)] sm:pt-[calc(var(--nav-h)+1.5rem)] flex-1 flex flex-col justify-between pb-1 sm:pb-8">
+      <div className="flex flex-row lg:flex-nowrap items-start justify-between gap-1 sm:gap-8 lg:gap-12 w-full">
 
         {/* Profile Column */}
         <motion.div
@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 lg:order-2"
         >
-          <div className="relative w-[70px] h-[70px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
+          <div className="relative w-[85px] h-[85px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[420px] xl:h-[420px]">
             <div className="hidden sm:block absolute rounded-full border border-[#00FF9C]/10 animate-pulse pointer-events-none"
               style={{ inset: '-24px', boxShadow: '0 0 40px 4px rgba(0,255,156,0.08), inset 0 0 30px rgba(0,255,156,0.03)' }} />
             <div className="hidden sm:block absolute rounded-full border border-cyan-400/20 pointer-events-none"
@@ -131,7 +131,7 @@ const Hero = () => (
           transition={{ duration: 0.4, delay: 0.2 }}
           className="flex flex-col flex-1 min-w-0 gap-0.5 sm:gap-4 lg:pr-6 xl:pr-8 lg:order-1 pt-0 sm:pt-2"
         >
-          <div className="w-full">
+          <div className="w-full flex flex-col flex-1">
             <div className="flex items-center gap-1 sm:gap-2 flex-wrap w-full">
               <span className="px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-[7px] sm:text-[10px] font-medium flex items-center gap-1">
                 <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
