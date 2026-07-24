@@ -29,7 +29,6 @@ const socialLinks = [
   { name: 'Twitter',   icon: 'twitter',    link: 'https://twitter.com/raphasha27',                    color: 'hover:text-sky-400' },
   { name: 'Kaggle',    icon: 'kaggle',     link: 'https://kaggle.com/Raphasha27',                     color: 'hover:text-blue-300' },
   { name: 'WhatsApp',  icon: 'whatsapp',   link: 'https://wa.me/27781172470',                         color: 'hover:text-green-400' },
-  { name: 'Email',     icon: 'mail',       link: 'mailto:raphashakoketso69@gmail.com',                color: 'hover:text-red-400' },
 ];
 
 const STATS = [
@@ -118,38 +117,10 @@ const Hero = () => (
             <p className="text-[9px] sm:text-sm text-[#00FF9C] font-medium">Software Engineer</p>
           </div>
 
-          <div className="mt-0.5 sm:mt-1 text-center max-w-[200px] sm:max-w-[240px]">
+          <div className="mt-0.5 sm:mt-1 text-center max-w-[200px] sm:max-w-[240px] lg:hidden">
             <SlidingText />
           </div>
 
-          <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
-            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 w-full pl-3 sm:pl-0">
-              <a href="#projects" className="px-3 py-1 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[9px] sm:text-base">
-                View Projects →
-              </a>
-              <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
-                <Icon name="download" size={9} /> CV
-              </a>
-              <a href="#contact" className="px-3 py-1 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base">
-                Hire Me
-              </a>
-            </div>
-            <div className="flex items-center justify-center gap-1 sm:gap-2 flex-wrap w-full">
-              {socialLinks.map((s, i) => (
-                <a 
-                  key={i} 
-                  href={s.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className={`w-6 h-6 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
-                  aria-label={`Visit my ${s.name} profile`}
-                  title={`Connect with me on ${s.name}`}
-                >
-                  <Icon name={s.icon} size={10} />
-                </a>
-              ))}
-            </div>
-          </div>
         </motion.div>
 
         {/* Content Column */}
@@ -184,7 +155,40 @@ const Hero = () => (
 
             <p className="text-[9px] sm:text-base text-white/40 w-full leading-tight">📍 Johannesburg, South Africa — Open to remote & worldwide opportunities. Let's build the future together.</p>
 
-
+            <div className="flex flex-col gap-1 sm:gap-3 w-full items-center mt-1 sm:mt-3">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 w-full">
+                <a href="#projects" className="px-3 py-1 sm:px-6 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded sm:rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-[9px] sm:text-base">
+                  View Projects →
+                </a>
+                <a href="/Koketso_Raphasha_CV.pdf" download className="px-3 py-1 sm:px-6 sm:py-3 border border-white/20 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
+                  <Icon name="download" size={9} /> CV
+                </a>
+              <a href="#contact" className="px-3 py-1 sm:px-6 sm:py-3 border border-blue-500/30 text-blue-400 font-medium rounded sm:rounded-lg hover:bg-blue-600/20 hover:border-blue-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base">
+                Hire Me
+              </a>
+              <a href="mailto:raphashakoketso69@gmail.com" className="px-3 py-1 sm:px-6 sm:py-3 border border-red-500/30 text-red-400 font-medium rounded sm:rounded-lg hover:bg-red-600/20 hover:border-red-400/50 transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
+                <Icon name="mail" size={9} /> Email
+              </a>
+              <a href="https://github.com/Raphasha27" target="_blank" rel="noopener noreferrer" className="px-3 py-1 sm:px-6 sm:py-3 border border-white/30 text-white/80 font-medium rounded sm:rounded-lg hover:bg-white/10 hover:border-white/50 hover:text-white transition-all active:scale-[0.97] text-[9px] sm:text-base flex items-center gap-1 sm:gap-2">
+                <Icon name="github" size={9} /> GitHub
+              </a>
+            </div>
+              <div className="flex items-center justify-center gap-x-3 gap-y-1.5 flex-wrap w-full max-w-[320px]">
+                {socialLinks.map((s, i) => (
+                  <a 
+                    key={i} 
+                    href={s.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={`w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-white/50 ${s.color} transition-all rounded sm:rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                    aria-label={`Visit my ${s.name} profile`}
+                    title={`Connect with me on ${s.name}`}
+                  >
+                    <Icon name={s.icon} size={14} />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Tech Arsenal */}
