@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#000000] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-clip">
+    <div className="bg-[#0a0e17] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-clip">
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
 
