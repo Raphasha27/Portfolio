@@ -62,15 +62,15 @@ const SlidingText = () => {
     return () => clearInterval(t);
   }, []);
   return (
-    <div className="h-5 overflow-hidden relative">
+    <div className="h-7 overflow-hidden relative">
       <AnimatePresence mode="wait">
         <motion.p
           key={idx}
-          initial={{ y: 20, opacity: 0 }}
+          initial={{ y: 12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -20, opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-[10px] sm:text-xs text-white/50 font-mono"
+          exit={{ y: -12, opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          className="text-[10px] sm:text-xs text-white/50 font-mono leading-tight"
         >
           {slideTexts[idx]}
         </motion.p>
