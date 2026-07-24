@@ -25,7 +25,7 @@ const Navbar = ({ setCmdOpen }) => {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const navItems = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+  const navItems = ['home', 'services', 'industries', 'solutions', 'about', 'contact'];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#000000]/80 backdrop-blur-xl h-[var(--nav-h)] flex items-center border-b border-white/5">
@@ -35,35 +35,32 @@ const Navbar = ({ setCmdOpen }) => {
       />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto flex justify-between items-center">
-        {/* ── Logo + Health Badge ── */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => scrollTo('home')}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity min-w-0"
             aria-label="Scroll to top"
           >
-            {/* Code bracket icon */}
             <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="2.2" className="w-5 h-5 shrink-0">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
+              <path d="M12 2l3 3-3 3-3-3z" />
+              <path d="M12 16l3 3-3 3-3-3z" />
+              <path d="M2 12l3-3 3 3-3 3z" />
+              <path d="M16 12l3-3 3 3-3 3z" />
             </svg>
-            {/* Short name on lg, full name on xl+ */}
             <span className="text-[#00FF9C] font-bold tracking-tight whitespace-nowrap block xl:hidden text-[13px]">
               KR.dev
             </span>
             <span className="text-[#00FF9C] font-bold tracking-tight whitespace-nowrap hidden xl:block text-[13px]">
-              Koketso_Raphasha
+              Koketso Raphasha
             </span>
           </button>
 
-          {/* Health badge — only on 2xl+ */}
           <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] shadow-[0_0_6px_rgba(0,255,156,0.8)] shrink-0" />
             System Health: Optimal
           </div>
         </div>
 
-        {/* ── Desktop nav links ── */}
         <div className="hidden lg:flex gap-4 xl:gap-6 text-[12px] xl:text-[13px] font-semibold text-white/70 capitalize">
           {navItems.map(item => (
             <button
@@ -77,17 +74,15 @@ const Navbar = ({ setCmdOpen }) => {
         </div>
 
         <div className="flex items-center gap-3">
-          {/* Share */}
           <button
             onClick={handleShare}
             title="Share"
-            aria-label="Share this portfolio"
+            aria-label="Share this page"
             className="w-9 h-9 hidden sm:flex items-center justify-center rounded-lg bg-white/5 border border-white/8 text-white/50 hover:text-white hover:border-white/20 transition-all"
           >
             <Icon name={copied ? 'check' : 'share'} size={15} />
           </button>
 
-          {/* Search / Command Palette */}
           <button
             onClick={() => setCmdOpen && setCmdOpen(true)}
             aria-label="Open command palette"
@@ -102,7 +97,7 @@ const Navbar = ({ setCmdOpen }) => {
             aria-label="Scroll to contact section"
             className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#001a11] border border-[#00FF9C]/30 text-[#00FF9C] text-[13px] font-bold rounded-xl hover:bg-[#002d1e] hover:border-[#00FF9C]/60 transition-all"
           >
-            Hire Me
+            Get in Touch
           </button>
 
           <button
@@ -115,7 +110,6 @@ const Navbar = ({ setCmdOpen }) => {
         </div>
       </div>
 
-      {/* Backdrop */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -129,7 +123,6 @@ const Navbar = ({ setCmdOpen }) => {
         )}
       </AnimatePresence>
 
-      {/* Sidebar panel */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.aside
@@ -140,17 +133,19 @@ const Navbar = ({ setCmdOpen }) => {
             transition={{ type: 'spring', damping: 28, stiffness: 260 }}
             className="fixed top-0 right-0 bottom-0 z-[70] w-[300px] max-w-[90vw] bg-[#020d1a] border-l border-[#00FF9C]/20 shadow-[-20px_0_60px_rgba(0,0,0,0.6)] lg:hidden flex flex-col overflow-y-auto"
           >
-            {/* ── Sidebar Header ── */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-white/8">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/40 flex items-center justify-center">
                   <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="2" className="w-4 h-4">
-                    <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
+                    <path d="M12 2l3 3-3 3-3-3z" />
+                    <path d="M12 16l3 3-3 3-3-3z" />
+                    <path d="M2 12l3-3 3 3-3 3z" />
+                    <path d="M16 12l3-3 3 3-3 3z" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-white text-[13px] font-bold leading-none">Koketso Raphasha</div>
-                  <div className="text-[#00FF9C] text-[10px] font-mono mt-0.5">Full-Stack · AI Engineer</div>
+                  <div className="text-[#00FF9C] text-[10px] font-mono mt-0.5">Software Engineer & Co-Founder</div>
                 </div>
               </div>
               <button
@@ -162,17 +157,15 @@ const Navbar = ({ setCmdOpen }) => {
               </button>
             </div>
 
-            {/* ── Status Badge ── */}
             <div className="mx-6 mt-4 px-4 py-2.5 rounded-xl bg-[#00FF9C]/5 border border-[#00FF9C]/15 flex items-center gap-2.5">
               <span className="w-2 h-2 rounded-full bg-[#00FF9C] shadow-[0_0_8px_rgba(0,255,156,0.8)] shrink-0 animate-pulse" />
-              <span className="text-[11px] font-semibold text-[#00FF9C] uppercase tracking-wider">Available for hire</span>
+              <span className="text-[11px] font-semibold text-[#00FF9C] uppercase tracking-wider">Operational</span>
             </div>
 
-            {/* ── Navigation ── */}
             <nav className="flex flex-col px-4 mt-6 gap-1">
               <div className="text-[9px] font-bold text-white/25 uppercase tracking-[0.25em] px-3 mb-2">Navigation</div>
               {navItems.map((item, i) => {
-                const icons = { home: 'home', about: 'user', experience: 'briefcase', skills: 'cpu', projects: 'code', contact: 'mail' };
+                const icons = { home: 'home', services: 'cpu', industries: 'globe', solutions: 'code', about: 'user', contact: 'mail' };
                 return (
                   <button
                     key={item}
@@ -191,14 +184,13 @@ const Navbar = ({ setCmdOpen }) => {
               })}
             </nav>
 
-            {/* ── Quick Links ── */}
             <div className="px-4 mt-6">
               <div className="text-[9px] font-bold text-white/25 uppercase tracking-[0.25em] px-3 mb-3">Quick Links</div>
               <div className="grid grid-cols-3 gap-2">
                 {[
                   { label: 'GitHub', icon: 'github', href: 'https://github.com/Raphasha27' },
                   { label: 'LinkedIn', icon: 'linkedin', href: 'https://za.linkedin.com/in/koketso-raphasha-517954387' },
-                  { label: 'WhatsApp', icon: 'whatsapp', href: 'https://wa.me/27781172470' },
+                  { label: 'Twitter', icon: 'twitter', href: 'https://twitter.com/kirovdynamics' },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                     className="flex flex-col items-center gap-1.5 py-3 rounded-xl bg-white/4 border border-white/8 hover:border-[#00FF9C]/30 hover:bg-[#00FF9C]/5 transition-all"
@@ -210,7 +202,6 @@ const Navbar = ({ setCmdOpen }) => {
               </div>
             </div>
 
-            {/* ── Bottom Actions ── */}
             <div className="px-4 mt-auto pb-8 pt-6 flex flex-col gap-3 border-t border-white/8">
               <button
                 onClick={() => { setIsMobileMenuOpen(false); if (setCmdOpen) setCmdOpen(true); }}
@@ -223,7 +214,8 @@ const Navbar = ({ setCmdOpen }) => {
                 onClick={() => scrollTo('contact')}
                 className="w-full py-3.5 bg-[#00FF9C] text-[#000000] font-bold rounded-xl hover:bg-[#00e88e] transition-all text-[14px] shadow-[0_0_20px_rgba(0,255,156,0.25)]"
               >
-                💼 Hire Me
+                <Icon name="briefcase" size={16} className="inline mr-2" />
+                Get in Touch
               </button>
             </div>
           </motion.aside>
